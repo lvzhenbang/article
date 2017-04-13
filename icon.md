@@ -90,3 +90,4 @@
 
       
       http://blog.csdn.net/c_mihoo/article/details/12774719
+      https://isux.tencent.com/understand-data-uri-performance.html
