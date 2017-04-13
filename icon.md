@@ -1,19 +1,19 @@
-#前端开发中关于icon 使用的总结
+# 前端开发中关于icon 使用的总结
 
-##解决方案：
+## 解决方案：
 	1. Css sprite 雪碧图，也称为css精灵图
 	2. Icon font 图标字体
 	3. Data URI scheme
 	
 	
-##实现原理：
-####雪碧图	它的基本原理是将网站中的所有的图标图片整合到一张图片中，该图片使用css 中的width,height,background属性和background-position属性来渲染网站中请求页面中的图标。
-####Icon font	 它的基本原理自定义一种字体，将不同的字配置作为icon图案，然后通过css嵌入其中使用。 
-####DataURI scheme	Data URI scheme是在RFC2397中定义的，将一些小的数据，直接嵌入到网页中，从而不用再从外部文件载入
+## 实现原理：
+#### 雪碧图	它的基本原理是将网站中的所有的图标图片整合到一张图片中，该图片使用css 中的width,height,background属性和background-position属性来渲染网站中请求页面中的图标。
+#### Icon font	 它的基本原理自定义一种字体，将不同的字配置作为icon图案，然后通过css嵌入其中使用。 
+#### DataURI scheme	Data URI scheme是在RFC2397中定义的，将一些小的数据，直接嵌入到网页中，从而不用再从外部文件载入
 
 
-##优势&劣势
-###雪碧图
+## 优势&劣势
+### 雪碧图
 > 优势
 
  		1. 加快网页加载速度
@@ -47,7 +47,7 @@
 	4. 文字图片的大小设置
 	5. 10p以下的字体chrome浏览器显示12px
 
-###Data URI scheme
+### Data URI scheme
 >优势
 
     使用一个data uri scheme
@@ -55,8 +55,8 @@
 
     浏览器使用的过程中不会缓存该图片
 
-##参考资料：
->Sprite
+## 参考资料：
+> Sprite
 
     http://www.cnblogs.com/hustskyking/archive/2015/08/17/iconfont-opt.html
     http://www.cnblogs.com/demix/archive/2009/11/28/1612715.html
@@ -64,7 +64,7 @@
     http://ntx.me/2015/05/21/IconFont/
     https://think2011.net/2017/03/31/css-sprite/
 
->Iconfont
+> Iconfont
 
     http://www.cnblogs.com/hustskyking/archive/2015/08/17/iconfont-opt.html
     http://www.cnblogs.com/demix/archive/2009/11/28/1612715.html
