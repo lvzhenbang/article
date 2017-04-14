@@ -50,6 +50,14 @@
     koala
     下载地址：http://koala-app.com/index-zh.html
     使方用法：http://www.w3cplus.com/blog/777.html
+    
+> css开发中的规范（BEM）
+
+    1.B（block）:模块化
+    2.E（element）:元素标签
+    3.M（modify）:属性修饰
+    
+  详细介绍见 **参考资料 BEM**
 > 参考资料和视频教程
 
 ### css预处理器相关文档
@@ -65,4 +73,9 @@
     http://lesscss.cn/ （官方文档跳转）
     http://www.imooc.com/learn/61（视频）
     http://www.imooc.com/learn/102（视频）
+
+### BEM
+    
+    http://www.w3cplus.com/preprocessor/getting-sass-y-with-bem.html
+    http://www.w3cplus.com/css/battling-bem-extended-edition-common-problems-and-how-to-avoid-them.html
     
