@@ -56,6 +56,10 @@
     1.B（block）:模块化
     2.E（element）:元素标签
     3.M（modify）:属性修饰
+    结构：
+    .block{}
+    .block__element{}
+    .block--modifier{}
     
   详细介绍见 **参考资料 BEM**
 > 参考资料和视频教程
