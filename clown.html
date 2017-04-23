@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>多列布局</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <style>
+        body {
+            padding: 0;
+            margin: 20px 0;
+        }
+
+        .l-clearfix:before,
+        .l-clearfix:after {
+            display: table;
+            content: ' ';
+        }
+
+        .l-clearfix:after {
+            clear: both;
+        }
+
+        h3 {
+            width: 1000px;
+            height: auto;
+            margin: 20px auto;
+        }
+
+        .l-list-container {
+            width: 1000px;
+            height: auto;
+            margin: 0 auto;
+            overflow: hidden;
+            border: 1px solid #ff0000;
+        }
+
+        .l-list {
+            width: 1020px;
+            height: auto;
+            /* margin: 0 auto; */
+            border: 1px solid #cecece;
+            overflow: hidden;
+        }
+
+        .l-list2 {
+            width: 1000px;
+            height: auto;
+            margin: 0 auto;
+            border: 1px solid #cecece;
+            overflow: hidden;
+        }
+
+        .l-list3 {
+            width: 1000px;
+            height: auto;
+            margin: 0 auto;
+            font-size: 0;
+            border: 1px solid #cecece;
+            overflow: hidden;
+        }
+
+        .l-list4-0 {
+            display: table;
+            width: 1000px;
+            height: auto;
+            margin: 0 auto;
+            border: 1px solid #cecece;
+        }
+
+        .l-list4 {
+            display: flex;
+            justify-content: space-between;
+            width: 1000px;
+            height: auto;
+            margin: 0 auto;
+            border: 1px solid #cecece;
+        }
+
+        .l-list5 {
+            width: 1000px;
+            height: auto;
+            display: grid;
+            grid-column-gap: 20px;
+            grid-template-columns: 235px 235px 235px 235px;
+            grid-template-rows: 220px;
+            margin: 0 auto;
+            border: 1px solid #cecece;
+        }
+
+        .l-list-item,
+        .l-list-item2 {
+            width: 235px;
+            height: 220px;
+            margin-right: 20px;
+            float: left;
+            background-color: #cecece;
+        }
+
+
+        .l-list-item2:last-child,.l-list-item3:last-child {
+            margin-right: 0;
+        }
+
+        .l-list-item3 {
+            display: inline-block;
+            width: 235px;
+            height: 220px;
+            margin-right: 20px;
+            background-color: #cecece;
+        }
+
+        .l-list-item4-0 {
+            display: table-cell;
+            height: 220px;
+            background-color: #cecece;
+        }
+
+        .l-list-item4 {
+            width: 235px;
+            height: 220px;
+            background-color: #cecece;
+        }
+
+        .l-list-item5 {
+            background-color: #cecece;
+        }
+
+    </style>
+</head>
+
+<body>
+<!-- 1 -->
+<h3> float布局 外包一个box l-list-container overflow:hidden, l-list加宽一个l-list-item margin-right</h3>
+<div class="l-list-container">
+    <div class="l-list">
+        <div class="l-list-item"></div>
+        <div class="l-list-item"></div>
+        <div class="l-list-item"></div>
+        <div class="l-list-item"></div>
+    </div>
+</div>
+<!-- 2 -->
+<h3> float布局 last-child 清除最后一个l-list-item2 margin-right </h3>
+<div class="l-list2">
+    <div class="l-list-item2"></div>
+    <div class="l-list-item2"></div>
+    <div class="l-list-item2"></div>
+    <div class="l-list-item2"></div>
+</div>
+
+<!-- 3 -->
+<h3>转换为内联模块 diaplay: inline-block </h3>
+<div class="l-list3">
+    <div class="l-list-item3"></div>
+    <div class="l-list-item3"></div>
+    <div class="l-list-item3"></div>
+    <div class="l-list-item3"></div>
+</div>
+
+<!-- 4-0 -->
+<h3>table布局 display:table </h3>
+<div class="l-list4-0">
+    <div class="l-list-item4-0"></div>
+    <div class="l-list-item4-0"></div>
+    <div class="l-list-item4-0"></div>
+    <div class="l-list-item4-0"></div>
+</div>
+
+<!-- 4 -->
+<h3>弹性布局 display:flex </h3>
+<div class="l-list4">
+    <div class="l-list-item4"></div>
+    <div class="l-list-item4"></div>
+    <div class="l-list-item4"></div>
+    <div class="l-list-item4"></div>
+</div>
+<!-- 5 -->
+<h3>网格布局 display:grid </h3>
+<div class="l-list5">
+    <div class="l-list-item5"></div>
+    <div class="l-list-item5"></div>
+    <div class="l-list-item5"></div>
+    <div class="l-list-item5"></div>
+</div>
+
+</body>
+
+</html>
