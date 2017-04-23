@@ -136,14 +136,17 @@ demo地址:[demo中的第三个案例](http://lvzhenbang.github.io/article/colow
 ![col-1.png](http://lvzhenbang.github.io/article/img/col-2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
   
 demo地址:[demo中的第四个案例](http://lvzhenbang.github.io/article/colown.html )
+   
    5.弹性布局（display：flex，兼容性分为两部分，pc端不佳，手机端优秀）
    
    它是在父容器中使用 display: flex; justify-content: space-between;
     
 demo地址:[demo中的第五个案例](http://lvzhenbang.github.io/article/colown.html )
+   
    6.网格布局（display：grid，兼容性不佳）
     
     .l-list5 {
         width: 1000px; height: auto; display: grid; grid-column-gap: 20px; grid-template-columns: 235px 235px 235px 235px; grid-template-rows: 220px; margin: 0 auto; border: 1px solid #cecece;
     }
+    
 demo地址:[demo中的第六个案例](http://lvzhenbang.github.io/article/colown.html )
