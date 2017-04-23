@@ -63,6 +63,8 @@
    
    最终这几种解决方案要实现的效果皆如下图所示：
    
+![col-1.png](http://lvzhenbang.github.io/article/img/col-1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
 
    1.固定布局 和 float布局（float：left，兼容性最优）
    
@@ -92,6 +94,7 @@
            width: 235px; height: 220px;  margin-right: 20px; float: left; background-color: #cecece;
         }
    
+demo地址:[demo中的第一个案例](http://lvzhenbang.github.io/article/colown.html )
    2.固定布局 和 float布局(float：left；css3的辅助的优化方案)（不支持css3的免谈）
     
    就是去掉容器l-list-container, 在样式中加入如下代码：
@@ -100,6 +103,7 @@
         margin-right: 0;
      }
      
+demo地址:[demo中的第二个案例](http://lvzhenbang.github.io/article/colown.html )
    3.转换为内联元素模块（display：inline-block，兼容性最优）
    
    html代码：
@@ -122,19 +126,24 @@
         display: inline-block; width: 235px;  height: 220px; margin-right: 20px;  background-color: #cecece;
     }
     
+demo地址:[demo中的第三个案例](http://lvzhenbang.github.io/article/colown.html )
    4.table布局（display：table，兼容性优）
    
    补充说明：这个是我想的没有在开发中大面积使用，这个方案我感觉是最佳的，各个浏览器测试下来没有发现问题，各位使用中发现问题，记得@我
    
    就是在父容器中使用用display：table，在子容器中使用display：table-cell
-   
+
+![col-1.png](http://lvzhenbang.github.io/article/img/col-2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+  
+demo地址:[demo中的第四个案例](http://lvzhenbang.github.io/article/colown.html )
    5.弹性布局（display：flex，兼容性分为两部分，pc端不佳，手机端优秀）
    
    它是在父容器中使用 display: flex; justify-content: space-between;
     
+demo地址:[demo中的第五个案例](http://lvzhenbang.github.io/article/colown.html )
    6.网格布局（display：grid，兼容性不佳）
     
     .l-list5 {
         width: 1000px; height: auto; display: grid; grid-column-gap: 20px; grid-template-columns: 235px 235px 235px 235px; grid-template-rows: 220px; margin: 0 auto; border: 1px solid #cecece;
     }
-    
+demo地址:[demo中的第六个案例](http://lvzhenbang.github.io/article/colown.html )
