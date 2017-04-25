@@ -15,6 +15,7 @@
             top: 0;
             left: 0;
             z-index: 9;
+            border: 1px solid #000000;
         }
 
         .l-float {
@@ -22,6 +23,7 @@
             height: 60px;
             float: left;
             z-index: 1;
+            border: 1px solid #f10000;
         }
 
         .l-menu {
@@ -30,6 +32,7 @@
             overflow: hidden;
             border-radius: 4px;
             background-color: #000;
+            border: 1px solid #ff0000;
         }
 
         .l-position {
@@ -40,7 +43,8 @@
             position: fixed;
             top: 60px;
             left: -200px;
-            transition: all 0.5s ease-in-out
+            transition: all 0.5s ease-in-out;
+            border: 1px solid #ffff00;
         }
 
         .l-active{
@@ -49,6 +53,17 @@
 
         .l-list{
             margin: 0 0 0 260px;
+            border: 1px solid #00ff00;
+            /*zoom:1;*/
+            /*overflow: hidden;*/
+        }
+
+        .l-list:after{
+            display: block;
+            content: '';
+            height:0;
+            overflow: hidden;
+            clear:both;
         }
 
         .l-list2{
