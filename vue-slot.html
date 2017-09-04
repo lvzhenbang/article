@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>vue-slot</title>
+    <script type="text/javascript" src="http://unpkg.com/vue"></script>
+    <style>
+    	*{
+    		padding:0;
+    		margin:0;
+    	}
+    	header{
+    		width:100%;
+    		height: 40px;
+    		font-size: 16px;
+    		color: #fff;
+    		line-height: 40px;
+    		text-align: center;
+    		background-color: #999;
+    	}
+    	main{
+    		width:100%;
+    		min-height:300px;
+    	}
+
+    	footer{
+    		width:100%;
+    		height: 40px;
+    		font-size: 14px;
+    		color: #fff;
+    		line-height: 40px;
+    		text-align: center;
+    		background-color: #999;
+    	}
+    </style>
+</head>
+
+<body>
+    <div id="app">
+    	<my-template>
+    		<div slot="header">this is header</div>
+			<p>this is default</p>
+    		<div slot="footer">this is footer</div>
+    	</my-template>
+    </div>
+
+
+    <script>
+    Vue.component('my-template', {
+        render: function(createElement) {
+            var header = this.$slots.header
+            var main = this.$slots.default
+            var footer = this.$slots.footer
+            return createElement('div', [
+                createElement('header', header),
+                createElement('main', main),
+                createElement('footer', footer)
+            ])
+        }
+    });
+    var vm = new Vue().$mount('#app');
+    </script>
+</body>
+
+</html>
