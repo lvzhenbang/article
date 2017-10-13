@@ -6,3 +6,19 @@
 
 删除本地分支：git branch -d [分支名称]
 删除远程分支；git push origin :heads/[分支名称]
+
+
+************************************************************
+
+mkdir myApp
+cd myApp
+git init
+touch README.md
+vim README.md
+git commit -m 'by lzb'
+git remote add origin git@github.com:lvzhenbang/myApp.git
+git push -u origin master
+
+***********************************************************
+
+git remote set-url --push origin ［new remote repository]
