@@ -38,4 +38,13 @@ git push -u origin master
 ***********************************************************
 ### 切换远程的仓库
 
-git remote set-url --push origin ［new remote repository]
+git remote set-url --push origin ［new remote repository
+
+
+### 版本的切换
+
+git reset --hard [版本号]
+
+git ref log 可查看版本号
+
+
