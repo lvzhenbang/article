@@ -49,3 +49,10 @@ git ref log 可查看版本号
 
 ### 版本的合并
 
+git merge [分支名]
+
+### 暂存工作区 切换到其他分支修改bug
+
+git stash
+git stash pop
+
