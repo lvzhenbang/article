@@ -53,8 +53,10 @@ git merge [分支名]
 
 ### 暂存工作区 切换到其他分支修改bug
 
-git stash
-git stash pop
+git stash 备份当前工作区的内容到git栈中
+git stash pop 从git栈中读取最近一次保存的内容，并恢复到工作区
+git stash list 显示git栈中的所有备份，可以利用这个列表来决定从那个地方恢复
+git stash clear 清空git栈
 
 
 
