@@ -89,3 +89,32 @@ git remote rm [remote-name] // git remote rm origin
 
 git remote rename [remote-name:old] [remote-name:new] // git remote rename pb paul
 
+### 打标签
+
+#### 列出标签
+
+git tag
+#### 创建标签
+
+附注标签 git tag -a [v1.4] -m ['my version is 1.4']
+查看标签 git show v1.4
+
+轻量标签 git tag v1.4-lw
+
+#### 后期打标签
+
+#### 共享标签
+
+git push origin v1.5
+
+#### 输出标签
+
+git checkout -b version2 v2.0.0
+
+### 别名
+
+git config --global alias.[命令别名] ’git的相关的命令‘
+
+
+
+
