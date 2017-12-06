@@ -58,5 +58,8 @@ git stash pop 从git栈中读取最近一次保存的内容，并恢复到工作
 git stash list 显示git栈中的所有备份，可以利用这个列表来决定从那个地方恢复
 git stash clear 清空git栈
 
-
+### git取消操作命令
+commit: git commit --amend
+stage: git reset HEAD [上一次 add 的文件名]
+modify: git checkout -- [上一次 modify 的文件名]
 
