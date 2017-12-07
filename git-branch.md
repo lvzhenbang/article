@@ -21,8 +21,10 @@ git branch [分支名字]
 
 git checkout [分支名字]
 
+注：创建分支并切换的快捷命令 git checkout -b [新建分支名]
+
 ### 项目分叉历史
 
-git log --oneline --decorate --graph --all
+git log --oneline --decorate --graph --all （图表结构）
 
 注: Git 的分支实质上仅是包含所指对象校验和（长度为 40 的 SHA-1 值字符串）的文件，所以它的创建和销毁都异常高效。创建一个新分支就相当于往一个文件中写入 41 个字节（40 个字符和 1 个换行符）
