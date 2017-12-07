@@ -57,6 +57,12 @@ git branch -d [分支名字]
 
 注2：需要先切换到主分支
 
+### 删除远程分支
+
+git branch -r -d origin/[branch-name]
+  
+git push origin :[branch-name]
+
 ### 合并冲突
 
 git mergetool
@@ -76,20 +82,28 @@ git mergetool
 长期分支
 因为 Git 使用简单的三方合并，所以就算在一段较长的时间内，反复把一个分支合并入另一个分支，也不是什么难事。 也就是说，在整个项目开发周期的不同阶段，你可以同时拥有多个开放的分支；你可以定期地把某些特性分支合并入其他分支中。
 
-许多使用 Git 的开发者都喜欢使用这种方式来工作，比如只在 master 分支上保留完全稳定的代码——有可能仅仅是已经发布或即将发布的代码。 他们还有一些名为 develop 或者 next 的平行分支，被用来做后续开发或者测试稳定性——这些分支不必保持绝对稳定，但是一旦达到稳定状态，它们就可以被合并入 master 分支了。 这样，在确保这些已完成的特性分支（短期分支，比如之前的 iss53 分支）能够通过所有测试，并且不会引入更多 bug 之后，就可以合并入主干分支中，等待下一次的发布。
+许多使用 Git 的开发者都喜欢使用这种方式来工作，比如只在 master 分支上保留完全稳定的代码——有可能仅仅是已经发布或即将发布的代码。 他们还有一些名为 develop 或者 next 的平行分支，被用来做后续开发或者测试稳定性——这些分支不必保持绝对稳定，但是一旦达到稳定状态，它们就可以被合并入master 分支了。这样，在确保这些已完成的特性分支（短期分支，比如之前的iss53 分支）能够通过所有测试，并且不会引入更多bug之后，就可以合并入主干分支中，等待下一次的发布。
 
 事实上我们刚才讨论的，是随着你的提交而不断右移的指针。 稳定分支的指针总是在提交历史中落后一大截，而前沿分支的指针往往比较靠前。
 
 渐进稳定分支的线性图。
 
+<<<<<<< HEAD
 ![](https://github.com/lvzhenbang/article/blob/master/img/git/lr-branches-1.png)
+=======
+![](https://github.com/lvzhenbang/blob/master/article/img/git/lr-branches-1.png)
+>>>>>>> 8cc58aef822f1b224d023d41e28f6d0c1eb617f4
 
 Figure 26. 渐进稳定分支的线性图
 
 通常把他们想象成流水线（work silos）可能更好理解一点，那些经过测试考验的提交会被遴选到更加稳定的流水线上去。
 
 
+<<<<<<< HEAD
 ![](https://github.com/lvzhenbang/article/blob/master/img/git/lr-branches-2.png)
+=======
+![](https://github.com/lvzhenbang/blob/master/article/img/git/lr-branches-2.png)
+>>>>>>> 8cc58aef822f1b224d023d41e28f6d0c1eb617f4
 
 渐进稳定分支的工作流（“silo”）视图。
 
@@ -101,7 +115,11 @@ Figure 27. 渐进稳定分支的流水线（“silo”）视图
 
 你已经在上一节中你创建的 iss53 和 hotfix 特性分支中看到过这种用法。 你在上一节用到的特性分支（iss53 和 hotfix 分支）中提交了一些更新，并且在它们合并入主干分支之后，你又删除了它们。 这项技术能使你快速并且完整地进行上下文切换（context-switch）——因为你的工作被分散到不同的流水线中，在不同的流水线中每个分支都仅与其目标特性相关，因此，在做代码审查之类的工作的时候就能更加容易地看出你做了哪些改动。 你可以把做出的改动在特性分支中保留几分钟、几天甚至几个月，等它们成熟之后再合并，而不用在乎它们建立的顺序或工作进度。
 
+<<<<<<< HEAD
 ![](https://github.com/lvzhenbang/article/blob/master/img/git/topic-branches-1.png)
+=======
+![](https://github.com/lvzhenbang/blob/master/article/img/git/topic-branches-1.png)
+>>>>>>> 8cc58aef822f1b224d023d41e28f6d0c1eb617f4
 
 考虑这样一个例子，你在 master 分支上工作到 C1，这时为了解决一个问题而新建 iss91 分支，在 iss91 分支上工作到 C4，然而对于那个问题你又有了新的想法，于是你再新建一个 iss91v2 分支试图用另一种方法解决那个问题，接着你回到 master 分支工作了一会儿，你又冒出了一个不太确定的想法，你便在 C10 的时候新建一个 dumbidea 分支，并在上面做些实验。 你的提交历史看起来像下面这个样子：
 
