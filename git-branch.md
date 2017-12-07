@@ -82,14 +82,14 @@ git mergetool
 
 渐进稳定分支的线性图。
 
-![](https://github.com/lvzhenbang/article/blog/master/img/git/lr-branches-1.png)
+![](https://github.com/lvzhenbang/article/blob/master/img/git/lr-branches-1.png)
 
 Figure 26. 渐进稳定分支的线性图
 
 通常把他们想象成流水线（work silos）可能更好理解一点，那些经过测试考验的提交会被遴选到更加稳定的流水线上去。
 
 
-![](https://github.com/lvzhenbang/article/blog/master/img/git/lr-branches-2.png)
+![](https://github.com/lvzhenbang/article/blob/master/img/git/lr-branches-2.png)
 
 渐进稳定分支的工作流（“silo”）视图。
 
