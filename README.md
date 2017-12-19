@@ -19,7 +19,7 @@
 
 [js中的数组，数字，字符串反转](https://github.com/lvzhenbang/article/blob/master/js/js-reverse.md)
 
-[两个数组之间的几种常见操作](https://github.com/lvzhenbang/article/blob/master/js/js-reverse.md)
+[两个数组之间的几种常见操作](https://github.com/lvzhenbang/article/blob/master/js/twoArry.md)
 
 
 ### LICENSE
