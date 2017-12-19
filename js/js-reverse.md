@@ -32,7 +32,7 @@ js中的反转主要有以下三种，数字反转，字符串反转，数组的
 
 既然有这么有这个兼容性更好的方法,为什么还要用reduce(),我想聪明的你应该很清楚那就是，运行的效率，前者的效率更高。我在自己电脑上跑的实例对比图如下：
 
-[reverse](https://github.com/lvzhenbang/article/blob/master/img/js/img-reverse.png)
+![reverse](https://github.com/lvzhenbang/article/blob/master/img/js/img-reverse.png)
 
 ### 数字的反转
 
