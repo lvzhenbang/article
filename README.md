@@ -15,6 +15,16 @@
 
 ### css 动画
 
+[menu导航动画](https://github.com/lvzhenbang/article/blob/master/cssAnimate/position-float.html)
+
+[鼠标滑过nav动画](https://github.com/lvzhenbang/article/blob/master/cssAnimate/transition-nav.html)
+
+### html layout
+
+[如何实现元素的多列布局](https://github.com/lvzhenbang/article/blob/master/layout/colown.html)
+
+[position定位布局理解,元素的定位关系如absolute-fixed-absolute](https://github.com/lvzhenbang/article/blob/master/layout/position.html)
+
 ### js
 
 [js中的数组，数字，字符串反转](https://github.com/lvzhenbang/article/blob/master/js/js-reverse.md)

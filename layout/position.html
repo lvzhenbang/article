@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" style="position: relative; top: 100px; left: 100px;">
+<head>
+	<meta charset="UTF-8">
+	<title>position</title>
+</head>
+<body style="position: absolute; top: 100px; left: 100px; height: 1000px;">
+	<!-- 有三个dom元素他们的postion关系顺序如absolute-fixed-absolute，请描述这三个元素在 浏览器中是如何定位的？ -->
+	<div style="position: absolute; top: 10px; left: 10px; width:200px; height: 200px; background-color: #ff0000">
+		absolute
+		<div style="position: fixed; top: 50px; left: 50px; width:100px; height: 100px; background-color: #00ff00">
+			fixed
+			<div style="position: absolute; top: 10px; left: 10px; width:50px; height: 50px; background-color: #0000ff">
+				absolute2
+			</div>
+		</div>
+	</div>
+</body>
+</html>
