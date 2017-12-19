@@ -31,7 +31,8 @@ js中的反转主要有以下三种，数字反转，字符串反转，数组的
 	console.log(str);
 
 既然有这么有这个兼容性更好的方法,为什么还要用reduce(),我想聪明的你应该很清楚那就是，运行的效率，前者的效率更高。我在自己电脑上跑的实例对比图如下：
-[reverse]()
+
+[reverse](https://github.com/lvzhenbang/article/blob/master/img/js/img-reverse.png)
 
 ### 数字的反转
 
@@ -47,26 +48,26 @@ js中的反转主要有以下三种，数字反转，字符串反转，数组的
 
 ### 针对以上3种情况的一个综合解决方案
 
-function objReverse(obj) {
-	if (Object.prototype.toString.call(obj) === '[object String]') {
-		obj = obj.split('');
-		return stringReverse(obj);
-	} else if (Object.prototype.toString.call(obj) === '[object Number]') {
-		obj = obj.toString().split('');
-		return +stringReverse(obj);
-	} else if (Object.prototype.toString.call(obj) === '[object Array]') {
-		return obj.reverse();
-	}
+	function objReverse(obj) {
+		if (Object.prototype.toString.call(obj) === '[object String]') {
+			obj = obj.split('');
+			return stringReverse(obj);
+		} else if (Object.prototype.toString.call(obj) === '[object Number]') {
+			obj = obj.toString().split('');
+			return +stringReverse(obj);
+		} else if (Object.prototype.toString.call(obj) === '[object Array]') {
+			return obj.reverse();
+		}
 
-	function stringReverse (obj) {
-		if(Array.prototype.reduce !== 'undefined') {
-			return obj.reduce(function(acc, v) {
-				return v + acc;
-			}, '')	
-		} else {
-			return obj.reverse().join('');
+		function stringReverse (obj) {
+			if(Array.prototype.reduce !== 'undefined') {
+				return obj.reduce(function(acc, v) {
+					return v + acc;
+				}, '')	
+			} else {
+				return obj.reverse().join('');
+			}
 		}
 	}
-}
 
 欢迎吐槽 :)
