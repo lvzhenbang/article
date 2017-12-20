@@ -79,7 +79,7 @@
         }, timeout || 300);
     });
 
-由于在ie<9中click 和 dbclick的触发判断时间更短，会造成dbclick失效的问题，测试连续出发三次会出现想要dbclick的效果，所以需要将代码改成上面的实现格式。
+由于在ie<9中click 和 dbclick的触发判断时间更短，会造成dbclick失效的问题，测试连续出发三次会出现想要dbclick的效果，所以需要将代码改成上面的实现格式，同时也会出现现弹出两个弹出框第一个内容为‘double click’, 第二个内容为‘single click’。
 
 ### 依然存在的问题
 
@@ -117,6 +117,27 @@
     </script>
 
 这是一个不错的方法,但是频繁操作dom属性的代码性能较差，不如换成变量
+
+但代码还是存在着缺陷，ie的时间间隔更短
+
+	The order of events for a dblclick is:
+
+	mousedown
+	mouseup
+	click
+	mousedown
+	mouseup
+	click
+	dblclick
+	The one exception to this rule is (of course) Internet Explorer with their custom order of:
+
+	mousedown
+	mouseup
+	click
+	mouseup
+	dblclick
+
+通过比较浏览器的事件发生顺序我们可以得到答案
 
 ### demo
 

@@ -33,6 +33,10 @@
 
 [给一个元素同时绑上click和dbclick事件所存在的问题详解](https://github.com/lvzhenbang/article/blob/master/js/single_double_click.md)
 
+### 其他
+
+[dom的发展由来](https://github.com/lvzhenbang/article/blob/master/dom.md)
+
 ### LICENSE
 
 [MIT](https://opensource.org/licenses/MIT)
