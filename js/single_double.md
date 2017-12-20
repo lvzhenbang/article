@@ -89,4 +89,35 @@
 
 根据浏览器的特有对象来判定浏览器的类型是个不错的方法
 
+### javascript原生实现的方法
+
+	<div onclick="doubleclick(this, function(){alert('single')}, function(){alert('double')})">click me</div>
+
+    <script>
+    	var flag = 0;
+        function doubleclick(el, onsingle, ondouble) {
+            // if (el.getAttribute("data-dblclick") == null) {
+                // el.setAttribute("data-dblclick", 1);
+            if (flag) {
+				flag = 1;
+                setTimeout(function () {
+                    // if (el.getAttribute("data-dblclick") == 1) {
+                    if (flag) {
+                        onsingle();
+                    }
+                    // el.removeAttribute("data-dblclick");
+                    flag = 0;
+                }, 300);
+            } else {
+                // el.removeAttribute("data-dblclick");
+                flag = 0;
+                ondouble();
+            }
+        }
+    </script>
+
+这是一个不错的方法,但是频繁操作dom属性的代码性能较差，不如换成变量
+
+### demo
+
 提供一个[demo](https://github.com/lvzhenbang/article/blob/master/js/demo/single_double_click.html)供大家参考
