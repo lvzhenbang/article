@@ -89,4 +89,4 @@
 
 根据浏览器的特有对象来判定浏览器的类型是个不错的方法
 
-提供一个[demo]()供大家参考
+提供一个[demo](https://github.com/lvzhenbang/article/blob/master/js/demo/single_double_click.html)供大家参考

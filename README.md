@@ -31,6 +31,7 @@
 
 [两个数组之间的几种常见操作](https://github.com/lvzhenbang/article/blob/master/js/twoArry.md)
 
+[给一个元素同时绑上click和dbclick事件所存在的问题详解](https://github.com/lvzhenbang/article/blob/master/js/single_double_click.md)
 
 ### LICENSE
 
