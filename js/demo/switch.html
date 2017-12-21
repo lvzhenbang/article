@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>switch</title>
+	<style>
+		.example {
+			width: 500px;
+			margin: 0 auto;
+		}
+		.switch {
+			padding: 20px;
+			border: 1px solid #ccc;
+		}
+		button {
+			width: 66px;
+		}
+	</style>
+</head>
+<body>
+	<div class="example">
+		<div class="switch">
+			<input type="radio" checked value="1" name="sex" data="1">男
+			<input type="radio" value="0" name="sex">女
+		</div>
+		
+		<button id="btn">click it</button>
+	</div>
+		
+	<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+	<script>
+		$('#btn').on('click',  function(event) {
+			event.preventDefault();
+			$('.switch input[type=radio]').each(function(index, el) {
+				if($(el).prop('checked')) {
+					console.log($(el).attr('value'))
+				}
+			});
+		});
+	</script>
+</body>
+</html>
