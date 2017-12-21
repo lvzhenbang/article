@@ -33,6 +33,8 @@
 
 [给一个元素同时绑上click和dbclick事件所存在的问题详解](https://github.com/lvzhenbang/article/blob/master/js/single_double_click.md)
 
+[傻傻的分也分不清楚的property和attribute](https://github.com/lvzhenbang/article/blob/master/js/porp-attr.md)
+
 ### 其他
 
 [dom的发展由来](https://github.com/lvzhenbang/article/blob/master/dom.md)
