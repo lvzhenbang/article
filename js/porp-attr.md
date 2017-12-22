@@ -53,6 +53,96 @@ attribute修改会得到这样的结果
 
 我们发现 setAttribute('checked', false)并不是不起作用，而是被选中了，说明了什么，说明了input元素对象将checked值设为了‘false’字符串，而在js中非空的String类型会根据执行的语境别转换类型为Boolean类型true
 
+
+### jQuery中的prop()和attr()源码的分析
+	
+jquery version 3.2.1
+	
+.prop()原码分析
+
+	jQuery.fn.extend( {
+		prop: function( name, value ) {
+			return access( this, jQuery.prop, name, value, arguments.length > 1 );
+		},
+
+		removeProp: function( name ) {
+			return this.each( function() {
+				// 删除名字为name的property
+				delete this[ jQuery.propFix[ name ] || name ];
+			} );
+		}
+	} );
+
+	jQuery.extend( {
+		prop: function( elem, name, value ) {
+			...
+			if ( value !== undefined ) {
+				...
+				// 为名字为name的property属性赋值
+				return ( elem[ name ] = value );
+			}
+			...
+			// 返回名字为name的property属性
+			return elem[ name ];
+		},
+		...
+	} );
+
+.attr()源码分析
+
+	jQuery.fn.extend( {
+		attr: function( name, value ) {
+			return access( this, jQuery.attr, name, value, arguments.length > 1 );
+		},
+
+		removeAttr: function( name ) {
+			return this.each( function() {
+				jQuery.removeAttr( this, name );
+			} );
+		}
+	} );
+
+	jQuery.extend( {
+		attr: function( elem, name, value ) {
+			...
+			if ( value !== undefined ) {
+				if ( value === null ) {
+					jQuery.removeAttr( elem, name );
+					return;
+				}
+
+				if ( hooks && "set" in hooks &&
+					( ret = hooks.set( elem, value, name ) ) !== undefined ) {
+					return ret;
+				}
+
+				elem.setAttribute( name, value + "" );
+				return value;
+			}
+
+			if ( hooks && "get" in hooks && ( ret = hooks.get( elem, name ) ) !== null ) {
+				return ret;
+			}			
+			// 取得并返回名字为name的attribute
+			ret = jQuery.find.attr( elem, name );
+			return ret == null ? undefined : ret;
+		},
+		...
+		removeAttr: function( elem, value ) {
+			...
+			if ( attrNames && elem.nodeType === 1 ) {
+				while ( ( name = attrNames[ i++ ] ) ) {
+					// 元素elem删除名字为name的attribute
+					elem.removeAttribute( name );
+				}
+			}
+		}
+	} );
+
+从上面的实例代码我们不难看出jQuery源码对attribute和property的创建和删除进行了严格的区分，attribute的创建和删除用setAttribute(), getAttribute();而property的创建和删除使用的方式跟一般对象一致，obj[name] = [value] 创建并赋值，delete obj[name] 则删除
+
+通过上面的示例我们发现setAttribute()也可以对一些property进行修改，这一点我们稍后再说，但无疑jQuery的做法把开发变得简单了起来，
+
 ### 为attr和prop赋值&取值
 
 通过上一小节的代码我们知道，我们可以通过两种方式向dom对象的属性来赋值。
