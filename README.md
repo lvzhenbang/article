@@ -35,6 +35,11 @@
 
 [傻傻的分也分不清楚的property和attribute](https://github.com/lvzhenbang/article/blob/master/js/porp-attr.md)
 
+[老生常谈之闭包](https://github.com/lvzhenbang/article/blob/master/git/closure.md)
+
+[我们面试中在被问到闭包这个问题是要注意的几点](https://github.com/lvzhenbang/article/blob/master/git/closure-translate.md)
+
+
 ### 其他
 
 [dom的发展由来](https://github.com/lvzhenbang/article/blob/master/dom.md)
