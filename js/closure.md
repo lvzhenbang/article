@@ -14,7 +14,7 @@
 
 > 定义
 
-闭包就是外层函数的内部函数。
+闭包就是外层函数的内部函数（不过它有如下特性）。
 
 > 特性
 
@@ -136,6 +136,12 @@ javascript 是一个函数级的作用域（function-level scope）,而不是一
 [githubGist的代码实例参考](https://gist.github.com/hallettj/64478)
 
 [stackflow的优秀解答](https://stackoverflow.com/questions/8862665/what-does-it-mean-global-namespace-would-be-polluted)
+
+### 闭包与立即执行函数
+
+闭包帮我们解决了我们要全局的使用，又不想全局所带来的污染的问题，使用闭包你可以像工厂方法一样创建多个不同的对象。但在实际的开发过程中我们又会遇到这样的问题，希望对象只有一份，也就是我们常说的单例模式，在javascript中函数没法私有化，所以转个思路我们可以让这个工厂方法不能多次调用，而这样的函数就是匿名函数；而且只能调用一次，就是在声明函数的时候立即执行。
+
+IIFE
 
 ### 文章推荐
 
