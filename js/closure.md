@@ -2,14 +2,6 @@
 
 闭包是什么？这是一个在面试的过程中出现的概率为60%以上的问题，也是我们张口就来的问题。但是我们往往发现，在面试的过程中我们的回答并不那么让面试官满意，我们虽然能张口说出一些但是却不能系统的对这个问题进行回答。面试官希望加入自己团队的是一个基础扎实，条理清晰，举一反三，吃苦耐劳的人，如果我们在面试中的回答只是‘东一榔头，西一棒槌’，结果我想已经显而易见了。
 
-[lucy’s blog about closure](http://lucybain.com/blog/2014/closures/)
-
-[by rlynjb about closure](https://medium.com/@rlynjb/js-interview-question-what-is-a-closure-and-how-why-would-you-use-one-b6fd45ea95f6)
-
-[我们面试中在被问到闭包这个问题是要注意的几点](https://github.com/lvzhenbang/article/blob/master/git/closure-translate.md)
-
-[闭包的延伸，让面试变得so easy](https://medium.com/javascript-scene/master-the-javascript-interview-what-is-a-closure-b2f0d2152b36)
-
 接下来将从三个方面来说闭包：
 
 1.闭包是什么？
@@ -144,3 +136,13 @@ javascript 是一个函数级的作用域（function-level scope）,而不是一
 [githubGist的代码实例参考](https://gist.github.com/hallettj/64478)
 
 [stackflow的优秀解答](https://stackoverflow.com/questions/8862665/what-does-it-mean-global-namespace-would-be-polluted)
+
+### 文章推荐
+
+[lucy’s blog about closure](http://lucybain.com/blog/2014/closures/)
+
+[by rlynjb about closure](https://medium.com/@rlynjb/js-interview-question-what-is-a-closure-and-how-why-would-you-use-one-b6fd45ea95f6)
+
+[我们面试中在被问到闭包这个问题是要注意的几点](https://github.com/lvzhenbang/article/blob/master/git/closure-translate.md)
+
+[闭包的延伸，让面试变得so easy](https://medium.com/javascript-scene/master-the-javascript-interview-what-is-a-closure-b2f0d2152b36)
