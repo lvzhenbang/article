@@ -44,6 +44,9 @@
 
 [dom的发展由来](https://github.com/lvzhenbang/article/blob/master/dom.md)
 
+
+[30-seconds-code 项目翻译总结](https://github.com/lvzhenbang/article/blob/master/js/30-seconds-code/index.md)
+
 ### LICENSE
 
 [MIT](https://opensource.org/licenses/MIT)
