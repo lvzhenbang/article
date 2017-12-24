@@ -8,24 +8,14 @@
 
 ### 目录
 
--[] [array](https://github.com/lvzhenbang/article/blob/master/js/30-seconds-code/array.md)
-
--[] [string](https://github.com/lvzhenbang/article/blob/master/js/30-seconds-code/string.md)
-
--[] [function](https://github.com/lvzhenbang/article/blob/master/js/30-seconds-code/funciton.md)
-
--[] [object](https://github.com/lvzhenbang/article/blob/master/js/30-seconds-code/object.md)
-
--[] [date](https://github.com/lvzhenbang/article/blob/master/js/30-seconds-code/date.md)
-
--[] [node](https://github.com/lvzhenbang/article/blob/master/js/30-seconds-code/node.md)
-
--[] [math](https://github.com/lvzhenbang/article/blob/master/js/30-seconds-code/math.md)
-
--[] [adapter](https://github.com/lvzhenbang/article/blob/master/js/30-seconds-code/adapter.md)
-
--[] [media](https://github.com/lvzhenbang/article/blob/master/js/30-seconds-code/media.md)
-
--[] [browser](https://github.com/lvzhenbang/article/blob/master/js/30-seconds-code/browser.md)
-
--[x] [utility](https://github.com/lvzhenbang/article/blob/master/js/30-seconds-code/utility.md)
+- [ ] [array](https://github.com/lvzhenbang/article/blob/master/js/30-seconds-code/array.md)
+- [ ] [string](https://github.com/lvzhenbang/article/blob/master/js/30-seconds-code/string.md)
+- [ ] [function](https://github.com/lvzhenbang/article/blob/master/js/30-seconds-code/funciton.md)
+- [ ] [object](https://github.com/lvzhenbang/article/blob/master/js/30-seconds-code/object.md)
+- [ ] [date](https://github.com/lvzhenbang/article/blob/master/js/30-seconds-code/date.md)
+- [ ] [node](https://github.com/lvzhenbang/article/blob/master/js/30-seconds-code/node.md)
+- [ ] [math](https://github.com/lvzhenbang/article/blob/master/js/30-seconds-code/math.md)
+- [ ] [adapter](https://github.com/lvzhenbang/article/blob/master/js/30-seconds-code/adapter.md)
+- [ ] [media](https://github.com/lvzhenbang/article/blob/master/js/30-seconds-code/media.md)
+- [ ] [browser](https://github.com/lvzhenbang/article/blob/master/js/30-seconds-code/browser.md)
+- [x] [utility](https://github.com/lvzhenbang/article/blob/master/js/30-seconds-code/utility.md)
