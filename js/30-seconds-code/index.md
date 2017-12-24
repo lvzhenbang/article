@@ -10,7 +10,7 @@
 
 - [ ] 未完成
 - [x] 完成
-
+*******************
 - [ ] [array](https://github.com/lvzhenbang/article/blob/master/js/30-seconds-code/array.md)
 - [ ] [string](https://github.com/lvzhenbang/article/blob/master/js/30-seconds-code/string.md)
 - [ ] [function](https://github.com/lvzhenbang/article/blob/master/js/30-seconds-code/funciton.md)
