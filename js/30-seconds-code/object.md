@@ -2,7 +2,7 @@
 
 ### cleanObj
 
-删除JSON对象中除指定键值的所有属性.
+删除JSON对象中除指定键值的属性.
 
 用递归的方法
 用 `Object.keys()` 方法遍历JSON对象然后删除不是`include`在给定数组中的属性.
@@ -25,24 +25,35 @@ const cleanObj = (obj, keysToKeep = [], childIndicator) => {
 */
 ```
 
-> 上一个例子是对指定的键岁对应的JSON对象进行深度遍历
+### cleanObj的变形（非原著作）
 
-用 `Object.keys()` 方法遍历JSON对象然后删除不是`include`在给定数组中的属性.
-如果你传入 `dep` 为true，则进行深度遍历;反之，则否.
+对所有的键对应的JSON对象进行深度遍历
+
+用 `Object.keys()` 方法遍历JSON对象然后删除不是 `include` 在给定数组中的属性.
+如果给定的属性值为object，则看传入的 `dep` 是否为false，或者没有第三个参数，则直接删除.
+如果传入 `dep` 为true，则进行深度遍历.
 ```
-const cleanObj = (obj, keysToKeep = [], dep) => {
+const cleanObj = (obj, keysToKeep = [], dep=false) => {
   Object.keys(obj).forEach(key => {
-    if (key === childIndicator) {
-      cleanObj(obj[key], keysToKeep, childIndicator);
-    } else if (!keysToKeep.includes(key)) {
-      delete obj[key];
+    if(dep) {
+      if (obj[key].constructor.name === 'Object') {
+        cleanObj(obj[key], keysToKeep, dep)
+      } else {
+        if (!keysToKeep.includes(key)) {
+          delete obj[key];
+        }
+      }
+    } else {
+      if (!keysToKeep.includes(key)) {
+        delete obj[key];
+      }
     }
   })
+  return obj
 }
 /*
-  const testObj = {a: 1, b: 2, children: {a: 1, b: 2}}
-  cleanObj(testObj, ["a"],"children")
-  console.log(testObj)// { a: 1, children : { a: 1}}
+  const testObj = {a:1, b:{a:1, b:2, c:3}, c:{a:1, b:2}, d: {a:1, b:2, c:3}}
+  cleanObj(testObj, ["a"],"children")  // {a: 1, b: {a: 1}, c: {a: 1}, d: {a: 1, c: 3}}
 */
 ```
 
