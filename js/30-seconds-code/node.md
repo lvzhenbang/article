@@ -1,26 +1,26 @@
 
-## Node
+## Nodejs
 
 ### JSONToFile
 
-Writes a JSON object to a file.
+将一个json对象保存到文件中.
 
-Use `fs.writeFile()`, template literals and `JSON.stringify()` to write a `json` object to a `.json` file.
+用 `fs.writeFile()`, 模板字符串 和 `JSON.stringify()` 将一个 `json` object 写到一个 `.json` 文件中.
 
 ```js
 const fs = require('fs');
 const JSONToFile = (obj, filename) => fs.writeFile(`${filename}.json`, JSON.stringify(obj, null, 2))
-// JSONToFile({test: "is passed"}, 'testJsonFile') -> writes the object to 'testJsonFile.json'
+// JSONToFile({test: "is passed"}, 'testJsonFile') -> 写这个对象到 'testJsonFile.json'
 ```
 
 
 ### readFileLines
 
-Returns an array of lines from the specified file.
+读取指定文件中的内容，按行插入数组中.
 
-Use `readFileSync` function in `fs` node package to create a `Buffer` from a file.
-convert buffer to string using `toString(encoding)` function.
-creating an array from contents of file by `split`ing file content line by line (each `\n`).
+用 `node` 的 `fs` 模块中的 `readFileSync` 方法读取文件后创建一个 `Buffer`.
+用 `toString(encoding)` 将 `Buffer` 转换为字符串.
+用 `split` 以 `\n` 为分隔符来创建一个行文件内容数组.
 
   ```js
 const fs = require('fs');

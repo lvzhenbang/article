@@ -2,9 +2,9 @@
 
 ### chainAsync
 
-Chains asynchronous functions.
+异步执行函数链.
 
-Loop through an array of functions containing asynchronous events, calling `next` when each asynchronous event has completed.
+循环一个包含异步事件的函数数组, 当异步事件执行完毕后调用 `next` 方法.
 
 ```js
 const chainAsync = fns => { let curr = 0; const next = () => fns[curr++](next); next(); };
@@ -17,33 +17,14 @@ chainAsync([
 */
 ```
 
-
-### compose
-
-Performs right-to-left function composition.
-
-Use `Array.reduce()` to perform right-to-left function composition.
-The last (rightmost) function can accept one or more arguments; the remaining functions must be unary.
-
-```js
-const compose = (...fns) => fns.reduce((f, g) => (...args) => f(g(...args)));
-/*
-const add5 = x => x + 5
-const multiply = (x, y) => x * y
-const multiplyAndAdd5 = compose(add5, multiply)
-multiplyAndAdd5(5, 2) -> 15
-*/
-```
-
-
 ### curry
 
-Curries a function.
+函数的柯里化.
 
-Use recursion.
-If the number of provided arguments (`args`) is sufficient, call the passed function `f`.
-Otherwise, return a curried function `f` that expects the rest of the arguments.
-If you want to curry a function that accepts a variable number of arguments (a variadic function, e.g. `Math.min()`), you can optionally pass the number of arguments to the second parameter `arity`.
+用递归.
+如果传入的参数对象 (`args`) 是有效的, 然后调用传入的函数 `fn`.
+否则返回 `fn` 和剩余参数中它所需的参数.
+如果想要柯里化一个接受任意参数的函数(可变参数, e.g. `Math.min()`), 你需要传入第二个参数 `arity`.
 
 ```js
 const curry = (fn, arity = fn.length, ...args) =>
@@ -54,12 +35,11 @@ const curry = (fn, arity = fn.length, ...args) =>
 // curry(Math.min, 3)(10)(50)(2) -> 2
 ```
 
-
 ### functionName
 
-Logs the name of a function.
+记录函数的名字.
 
-Use `console.debug()` and the `name` property of the passed method to log the method's name to the `debug` channel of the console.
+用 `console.debug()` 和 被传递的方法的 `name` 属性来记录方法的名字并打印在控制台上.
 
 ```js
 const functionName = fn => (console.debug(fn.name), fn);
@@ -69,10 +49,10 @@ const functionName = fn => (console.debug(fn.name), fn);
 
 ### pipe
 
-Performs left-to-right function composition.
+按照 left-to-right 的顺序执行函数的集合.
 
-Use `Array.reduce()` with the spread operator (`...`) to perform left-to-right function composition.
-The first (leftmost) function can accept one or more arguments; the remaining functions must be unary.
+用 `Array.reduce()` 和 (`...`) 操作符按照 left-to-right 的顺序执行函数的集合.
+第一个函数可以接受一个或者更多的参数; 其余的函数必须是一元函数.
 
 ```js
 const pipeFunctions = (...fns) => fns.reduce((f, g) => (...args) => g(f(...args)));
@@ -85,24 +65,42 @@ multiplyAndAdd5(5, 2) -> 15
 ```
 
 
+### compose
+
+按照 right-to-left 的顺序执行函数的集合.
+
+用 `Array.reduce()` to perform right-to-left function composition.
+最后一个函数可以接受一个或者更多的参数; 其余的函数必须是一元函数.
+
+```js
+const compose = (...fns) => fns.reduce((f, g) => (...args) => f(g(...args)));
+/*
+const add5 = x => x + 5
+const multiply = (x, y) => x * y
+const multiplyAndAdd5 = compose(add5, multiply)
+multiplyAndAdd5(5, 2) -> 15
+*/
+```
+
+
 ### runPromisesInSeries
 
-Runs an array of promises in series.
+执行一组串联的promise.
 
-Use `Array.reduce()` to create a promise chain, where each promise returns the next promise when resolved.
+用 `Array.reduce()` 创建一个promise链, 链中每一个promise状态变为resolved，返回下一个promise.
 
 ```js
 const runPromisesInSeries = ps => ps.reduce((p, next) => p.then(next), Promise.resolve());
 // const delay = (d) => new Promise(r => setTimeout(r, d))
-// runPromisesInSeries([() => delay(1000), () => delay(2000)]) -> executes each promise sequentially, taking a total of 3 seconds to complete
+// runPromisesInSeries([() => delay(1000), () => delay(2000)]) -> 按顺序的执行promise链，共花费3s的时间
 ```
 
 
 ### sleep
 
-Delays the execution of an asynchronous function.
+延迟异步函数的执行.
 
-Delay executing part of an `async` function, by putting it to sleep, returning a `Promise`.
+`async` 函数的延迟功能部分的实现是通过将该异步函数放入定时器中，然后返回一个 `Promise`.
 
 ```js
 const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));

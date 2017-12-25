@@ -2,10 +2,11 @@
 
 ### cleanObj
 
-Removes any properties except the ones specified from a JSON object.
+删除JSON对象中除指定键值的所有属性.
 
-Use `Object.keys()` method to loop over given JSON object and deleting keys that are not `include`d in given array.
-Also if you give it a special key (`childIndicator`) it will search deeply inside it to apply function to inner objects too.
+用递归的方法
+用 `Object.keys()` 方法遍历JSON对象然后删除不是`include`在给定数组中的属性.
+如果你传入 `childIndicator` ，它将对该键所对应的JSON对象进行深度遍历.
 
 ```js
 const cleanObj = (obj, keysToKeep = [], childIndicator) => {
@@ -24,12 +25,31 @@ const cleanObj = (obj, keysToKeep = [], childIndicator) => {
 */
 ```
 
+> 上一个例子是对指定的键岁对应的JSON对象进行深度遍历
+
+用 `Object.keys()` 方法遍历JSON对象然后删除不是`include`在给定数组中的属性.
+如果你传入 `dep` 为true，则进行深度遍历;反之，则否.
+```
+const cleanObj = (obj, keysToKeep = [], dep) => {
+  Object.keys(obj).forEach(key => {
+    if (key === childIndicator) {
+      cleanObj(obj[key], keysToKeep, childIndicator);
+    } else if (!keysToKeep.includes(key)) {
+      delete obj[key];
+    }
+  })
+}
+/*
+  const testObj = {a: 1, b: 2, children: {a: 1, b: 2}}
+  cleanObj(testObj, ["a"],"children")
+  console.log(testObj)// { a: 1, children : { a: 1}}
+*/
+```
 
 ### objectFromPairs
 
-Creates an object from the given key-value pairs.
-
-Use `Array.reduce()` to create and combine key-value pairs.
+将一个键值对形式的数组转化为对象
+用 `Array.reduce()` 去创建对象并合并键值对.
 
 ```js
 const objectFromPairs = arr => arr.reduce((a, v) => (a[v[0]] = v[1], a), {});
@@ -39,9 +59,9 @@ const objectFromPairs = arr => arr.reduce((a, v) => (a[v[0]] = v[1], a), {});
 
 ### objectToPairs
 
-Creates an array of key-value pair arrays from an object.
+将一个对象转化为键值对形式的数组.
 
-Use `Object.keys()` and `Array.map()` to iterate over the object's keys and produce an array with key-value pairs.
+用 `Object.keys()` 将对象转化为对象的键数组，然后 `Array.map()` 生成一个键值对的数组.
 
 ```js
 const objectToPairs = obj => Object.keys(obj).map(k => [k, obj[k]]);
@@ -51,10 +71,10 @@ const objectToPairs = obj => Object.keys(obj).map(k => [k, obj[k]]);
 
 ### orderBy
 
-Returns a sorted array of objects ordered by properties and orders.
+按对象属性和排序规则排序对象数组.
 
-Uses a custom implementation of sort, that reduces the props array argument with a default value of 0, it uses destructuring to swap the properties position depending on the order passed.
-If no orders array is passed it sort by 'asc' by default.
+使用 `Array.sort()` 的自定义排序规则排序,根据传入的 `order`排序方式，用解构来实现指定的属性的位置交换.
+如果没有传入参数 `order` 默认值为asc.
 
 ```js
 const orderBy = (arr, props, orders) =>
@@ -78,9 +98,9 @@ orderby(users, ['name', 'age']) -> [{name: 'barney', age: 34}, {name: 'barney', 
 
 ### select
 
-Retrieve a property that indicated by the selector from an object.
+从一个对象中检索出选择其所代表的属性.
 
-If the property does not exists returns `undefined`.
+如果属性不存在返回 `undefined`.
 
 ```js
 const select = (from, selector) =>
@@ -93,9 +113,9 @@ const select = (from, selector) =>
 
 ### shallowClone
 
-Creates a shallow clone of an object.
+对象的浅拷贝.
 
-Use `Object.assign()` and an empty object (`{}`) to create a shallow clone of the original.
+用 `Object.assign()` 和一个 (`{}`) 来实现对源对象的浅拷贝.
 
 ```js
 const shallowClone = obj => Object.assign({}, obj);
@@ -109,9 +129,9 @@ a === b -> false
 
 ### truthCheckCollection
 
-Checks if the predicate (second argument) is truthy on all elements of a collection (first argument).
+判断第一个参数所代表的集合中的每一个对象中是否包含第二个参数所代表的属性.
 
-Use `Array.every()` to check if each passed object has the specified property and if it returns a truthy value.
+用 `Array.every()` 去检查结合中每一个对象是否包含`pre`属性.
  
  ```js
 const truthCheckCollection = (collection, pre) => (collection.every(obj => obj[pre]));
