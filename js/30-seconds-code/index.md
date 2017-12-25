@@ -14,7 +14,7 @@
 *******************
 - [ ] [array](https://github.com/lvzhenbang/article/blob/master/js/30-seconds-code/array.md)
 - [x] [string](https://github.com/lvzhenbang/article/blob/master/js/30-seconds-code/string.md)
-- [x] [function](https://github.com/lvzhenbang/article/blob/master/js/30-seconds-code/funciton.md)
+- [x] [function](https://github.com/lvzhenbang/article/blob/master/js/30-seconds-code/function.md)
 - [ ] [object](https://github.com/lvzhenbang/article/blob/master/js/30-seconds-code/object.md)
 - [ ] [date](https://github.com/lvzhenbang/article/blob/master/js/30-seconds-code/date.md)
 - [x] [nodejs](https://github.com/lvzhenbang/article/blob/master/js/30-seconds-code/node.md)
