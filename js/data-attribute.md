@@ -36,7 +36,7 @@
 
 使用场景就是如上面描述的那样。
 
-### 用 HTML5 `data-*` 能存些什么
+### 用 HTML5 `data-*` 能存储些什么
 
 `data-*` 是个好东西，但它不是万能的，它本身还是 `[Attribute](https://github.com/lvzhenbang/article/blob/master/js/porp-attr.md)` ，而 `Attribute` 就是只能为字符串。如果你将一个对象存储在其中是不行的，但对对象进行序列化处理后，还是可以的。现在你只需要知道它只能存储字符串就行了。
 
