@@ -10,7 +10,7 @@
 
 在一些电商网站的源码中也看到过如下图的情况：
 
-![淘宝](https://github.com/lvzhenbang/article/blob/master/img/js/淘宝.png)
+![淘宝](https://github.com/lvzhenbang/article/blob/master/img/js/taobao.png)
 
 在移动端的开发中，我们经常会使用这种情况，对媒体资源（图片，视频）的优化处理上
 
