@@ -26,29 +26,29 @@
 
 ### HTML5 `data-*` 如何工作
 
-我们可以在一个列表相中存储一个用户的信息，如下
+我们可以在一个列表项中存储一个用户的信息，如下：
 
 	<li data-id="111111" data-name="lvzhenbang" data-email="lvzhenbang@outlook.com" data-github="https://github.com/lvzhenbang">lvzhenbang</li>
 
-这些数据对于页面的访问者来说用处不大，因为用户看不到，但是它对于web应用的开发很有用。这时你可以想象一下用一个删除按钮，这个按钮要删除的列表中的某个用户，该用户的数据信息 `data-id` 就在按钮中，你不需要其他的相关的东西，或者属性操作，就可以直接向后端发送请求。
+这些数据对于页面的访问者来说用处不大，因为用户看不到，但是它对于web应用的开发者很有用。这时你可以想象一下增加一个删除按钮，这个按钮可以删除列表中的某个用户，通过用户的数据信息 `data-id` ，你不需要其他的相关东西或者属性，就可以直接向后端发送请求删除该用户。
 
 	<button id="delete-btn" type="button" data-cmd="delete" data-id="111111">删除</button>
 
-使用场景就是如上面描述的那样。
+这个简单的使用场景就描述了 `data-*` 如何工作。
 
 ### 用 HTML5 `data-*` 能存储些什么
 
-`data-*` 是个好东西，但它不是万能的，它本身还是 `[Attribute](https://github.com/lvzhenbang/article/blob/master/js/porp-attr.md)` ，而 `Attribute` 就是只能为字符串。如果你将一个对象存储在其中是不行的，但对对象进行序列化处理后，还是可以的。现在你只需要知道它只能存储字符串就行了。
+`data-*` 虽然是个好东西，但它不是万能的，它本身还是 `[Attribute](https://github.com/lvzhenbang/article/blob/master/js/porp-attr.md)` ，而 `Attribute` 就是只能存储字符串类型数据。如果你将一个对象直接存储在其中是不行的，但对对象进行序列化处理后，还是可以的。
 
 #### 用JavaScript来reading/writing `data-*`
 
-	// 获得用户信息的操作按钮
+	// 用户信息的操作按钮
 	var oBtn = document.getElementById('opt-btn');
-	// 获得删除按钮
+	// 删除按钮
 	var delBtn = document.getElementById('delte-btn');
-	// 获得操作的信息
+	// 获得信息
 	var id = oBtn.getAttribute('data-id');
-	// 改变删除按钮的数据信息
+	// 改变数据信息
 	delBtn.setAttribute('data-id', id);
 
 是不是很简单，然后你就可以通过AJAX向后端请求，做你想要做的事情了。
@@ -66,11 +66,11 @@
 	// 改变删除按钮的数据信息
 	delBtn.attr('data-id', id);
 
-熟悉jQuery的可能会想到不是还有一个 `.data()` 方法吗? 虽然，`.attr()` 和 `.data()` 在操作 `data-*` 上有一些重叠，但他们的完全是两回事。没有深入理解的同学，只要知道 `.attr()` 就好了。
+熟悉jQuery的你可能会想到不是还有一个 `.data()` 方法吗? 虽然 `.attr()` 和 `.data()` 在操作 `data-*` 上有一些重叠，但他们完全是两回事。没有深入理解的同学，只需要知道 `.attr()` 就好了。
 
 #### HTML5 有原生的API `dataset` 来reading/writing `data-*`
 
-HTML5 就是这样好用，但是存在一些兼容性问题，IE以下不支持。但是时代在进步，这些奇葩的浏览器最终会成为历史，所以还是有必要说两句。
+HTML5 就是开发就是这样方便，但它存在一些兼容性问题，IE系列的浏览器不支持。但是时代在进步，这些奇葩的浏览器最终会成为历史，所以还是有必要说两句。
 
 	// 获得用户信息的操作按钮
 	var oBtn = document.getElementById('opt-btn');
@@ -89,9 +89,9 @@ HTML5 就是这样好用，但是存在一些兼容性问题，IE以下不支持
 
 #### 过滤
 
-这其实是一个简化版的模糊查询，我曾经再一次面使用遇到过这样的问题，就是做一个简单的模糊查询，这我会在另一篇文章中单独讲。
+这其实是一个简化版的模糊查询，我曾经再一次面使用遇到过这样的问题，就是让回答如何做一个简单的模糊查询。
 
-假如你有一个列表的demo，你想要过滤他们的关键字。只要你将它们的关键字放入 `data attribute` 中，然后编写一个简短的脚本循环并显示/隐藏它们即可。
+假如你有一个如下面所示的demo，你想要通过滤每个用户的关键字来筛选用户。只要你将它们的关键字放入 `data attribute` 中，然后编写一个简短的脚本循环并显示/隐藏它们即可。
 	
 html
 	
@@ -226,7 +226,7 @@ BootStrap用自定义数据属性作为可选择的配置项来配置插件。�
 
 2.数据属性不应该用作meta data 和 micro format的替代品。
 
-micro format 被设计给人类的，是被引入给我们的标记上下文的。例如：如果你有一张Vcard用来记录个人或组织的联系信息，那么你将会给这张Vcard一个类，让机器理解这是一个联系信息。代码如下：
+micro format 被设计给人类用的，是被引入给我们的标记上下文的。例如：如果你有一张Vcard用来记录个人或组织的联系信息，那么你将会给这张Vcard一个类，让机器理解这是一个联系信息。代码如下：
 	
 	<div class="vcard">
 	 	<span class="fn" >Aaron Lumsden</span>
