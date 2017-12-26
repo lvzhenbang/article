@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>data-style</title>
+	<style>
+		span {
+			display: inline-block;;
+			padding: 8px;
+			border-radius: 3px;
+			cursor: pointer;
+			box-shadow: 1px 1px 2px #ccc;
+		}
+
+		[data-warning] {
+			color: #fff;
+		    background: red;
+		}
+
+		[data-warning*=error] {
+			color: #fff;
+	    	background: red;
+		}
+
+		[data-warning*=update] {
+			color: #fff;
+			background: green;
+		}
+
+		[data-warning*=modify] {
+			color: #fff;
+		    background: blue;
+		}
+	</style>
+</head>
+<body>
+	<span data-warning="error">error</span>
+	<span data-warning="update">update</span>
+	<span data-warning="modify">modify</span>
+	<span data-warning>default</span>
+</body>
+</html>

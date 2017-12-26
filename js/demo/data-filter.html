@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>data-filter</title>
+</head>
+<body>
+	<input type="text" id="filter">
+	<ul class="person">
+	    <li data-models="'王明', 25, '网络工程', '篮球'">王明</li>
+	    <li data-models="'张华', 23, '软件工程', '足球'">张华</li>
+	    <li data-models="'张华', 24, '计算机科学技术', '篮球'">王丽</li>
+	    <li data-models="'王大牛', 25, '网络工程', '篮球'">王大牛</li>
+	    <li data-models="'王小二', 25, '机电自动化', '篮球'">王小二</li>
+	    <li data-models="'张丽', 24, '机电自动化', '篮球'">张丽</li>
+	</ul>
+
+	<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+	<script>
+		$('#filter').on('keyup', function() {
+		    var keyword = $(this).val().toLowerCase();
+		    $('.person > li').each( function() {
+		        $(this).toggle( keyword.length < 1 || $(this).attr('data-models').indexOf(keyword) > -1 );
+		    });
+		});
+	</script>
+</body>
+</html>

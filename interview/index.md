@@ -4,8 +4,14 @@
 
 ### JavaScript
 
+[给一个元素同时绑上click和dbclick事件所存在的问题详解](https://github.com/lvzhenbang/article/blob/master/interview/js/single_double.md)
 
 ### html
 
+[doctype 是什么](https://github.com/lvzhenbang/article/blob/master/interview/html/doctype.md)
+
+[浏览器模式](https://github.com/lvzhenbang/article/blob/master/interview/html/browser-mode.md)
+
+[用doctype激活浏览器模式](https://github.com/lvzhenbang/article/blob/master/interview/html/browser-mode&doctype.md)
 
 ### css

@@ -4,9 +4,11 @@
 
 DOCTYPE的作用是告诉浏览器你所编写的页面是什么版本。它应该在你的HTML文档中第一位出现，如果你使用的是HTML5,它应该像这样：<!DOCTYPE html>，相对于[其他9种类型](https://en.wikipedia.org/wiki/Document_type_declaration)它是最简洁的，DOCTYPE不是一个元素标签。
 
-### 第一问：为什么HTML5没有DTD？
+### 为什么HTML5没有DTD？
 
 HTML5的声明很短，没有引用`DTD`（文档类型定义)，HTML5不是基于SGML的。而在 `HTML 4.0.1` 中 `<!DOCTYPE>` 声明引用一个 `DTD`，因为 `HTML 4.0.1` 是基于 `SGML` 的，浏览器根据 `DTD` 对标记语言的规则才能正确的渲染文档内容。
+
+### HTML4 几种doctype
 
 	HTML 4.01 Strict
 
@@ -30,7 +32,11 @@ DTD的限制太多，太复杂，需要很多的语法错误捕获。
 
 想要更深层次的了解HTML5为什么没有使用DTD，[StackOverflow](http://stackoverflow.com/questions/4053917/where-is-the-html5-document-type-definition)的回答很详尽。
 
+后来问着问着扩展到SVG，XML
+
 ## SVG
+
+### 定义
 
 SVG 意为可缩放矢量图形（Scalable Vector Graphics）
 
@@ -42,4 +48,36 @@ SVG使用XML格式定义图像
 	    <!-- SVG-specific tags here -->
 	</svg>
 
+### 用途
+
+由于svg是基于矢量的所以它能很好的处理图形大小的改变，svg是基于XML的所以svg比较适合做动态交互，相对于canvas绘图它有这样的优势。
+
+canvas提供的功能更原始，适合像素处理，动态渲染和大数据绘制
+
+svg提供的功能更完善，适合静态图片展示，高保真文档和打印的应用场景
+
+[canvas vs svg](http://ycoder.com/2013/12/)
+
 [svg教程](http://www.w3school.com.cn/svg/)
+
+## XML
+
+### 定义
+
+XML 指可扩展标记语言（eXtensible Markup Language）。
+
+### 用途
+
+XML 被设计用来传输和存储数据。
+
+### XML 和 HTML 的区别
+
+XML 和 HTML 为不同的目的而设计：
+	
+	XML 被设计用来传输和存储数据，其焦点是数据的内容。
+	HTML 被设计用来显示数据，其焦点是数据的外观。
+	HTML 旨在显示信息，而 XML 旨在传输信息。
+
+### 知识点扩展
+
+SGML：标准通用标记语言（以下简称“通用标言”），是一种定义电子文档结构和描述其内容的国际标准语言；通用标言为语法置标提供了异常强大的工具，同时具有极好的扩展性，因此在数据分类和索引中非常有用；是所有电子文档标记语言的起源，早在万维网发明之前“通用标言”就已存在。
