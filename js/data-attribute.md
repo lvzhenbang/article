@@ -20,6 +20,8 @@
 
 在HTML5出现之前我们处理一些被引入的数据是通过用的 `class Attribute` 或者元素自带的 attribute，或者开发人员自定义一些数据属性。
 
+这样操作数据很不方便，如何在页面内处理数据更方便，成了开发人员苦恼的问题，在HTML5出现后你就不用在担心了。
+
 [w3c data-attribute 规范](http://w3c.github.io/html/dom.html#custom-data-attribute)
 
 ### HTML5 `data-*` 如何工作
