@@ -49,6 +49,8 @@
 
 [面试题整理](https://github.com/lvzhenbang/article/blob/master/interview/index.md)
 
+[高屋建瓴——设计模式](https://github.com/lvzhenbang/article/blob/master/design-pattern/index.md)
+
 ### LICENSE
 
 [MIT](https://opensource.org/licenses/MIT)
