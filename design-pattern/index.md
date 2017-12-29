@@ -11,6 +11,8 @@
 	
 [constructor 设计模式](https://github.com/lvzhenbang/article/blob/master/design-pattern/constructor.md)
 
+[外观 设计模式](https://github.com/lvzhenbang/article/blob/master/design-pattern/facade.md)
+
 持续更新中...
 
 ### 参考资料
