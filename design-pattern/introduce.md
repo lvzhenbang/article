@@ -123,7 +123,7 @@
 
 ### 设计模式的分类
 
-构造器模式（Constructor Pattern）
+构造器模式（Constructor Pattern）[https://github.com/lvzhenbang/article/blob/master/design-pattern/constructor.md](https://github.com/lvzhenbang/article/blob/master/design-pattern/constructor.md)
 
 模块设计模式 （Module Pattern）
 

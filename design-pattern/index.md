@@ -7,7 +7,11 @@
 
 [大话设计模式](https://github.com/lvzhenbang/article/blob/master/design-pattern/introduce.md)
 
+### javascript 设计模式
+	
+[constructor 设计模式](https://github.com/lvzhenbang/article/blob/master/design-pattern/constructor.md)
 
+持续更新中...
 
 ### 参考资料
 
