@@ -155,4 +155,4 @@
 	console.log( civic.toString() ); -> "Honda Civic has done 20000 miles"
 	console.log( mondeo.toString() ); -> "Ford Mondeo has done 5000 miles"·
 
-这样，`toString()` 将实现在不同的实例对象间的共享。
+这样，`toString()` 将实现在不同的对象实例间的共享。
