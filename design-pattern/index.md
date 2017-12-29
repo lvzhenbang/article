@@ -5,7 +5,7 @@
 
 ### 目录
 
-[大话设计模式](https://github.com/lvzhenbang/article/blob/master/design-pattern/introduce.md)
+[‘大处着眼，小处着手’——设计模式系列](https://github.com/lvzhenbang/article/blob/master/design-pattern/introduce.md)
 
 ### javascript 设计模式
 	

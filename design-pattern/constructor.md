@@ -156,3 +156,5 @@
 	console.log( mondeo.toString() ); -> "Ford Mondeo has done 5000 miles"·
 
 这样，`toString()` 将实现在不同的对象实例间的共享。
+
+其它设计模式相关文章请转[‘大处着眼，小处着手’——设计模式系列](https://github.com/lvzhenbang/article/blob/master/design-pattern/introduce.md)
