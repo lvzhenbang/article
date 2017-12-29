@@ -13,6 +13,8 @@
 
 [外观 设计模式](https://github.com/lvzhenbang/article/blob/master/design-pattern/facade.md)
 
+[factory 设计模式](https://github.com/lvzhenbang/article/blob/master/design-pattern/factory.md)
+
 持续更新中...
 
 ### 参考资料
