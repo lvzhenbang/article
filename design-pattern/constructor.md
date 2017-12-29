@@ -62,7 +62,7 @@
 	// 4. Object.defineProperties
 	// 设置属性
 
-	Object。defineProperties(newObject, {
+	Object.defineProperties(newObject, {
 		"someKey": {
 			value: "Hello World",
 			writable: true
