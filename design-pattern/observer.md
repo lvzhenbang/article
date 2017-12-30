@@ -1,28 +1,30 @@
 ## 观察者设计模式
 
+观察者设计模式是一个好的设计模式，这个模式我们在开发中比较常见，尤其是它的变形模式订阅/发布者模式我们更是很熟悉，在我们所熟悉jQuery库和vue.js框架中我们都有所了解，对于它的变种订阅/发布模式我在面试中也曾经被问到，当时就懵了。随着工作经历渐多越来越充实它，特别是当你想要朝着中高级工程师进阶这个东西绕不过。
+
 ### 定义
 
 观察者设计模式中有一个对象（被称为subject）根据观察者（observer）维护一个对象列表，自动通知它们对状态的任何修改。
 
-当一个subject要通知观察者一些有趣的事情时，它会向观察者发送通知（它可以包含于通知主题相关的特定数据）
+当一个subject要通知观察者一些有趣的事情时，它会向观察者发送通知（它可以包含通知主题相关的特定数据）
 
 当我们不在希望某一特定的观察员被通知它们所登记的主题变化时，这个主题可以将他们从观察员名单上删除。
 
-为了从整体上了解设计模式的用法和优势，回顾已发布的设计模式通常是有用的，这些设计模式的定义与语言无关。在GoF这本书中，观察者设计模式是这样定义的：
+为了从整体上了解设计模式的用法和优势，回顾已发布的设计模式是非常有用的，这些设计模式的定义与语言无关。在GoF这本书中，观察者设计模式是这样定义的：
 	
 “一个或多个观察者对某一subject的状态感兴趣，并通过附加它们自己来注册它们对该主题的兴趣。当观察者可能感兴趣的主题发生变化时，会发送一个通知信息，该通知将调用们个观察者中的更新方法。当观察者不再对主题的状态感兴趣时，他们可以简单地分离自己。”
 
 ### 组成
 
-扩展我们所学，以一下的组件实现observer模式：
+扩展我们所学，以组件形式实现observer模式：
 
-主题：维护一个观察这里表，方便添加或删除观察者
+主题（subject）：维护一个观察者列表，方便添加或删除观察者
 
-observer：为需要通知对象更改状态的对象提供一个更新接口
+观察者（observer）：为需要通知对象更改状态的对象提供一个更新接口
 
-实际主题：向观察者发送关于状态变化的通知，存储实际观察者的状态
+实际主题（ConcreteSubject）：向观察者发送关于状态变化的通知，存储实际观察者的状态
 
-实际观察者：存储引用到的实际主题，为观察者实现一个更新接口，以确保状态与主题的一致。
+实际观察者（ConcreteObserver）：存储引用到的实际主题，为观察者实现一个更新接口，以确保状态与主题的一致。
 
 
 ### 实现
@@ -96,15 +98,13 @@ observer：为需要通知对象更改状态的对象提供一个更新接口
 
 ### 示例
 
-使用上的观察者组件，我们做一个如下面定义的demo：
+使用上面定义的观察者组件，我们做一个demo，定义如下：
 
-[] 在页面中添加新的可观察复选框的按钮；
+* 在页面中添加新的可观察复选框的按钮；
+* 一个控制复选框将作为一个subject，通知其它的复选框，它们应该被检查；
+* 正在被添加的复选框容器
+* 然后，我们定义实际的主题和实际的观察者处理句柄，以便为页面添加新的观察者并实现更新接口。
 
-[] 一个控制复选框将作为一个subject，通知其它的复选框，它们应该被检查；
-
-[] 正在被添加的复选框容器
-
-然后，我们定义实际的主题和实际的观察者处理句柄，以便为页面添加新的观察者并实现更新接口。
 
 实例代码如下：
 
@@ -116,50 +116,46 @@ html
 
 js
 
-	// Extend an object with an extension
+	// 用extend()扩展一个对象
 	function extend( obj, extension ){
 	  for ( var key in extension ){
 	    obj[key] = extension[key];
 	  }
 	}
 	 
-	// References to our DOM elements
-	 
+	// DOM 元素的引用
 	var controlCheckbox = document.getElementById( "mainCheckbox" ),
 	  addBtn = document.getElementById( "addNewObserver" ),
 	  container = document.getElementById( "observersContainer" );
 	 
-	 
-	// Concrete Subject
-	 
-	// Extend the controlling checkbox with the Subject class
+	// 实际主题 (Concrete Subject)
+	// 将控制 checkbox 扩展到 Subject class
 	extend( controlCheckbox, new Subject() );
 	 
-	// Clicking the checkbox will trigger notifications to its observers
+	// 单击checkbox 通知将发送到它的观察者
 	controlCheckbox.onclick = function(){
 	  controlCheckbox.notify( controlCheckbox.checked );
 	};
 	 
 	addBtn.onclick = addNewObserver;
 	 
-	// Concrete Observer
-	 
+	// 实际观察者(Concrete Observer)
 	function addNewObserver(){
 	 
-	  // Create a new checkbox to be added
+	  // 新创建的checkbox被添加
 	  var check = document.createElement( "input" );
 	  check.type = "checkbox";
 	 
-	  // Extend the checkbox with the Observer class
+	  // 扩展 checkbox 用 Observer class
 	  extend( check, new Observer() );
 	 
-	  // Override with custom update behaviour
+	  // 用自定义的 update 行为覆盖默认的
 	  check.update = function( value ){
 	    this.checked = value;
 	  };
 	 
-	  // Add the new observer to our list of observers
-	  // for our main subject
+	  // 添加新的 observer 到 observers 列表中
+	  // 为我们的 main subject
 	  controlCheckbox.addObserver( check );
 	 
 	  // Append the item to the container
@@ -168,11 +164,11 @@ js
 
 在这个示例中我们研究了如何实现和使用观察者模式，涵盖了主题(subject), 观察者(observer)，实际/具体对象(ConcreteSubject)，实际/具体观察者(ConcreteObserver)
 
-实例演示：[demo](https://jsfiddle.net/sanlv/mgagzo0r/)
+效果演示：[demo](https://jsfiddle.net/sanlv/mgagzo0r/)
 
 ### 观察者和发布者订阅模式之间的差异
 
-最然，观察者模式很有用，但是在JavaScript中我们经常会用一种被称为发布/订阅模式的变体来实现。虽然它们很相似，但是这些模式之间还是有区别的。
+虽然，观察者模式很有用，但是在JavaScript中我们经常会用一种被称为发布/订阅模式这种变体的观察者模式。虽然它们很相似，但是这些模式之间还是有区别的。
 
 观察者模式要求希望接受主题通知的观察者（或对象）必须订阅该对象触发事件的对象（主题）
 
@@ -180,34 +176,29 @@ js
 
 与观察者模式不同，它允许任何订阅者实现一个适当的事件处理程序来注册并接收发布者发布的主题通知。
 
-下面一个例子，如果提供了功能实现，如何使用发布/订阅模式，可以在幕后支持publish()，subscribe()，unsubscribe()
+下面一个例子提供了功能实现，使用发布/订阅模式，可以支持在幕后的publish()，subscribe()，unsubscribe()
 
-	// A very simple new mail handler
- 
-	// A count of the number of messages received
+	// 一个简单的邮件处理程序
+	// 接收邮件数
 	var mailCounter = 0;
 	 
-	// Initialize subscribers that will listen out for a topic
-	// with the name "inbox/newMessage".
+	// 初始化监听主题的名为 "inbox/newMessage" 的订阅者.
 	 
-	// Render a preview of new messages
+	// 呈现一个新消息的预览
 	var subscriber1 = subscribe( "inbox/newMessage", function( topic, data ) {
 	 
-	  // Log the topic for debugging purposes
+	  // 为了调试目的打印 topic
 	  console.log( "A new message was received: ", topic );
 	 
-	  // Use the data that was passed from our subject
-	  // to display a message preview to the user
+	  // 使用从我们的主题传递的数据并向订阅者显示消息预览
 	  $( ".messageSender" ).html( data.sender );
 	  $( ".messagePreview" ).html( data.body );
 	 
 	});
 	 
-	// Here's another subscriber using the same data to perform
-	// a different task.
+	// 这是另一个订阅者使用相同数据执行不同的任务.
 	 
-	// Update the counter displaying the number of new
-	// messages received via the publisher
+	// 更新计数器，显示通过发布者发布所就收的消息数量
 	 
 	var subscriber2 = subscribe( "inbox/newMessage", function( topic, data ) {
 	 
@@ -220,8 +211,7 @@ js
 	  body: "Hey there! How are you doing today?"
 	}]);
 	 
-	// We could then at a later point unsubscribe our subscribers
-	// from receiving any new topic notifications as follows:
+	// 我们可以在取消订阅让我们的订阅者不能接收到任何新的主题通知如下:
 	// unsubscribe( subscriber1 );
 	// unsubscribe( subscriber2 );
 
