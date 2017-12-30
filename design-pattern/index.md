@@ -15,6 +15,8 @@
 
 [factory 设计模式](https://github.com/lvzhenbang/article/blob/master/design-pattern/factory.md)
 
+[观察者 设计模式](https://github.com/lvzhenbang/article/blob/master/design-pattern/observer.md)
+
 持续更新中...
 
 ### 参考资料
