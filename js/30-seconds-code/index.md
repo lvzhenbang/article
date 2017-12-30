@@ -18,7 +18,7 @@
 - [x] [object](https://github.com/lvzhenbang/article/blob/master/js/30-seconds-code/object.md)
 - [ ] [date](https://github.com/lvzhenbang/article/blob/master/js/30-seconds-code/date.md)
 - [x] [nodejs](https://github.com/lvzhenbang/article/blob/master/js/30-seconds-code/node.md)
-- [ ] [math](https://github.com/lvzhenbang/article/blob/master/js/30-seconds-code/math.md)
+- [x] [math](https://github.com/lvzhenbang/article/blob/master/js/30-seconds-code/math.md)
 - [x] [adapter](https://github.com/lvzhenbang/article/blob/master/js/30-seconds-code/adapter.md)
 - [ ] [media](https://github.com/lvzhenbang/article/blob/master/js/30-seconds-code/media.md)
 - [ ] [browser](https://github.com/lvzhenbang/article/blob/master/js/30-seconds-code/browser.md)
