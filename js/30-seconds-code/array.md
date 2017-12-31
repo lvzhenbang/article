@@ -1,14 +1,14 @@
 
 ## Array
 
-### arrayGcd
+### 数组最大公约数 (arrayGcd)
 
-Calculates the greatest common denominator (gcd) of an array of numbers.
+计算数字数组最大公约数 (gcd).
 
-Use `Array.reduce()` and the `gcd` formula (uses recursion) to calculate the greatest common denominator of an array of numbers.
+用 `Array.reduce()` 和 `gcd` 运算式 (使用递归) 计算一个数字数组的最大公约数.
 
 ```js
-const arrayGcd = arr =>{
+const arrayGcd = arr => {
   const gcd = (x, y) => !y ? x : gcd(y, x % y);
   return arr.reduce((a,b) => gcd(a,b));
 }
@@ -16,11 +16,11 @@ const arrayGcd = arr =>{
 // arrayGcd([4,8,12]) -> 4
 ```
 
-### arrayLcm
+### 数组最小公倍数 (arrayLcm)
 
-Calculates the lowest common multiple (lcm) of an array of numbers.
+求数字数组的最小公倍数 (lcm).
 
-Use `Array.reduce()` and the `lcm` formula (uses recursion) to calculate the lowest common multiple of an array of numbers.
+用 `Array.reduce()` 和 `lcm` 运算式 (使用递归) 计算一个数字数组的最小公倍数.
 
 ```js
 const arrayLcm = arr =>{
@@ -211,12 +211,12 @@ const everyNth = (arr, nth) => arr.filter((e, i) => i % nth === nth - 1);
 
 ### filterNonUnique
 
-Filters out the non-unique values in an array.
+过滤移除数组中重复出现的元素.
 
-Use `Array.filter()` for an array containing only the unique values.
+用 `Array.filter()` 保留数组中独一无二的元素.
 
 ```js
-const filterNonUnique = arr => arr.filter(e => arr.indexOf(e) !== -1);
+const filterNonUnique = arr => arr.filter(i => arr.indexOf(i) === arr.lastIndexOf(i));
 // filterNonUnique([1,2,2,3,4,4,5]) -> [1,3,5]
 ```
 
@@ -414,11 +414,11 @@ const pull = (arr, ...args) => {
 
 ### pullAtIndex
 
-Mutates the original array to filter out the values at the specified indexes.
+过滤出指定索引的数组元素，并修改原数组.
 
-Use `Array.filter()` and `Array.includes()` to pull out the values that are not needed.
-Use `Array.length = 0` to mutate the passed in an array by resetting it's length to zero and `Array.push()` to re-populate it with only the pulled values.
-Use `Array.push()` to keep track of pulled values 
+用 `Array.filter()` 和 `Array.includes()` 提取不需要的元素.
+用 `Array.length = 0` 初始化数组且长度为零, 用 `Array.push()` 重新传入剩余的元素.
+用 `Array.push()` 记录pulled值 
 
 ```js
 const pullAtIndex = (arr, pullArr) => {
@@ -439,11 +439,11 @@ const pullAtIndex = (arr, pullArr) => {
 
 ### pullAtValue
 
-Mutates the original array to filter out the values specified. Returns the removed elements.
+从原数组中过滤出指定元素. 返回过滤出的元素.
 
-Use `Array.filter()` and `Array.includes()` to pull out the values that are not needed.
-Use `Array.length = 0` to mutate the passed in an array by resetting it's length to zero and `Array.push()` to re-populate it with only the pulled values.
-Use `Array.push()` to keep track of pulled values 
+用 `Array.filter()` 和 `Array.includes()` 移除不必要的元素.
+用 `Array.length = 0` 初始化元素组且长度为零，用 `Array.push()` 重新传入剩余的元素.
+用 `Array.push()` 记录 pulled 值 
 
 ```js
 const pullAtValue = (arr, pullArr) => {
@@ -462,54 +462,55 @@ console.log(pulled); -> [ 'b', 'd' ]
 */
 ```
 
+```js（自定义）
+const pullAtValue = (arr, pullArr) => {
+  let removed = []; 
+  arr.forEach((v, i) => pullArr.includes(v) ? removed.push(v) : v);
+  pullArr.filter((v) => arr.splice(arr.indexOf(v), 1));
+  return removed;
+}
+/*
+let myArray = ['a', 'b', 'c', 'd'];
+let pulled = pullAtValue(myArray, ['b', 'd']);
+console.log(myArray); -> [ 'a', 'c' ]
+console.log(pulled); -> [ 'b', 'd' ]
+*/
+```
 
 ### remove
 
-Removes elements from an array for which the given function returns `false`.
+如果给定的函数返回 `false`, 则从数组中移除元素.
 
-Use `Array.filter()` to find array elements that return truthy values and `Array.reduce()` to remove elements using `Array.splice()`.
-The `func` is invoked with three arguments (`value, index, array`).
+用 `Array.filter()` 找返回 `false` 的数组元素，用 `Array.reduce()` 和 `Array.splice()` 对原数组进行处理.
+`func` 调用 (`value, index, array`) 参数.
 
 ```js
 const remove = (arr, func) =>
   Array.isArray(arr) ? arr.filter(func).reduce((acc, val) => {
-    arr.splice(arr.indexOf(val), 1); return acc.concat(val);
-    }, [])
-  : [];
+    arr.splice(arr.indexOf(val), 1);
+    return acc.concat(val);
+  }, []) : [];
 // remove([1, 2, 3, 4], n => n % 2 == 0) -> [2, 4]
 ```
 
 
 ### sample
 
-Returns a random element from an array.
+从数组中返回一个随机元素.
 
-Use `Math.random()` to generate a random number, multiply it by `length` and round it of to the nearest whole number using `Math.floor()`.
-This method also works with strings.
+用 `Math.random()` 生成一个随机数, 乘以数组的 `length` ，然后 `Math.floor()` 进行下舍入.
+这个方法也适合字符串.
 
 ```js
 const sample = arr => arr[Math.floor(Math.random() * arr.length)];
 // sample([3, 7, 9, 11]) -> 9
 ```
 
-
-### shuffle
-
-Randomizes the order of the values of an array.
-
-Use `Array.sort()` to reorder elements, using `Math.random()` in the comparator.
-
-```js
-const shuffle = arr => arr.sort(() => Math.random() - 0.5);
-// shuffle([1,2,3]) -> [2,3,1]
-```
-
-
 ### similarity
 
-Returns an array of elements that appear in both arrays.
+返回一个数组，数组元素在两个给定的数组中均有.
 
-Use `filter()` to remove values that are not part of `values`, determined using `includes()`.
+用 `filter()`过滤出不在另一个数组中的 `values`, 确定条件用 `includes()`.
 
 ```js
 const similarity = (arr, values) => arr.filter(v => values.includes(v));
@@ -519,9 +520,9 @@ const similarity = (arr, values) => arr.filter(v => values.includes(v));
 
 ### symmetricDifference
 
-Returns the symmetric difference between two arrays.
+返回一个数组，包含在给定的两个数组中均未出现的元素.
 
-Create a `Set` from each array, then use `Array.filter()` on each of them to only keep values not contained in the other.
+为每个数组创建一个 `Set` , 然后用 `Array.filter()` 过滤剩下都有的元素.
 
 ```js
 const symmetricDifference = (a, b) => {
@@ -531,12 +532,28 @@ const symmetricDifference = (a, b) => {
 // symmetricDifference([1,2,3], [1,2,4]) -> [3,4]
 ```
 
+```js(自定义)
+const symmetricDifference = (a, b) => [...(new Set([...a,...b]))].filter((v) => !a.includes(v) || !b.includes(v));
+// symmetricDifference([1,2,3], [1,2,4]) -> [3,4]
+```
+
+### shuffle
+
+随机化一个数组值的顺序.
+
+用 `Array.sort()` 重新排序数组 , 用 `Math.random()` 作比较器.
+
+```js
+const shuffle = arr => arr.sort(() => Math.random() - 0.5);
+// shuffle([1,2,3]) -> [2,3,1]
+```
+
 
 ### tail
 
-Returns all elements in an array except for the first one.
+返回数组中出第一个元素外的所有元素.
 
-Return `arr.slice(1)` if the array's `length` is more than `1`, otherwise, return the whole array.
+如果，数组 `length` 大于 `1` 返回 `arr.slice(1)`，否者，返回整个数组.
 
 ```js
 const tail = arr => arr.length > 1 ? arr.slice(1) : arr;
@@ -547,9 +564,9 @@ const tail = arr => arr.length > 1 ? arr.slice(1) : arr;
 
 ### take
 
-Returns an array with n elements removed from the beginning.
+返回指定长度的数组，数组中元素从数组第一个元素起.
 
-Use `Array.slice()` to create a slice of the array with `n` elements taken from the beginning.
+用 `Array.slice()` 从原始数组的第一个元素起，截取 `n` 个元素.
 
 ```js
 const take = (arr, n = 1) => arr.slice(0, n);
@@ -560,9 +577,9 @@ const take = (arr, n = 1) => arr.slice(0, n);
 
 ### takeRight
 
-Returns an array with n elements removed from the end.
+返回指定长度的数组，数组中元素从数组最后一个元素起.
 
-Use `Array.slice()` to create a slice of the array with `n` elements taken from the end.
+用 `Array.slice()` 从原始数组的最后一个元素起，截取 `n` 个元素.
 
 ```js
 const takeRight = (arr, n = 1) => arr.slice(arr.length - n, arr.length);
@@ -573,9 +590,9 @@ const takeRight = (arr, n = 1) => arr.slice(arr.length - n, arr.length);
 
 ### union
 
-Returns every element that exists in any of the two arrays once.
+返回两个数组中存在的所有元素.
 
-Create a `Set` with all values of `a` and `b` and convert to an array.
+创建一个 `Set` 用 `a` 和 `b` 所有元素，然后转换为数组.
 
 ```js
 const union = (a, b) => Array.from(new Set([...a, ...b]));
@@ -585,9 +602,9 @@ const union = (a, b) => Array.from(new Set([...a, ...b]));
 
 ### without
 
-Filters out the elements of an array, that have one of the specified values.
+从数组中移除所有指定的元素.
 
-Use `Array.filter()` to create an array excluding(using `!Array.includes()`) all given values.
+用 `Array.filter()` 过滤出所有制定的元素(用 `!Array.includes()` 做过滤条件 ).
 
 _(For a snippet that mutates the original array see [`pull`](#pull))_
 
@@ -599,11 +616,11 @@ const without = (arr, ...args) => arr.filter(v => !args.includes(v));
 
 ### zip
 
-Creates an array of elements, grouped based on the position in the original arrays.
+创建一个数组，根据原始数组中的位置进行分组.
 
-Use `Math.max.apply()` to get the longest array in the arguments.
-Creates an array with that length as return value and use `Array.from()` with a map-function to create an array of grouped elements.
-If lengths of the argument-arrays vary, `undefined` is used where no value could be found.
+用 `Math.max.apply()` 获得参数中最长的数组的长度.
+创建一个用该长度做返回值并使用 `array.from` 和 `map()` 创建分组的元素数组.
+如果参数数组的长度不同, `undefined` 将被用于没有元素的地方.
 
 ```js
 const zip = (...arrays) => {
@@ -619,9 +636,8 @@ const zip = (...arrays) => {
 
 ### zipObject
 
-Given an array of valid property identifiers and an array of values, return an object associating the properties to the values.
-
-Since an object can have undefined values but not undefined property pointers, the array of properties is used to decide the structure of the resulting object using `Array.reduce()`.
+给定一个有效的属性标识数组，返回一个属性与值相关联的对象.
+因为对象可以有未定义的值，但不能有未定义的属性指针，所以使用 `Array.reduce()` 决定结果对象的结构.
 
 ```js
 const zipObject = ( props, values ) => props.reduce( ( obj, prop, index ) => ( obj[prop] = values[index], obj ), {} )
