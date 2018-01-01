@@ -15,3 +15,8 @@
 [用doctype激活浏览器模式](https://github.com/lvzhenbang/article/blob/master/interview/html/browser-mode&doctype.md)
 
 ### css
+
+
+### 其他
+
+[面试——弹出框的实现及布局/js设计模式问题延伸](https://github.com/lvzhenbang/article/blob/master/interview/other/mask-layout-singleton.md)
