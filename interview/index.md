@@ -19,4 +19,4 @@
 
 ### 其他
 
-[面试——弹出框的实现及布局/js设计模式问题延伸](https://github.com/lvzhenbang/article/blob/master/interview/other/mask-layout-singleton.md)
+[掌握面试——弹出框的实现（一道题中包含布局/js设计模式）](https://github.com/lvzhenbang/article/blob/master/interview/other/mask-layout-singleton.md)
