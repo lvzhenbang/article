@@ -41,6 +41,8 @@
 
 [HTML5中的 `data-*` 如何处理数据详解](https://github.com/lvzhenbang/article/blob/master/js/data-attribute.md)
 
+[this,call和apply(这三个东西，如何牢牢记住)](https://github.com/lvzhenbang/article/blob/master/js/this-call-apply.md)
+
 ### 其他
 
 [dom的发展由来](https://github.com/lvzhenbang/article/blob/master/dom.md)

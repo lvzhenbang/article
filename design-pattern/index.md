@@ -42,8 +42,6 @@ JavaScript从开始被人当成为一种玩具语言，到后来发展为一门�
 
 [‘大处着眼，小处着手’——设计模式系列](https://github.com/lvzhenbang/article/blob/master/design-pattern/introduce.md)
 
-[面向对象的JavaScript]()
-
 注：这是我个人对设计模式的认识和理解，仅代表个人观点个看法，不足之处欢迎大家指正，随着认识的加深这篇文章（包括设计模式其他系列文章）会不断地进行更新。
 
 ### javascript 设计模式

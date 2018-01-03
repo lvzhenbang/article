@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>apply</title>
+	<style>
+		#box {
+			width: 100px;
+			height: 20px;
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+	<div id="box">click it</div>
+<script>
+	/*var oDiv = document.getElementById('box');
+	oDiv.onclick = function() {
+		console.log(1);
+		alertId.apply(this)
+	};
+
+	function alertId() {
+		alert(this.id)
+	}*/
+
+	Function.prototype.bind = function() {
+		var that = this;
+		var context = [].shift.apply(arguments);
+		var args = [].slice.apply(arguments);
+
+		return function() {
+			return that.apply( context, [].concat.apply( [].slice.apply( arguments ), args) )
+		}
+	}
+
+	var obj = {
+		name: 'lzb'
+	};
+
+	var setName = function(name) {
+		this.name = name;
+	}.bind(obj, 'xxx'); // 设置setName 的默认参数
+
+	var getName = function() {
+		console.log(this.name)
+	}.bind(obj);
+
+	setName(); // 默认为 xxx
+	// setName('snalv');
+	getName(); // sanlv
+</script>	
+</body>
+</html>
