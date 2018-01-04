@@ -1,6 +1,6 @@
 # 前端知识总结
 
-欢迎大家吐槽，欢迎大家指正错误，欢迎大家修改文章中的不足
+欢迎大家吐槽，欢迎大家指正错误，欢迎大家修改文章中的不足.
 
 ### git
 
@@ -22,6 +22,8 @@
 [鼠标滑过nav动画](https://github.com/lvzhenbang/article/blob/master/cssAnimate/transition-nav.html)
 
 ### html layout
+
+[dom的发展由来](https://github.com/lvzhenbang/article/blob/master/dom.md)
 
 [如何实现元素的多列布局](https://github.com/lvzhenbang/article/blob/master/layout/colown.html)
 
@@ -45,11 +47,11 @@
 
 [this,call和apply(这三个东西，如何牢牢记住)](https://github.com/lvzhenbang/article/blob/master/js/this-call-apply.md)
 
-### 其他
-
-[dom的发展由来](https://github.com/lvzhenbang/article/blob/master/dom.md)
+### 翻译
 
 [30-seconds-code 项目翻译总结](https://github.com/lvzhenbang/article/blob/master/js/30-seconds-code/index.md)
+
+### 其他
 
 [面试题整理](https://github.com/lvzhenbang/article/blob/master/interview/index.md)
 
