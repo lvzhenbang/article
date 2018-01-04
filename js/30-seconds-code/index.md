@@ -21,5 +21,5 @@
 - [x] [math](https://github.com/lvzhenbang/article/blob/master/js/30-seconds-code/math.md)
 - [x] [adapter](https://github.com/lvzhenbang/article/blob/master/js/30-seconds-code/adapter.md)
 - [ ] [media](https://github.com/lvzhenbang/article/blob/master/js/30-seconds-code/media.md)
-- [ ] [browser](https://github.com/lvzhenbang/article/blob/master/js/30-seconds-code/browser.md)
+- [x] [browser](https://github.com/lvzhenbang/article/blob/master/js/30-seconds-code/browser.md)
 - [x] [utility](https://github.com/lvzhenbang/article/blob/master/js/30-seconds-code/utility.md)
