@@ -1,4 +1,6 @@
-# 知识总结
+# 前端知识总结
+
+欢迎大家吐槽，欢迎大家指正错误，欢迎大家修改文章中的不足
 
 ### git
 
@@ -6,7 +8,7 @@
 
 [git分支操作](https://github.com/lvzhenbang/article/blob/master/git/git-branch.md)
 
-[git原理](https://github.com/lvzhenbang/article/blob/master/git/git-原理.md)
+[git分支管理策略](https://github.com/lvzhenbang/article/blob/master/git/git-manage.md)
 
 ### vue
 
