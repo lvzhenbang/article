@@ -132,7 +132,3 @@ git checkout -b version2 v2.0.0
 ### 别名
 
 git config --global alias.[命令别名] ’git的相关的命令‘
-
-
-
-
