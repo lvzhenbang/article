@@ -1,5 +1,28 @@
 ## git 常用命令
 
+从一个demo开始学习git，我们首先创建一个项目，然后用 `git init` 命令初始化它，我们新建一个文件，然后将文件添加到缓存区，紧接着编译项目，下一步连接本地仓库和远程仓库，推送demo。
+
+这样就将一个demo上传到GitHub，或其他git版本管理服务器上。
+
+下面我们就具体来认识一下git的常用命令。
+
+### 一个demo
+
+```
+mkdir myApp
+cd myApp
+git init
+touch README.md
+vim README.md
+git add README.md
+git commit -m 'by lzb'
+git remote add origin git@github.com:lvzhenbang/myApp.git
+git push -u origin master
+
+```
+
+***********************************************************
+
 ### 查看分支
 
 查看本地分支：git branch 
@@ -20,22 +43,6 @@
 
 
 ************************************************************
-
-### 一个demo
-
-```
-mkdir myApp
-cd myApp
-git init
-touch README.md
-vim README.md
-git commit -m 'by lzb'
-git remote add origin git@github.com:lvzhenbang/myApp.git
-git push -u origin master
-
-```
-
-***********************************************************
 
 ### 版本的切换
 
@@ -107,19 +114,18 @@ git remote rm [remote-name] // git remote rm origin
 
 git remote rename [remote-name:old] [remote-name:new] // git remote rename pb paul
 
-### 打标签
+### 标签
 
-#### 列出标签
+#### 查看所有标签
 
 git tag
+
 #### 创建标签
 
 附注标签 git tag -a [v1.4] -m ['my version is 1.4']
 查看标签 git show v1.4
 
 轻量标签 git tag v1.4-lw
-
-#### 后期打标签
 
 #### 共享标签
 

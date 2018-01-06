@@ -4,11 +4,19 @@
 
 ### git
 
-[git常用命令](https://github.com/lvzhenbang/article/blob/master/git/git-branch.md)
+[git repository](https://github.com/lvzhenbang/article/blob/master/git/git-repository.md)
+
+[git常用命令](https://github.com/lvzhenbang/article/blob/master/git/git-command.md)
 
 [git分支操作](https://github.com/lvzhenbang/article/blob/master/git/git-branch.md)
 
-[git分支管理策略](https://github.com/lvzhenbang/article/blob/master/git/git-manage.md)
+[git分支管理策略](https://github.com/lvzhenbang/article/blob/master/git/git-branch-manage.md)
+
+[git提交记录操作](https://github.com/lvzhenbang/article/blob/master/git/git-commit-manage.md)
+
+[git合并分支（merge vs rebase）](https://github.com/lvzhenbang/article/blob/master/git/git-merge.md)
+
+[git 技巧使用](https://github.com/lvzhenbang/article/blob/master/git/git-skills.md)
 
 ### vue
 
