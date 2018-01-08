@@ -55,6 +55,10 @@
 
 [this,call和apply(这三个东西，如何牢牢记住)](https://github.com/lvzhenbang/article/blob/master/js/this-call-apply.md)
 
+### 正则
+
+[如何学正则（告别复制粘贴）](https://github.com/lvzhenbang/article/blob/master/regular/introduce.md)
+
 ### 翻译
 
 [30-seconds-code 项目翻译总结](https://github.com/lvzhenbang/article/blob/master/js/30-seconds-code/index.md)
