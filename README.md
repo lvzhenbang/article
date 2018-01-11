@@ -55,7 +55,8 @@
 
 [this,call和apply(这三个东西，如何牢牢记住)](https://github.com/lvzhenbang/article/blob/master/js/this-call-apply.md)
 
-[javascript 对象知识点]（https://github.com/lvzhenbang/article/blob/master/js/js-object.md）
+[javascript 对象知识点](https://github.com/lvzhenbang/article/blob/master/js/js-object.md)
+
 
 ### 正则
 
