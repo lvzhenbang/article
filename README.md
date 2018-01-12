@@ -57,6 +57,7 @@
 
 [javascript 对象知识点](https://github.com/lvzhenbang/article/blob/master/js/js-object.md)
 
+[漫谈javascript函数式编程](https://github.com/lvzhenbang/article/blob/master/js/functional-programing.md)
 
 ### 正则
 
