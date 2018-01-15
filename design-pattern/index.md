@@ -56,7 +56,7 @@ JavaScript从开始被人当成为一种玩具语言，到后来发展为一门�
 
 [观察者 设计模式](https://github.com/lvzhenbang/article/blob/master/design-pattern/observer.md)
 
-[单例 设计模式](https://github.com/lvzhenbang/article/blob/master/design-pattern/singleton.md)
+[javascript 单例设计模式](https://github.com/lvzhenbang/article/blob/master/design-pattern/js-singleton.md)
 
 持续更新中...
 
