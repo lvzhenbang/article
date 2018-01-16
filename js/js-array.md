@@ -110,6 +110,17 @@ flattern(martrix); // [1, 2, 3, 4, 5, 6]
 
 ```
 
+二维数组的扁平化方法2：
+
+```
+let martrix = [[1, 2], [3, 4], [5, 6]];
+
+let flattern = arr => [].concat.apply([], arr);
+
+flattern(martrix); // [1, 2, 3, 4, 5, 6]
+
+```
+
 将url地址的参数像转化为对象，
 
 ```
