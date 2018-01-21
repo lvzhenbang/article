@@ -60,6 +60,8 @@ JavaScript从开始被人当成为一种玩具语言，到后来发展为一门�
 
 [javascript 策略设计模式](https://github.com/lvzhenbang/article/blob/master/design-pattern/strategy.md)
 
+[javascript 代理设计模式](https://github.com/lvzhenbang/article/blob/master/design-pattern/proxy-pattern.md)
+
 持续更新中...
 
 ### 参考资料
