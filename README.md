@@ -37,7 +37,10 @@
 
 [position定位布局理解,元素的定位关系如absolute-fixed-absolute](https://github.com/lvzhenbang/article/blob/master/layout/position.html)
 
-### js
+### JavaScript
+
+<details>
+<summary>目录</summary>
 
 [js中的数组，数字，字符串反转](https://github.com/lvzhenbang/article/blob/master/js/js-reverse.md)
 
@@ -58,6 +61,8 @@
 [javascript 对象知识点](https://github.com/lvzhenbang/article/blob/master/js/js-object.md)
 
 
+</details>
+
 ### 正则
 
 [如何学正则（告别复制粘贴）](https://github.com/lvzhenbang/article/blob/master/regular/introduce.md)
@@ -74,7 +79,6 @@
 
 <details>
 <summary>目录</summary>
-
 
 [高屋建瓴——设计模式](https://github.com/lvzhenbang/article/blob/master/design-pattern/index.md)
 
