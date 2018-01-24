@@ -98,7 +98,7 @@
 
 [javascript 代理设计模式](https://github.com/lvzhenbang/article/blob/master/design-pattern/proxy-pattern.md)
 
-[javascript 迭代器设计模式](https://github.com/lvzhenbang/article/blob/master/design-pattern/proxy-pattern.md)
+[javascript 迭代器设计模式](https://github.com/lvzhenbang/article/blob/master/design-pattern/iterator.md)
 
 </details>
 
