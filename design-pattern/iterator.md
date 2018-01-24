@@ -157,3 +157,33 @@ $ = {
 
 我们再使用ES6处理一般对象时一般使用两种方法，一种是将普通对象转化为迭代器对象，另一种就是上面这种写法。
 
+### 终止迭代器
+
+通过上面的例子，我们发现迭代器可以实现像普通for循环中使用break一样跳出循环。
+
+```
+if (fn.call(obj[i], i, obj[i]) === false) {
+	break;
+}
+```
+
+它表示回调函数返回fasle后，那么循环终止。
+
+```
+var $ = {
+	each: function(arr, fn) {
+		for(var i = 0, len = arr.length; i < len; i++) {
+			if(fn(i, arr[i]) === false) {
+				break;
+			}
+		}
+	}
+};
+
+$.each([1, 2, 3, 4, 5], function(i, val) {
+	if(val > 3) return false;
+	console.log(val);
+})
+```
+
+其实，按照分类还有一个倒序迭代器，由于比较简单这里就不多说，你可以自己实现以下，其实，就是封装一个 `reverse()` 。
