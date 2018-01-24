@@ -1,6 +1,6 @@
 # 前端知识总结
 
-欢迎大家吐槽，欢迎大家指正错误，欢迎大家修改文章中的不足.
+欢迎大家吐槽，欢迎大家指正错误，欢迎大家修改文章中的不足。
 
 ### git
 
@@ -70,7 +70,34 @@
 
 [面试题整理](https://github.com/lvzhenbang/article/blob/master/interview/index.md)
 
+### 设计模式
+
+<details>
+<summary>目录</summary>
+
+
 [高屋建瓴——设计模式](https://github.com/lvzhenbang/article/blob/master/design-pattern/index.md)
+
+[面向对象的JavaScript](https://github.com/lvzhenbang/article/blob/master/design-pattern/oop-js.md)
+	
+[构造器 设计模式](https://github.com/lvzhenbang/article/blob/master/design-pattern/constructor.md)
+
+[外观 设计模式](https://github.com/lvzhenbang/article/blob/master/design-pattern/facade.md)
+
+[工厂 设计模式](https://github.com/lvzhenbang/article/blob/master/design-pattern/factory.md)
+
+[观察者 设计模式](https://github.com/lvzhenbang/article/blob/master/design-pattern/observer.md)
+
+[javascript 单例设计模式](https://github.com/lvzhenbang/article/blob/master/design-pattern/js-singleton.md)
+
+[javascript 策略设计模式](https://github.com/lvzhenbang/article/blob/master/design-pattern/strategy.md)
+
+[javascript 代理设计模式](https://github.com/lvzhenbang/article/blob/master/design-pattern/proxy-pattern.md)
+
+[javascript 迭代器设计模式](https://github.com/lvzhenbang/article/blob/master/design-pattern/proxy-pattern.md)
+
+</details>
+
 
 ### LICENSE
 
