@@ -199,7 +199,7 @@ var preImage = (function() {
  
     return {
     	setSrc: function(src) {
-    		myImage.setSrc = '../loading.gif';
+    		myImage.setSrc('../loading.gif');
     		img.src = src;
     	}
     }
