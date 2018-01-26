@@ -100,6 +100,8 @@
 
 [javascript 迭代器设计模式](https://github.com/lvzhenbang/article/blob/master/design-pattern/iterator.md)
 
+[javascript 观察者模式](https://github.com/lvzhenbang/article/blob/master/design-pattern/js-observer.md)
+
 </details>
 
 
