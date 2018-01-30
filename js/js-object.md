@@ -360,3 +360,69 @@ c 3
  */
 
 ```
+
+### 使用注意问题
+
+1.两个对象数据的比较
+
+```
+var obj = {
+	a:1,
+	b:2,
+	c:3
+}
+
+var obj2 = {
+	a:1,
+	b:2,
+	c:3
+}
+
+function compare(origin, target) {
+    if (typeof target === 'object')    {
+        if (typeof origin !== 'object') return false
+        for (let key of Object.keys(target))
+            if (!compare(origin[key], target[key])) return false
+        return true
+    } else {
+    	return origin === target
+    }
+}
+```
+
+对于两个未知的对象我们使用递归来进行深度遍历比较是否存在不相等的属性，如果存在返回false；反之，则返回true。
+
+我们再看看JavaScript开发中的其它常见数据类型的比较方式。
+
+变量的比较我们通过 `===` 或 `!==` 来判断两个对象是否相等。
+
+```
+var a = 1;
+var b = 1;
+console.log(a === b); // true
+```
+
+两个数组中数字元素的比较
+
+```
+var a = [1, 2, 3, 4, 5];
+var b = [1, 3, 5, 7, 9];
+console.log(a[0] === b[0]); // true
+console.log(a[1] === b[1]); // false
+```
+
+连个数组中的字符串元素比较
+
+结果同上
+
+两个数组中的对象元素的比较
+
+```
+var arr = [{a:1}, {b:2}, {c:3}, {d:4}, {e:5}];
+var arr2 = [{a:1}, {c:3}, {e:5}];
+
+console.log(arr[0] === arr2[0]); // false
+console.log(arr[] === arr2[1]); // false
+```
+
+
