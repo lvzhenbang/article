@@ -1,6 +1,6 @@
-### 自定是表格
+### 自定义表格
 
-在开发中，我们的开发大多根据用户的需要来完成，比如说，用户要我们在网页中是以一个类似excel表格的table，我们先来一张效果图：
+我们如何在html网页中是以一个类似excel表格的table，我们先来一张效果图：
 
 ![效果图](https://github.com/lvzhenbang/article/blob/master/layout/img/table.jpg)
 
