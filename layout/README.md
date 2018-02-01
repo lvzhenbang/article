@@ -7,3 +7,5 @@
 [position定位布局理解,元素的定位关系如absolute-fixed-absolute](https://github.com/lvzhenbang/article/blob/master/layout/position.html)
 
 [仿excel布局的表格](https://github.com/lvzhenbang/article/blob/master/layout/table.md)
+
+[由字体引起的布局问题及解决方案](https://github.com/lvzhenbang/article/blob/master/layout/text-layout.md)
