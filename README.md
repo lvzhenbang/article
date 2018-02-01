@@ -30,7 +30,9 @@
 
 [仿excel布局的表格](https://github.com/lvzhenbang/article/blob/master/layout/table.md)
 
+[移动端页面设计问题导致字体覆盖图标的解决方案](https://github.com/lvzhenbang/article/blob/master/layout/text-icon.md)
 
+[由字体引起的布局问题及解决方案](https://github.com/lvzhenbang/article/blob/master/layout/text-layout.md)
 
 ### css 动画
 
