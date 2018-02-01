@@ -250,3 +250,5 @@ div.content:after {
 
 
 [效果预览](https://codepen.io/lvzhenbang/project/editor/ZepemN#table-rect.html)
+
+[仿excel效果table 完整demo](https://codepen.io/lvzhenbang/pen/QQjwMo)
