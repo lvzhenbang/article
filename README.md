@@ -70,6 +70,8 @@
 
 [漫谈javascript函数式编程](https://github.com/lvzhenbang/article/blob/master/js/functional-programing.md)
 
+[漫谈promise使用场景](https://github.com/lvzhenbang/article/blob/master/js/promise.md)
+
 </details>
 
 ### 正则
