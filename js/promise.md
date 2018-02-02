@@ -274,7 +274,7 @@ $.ajax({
     //TODO here
 });
 ```
-### prommise存在的问题
+### promise存在的问题
 
 * promise一旦执行，无法中途取消
 * promise的错误无法在外部被捕捉到，只能在内部进行预判处理
