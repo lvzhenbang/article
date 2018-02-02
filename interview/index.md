@@ -21,3 +21,5 @@
 ### 其他
 
 [掌握面试——弹出框的实现（一道题中包含布局/js设计模式）](https://github.com/lvzhenbang/article/blob/master/interview/other/mask-layout-singleton.md)
+
+[javascript 排序算法](https://www.jianshu.com/p/1b4068ccd505)
