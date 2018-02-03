@@ -80,8 +80,9 @@
 
 ### 翻译
 
-[30-seconds-code 项目翻译总结](https://github.com/lvzhenbang/article/blob/master/js/30-seconds-code/index.md)
+[30-seconds-code 项目翻译总结](https://github.com/lvzhenbang/article/blob/master/translate/30-seconds-code/index.md)
 
+[eval()不是魔鬼，只是被误解了](https://github.com/lvzhenbang/article/blob/master/translate/eval.md)
 ### 其他
 
 [面试题整理](https://github.com/lvzhenbang/article/blob/master/interview/index.md)
