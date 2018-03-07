@@ -68,6 +68,8 @@
 
 [javascript 开发中对象使用注意事项](https://github.com/lvzhenbang/article/blob/master/js/js-object2.md)
 
+[javascript 函数知识点梳理](https://github.com/lvzhenbang/article/blob/master/js/js-function.md)
+
 [漫谈javascript函数式编程](https://github.com/lvzhenbang/article/blob/master/js/functional-programing.md)
 
 [漫谈promise使用场景](https://github.com/lvzhenbang/article/blob/master/js/promise.md)
