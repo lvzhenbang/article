@@ -220,3 +220,5 @@ robotB.init().say(); // "My name is B"
 [Named and Optional Arguments in JavaScript](https://medium.com/dailyjs/named-and-optional-arguments-in-javascript-using-es6-destructuring-292a683d5b4e)
 
 [How to use optional arguments in functions (with optional callback)](http://www.jstips.co/en/javascript/use-optional-arguments/)
+
+[JavaScript Functions that Return Functions](https://davidwalsh.name/javascript-functions)
