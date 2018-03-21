@@ -1,9 +1,8 @@
-## 常用数组方法  (ES6前)
+## 常用数组方法 
 
-ES5 的方法及 ES5方法的 ES3 兼容
 
-改变原数组：sort，splice，ruduce
-返回一个原数组副本的改变：slice，filter
+改变原数组：pop，push，unshift，shift，sort，splice，reverse
+返回一个原数组副本的改变：slice，join，contact，toString，toLocaleString
 
 ### ES3
 
@@ -68,96 +67,153 @@ arr.splice(1, 3); // [1, 5, 6]
 arr.splice(arr.length, 0, 7, 8, 9); // [1, 5, 6, 7, 8, 9]
 ```
 
-### ES5
 
-#### array.reduce(callback[, initalValue]) // v1.8
+#### array.join(seperator)
 
-描述：该方法的第一个参数是一个回调函数，这个回调函数有4个参数，求和值、当前值，当前值索引，数组本身；第二个参数是个可选参数，表示初始值，若指定，则当作最初使用的求和值，若缺省，则使用数组第一个元素作为求和值，相比较于有第二个参数的情况少迭代一次。 
-
-注意：改变原数组。
-
-array.reduce 的兼容性实现：
-
-```
-if (typeof Array.prototype.reduce !== "function") {
-  Array.prototype.reduce = function (fn, initialValue) {
-     var acc = initialValue, k = 0, len = this.length;
-     if (typeof initialValue === "undefined") {
-        acc = this[0];
-        k = 1;
-     }
-     
-    if (typeof fn === "function") {
-      for (k; k < len; k++) {
-         this.hasOwnProperty(k) && (acc = fn(acc, this[k], k, this));
-      }
-    }
-    return acc;
-  };
-}
-```
-
-用法：
-
-二维数组的扁平化：
-
-```
-let martrix = [[1, 2], [3, 4], [5, 6]];
-
-let flattern = arr => arr.reduce((acc, cur) => acc.concat(cur) , []);
-
-flattern(martrix); // [1, 2, 3, 4, 5, 6]
-
-```
-
-二维数组的扁平化方法2：
-
-```
-let martrix = [[1, 2], [3, 4], [5, 6]];
-
-let flattern = arr => [].concat.apply([], arr);
-
-flattern(martrix); // [1, 2, 3, 4, 5, 6]
-
-```
-
-将url地址的参数像转化为对象，
-
-```
-const getURLParameters = url =>
-  url.match(/([^?=&]+)(=([^&]*))/g).reduce(
-    (a, v) => (a[v.slice(0, v.indexOf('='))] = v.slice(v.indexOf('=') + 1), a), {}
-  );
-getURLParameters('http://url.com/page?name=Adam&surname=Smith') // {name: 'Adam', surname: 'Smith'}
-```
-
-
-#### array.filter(callback[, thisObject]) // v1.6
-
-描述：返回过滤后的新数组。第一个参数callback 回调函数有三个参数，当前值、当前值索引、该数组，它返回布尔值 true/false ，如果是true，则保留；如果是false，则删除；第二个参数可选，它作为回调函数的this使用，如果省略，回调函数的this为undefined。
+描述：该方法用于把数组中的所有元素放入一个字符串，用一个可选的分隔符参数进行连接。
 
 注意：不改变原数组。
 
 兼容性实现：
 
 ```
-if (typeof Array.prototype.filter !== "function") {
-  Array.prototype.filter = function (fn, context) {
-    var arr = [];
-    if (typeof fn === "function") {
-       for (var k = 0, len = this.length; k < len; k++) {
-          fn.call(context, this[k], k, this) && arr.push(this[k]);
-       }
+if (typeof Array.prototype.join !== "function") {
+  Array.prototype.join = function (c) {
+    var str = '',
+        len = this.length;
+    if(len <= 1) return this[0]
+
+    if(c) {
+      str = this[0]
+      for (var i = 1; i < len; i++) {
+          str = str + c + this[i]
+      }
     }
-    return arr;
-  };
+    return str;
+  }
 }
 ```
 
 用法：
 
 ```
-let arr = [1, 2, 3, 4, 5, 6];
-let arrayFilter = arr => arr.filter(value => value%2 === 0);
-arrayFilter(arr); // [2, 4, 6]
+var arr = [1, 2, 3, 4, 5, 6];
+arr.join('-') // "1-2-3-4-5-6"
+```
+
+#### array.reverse()
+
+描述：用于颠倒数组中元素的顺序。
+
+注意：不改变原数组。
+
+兼容性实现：
+
+```
+if (typeof Array.prototype.reverse !== "function") {
+  Array.prototype.reverse = function () {
+    var arr = [],
+        len = this.length;
+
+    for(var i=len-1; i>=0; i--) {
+      arr[len-i] = this[i]
+    }
+    return arr;
+  }
+}
+```
+
+用法：
+
+```
+var arr = [1, 2, 3, 4, 5, 6];
+arr.reverse() // [6, 5, 4, 3, 2, 1]
+```
+
+#### array.concat()
+
+描述：将两个或多个数组拼接成一个数组。参数可以是数组也可以是非数组元素。如果参数是非嵌套的数组，
+可以将数组元素进行拼接；如果参数是嵌套数组，那么该方法不会扁平化该参数数组。
+
+注意：不改变原数组。
+
+兼容性实现：
+
+```
+if (typeof Array.prototype.concat !== "function") {
+  Array.prototype.concat = function () {
+    var arr = []
+    for(var i=0, i=arguments.length; i<len; i++) {
+      arr[i] = arguments[0]
+    }
+    return arr;
+  }
+}
+```
+
+用法：
+
+```
+var arr = [1, 2, 3];
+arr.concat([4, 5, 6]) // [1, 2, 3, 4, 5, 6]
+```
+
+#### array.push() && array.pop()
+
+描述：push()向数组的末尾添加一个或多个元素，返回数组为数组长度；pop()用于删除并返回数组的最后一个元素，返回值为当前数组最后一个元素。
+
+说明：如果数组为空，pop()返回undefined
+
+用法：
+
+```
+var arr = [1, 2, 3];
+arr.push(4, 5, 6) // 6， arr => [1, 2, 3, 4, 5, 6]
+arr.pop() // 6， arr => [1, 2, 3, 4, 5]
+```
+
+#### array.unshift() && shift()
+
+描述：unshift()向数组的头部添加一个或多个元素，返回数组为数组长度；shift()用于删除并返回数组的最后一个元素，返回值为当前数组最后一个元素。
+
+说明：如果数组为空，shift()返回undefined
+
+用法：
+
+```
+var arr = [4, 5, 6];
+arr.unshift(1, 2, 3) // 6， arr => [1, 2, 3, 4, 5, 6]
+arr.shift() // 1， arr => [2, 3, 4, 5, 6]
+```
+
+#### toString()
+
+描述：可以将一个逻辑转化为字符串。返回值会根据原始的布尔值或者booleanObject对象返回相应的字符串“true”或“false”
+
+说明：如果该方法的对象不是Boolean，则抛出异常TypeError
+
+用法：
+
+```
+var boo = new Boolean(true)
+boo.toString() // "true"
+
+var arr = [1, 2, 3]
+arr.toString() // "1,2,3"
+
+var obj = {}
+obj.toString() // "[object Object]"
+```
+
+#### toLocaleString()
+
+描述：可根据本地时间把Date对象转换为字符串，并返回结果
+
+说明：dateObject 的字符串表示，以本地时间区表示，并根据本地规则格式化。
+
+用法：
+
+```
+var date = new Date()
+date.toLocaleString() // "2018/3/13 下午3:02:31"
 ```
