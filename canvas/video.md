@@ -42,7 +42,7 @@ setInterval(function() {
 }, 16)
 ```
 
-[实际效果图](https://github.com/lvzhenbang/article/blob/master/canvas/img/video-1.png)
+![实际效果图](https://github.com/lvzhenbang/article/blob/master/canvas/img/video-1.png)
 
 第二种，getImagedata()，putImageData()，制作灰色视频代码如下：
 
@@ -86,7 +86,7 @@ function draw(video, ctx, ctxBack, cw, ch) {
 ```
 
 
-[实际效果图](https://github.com/lvzhenbang/article/blob/master/canvas/img/video-2.png)
+![实际效果图](https://github.com/lvzhenbang/article/blob/master/canvas/img/video-2.png)
 
 ### 我们可以使用canvas做什么
 
@@ -212,4 +212,4 @@ function draw(v, cb, w, h) {
 }
 ```
 
-[实际效果图](https://github.com/lvzhenbang/article/blob/master/canvas/img/grab.png)
+![实际效果图](https://github.com/lvzhenbang/article/blob/master/canvas/img/grab.png)
