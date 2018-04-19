@@ -248,16 +248,17 @@ var robotDancer = function() {
 	Robot.apply(this, arguments)
 }
 
-robotDancer.prototype.dance = function() {
-	console.log('I can dance.')
-}
-
 function inherit(RObot, robotDancer) {
 	robotDancer.prototype = Object.create(Robot.prototype)
 	robotDancer.prototype.constructor = robotDancer
 }
 
 inherit(Robot, robotDancer)
+
+
+robotDancer.prototype.dance = function() {
+	console.log('I can dance.')
+}
 
 var dancerA = new robotDancer('A')
 
