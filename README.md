@@ -22,6 +22,8 @@
 
 [vue-slot 模板应用](https://github.com/lvzhenbang/article/blob/master/vue/vue-slot.html)
 
+[由路径参数引起的路由问题](https://github.com/lvzhenbang/article/blob/master/vue/route/path-param.md)
+
 
 ### css 动画
 
@@ -66,11 +68,15 @@
 
 [javascript 对象知识点梳理](https://github.com/lvzhenbang/article/blob/master/js/js-object.md)
 
+[javascript 创建对象的高级用法](https://github.com/lvzhenbang/article/blob/master/js/js-object-1.md)
+
 [javascript 开发中对象使用注意事项](https://github.com/lvzhenbang/article/blob/master/js/js-object2.md)
 
 [JavaScript 对象属性高级用法详解](https://github.com/lvzhenbang/article/blob/master/js/js-object3.md)
 
 [javascript 函数知识点梳理](https://github.com/lvzhenbang/article/blob/master/js/js-function.md)
+
+[JS开发中函数知识点梳理(二）](https://github.com/lvzhenbang/article/blob/master/js/js-function-2.md)
 
 [漫谈javascript函数式编程](https://github.com/lvzhenbang/article/blob/master/js/functional-programing.md)
 
