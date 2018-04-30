@@ -78,6 +78,8 @@
 
 [JS开发中函数知识点梳理(二）](https://github.com/lvzhenbang/article/blob/master/js/js-function-2.md)
 
+[JS开发中函数知识点梳理(三）](https://github.com/lvzhenbang/article/blob/master/js/js-function-3.md)
+
 [漫谈javascript函数式编程](https://github.com/lvzhenbang/article/blob/master/js/functional-programing.md)
 
 [漫谈promise使用场景](https://github.com/lvzhenbang/article/blob/master/js/promise.md)

@@ -16,6 +16,32 @@ function functionName(arg0, arg1,[...]) {
 
 在JavaScript中，函数声明有一个特性是函数声明的提升，也就是说在代码执行前会先读取函数声明，因此，我们把函数声明放在调用它的语句的前后皆可。
 
+### 函数表达式的分类
+
+1. 匿名函数表达式
+
+```
+var func = function() {
+	console.log('I am an anonymous function expression.')
+}
+```
+
+2. 具名函数表达式
+
+```
+var func = function functionname() {
+	console.log('I am a named function expression.')
+}
+```
+
+3. 自调用函数表达式
+
+```
+(function() {
+	console.log('I am a self-call function expression.')
+})()
+```
+
 ### 函数表达式
 
 常见结构如下：
