@@ -24,6 +24,7 @@
 
 [由路径参数引起的路由问题](https://github.com/lvzhenbang/article/blob/master/vue/route/path-param.md)
 
+[深入理解vue之组件](https://github.com/lvzhenbang/article/blob/master/vue/doc/render.md)
 
 ### css 动画
 
