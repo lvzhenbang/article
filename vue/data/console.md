@@ -1,3 +1,5 @@
+## vue 控制台提示的错误
+
 1.控制台提示“App.vue?ea99:28 Uncaught TypeError: Cannot read property 'splice' of undefined
     at VueComponent.sp (App.vue?ea99:28)”
 
