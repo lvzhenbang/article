@@ -181,3 +181,73 @@ var arr = [1, 2, 3, 4, 5, 6];
 
 arr.fill('*', 1, 4) // [1, "*", "*", "*", 5, 6]
 ```
+
+#### Array.prototype.includes  ES6
+
+描述：它可以非常简单的查找到数组某一项元素是否在Array中，特别是对于NaN。在ES6前我们使用indexOf/lastIndexOf，而它们不能查找NaN。
+
+用法：
+
+```
+const arr = [1, 2, 3, NaN]
+arr.includes(NaN) // true
+
+```
+
+兼容性实现：
+
+```
+```
+
+### 指数运算符 `**` ES6
+
+描述：除了我们所熟知的 `+`, `-`, `*`, `/`, `%`这些中缀运算符外，`**` 这个中缀运算符通常用于指数运算
+
+用法：
+
+```
+// 在ES6前我们用Math.pow()
+Math.pow(2, 3) // 8
+
+// 现在我们用 **
+2**3 // 8
+```
+
+### Object.values() ES8
+
+描述：它返回对象自身所有的属性值，而不包括原型链上的任何值。
+
+用法：
+
+```
+var Robot = function(name) {
+  this.name = name
+}
+
+Robot.prototype.say = function() {
+  console.log('My name is ' + this.name + '.')
+}
+
+var robert = new Robot('robert')
+
+// 在ES5中我们使用Object.keys() 来获取对象属性的属性名，但是它也不包含对象继承的原型链上的。
+Object.keys(robert) // ["name"]
+
+// 在ES7中我们使用Object.values() 来获取对象属性的属性值
+Object.values(robert) // ["robert"]
+```
+
+### Object.entries() ES8
+
+描述：它以数组的形式返回对象的键和值。
+
+```
+const person = { name: 'robert', age: 18 }
+for (let [key, value] of Object.entries(person)) {
+  console.log(`key: ${key}, value: ${value}`)
+}
+/**
+ * key: name, value: robert
+ * key: age, value: 18
+ */
+```
