@@ -2,6 +2,16 @@
 
 ### 一般构造函数
 
+```
+var Robot = function(name) {
+	this.name = name
+} 
+
+var robert = new robert('robert')
+
+robert.name // "robert"
+```
+
 ### 寄生构造函数
 
 创建一个用来封装创建对象的函数，然后再返回新创建的对象。这个函数看起来就像是一个构造函数一样。
