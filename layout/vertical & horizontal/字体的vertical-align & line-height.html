@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>p</title>
+    <link href="https://fonts.googleapis.com/css?family=Arial" rel="stylesheet">
+    <style>
+    *, *:after, *:before {
+        box-sizing: border-box;
+    }    
+    p {
+        background-color: rgba(255, 0, 0);
+        border: 1px solid #000;
+        /* font metrics */
+        --font: Catamaran;
+        --fm-emSquare: 1;
+        --fm-capitalHeight: 0.68;
+        --fm-descender: 0.54;
+        --fm-ascender: 1.1;
+        --fm-linegap: 0;
+        
+        /* compute needed values */
+        --lineheightNormal: (var(--fm-ascender) + var(--fm-descender) + var(--fm-linegap));
+        --distanceBottom: (var(--fm-descender));
+        --distanceTop: (var(--fm-ascender) - var(--fm-capitalHeight));
+        --contentArea: (var(--lineheightNormal) * var(--computedFontSize));
+        --valign: ((var(--distanceBottom) - var(--distanceTop)) * var(--computedFontSize));  
+        --computedFontSize: (var(--capital-height) / var(--fm-capitalHeight)); 
+        --computedLineheight: ((var(--line-height) * var(--capital-height)) - var(--valign));
+        
+        /* desired capital height and line-height */
+        --capital-height: 100;
+        --line-height: 1;
+        
+        /* set font family */
+        font-family: var(--font);
+        
+        /* set capital height to equal font-size */
+        font-size: calc(var(--computedFontSize) * 1px);
+
+        /* set computed line-height */
+        line-height: calc(var(--computedLineheight) * 1px);
+    }
+    span {
+        vertical-align: calc(var(--valign) * -1px);
+    }
+
+    span::before {
+        content: '';
+        display: inline-block;
+        width: calc(1px * var(--capital-height));
+        height: calc(1px * var(--capital-height));
+        margin-right: 10px;
+        background: url('https://cdn.pbrd.co/images/yBAKn5bbv.png');
+        background-size: cover;
+    }
+    </style>
+</head>
+<body>
+<p><span>Ba</span> </p>
+</body>
+</html>
