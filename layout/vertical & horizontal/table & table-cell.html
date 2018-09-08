@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>table & table-cell</title>
+    <style>
+        html, body {
+            padding: 0;
+            margin: 0;
+            width: 100%;
+            height: 100%;
+        }
+        .parent {
+            display: table;
+            width: 100%;
+            height: 100%;
+        }
+
+        .children {
+            position: relative;
+            display: table-cell;
+            vertical-align: middle;
+            text-align: center;
+        }
+
+        .content {
+            display: inline-block;
+            padding: 20px;
+            background: gray
+
+        }
+    </style>
+</head>
+<body>
+    <div class="parent" style="background:black">
+        <div class="children">
+            <div class="content">
+                children
+            </div>
+        </div>
+    </div>   
+    <!-- <div style="width: 100%; height: 200px; background: black;"></div> -->
+</body>
+</html>
