@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>flex direction</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        html,body {
+            width: 100vw;
+            height: 100vh;
+        }
+
+        .box {
+            display: flex;
+            align-items: stretch;
+            /* flex-flow: wrap; */
+            justify-content: space-around;
+        }
+
+        .box-item {
+            width: 100px;
+            padding: 22px;
+            border: 1px solid #000;
+            text-align: center;
+        }
+
+        .box-item+.box-item {
+            border-left: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+       <span class="box-item">1</span>
+       <span class="box-item">2</span>
+       <span class="box-item">3</span>
+       <span class="box-item">4</span>
+       <span class="box-item">5</span>
+       <span class="box-item">6</span>
+       <span class="box-item">7</span>
+       <span class="box-item">8</span>
+       <span class="box-item">9</span>
+       <span class="box-item">10</span>
+    </div>
+</body>
+</html>

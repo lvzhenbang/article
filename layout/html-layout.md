@@ -4,6 +4,13 @@
 
 ### 整体布局
 
+
+在开发的过程中尝试使用flex进行布局，不使用float, postion, display: table进行页面的框架搭建，能用flex的尽量尝试使用flex。
+
+[flex 整体布局案例-1](https://github.com/lvzhenbang/article/blob/master/layout/flex/html-layout.html)
+
+[flex 整体布局案例-2](https://github.com/lvzhenbang/article/blob/master/layout/flex/html-layout2.html)
+
 待续...
 
 ### 局部布局
