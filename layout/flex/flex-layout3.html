@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>flex-layout</title>
+    <style>
+        html, body {
+            width: 100vw;
+            height: 100vh;
+            padding: 0;
+            margin: 0;
+        }
+
+        ul {
+            padding: 0;
+            margin: 0;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        /* layout start */
+        body {
+            display: -webkit-flex;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        header, footer {
+            display: -webkit-flex;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 80px;
+            font-size: 16px;
+            color: #fff;
+            background: #37474f;
+        }
+
+        header {
+            align-self: flex-start;
+        }
+
+        footer {
+            align-self: flex-end;
+        }
+
+        main {
+            width: 100%;
+            height: calc(100vh - 160px);
+            overflow: auto;
+            /* other */
+            display: flex;
+        }
+
+        aside {
+            min-width: 200px;
+            height: 100%;
+            flex-basis: auto;
+            flex-shrink: 1;
+            overflow: auto;
+            box-sizing: border-box;
+            border-right: 1px solid #cdcdcd;
+            /* other */
+            -webkit-transition: min-width .3s;
+            -moz-transition: min-width .3s;
+            transition: min-width .3s;
+        }
+
+        .main-body {
+            width: 100%;
+            min-width: 200px;
+            height: 100%;
+            flex-shrink: 1;
+            flex-basis: auto;
+            /* other */
+            position: relative;
+            display: -webkit-flex;
+            display: flex;
+            flex-direction: column;
+        }
+        /* layout end */
+        aside ul {
+            height: 100%;
+            background-color: gray;
+        }
+
+        aside li {
+            height: 60px;
+            line-height: 60px;
+            border-bottom: 1px solid #cdcdcd;
+            box-sizing: border-box;
+
+            font-size: 14px;
+            color: yellow;
+            text-align: center;
+            background-color: gray;
+            cursor: pointer;
+        }
+
+        aside li:hover {
+            border-left: 2px solid red;
+            letter-spacing: 2px;
+
+            background-color: black;
+            color: white;
+        }
+
+        #menu {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            z-index: 2;
+
+            width: 36px;
+            height: 36px;
+            font-size: 12px;
+            cursor: pointer;
+        }
+
+        #menu:before {
+            position: absolute;
+            top: .25em;
+            left: .25em;
+            z-index: 3;
+            height: .5em;
+            width: .5em;
+            content: '';
+            background: #ff6589;
+            border-radius: 0;
+            box-shadow:
+                0.5em 0 0 0 #ff7465, 1em 0 0 0 #ffa865,
+                1.5em 0 0 0 #ffdb65, 2em 0 0 0 #f0ff65,
+
+                0 1em 0 0 #ff6589, 0.5em 1em 0 0 #ff7465,
+                1em 1em 0 0 #ffa865, 1.5em 1em 0 0 #ffdb65,
+                2em 1em 0 0 #f0ff65,
+                
+                0 2em 0 0 #ff6589, 0.5em 2em 0 0 #ff7465,
+                1em 2em 0 0 #ffa865, 1.5em 2em 0 0 #ffdb65,
+                2em 2em 0 0 #f0ff65;
+            transition: 0.3;
+        }
+
+        .active#menu:before {
+            background: #ff6589;
+            border-radius: .15em 0 .15em;
+            box-shadow: 
+                0.5em 0.5em 0 0 #ff7465, 1em 1em 0 0 #ffa865,
+                1.5em 0.5em 0 0 #ffdb65, 2em 0 0 0 #f0ff65,
+
+                0 2em 0 0 #ff6589, 0.5em 1.5em 0 0 #ff7465,
+                1.5em 1.5em 0 0 #ffdb65, 2em 2em 0 0 #f0ff65;
+        }
+
+        aside.active {
+            min-width: 0;
+            flex-basis: 0;
+        }
+
+        .content-header {
+            display: -webkit-flex;           
+            display: flex;
+            min-height: 60px;
+            justify-content: center;
+            align-items: center;
+            
+            box-sizing: border-box;
+            width: 100%;
+            padding-left: 60px;
+            border-bottom: 1px solid #cdcdcd;
+        }
+
+        .content-box {
+            height: 100%;
+            overflow: auto;
+        }        
+    </style>
+</head>
+<body>
+    <!-- head -->
+    <header>
+        <p>this is head.</p>         
+    </header>
+    <!-- body -->
+    <main>
+        <aside>
+            <ul>
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+                <li>5</li>
+                <li>6</li>
+            </ul>
+        </aside>
+        <!-- this is body -->
+        <div class="main-body">
+            <div id="menu" title="menu"></div>
+            <div class="content-header">
+                <p>this is content-header.</p>
+            </div>
+
+            <div class="content-box">
+                <div style="height: 1000px;">
+                    this is content-box
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- footer -->
+    <footer>
+        <p>this is footer</p>
+    </footer>
+
+    
+    <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+
+    <script>
+        $(function() {
+            $('#menu').on('click', function(e) {
+                e.preventDefault()
+                if ($('aside').hasClass('active')) {
+                    $(this).removeClass('active')
+                    $('aside').removeClass('active')
+                } else {
+                    $(this).addClass('active')
+                    $('aside').addClass('active')
+                }
+            })
+        })
+    </script>
+</body>
+</html>
