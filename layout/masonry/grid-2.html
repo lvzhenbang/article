@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>grid</title>
+    <style>
+        html,
+        body {
+            padding: 0;
+            margin: 0;
+        }
+
+        ul {
+            margin: 0;
+            padding: 0;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        .grid {
+            display: grid;
+            align-items: flex-end;
+            grid-column-gap: 10px;
+            grid-template-columns: repeat(3, 1fr);
+            grid-auto-rows: 10px;
+        }
+
+        .grid-item {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-sizing: border-box;
+            border: 1px solid #cdcdcd;
+        }
+
+
+        .item-1 { height: 150px; }
+        .item-2 { height: 80px; }        
+        .item-3 { height: 150px; }
+        .item-4 { height: 200px; }
+        .item-5 { height: 130px; }
+        .item-6 { height: 50px; }
+        .item-7 { height: 50px; }
+        .item-8 { height: 80px; }        
+        .item-9 { height: 150px; }
+        .item-10 { height: 200px; }
+        .item-11 { height: 130px; }
+        .item-12 { height: 50px; }
+    </style>
+</head>
+
+<body>
+    <ul class="grid">
+        <li class="grid-item item-1">1</li>
+        <li class="grid-item item-2">2</li>
+        <li class="grid-item item-3">3</li>
+        <li class="grid-item item-4">4</li>
+        <li class="grid-item item-5">5</li>
+        <li class="grid-item item-6">6</li>
+        <li class="grid-item item-7">7</li>
+        <li class="grid-item item-8">8</li>
+        <li class="grid-item item-9">9</li>
+        <li class="grid-item item-10">10</li>
+        <li class="grid-item item-11">11</li>
+        <li class="grid-item item-12">12</li>
+    </ul>
+
+    <script>
+        
+        function resizeGridItem(item, i) {
+            grid = document.querySelector('.grid');
+            rowHeight = parseInt(window.getComputedStyle(grid).getPropertyValue('grid-auto-rows'));
+            rowSpan = Math.ceil(item.getBoundingClientRect().height / rowHeight);
+
+            if (i < 3) {
+                item.style.gridRowEnd = 'span ' + rowSpan
+            } else {
+                item.style.gridRowEnd = 'span ' + (rowSpan + 1)
+            }
+        }
+
+        function resizeGridItems() {
+            document
+                .querySelectorAll('.grid-item')
+                .forEach((item, i) => resizeGridItem(item, i))
+        }
+
+        window.onload = resizeGridItems();
+        window.addEventListener("resize", resizeGridItems);
+    </script>
+</body>
+
+</html>

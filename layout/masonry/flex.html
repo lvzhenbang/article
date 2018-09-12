@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>flex</title>
+    <style>
+        html, body {
+            padding: 0;
+            margin: 0;
+        }
+
+        ul {
+            margin: 0;
+            padding: 0;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        .grid {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            align-content: space-between;
+            width: 100%;
+            max-height: 350px;
+        }
+
+        .grid-item {            
+            width: calc(100%/3.05);
+            margin-bottom: calc(100%/120);
+            box-sizing: border-box;
+            border: 1px solid #cdcdcd;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .item-1 {
+            height: 50px;
+        }
+
+        
+        .item-2 {
+            height: 80px;
+        }
+
+        
+        .item-3 {
+            height: 150px;
+        }
+
+        .item-4 {
+            height: 200px;
+        }
+
+        .item-5 {
+            height: 130px;
+        }
+
+        .item-6 {
+            height: 50px;
+        }
+    </style>
+</head>
+<body>
+    <ul class="grid">
+        <li class="grid-item item-1">1</li>
+        <li class="grid-item item-2">2</li>
+        <li class="grid-item item-3">3</li>
+        <li class="grid-item item-4">4</li>
+        <li class="grid-item item-5">5</li>
+        <li class="grid-item item-6">6</li>
+    </ul>
+</body>
+</html>

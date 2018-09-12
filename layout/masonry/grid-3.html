@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>grid</title>
+    <style>
+        html,
+        body {
+            padding: 0;
+            margin: 0;
+        }
+
+        ul {
+            margin: 0;
+            padding: 0;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        .grid {
+            display: grid;
+            /* grid-column-gap: 10px; */
+            /* grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); */
+            /* grid-template-columns: repeat(3, 1fr); */
+            /* grid-auto-rows: 10px; */
+        }
+
+        .grid-item {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-sizing: border-box;
+            border: 1px solid #cdcdcd;
+        }
+
+
+        .item-1 { height: 150px; }
+        .item-2 { height: 80px; }        
+        .item-3 { height: 150px; }
+        .item-4 { height: 200px; }
+        .item-5 { height: 130px; }
+        .item-6 { height: 50px; }
+        .item-7 { height: 50px; }
+        .item-8 { height: 80px; }        
+        .item-9 { height: 150px; }
+        .item-10 { height: 200px; }
+        .item-11 { height: 130px; }
+        .item-12 { height: 50px; }
+    </style>
+</head>
+
+<body>
+    <ul class="grid">
+        <li class="grid-item item-1">1</li>
+        <li class="grid-item item-2">2</li>
+        <li class="grid-item item-3">3</li>
+        <li class="grid-item item-4">4</li>
+        <li class="grid-item item-5">5</li>
+        <li class="grid-item item-6">6</li>
+        <li class="grid-item item-7">7</li>
+        <li class="grid-item item-8">8</li>
+        <li class="grid-item item-9">9</li>
+        <li class="grid-item item-10">10</li>
+        <li class="grid-item item-11">11</li>
+        <li class="grid-item item-12">12</li>
+    </ul>
+
+    <script>
+        // 定义一个瀑布流
+        class Masonry {
+            constructor(obj, opts) {
+                this.options = {
+                    'limit': 'auto', // 默认 auto,  也可以设置具体的列数值
+                    'gap': 10,
+                }
+                this.config = Object.assign({}, this.options, opts)
+                this.grid = obj || document.querySelector('.grid')
+            }
+            // 初始化
+            init() {
+                this.gridItems = this.grid.querySelectorAll('.grid-item')
+                this.setGrid()               
+                this.setAllGridItem()
+            }
+            // 窗口发生变化
+            resize() {
+                this.setAllGridItem()
+            }
+            // 设置grid容器
+            setGrid() {
+                // 设置列
+                if (this.config.limit === 'auto') {
+                    this.grid.style.gridTemplateColumns = 'repeat(auto-fill, minmax(300px, 1fr))'
+                } else {
+                    this.grid.style.gridTemplateColumns = 'repeat(' + this.config.limit + ', 1fr)'
+                }
+                
+                // 设置列间距
+                this.grid.style.gridColumnGap = this.config.gap + 'px'
+                // 设置网格 自动行 行高
+                this.grid.style.gridAutoRows = this.config.gap + 'px'
+                console.log(1)
+            }
+            // 设置项目
+            setAllGridItem() {
+                this.gridItems.forEach((item, i) => this.setGridItem(item, i))
+            }
+            // one by one
+            setGridItem(item, i) {
+                const clientRect = item.getBoundingClientRect()
+                // 计算项目内容所占高度
+                const rowSpan = Math.ceil(clientRect.height / this.config.gap);
+                
+                // 设置行间距
+                this.grid.style.alignItems ='flex-end'
+                // 如果 limit="auto" 这样的非数字字符串，需要计算列数
+                const limit = isNaN(this.config.limit) && isFinite(this.config.limit)  ? this.config.limit : Math.floor(window.innerWidth / clientRect.width)
+
+                if (i < limit) {
+                    item.style.gridRowEnd = 'span ' + rowSpan
+                } else {
+                    item.style.gridRowEnd = 'span ' + (rowSpan + 1)
+                }
+            }
+        }
+
+        var grid = new Masonry(document.querySelector('.grid'))
+
+        // 当页面加载，或者窗口大小发生变化时的操作
+        window.onload = grid.init()
+        window.addEventListener('resize', function() {
+            grid.resize()
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Multiple columns</title>
+    <style>
+        html, body {
+            padding: 0;
+            margin: 0;
+        }
+
+        ul {
+            margin: 0;
+            padding: 0;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        .grid {
+            column-count: 3;
+            column-gap: 10px;
+        }
+
+        .grid-item {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-sizing: border-box;
+            border: 1px solid #cdcdcd;
+            margin-bottom: 10px;
+
+            break-inside: avoid;
+            page-break-inside: avoid;
+        }
+
+        .item-1 {
+            height: 50px;
+        }
+
+        
+        .item-2 {
+            height: 80px;
+        }
+
+        
+        .item-3 {
+            height: 150px;
+        }
+
+        .item-4 {
+            height: 200px;
+        }
+
+        .item-5 {
+            height: 130px;
+        }
+
+        .item-6 {
+            height: 50px;
+        }
+    </style>
+</head>
+<body>
+    <ul class="grid">
+        <li class="grid-item item-1">1</li>
+        <li class="grid-item item-2">2</li>
+        <li class="grid-item item-3">3</li>
+        <li class="grid-item item-4">4</li>
+        <li class="grid-item item-5">5</li>
+        <li class="grid-item item-6">6</li>
+    </ul>
+</body>
+</html>
