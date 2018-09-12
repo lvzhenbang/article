@@ -37,8 +37,12 @@
 [demo](https://github.com/lvzhenbang/article/blob/master/layout/vertical & horizontal/flex.html)
 
 
-
 [垂直居中布局问题总结](https://github.com/lvzhenbang/article/blob/master/layout/verticle-align & line-height.md)
+
+表格的布局
 
 [表格布局](https://github.com/lvzhenbang/article/blob/master/layout/table.md)
 
+多列的布局
+
+[实现像报纸内容排版一样的多列布局](https://github.com/lvzhenbang/article/blob/master/layout/multi-col.md)
