@@ -1,6 +1,6 @@
 ## 瀑布流
 
-待续...
+瀑布流包含了相当丰富的前端知识点，如：布局(传统)、js的基础的掌握（DOM, BOM, javaScript的基本语法）、grid网格布局、ajax、懒加载（lazyload）、debounce(scroll事件被频繁添加)、throttle（短时间频繁触发load more）、只对新load的项目进行瀑布流布局等
 
 ### 等宽不定高的瀑布流
 
@@ -48,6 +48,20 @@
 代码参考如下demo:
 
 [demo-3]((https://github.com/lvzhenbang/article/blob/master/layout/mansonry/grid-3.html)
+
+### 如何做一个优秀的瀑布流
+
+一个beautiful的瀑布流就应该是这样的，最好采取浏览器支持的dom渲染方式，如果浏览器支持瀑布流这种布局的方式，就不需要写它的布局代码，但某人为现在不太可能，但将来说不定，有人直接提议支持display: masonry; 这里不做引申了，虽然flex和multi-col可以实现类似的布局，但这种布局并不是严格意义上来说的masonry，但使用grid外加少量的js，就可以轻松的实现一个瀑布流。
+
+言归正传，那么如何做一个优秀的瀑布流呢，正如文章一开始说的那样，要对它的功能进行优化。
+
+1. 预加载（让页面预先加载几个item）
+2. 懒加载（lazyload，针对图片的处理）
+3. debounce(scroll事件被频繁添加)
+4. throttle（短时间频繁触发load more）
+5. 只对新load的项目进行瀑布流布局
+
+未完待续...
 
 ### 插件
 
