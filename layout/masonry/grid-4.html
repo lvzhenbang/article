@@ -275,12 +275,13 @@
                 setTimeout(function() {}, 2000)
                 // random  width/height 200~800 (200 + Math.random()* 600)
                 // 批量加载 10个/次
-                let vDom = document.createElement('div'),
-                    str = ''
+                // let vDom = document.createDocumentFragment(),
+                let vDom = document.createElement('template'),
+                    html = ''
                 for (var i=0; i<10; i++) {
                     let width = Math.floor((200 + Math.random()* 600)),
                         height = Math.floor((200 + Math.random()* 600))
-                    let html = `<li class="grid-item">
+                    let li = `<li class="grid-item">
                         <div class="box">
                             <img
                                 src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="
@@ -290,14 +291,20 @@
                                 alt="${d++}">
                         </div>
                     </li>`
-                    str += html
+                    // let boxLi = document.createElement('div')
+                    // boxLi.innerHTML = li
+                    // vDom.appendChild(boxLi.querySelector('li'))
+                    html += li
                 }
 
-                vDom.innerHTML = str
+                // vDom.innerHTML = html
+                // for(var i=0, vItem = vDom.children; i<vItem.length; i++) {
+                //     grid.append(vItem[i])
+                // }
 
-                for(var i=0, vItem = vDom.children; i<vItem.length; i++) {
-                    grid.append(vItem[i])
-                }
+                // grid.appendChild(vDom.content)
+                grid.appendChild(vDom)
+
                 gridMas.init(false)
             }
         }
