@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>grid</title>
+    <style>
+        html,
+        body {
+            padding: 0;
+            margin: 0;
+        }
+
+        ul {
+            margin: 0;
+            padding: 0;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        .grid {
+            display: grid;
+            /* grid-column-gap: 10px; */
+            /* grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); */
+            /* grid-template-columns: repeat(3, 1fr); */
+            /* grid-auto-rows: 10px; */
+        }
+
+        .grid-item {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+        }
+        
+        .box {
+            display: flex;
+            width: 100%;
+            box-sizing: border-box;            
+            border: 1px solid #cdcdcd;
+        }
+
+        .box img {
+            width: 100%;
+            height: auto;
+        }
+
+        .load-more {
+            width: 100%;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            font-size: 16px;
+            font-weight: bolder;
+            box-sizing: border-box;
+            border: 1px solid #cdcdcd;
+        }
+    </style>
+</head>
+
+<body>
+    <ul class="grid">
+        <li class="grid-item">
+            <div class="box">
+                <img src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" data-url="http://img.hb.aicdn.com/ebce38b9eb4b27cf11b3ceeaece2b6c31a1cd32f8bd85-DOFiuY_fw658" width="658"
+                    height="658" alt="1">
+            </div>
+        </li>
+        <li class="grid-item">
+            <div class="box">
+                <img src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" data-url="http://img.hb.aicdn.com/6faa2d74dab6cbe83cb524ba40688cd7a353e35a19fa4d-bGMc9V_fw658" width="658"
+                    height="1170" alt="2">
+            </div>
+        </li>
+        <li class="grid-item">
+            <div class="box">
+                <img src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" data-url="http://img.hb.aicdn.com/530fb852be77ada99eb19d582080276511959e8c2328c-qFKZ70_fw658" width="658"
+                    height="658" alt="3">
+            </div>
+        </li>
+        <li class="grid-item">
+            <div class="box">
+                <img src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" data-url="http://img.hb.aicdn.com/80ca58bd06581098e6925dd7672d0105222059a25151f-GVQEmZ_fw658" width="600"
+                    height="947" alt="4">
+            </div>
+        </li>
+        <li class="grid-item">
+            <div class="box">
+                <img src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" data-url="http://img.hb.aicdn.com/01e0e96d4f123fe7a7fc55e995c399974fb2bcb650e30-qK3cMQ_fw658" width="600"
+                    height="753" alt="5">
+            </div>
+        </li>
+        <li class="grid-item">
+            <div class="box">
+                <img src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" data-url="http://img.hb.aicdn.com/89d874dfb1d76d8b71c2e4b888d6cc8affe5232551088-RFS6tu_fw658" width="600"
+                    height="947" alt="6">
+            </div>
+        </li>
+        <li class="grid-item">
+            <div class="box">
+                <img src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" data-url="http://img.hb.aicdn.com/01e0e96d4f123fe7a7fc55e995c399974fb2bcb650e30-qK3cMQ_fw658" width="600"
+                    height="753" alt="7">
+            </div>
+        </li>
+        <li class="grid-item">
+            <div class="box">
+                <img src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" data-url="http://img.hb.aicdn.com/9601ddd8be170e0530e88878e2c1fb14f0f34fd8185a4d-4qDZG1_fw658" width="658"
+                    height="933" alt="8">
+            </div>
+        </li>
+        <li class="grid-item">
+            <div class="box">
+                <img src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" data-url="http://img.hb.aicdn.com/db85ff4bbfc5908a79cc9f1f194cc8d0b7a523e61ce8b5-UUP0TB_fw658" width="658"
+                    height="934" alt="9">
+            </div>
+        </li>
+        <li class="grid-item">
+            <div class="box">
+                <img src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" data-url="http://img.hb.aicdn.com/2b413424212787b177ad5673e8f520cef4deaf111479b6-22cS1B_fw658" width="658"
+                    height="658" alt="10">
+            </div>
+        </li>
+        <li class="grid-item">
+            <div class="box">
+                <img src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" data-url="http://img.hb.aicdn.com/ed0ae7d9c39b54311dbfa061d3badf19eca640841ab89a-0pzK4t_fw658" width="658"
+                    height="933" alt="11">
+            </div>
+        </li>
+        <li class="grid-item">
+            <div class="box">
+                <img src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" data-url="http://img.hb.aicdn.com/fb69d1f2478215de298e4ad9d28a0170691abd297f77e-4bzImw_fw658" width="658"
+                    height="609" alt="12">
+            </div>
+        </li>
+    </ul>
+    <div class="load-more">加载更多...</div>
+    <script src="./lodash.min.js"></script>
+    <script>
+        // 定义一个瀑布流
+        class Masonry {
+            constructor(obj, opts) {
+                this.options = {
+                    'limit': 'auto', // 默认 auto,  也可以设置具体的列数值
+                    'gap': 10,
+                }
+                this.config = Object.assign({}, this.options, opts)
+                this.grid = obj || document.querySelector('.grid')
+            }
+            // 初始化
+            init(flag = true) {
+                this.flag = flag
+                // 容器style
+                this.setGrid()
+                // 项目布局，flag=true初始化默认，flag=false设置load-more新加载的项目
+                if (flag) {
+                    this.gridItems = this.grid.querySelectorAll('.grid-item')
+                } else {
+                    this.gridItems = this.grid.querySelectorAll('.grid-item.add')
+                }
+                this.setAllGridItem()
+            }
+            // 窗口发生变化
+            resize() {
+                this.setAllGridItem()
+            }
+            // 设置grid容器
+            setGrid() {
+                // 设置列
+                if (this.config.limit === 'auto') {
+                    this.grid.style.gridTemplateColumns = 'repeat(auto-fill, minmax(300px, 1fr))'
+                } else {
+                    this.grid.style.gridTemplateColumns = 'repeat(' + this.config.limit + ', 1fr)'
+                }
+
+                // 设置列间距
+                this.grid.style.gridColumnGap = this.config.gap + 'px'
+                // 设置网格 自动行 行高
+                this.grid.style.gridAutoRows = this.config.gap + 'px'
+            }
+            // 设置项目
+            setAllGridItem() {
+                this.gridItems.forEach((item, i) => {
+                    this.setGridItem(item, i)
+                })
+            }
+            // one by one
+            setGridItem(item, i) {
+                let img = item.querySelector('img'),
+                   aWidth = img.getAttribute('width'),
+                   aHeight = img.getAttribute('height')
+                let clientRect = item.getBoundingClientRect()
+                // init img
+                img.setAttribute('width', Math.floor(clientRect.width))
+                let imgHeight = Math.floor(aHeight * clientRect.width / aWidth)
+                img.setAttribute('height', imgHeight)
+
+                // init box
+                item.querySelector('.box').style = 'overflow: hidden; height: ' + Math.floor(imgHeight / this.config.gap) * this.config.gap + 'px'
+
+                // 计算项目内容所占高度
+                let clientRect2 = item.getBoundingClientRect(),
+                    rowSpan = Math.floor(imgHeight / this.config.gap)
+
+                // 设置行间距
+                this.grid.style.alignItems = 'flex-end'
+                // 如果 limit="auto" 这样的非数字字符串，需要计算列数
+                let limit = isNaN(this.config.limit) && isFinite(this.config.limit) ? this.config.limit :
+                    Math.floor(window.innerWidth / clientRect2.width)
+
+                if (!!!this.flag) {
+                    item.style.gridRowEnd = 'span ' + (rowSpan + 1)
+                } else {
+                    if (i < limit) {
+                        item.style.gridRowEnd = 'span ' + rowSpan
+                    } else {
+                        item.style.gridRowEnd = 'span ' + (rowSpan + 1)
+                    }
+                }
+            }
+        }
+        // 实例化 masonry
+        let gridMas = new Masonry(document.querySelector('.grid'), {
+            limit: 3
+        })
+
+        // 当页面加载，或者窗口大小发生变化时的操作
+        window.onload = gridMas.init()
+        window.addEventListener('resize', function () {
+            gridMas.resize()
+        })
+        
+        // layout
+        let grid = document.querySelector('.grid'),
+            gridItems = grid.querySelectorAll('.grid-item')
+        
+        var d = 1000
+        // load more item(img)
+        function loadMore() {
+            let loadMore = document.querySelector('.load-more')
+            if(loadMore.getBoundingClientRect().top < window.innerHeight) {
+                // 模拟ajax 请求
+                setTimeout(function() {}, 2000)
+                // random  width/height 200~800 (200 + Math.random()* 600)
+                // 批量加载 10个/次
+                let vDom = document.createElement('template'),
+                    html = ''
+                for (var i=0; i<10; i++) {
+                    let width = Math.floor((200 + Math.random()* 600)),
+                        height = Math.floor((200 + Math.random()* 600))
+                    let li = `<li class="grid-item add">
+                        <div class="box">
+                            <img
+                                src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="
+                                data-url=""
+                                width="${width}"
+                                height="${height}"
+                                alt="${d++}">
+                        </div>
+                    </li>`
+                    html += li
+                }
+                vDom.innerHTML = html
+                grid.appendChild(vDom.content)
+                gridMas.init(false)
+                loadImg(grid.querySelectorAll('.grid-item.add'))
+            }
+        }
+        
+        // 针对loadMore 其实应该使用throttle，应该保证loadMore在某一时间段内触发一次；区别于loadImg的
+        // scrollbar 的频发滚动事件，在这里不使用window.addEventListener("scroll", _.throttle(loadImg, 200))，
+        // 而考虑使用一个新的浏览器API：IntersectionObserver，ie不支持，但最新版的edg支持，考虑到兼容性，可以使用polyfill(可参考：https://github.com/w3c/IntersectionObserver/)
+        // infinite scroll
+        let obMore = new IntersectionObserver(function(entries) {
+            // console.log(entries)
+            if (entries[0].intersectionRatio <= 0) return;
+            loadMore()
+        }, {
+            // threshold: 0 // 默认值，不显示loadMore模块
+            threshold: [0, 1] // 显示loadMore模块
+        })
+
+        obMore.observe(document.querySelector('.load-more'))
+
+        // lazyload img
+        function loadImg(items) {
+            let obImg = new IntersectionObserver(function(entries) {
+                entries.forEach(function(entry) {
+                    if (entry.intersectionRatio > 0) {
+                        let v = entry.target
+                        let classes = v.getAttribute('class')   
+                        // unload
+                        if ( !!!classes.includes('loaded') ) {
+                            let item = v.querySelector('img'),
+                                src = item.getAttribute('src'),
+                                dataUrl = item.getAttribute('data-url')
+                            if (src !== dataUrl) {
+                                item.setAttribute('src', dataUrl)
+                                v.setAttribute('class', 'grid-item loaded')
+                            }
+                        }
+                        
+                        obImg.unobserve(v)
+                    }
+                })
+            })
+
+            items.forEach(function(v) {
+                obImg.observe(v)      
+            })
+        }
+
+        loadImg(gridItems)
+
+        //  持续优化中...
+    </script>
+</body>
+
+</html>

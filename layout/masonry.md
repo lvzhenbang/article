@@ -60,6 +60,9 @@
 3. debounce(scroll事件被频繁添加)
 4. throttle（短时间频繁触发load more）
 5. 只对新load的项目进行瀑布流布局
+6. 新添加的item批量加载的优化（for循环——>fragment——>template）
+7. 只对新增加的item进行布局
+8. 使用IntersetionObserver这个API来实现lazyload和infinite scroll
 
 未完待续...
 
@@ -72,4 +75,9 @@
 ### 参考资料
 
 [Generating Masonry Layouts](https://www.sitepoint.com/understanding-masonry-layout/)
+
 [Debouncing and Throttling Explained Through Examples](https://css-tricks.com/debouncing-throttling-explained-examples/)
+
+[IntersectionObserver API 使用教程](http://www.ruanyifeng.com/blog/2016/11/intersectionobserver_api.html)
+
+[ntersection Observer comes to Firefox](https://hacks.mozilla.org/2017/08/intersection-observer-comes-to-firefox/)
