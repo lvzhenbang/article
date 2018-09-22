@@ -2,7 +2,7 @@
 
 这里主要分为整体布局和局部布局。
 
-### 整体布局
+### 框架布局
 
 在开发的过程中尝试使用flex进行布局，不使用float, postion, display: table进行页面的框架搭建，能用flex的尽量尝试使用flex。
 
@@ -16,9 +16,7 @@
 
 待续...
 
-### 局部布局
-
-水平垂直居中布局（宽高自适应）
+### 水平垂直居中布局（宽高自适应）
 
 1. 使用display: table, display: table-cell
 
@@ -39,10 +37,18 @@
 
 [垂直居中布局问题总结](https://github.com/lvzhenbang/article/blob/master/layout/verticle-align & line-height.md)
 
-表格的布局
+### 表格的布局
 
 [表格布局](https://github.com/lvzhenbang/article/blob/master/layout/table.md)
 
-多列的布局
+### 多列的布局
 
 [实现像报纸内容排版一样的多列布局](https://github.com/lvzhenbang/article/blob/master/layout/multi-col.md)
+
+
+### 单元素布局
+
+css3 的黑魔法给了我们更多的实现选择。通过使用伪(类)元素（例如：::before，:target等）和css3(例如：box-shadow, border-radius等)，可以让我们实现很多以前不能实现的效果，或者实现起来比较复杂需要很多元素支持，现在我们可以通过少数几个元素就可以快速引入，然后引入相应的样式即可，这样就可以使整个页面变得更整洁。
+
+[太极八卦图（css + html）](https://codepen.io/lvzhenbang/pen/ZMZGBJ)
+
