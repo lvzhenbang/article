@@ -2,40 +2,35 @@
 
 git 的优势：
 
-1.创建的分支轻量
-
-2.创建的分支速度快，几乎瞬间完成
-
-3.便捷的在不同的分支之间切换
+1. 创建的分支轻量
+2. 创建的分支速度快，几乎瞬间完成
+3. 便捷的在不同的分支之间切换
 
 
 git鼓励在工作流程中频繁地使用分支和合并
 
 ### 查看分支
 
-git branch
-
-git branch -v 查看每一个分支的最后一次提交
-
-git branch --merged/--no-merged  查看已经合并和尚未合并到当前分支的分支
+* git branch
+* git branch -v 查看每一个分支的最后一次提交
+* git branch --merged/--no-merged  查看已经合并和尚未合并到当前分支的分支
 
 ### 查看远程分支
 
-查看远程分支的详细信息 git remote show [url] [分支名]
+* git branch -r // 远程分支列表
+* git remote show [url] [分支名] // 查看某远程分支的详细信息
 
-git branch -r
 
 ### 创建本地分支
 
-git branch [分支名字]
+* git branch [分支名字]
 
 注：git中的HEAD指针可以让我们知道当前所在的本地分支
 
 ### 切换分支
 
-git checkout [分支名字]
-
-git checkout -b [分支名字] 创建并切换到创建分支
+* git checkout [分支名字]
+* git checkout -b [分支名字] 创建并切换到创建分支
 
 ### 创建远程分支
 
