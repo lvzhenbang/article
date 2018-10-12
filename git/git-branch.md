@@ -84,9 +84,8 @@ git branch -d [分支名字]
 
 ### 删除远程分支
 
-git push [url] -d [branch-name]
-
-git push origin :heads/[远程分支名字]
+* git push [url] -d [branch-name]
+* git push origin :heads/[远程分支名字]
 
 ### 合并冲突
 
