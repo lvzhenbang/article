@@ -4,19 +4,19 @@
 
 ### git
 
-[git repository](https://github.com/lvzhenbang/article/blob/master/git/git-repository.md)
+<details>
 
-[git常用命令](https://github.com/lvzhenbang/article/blob/master/git/git-command.md)
+<summary> 目录 </summary>
 
-[git分支操作](https://github.com/lvzhenbang/article/blob/master/git/git-branch.md)
+* [git repository](https://github.com/lvzhenbang/article/blob/master/git/git-repository.md)
+* [git常用命令](https://github.com/lvzhenbang/article/blob/master/git/git-command.md)
+* [git分支操作](https://github.com/lvzhenbang/article/blob/master/git/git-branch.md)
+* [git分支管理策略](https://github.com/lvzhenbang/article/blob/master/git/git-branch-manage.md)
+* [git提交记录操作](https://github.com/lvzhenbang/article/blob/master/git/git-commit-manage.md)
+* [git合并分支（merge vs rebase）](https://github.com/lvzhenbang/article/blob/master/git/git-merge.md)
+* [git 技巧使用](https://github.com/lvzhenbang/article/blob/master/git/git-skills.md)
 
-[git分支管理策略](https://github.com/lvzhenbang/article/blob/master/git/git-branch-manage.md)
-
-[git提交记录操作](https://github.com/lvzhenbang/article/blob/master/git/git-commit-manage.md)
-
-[git合并分支（merge vs rebase）](https://github.com/lvzhenbang/article/blob/master/git/git-merge.md)
-
-[git 技巧使用](https://github.com/lvzhenbang/article/blob/master/git/git-skills.md)
+</details>
 
 ### vue
 
@@ -34,66 +34,47 @@
 
 ### html layout
 
-[dom的发展由来](https://github.com/lvzhenbang/article/blob/master/dom.md)
+<details>
 
-[如何实现元素的多列布局](https://github.com/lvzhenbang/article/blob/master/layout/n-clown.md)
+<summary> 目录 </summary>
 
-[position定位布局理解,元素的定位关系如absolute-fixed-absolute](https://github.com/lvzhenbang/article/blob/master/layout/position.html)
+* [dom的发展由来](https://github.com/lvzhenbang/article/blob/master/dom.md)
+* [如何实现元素的多列布局](https://github.com/lvzhenbang/article/blob/master/layout/n-clown.md)
+* [position定位布局理解,元素的定位关系如absolute-fixed-absolute](https://github.com/lvzhenbang/article/blob/master/layout/position.html)
+* [仿excel布局的表格](https://github.com/lvzhenbang/article/blob/master/layout/table.md)
+* [移动端页面设计问题导致字体覆盖图标的解决方案](https://github.com/lvzhenbang/article/blob/master/layout/text-icon.md)
+* [由字体引起的布局问题及解决方案](https://github.com/lvzhenbang/article/blob/master/layout/text-layout.md)
+* [常用的页面布局方案](https://github.com/lvzhenbang/article/blob/master/layout/html-layout.md)
+* [dialog新方案](https://github.com/lvzhenbang/article/blob/master/layout/dialog.md)
 
-[仿excel布局的表格](https://github.com/lvzhenbang/article/blob/master/layout/table.md)
-
-[移动端页面设计问题导致字体覆盖图标的解决方案](https://github.com/lvzhenbang/article/blob/master/layout/text-icon.md)
-
-[由字体引起的布局问题及解决方案](https://github.com/lvzhenbang/article/blob/master/layout/text-layout.md)
-
-[常用的页面布局方案](https://github.com/lvzhenbang/article/blob/master/layout/html-layout.md)
+</details>
 
 ### JavaScript
 
 <details>
 <summary>目录</summary>
 
-[js中的数组，数字，字符串反转](https://github.com/lvzhenbang/article/blob/master/js/js-reverse.md)
-
-[两个数组之间的几种常见操作](https://github.com/lvzhenbang/article/blob/master/js/twoArry.md)
-
-[给一个元素同时绑上click和dbclick事件所存在的问题详解](https://github.com/lvzhenbang/article/blob/master/js/single_double_click.md)
-
-[傻傻的分也分不清楚的property和attribute](https://github.com/lvzhenbang/article/blob/master/js/porp-attr.md)
-
-[老生常谈之闭包](https://github.com/lvzhenbang/article/blob/master/js/closure.md)
-
-[我们面试中在被问到闭包这个问题是要注意的几点](https://github.com/lvzhenbang/article/blob/master/js/closure-translate.md)
-
-[HTML5中的 `data-*` 如何处理数据详解](https://github.com/lvzhenbang/article/blob/master/js/data-attribute.md)
-
-[this,call和apply(这三个东西，如何牢牢记住)](https://github.com/lvzhenbang/article/blob/master/js/this-call-apply.md)
-
-[javascript 对象知识点梳理](https://github.com/lvzhenbang/article/blob/master/js/js-object.md)
-
-[javascript 创建对象的高级用法](https://github.com/lvzhenbang/article/blob/master/js/js-object-1.md)
-
-[javascript 开发中对象使用注意事项](https://github.com/lvzhenbang/article/blob/master/js/js-object2.md)
-
-[JavaScript 对象属性高级用法详解](https://github.com/lvzhenbang/article/blob/master/js/js-object3.md)
-
-[javascript 数组知识点梳理](https://github.com/lvzhenbang/article/blob/master/js/js-array.md)
-
-[JS 数组知识点梳理(二）](https://github.com/lvzhenbang/article/blob/master/js/js-array2.md)
-
-[JS 数组知识点梳理(三）](https://github.com/lvzhenbang/article/blob/master/js/js-array3.md)
-
-[javascript 函数知识点梳理](https://github.com/lvzhenbang/article/blob/master/js/js-function.md)
-
-[JS开发中函数知识点梳理(二）](https://github.com/lvzhenbang/article/blob/master/js/js-function-2.md)
-
-[JS开发中函数知识点梳理(三）](https://github.com/lvzhenbang/article/blob/master/js/js-function-3.md)
-
-[漫谈javascript函数式编程](https://github.com/lvzhenbang/article/blob/master/js/functional-programing.md)
-
-[漫谈promise使用场景](https://github.com/lvzhenbang/article/blob/master/js/promise.md)
-
-[JavaScript继承几种方式理解](https://github.com/lvzhenbang/article/blob/master/js/js-inherit.md)
+* [js中的数组，数字，字符串反转](https://github.com/lvzhenbang/article/blob/master/js/js-reverse.md)
+* [两个数组之间的几种常见操作](https://github.com/lvzhenbang/article/blob/master/js/twoArry.md)
+* [给一个元素同时绑上click和dbclick事件所存在的问题详解](https://github.com/lvzhenbang/article/blob/master/js/single_double_click.md)
+* [傻傻的分也分不清楚的property和attribute](https://github.com/lvzhenbang/article/blob/master/js/porp-attr.md)
+* [老生常谈之闭包](https://github.com/lvzhenbang/article/blob/master/js/closure.md)
+* [我们面试中在被问到闭包这个问题是要注意的几点](https://github.com/lvzhenbang/article/blob/master/js/closure-translate.md)
+* [HTML5中的 `data-*` 如何处理数据详解](https://github.com/lvzhenbang/article/blob/master/js/data-attribute.md)
+* [this,call和apply(这三个东西，如何牢牢记住)](https://github.com/lvzhenbang/article/blob/master/js/this-call-apply.md)
+* [javascript 对象知识点梳理](https://github.com/lvzhenbang/article/blob/master/js/js-object.md)
+* [javascript 创建对象的高级用法](https://github.com/lvzhenbang/article/blob/master/js/js-object-1.md)
+* [javascript 开发中对象使用注意事项](https://github.com/lvzhenbang/article/blob/master/js/js-object2.md)
+* [JavaScript 对象属性高级用法详解](https://github.com/lvzhenbang/article/blob/master/js/js-object3.md)
+* [javascript 数组知识点梳理](https://github.com/lvzhenbang/article/blob/master/js/js-array.md)
+* [JS 数组知识点梳理(二）](https://github.com/lvzhenbang/article/blob/master/js/js-array2.md)
+* [JS 数组知识点梳理(三）](https://github.com/lvzhenbang/article/blob/master/js/js-array3.md)
+* [javascript 函数知识点梳理](https://github.com/lvzhenbang/article/blob/master/js/js-function.md)
+* [JS开发中函数知识点梳理(二）](https://github.com/lvzhenbang/article/blob/master/js/js-function-2.md)
+* [JS开发中函数知识点梳理(三）](https://github.com/lvzhenbang/article/blob/master/js/js-function-3.md)
+* [漫谈javascript函数式编程](https://github.com/lvzhenbang/article/blob/master/js/functional-programing.md)
+* [漫谈promise使用场景](https://github.com/lvzhenbang/article/blob/master/js/promise.md)
+* [JavaScript继承几种方式理解](https://github.com/lvzhenbang/article/blob/master/js/js-inherit.md)
 
 
 </details>
@@ -107,6 +88,7 @@
 [30-seconds-code 项目翻译总结](https://github.com/lvzhenbang/article/blob/master/translate/30-seconds-code/index.md)
 
 [eval()不是魔鬼，只是被误解了](https://github.com/lvzhenbang/article/blob/master/translate/eval.md)
+
 ### 其他
 
 [面试题整理](https://github.com/lvzhenbang/article/blob/master/interview/index.md)
