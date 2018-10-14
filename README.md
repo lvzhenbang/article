@@ -26,12 +26,6 @@
 
 [深入理解vue之组件](https://github.com/lvzhenbang/article/blob/master/vue/doc/render.md)
 
-### css 动画
-
-[menu导航动画](https://github.com/lvzhenbang/article/blob/master/cssAnimate/position-float.html)
-
-[鼠标滑过nav动画](https://github.com/lvzhenbang/article/blob/master/cssAnimate/transition-nav.html)
-
 ### html layout
 
 <details>
