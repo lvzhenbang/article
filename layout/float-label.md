@@ -124,3 +124,7 @@ label浮动效果样式
 
 这种label浮动的效果和[JVFloatLabeledTextField](https://github.com/jverdi/JVFloatLabeledTextField)的效果不同，前者是获取到焦点，label立马开始浮动，而后者是当用户输入内容时（也就是placeholder消失时），label开始浮动。要使两者的效果相同，我们可以使用伪类可以嵌套的特性，修改 `.input-group>input:focus ~ label` 为 `.input-group>input:focus:not(:placeholder-shown) ~ label` ，这里的 `:placeholder-shown` 可以定义 `placeholder` 的显隐效果，但它的兼容性不太好，ie/edge 压根不支持，chrome和safari，以及Firefox还可以，具体可参考[can i use](https://caniuse.com/#search=placeholder)。更多伪类和伪元素知识点总结，可参考[pseudo](https://github.com/lvzhenbang/pseudo)
 
+### 案例展示
+
+[demo](https://codepen.io/lvzhenbang/pen/yRowVE)
+
