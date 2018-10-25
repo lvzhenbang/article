@@ -20,11 +20,9 @@
 
 ### vue
 
-[vue-slot 模板应用](https://github.com/lvzhenbang/article/blob/master/vue/vue-slot.html)
-
-[由路径参数引起的路由问题](https://github.com/lvzhenbang/article/blob/master/vue/route/path-param.md)
-
-[深入理解vue之组件](https://github.com/lvzhenbang/article/blob/master/vue/doc/render.md)
+* [vue-slot 模板应用](https://github.com/lvzhenbang/article/blob/master/vue/vue-slot.html)
+* [由路径参数引起的路由问题](https://github.com/lvzhenbang/article/blob/master/vue/route/path-param.md)
+* [深入理解vue之组件](https://github.com/lvzhenbang/article/blob/master/vue/doc/render.md)
 
 ### html layout
 
@@ -76,47 +74,35 @@
 
 ### 正则
 
-[如何学正则（告别复制粘贴）](https://github.com/lvzhenbang/article/blob/master/regular/introduce.md)
+* [如何学正则（告别复制粘贴）](https://github.com/lvzhenbang/article/blob/master/regular/introduce.md)
 
 ### 翻译
 
-[30-seconds-code 项目翻译总结](https://github.com/lvzhenbang/article/blob/master/translate/30-seconds-code/index.md)
-
-[eval()不是魔鬼，只是被误解了](https://github.com/lvzhenbang/article/blob/master/translate/eval.md)
+* [30-seconds-code 项目翻译总结](https://github.com/lvzhenbang/article/blob/master/translate/30-seconds-code/index.md)
+* [eval()不是魔鬼，只是被误解了](https://github.com/lvzhenbang/article/blob/master/translate/eval.md)
 
 ### 想法
 
-[你为什么用/不用框架？](https://github.com/lvzhenbang/article/blob/master/idea/why_do_you_use_framework.md)
-[八个审查代码的技巧](https://github.com/lvzhenbang/article/blob/master/idea/code_review.md)
+* [你为什么用/不用框架？](https://github.com/lvzhenbang/article/blob/master/idea/why_do_you_use_framework.md)
+* [八个审查代码的技巧](https://github.com/lvzhenbang/article/blob/master/idea/code_review.md)
 
 ### 设计模式
 
 <details>
 <summary>目录</summary>
 
-[高屋建瓴——设计模式](https://github.com/lvzhenbang/article/blob/master/design-pattern/index.md)
-
-[面向对象的JavaScript](https://github.com/lvzhenbang/article/blob/master/design-pattern/oop-js.md)
-	
-[构造器 设计模式](https://github.com/lvzhenbang/article/blob/master/design-pattern/constructor.md)
-
-[外观 设计模式](https://github.com/lvzhenbang/article/blob/master/design-pattern/facade.md)
-
-[工厂 设计模式](https://github.com/lvzhenbang/article/blob/master/design-pattern/factory.md)
-
-[观察者 设计模式](https://github.com/lvzhenbang/article/blob/master/design-pattern/observer.md)
-
-[javascript 单例设计模式](https://github.com/lvzhenbang/article/blob/master/design-pattern/js-singleton.md)
-
-[javascript 策略设计模式](https://github.com/lvzhenbang/article/blob/master/design-pattern/strategy.md)
-
-[javascript 代理设计模式](https://github.com/lvzhenbang/article/blob/master/design-pattern/proxy-pattern.md)
-
-[javascript 迭代器设计模式](https://github.com/lvzhenbang/article/blob/master/design-pattern/iterator.md)
-
-[javascript 观察者模式](https://github.com/lvzhenbang/article/blob/master/design-pattern/js-observer.md)
-
-[javascript 享元设计模式](https://github.com/lvzhenbang/article/blob/master/design-pattern/flyweight.md)
+* [高屋建瓴——设计模式](https://github.com/lvzhenbang/article/blob/master/design-pattern/index.md)
+* [面向对象的JavaScript](https://github.com/lvzhenbang/article/blob/master/design-pattern/oop-js.md)
+* [构造器 设计模式](https://github.com/lvzhenbang/article/blob/master/design-pattern/constructor.md)
+* [外观 设计模式](https://github.com/lvzhenbang/article/blob/master/design-pattern/facade.md)
+* [工厂 设计模式](https://github.com/lvzhenbang/article/blob/master/design-pattern/factory.md)
+* [观察者 设计模式](https://github.com/lvzhenbang/article/blob/master/design-pattern/observer.md)
+* [javascript 单例设计模式](https://github.com/lvzhenbang/article/blob/master/design-pattern/js-singleton.md)
+* [javascript 策略设计模式](https://github.com/lvzhenbang/article/blob/master/design-pattern/strategy.md)
+* [javascript 代理设计模式](https://github.com/lvzhenbang/article/blob/master/design-pattern/proxy-pattern.md)
+* [javascript 迭代器设计模式](https://github.com/lvzhenbang/article/blob/master/design-pattern/iterator.md)
+* [javascript 观察者模式](https://github.com/lvzhenbang/article/blob/master/design-pattern/js-observer.md)
+* [javascript 享元设计模式](https://github.com/lvzhenbang/article/blob/master/design-pattern/flyweight.md)
 
 </details>
 
