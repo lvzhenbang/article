@@ -86,6 +86,8 @@
 
 ### 想法
 
+[你为什么用/不用框架？](https://github.com/lvzhenbang/article/blob/master/idea/why_do_you_use_framework.md)
+[八个审查代码的技巧](https://github.com/lvzhenbang/article/blob/master/idea/code_review.md)
 
 ### 设计模式
 
