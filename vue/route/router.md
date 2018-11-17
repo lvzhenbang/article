@@ -83,6 +83,8 @@ const app = new Vue({
 
 vue-router的好处就是可以对导航（navigation）做细粒度的控制，如：导航触发前的控制，视图更新前的控制等；也可以对视图（view）做一些视图控制，如：视图的数据的获取，视图的lazyload，transition等。
 
+入门示例可参考[router 入门](https://router.vuejs.org/zh/guide/#html)
+
 vue-router其实也没有多少东西，其中一个就是配置`routes`选项，就成功了一半，其实就是学好 `RouteConfig` ：
 
 ```
