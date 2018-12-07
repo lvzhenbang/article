@@ -1,28 +1,28 @@
 # 判断DOM元素是否出现再浏览器窗口中
 
-几乎所有的项目都要解决这样一个问题：判断一个元素是否出现再浏览器窗口中？因为通过它我们可以极大的优化项目的性能，进而提升用户的的体验。
+几乎所有的项目都要解决这样一个问题：判断一个元素是否出现在浏览器窗口中？因为通过它我们可以极大的优化项目的性能，进而提升用户的的体验。
 
 ## 使用场景及技术分析
 
-所涉及的业务实现，比较常见的就是电商形式的网站或者是图片展示类的网站。电商网站，如：[淘宝](https://www.taobao.com/)、[京东](https://www.jd.com/)等；图片展示类，如：[花瓣](http://huaban.com/)，[pinterest](https://www.pinterest.com/)。
+所涉及的业务实现，比较常见的就是电商平台或者是图片展示类的网站。电商网站，如：[淘宝](https://www.taobao.com/)、[京东](https://www.jd.com/)等；图片展示类，如：[花瓣](http://huaban.com/)，[pinterest](https://www.pinterest.com/)。
 
-涉及的技术，如：lazyload技术动态的加载图片（元素），无限加载技术，包括现现在各个网站都在实现的骨架屏技术。
+涉及的技术，如：[lazyload](https://baike.baidu.com/item/lazyload/7877218?fr=aladdin)技术动态的加载图片（元素），无限加载技术，包括基于骨架屏技术加载静态资源。
 
-* lazyload：它通常判断一个元素是否出现在浏览器窗口中，如果出现则将img元素标签内的src属性中的图片地址替换成自定data-src属性的地址，但这里不一定是data-src属性，也可能是srcset，在[pinterest](https://www.pinterest.com/)中，就是这样做的，当然你也可以定义成任何你喜欢的，这只是其中的一种；另一种是判断元素是否出现在浏览器窗口中之后，加载一个HTML代码块，[小米商城官网](https://www.mi.com)就是这样实现的。
+* 懒加载（lazyload）：它目的是按需加载，而很大一部分项目的前端实现是通过判断一个元素是否出现在浏览器窗口中，如果出现则将img元素标签内的src属性中的图片地址替换成自定`data-src`属性的地址，但这里不一定是`data-src`属性，也可能是`srcset`，[pinterest](https://www.pinterest.com/)中就是这样做的，当然你也可以定义成任何你喜欢的，这只是其中的一种方式；另一种是判断元素是否出现在浏览器窗口中之后，然后加载一个HTML代码块，[小米商城官网](https://www.mi.com)就是这样实现的，当然也有其他一些也是这样做的，这里就不一一做介绍了。
 
-* 无限加载：它是通过底部的 `加载更多` 这个代码块是否出现在浏览器窗口中，如果在，就向容器代码块中追加一定数量的相关代码块，这时 `加载更多` 这个代码块就会被挤压出到浏览器窗口之外。当然有些无限加载技术也使用lazyload。
+* 无限加载（infinte scroll）：它是通过底部的 `加载更多` 这个代码块是否出现在浏览器窗口中，如果在，就向容器代码块中追加一定数量的相关代码块，这时 `加载更多` 这个代码块就会被挤压出到浏览器窗口之外。当然有些无限加载技术也使用lazyload。
 
-* 骨架屏技术：这个技术在前一波广受关注，它的原理就是在请求一个页面时，先不显示页面的内容，先显示页面的布局，像文字、图片、视频等静态资源都不显示，而显示的是与页面布局相关的css样式。其实通俗一点来说，就是网页做一个CT，这样是不是理解起来更方便？像淘宝的pc官网，youtube都是这样实现的。
+* 骨架屏技术（skelton screen）：这个技术在前一波广受关注，它的原理就是在请求一个页面时，先不显示页面的内容，先显示页面的布局，像文字、图片、视频等静态资源都不显示，而显示的是与页面布局相关的css样式。其实通俗一点来说，就是网页做一个CT，这样是不是理解起来更方便？像淘宝的pc官网，youtube都是这样实现的。
 
-这些业务和技术的都是为了为了解决低网速情况下，页面内容没有加载，而出现的低用户体验。
+这些业务和技术的目的都是为了为了解决低网速情况下使用web应用，如果页面内内容没有加载，那么就会造成低用户体验。
 
-这些业务和使用的技术基本上都用了`判断页面的元素是否出现在浏览器窗口中`。
+这些业务和使用的技术基本上都用了 `判断页面的元素是否出现在浏览器窗口中`。
 
 ## 如何判断一个元素是否出现在窗口中呢？
 
 > 现在通用的是基于浏览器的窗口的判断
 
-那么何为基于浏览器窗口的判断呢？这要通过DOM的API `.getBoundingClientRect()` ，这个获取目标元素距离浏览器窗口的位置坐标(top, left) 或者（x, y），所以说是基于浏览器窗口的。我们可以拖动浏览器的滚动条来使目标元素从浏览器的顶端进入浏览器窗口（这可以判断上边界），也可以从浏览器的底部进入浏览器窗口（这可以判断下边界），而这正好是判断目标元素进入浏览器窗口的边界。
+那么何为基于浏览器窗口的判断呢？这要通过DOM的API `.getBoundingClientRect()` ，获取目标元素距离浏览器窗口的位置坐标(top, left) 或者（x, y）坐标，所以说是基于浏览器窗口的。我们可以拖动浏览器的滚动条来使目标元素从浏览器的顶端进入浏览器窗口（这可以判断上边界），也可以从浏览器的底部进入浏览器窗口（这可以判断下边界），而这正好是判断目标元素进入浏览器窗口的边界。
 
 上边界：
 
@@ -70,7 +70,7 @@ if (clientRect.top >= 0 && clientRect.bottom > window.innerHeight) {}
 if (window.pageYoffset > el.offsetTop - window.innerHeight && window.pageYoffset < el.offsetTop - el.offsetHeight) {}
 ```
 
-当然，上面的时目标元素部分或整体出现在浏览器窗口的判断条件，如果是整个目标元素，方法同上，可参考下面的代码：
+当然，上面的是目标元素部分或整体出现在浏览器窗口的判断条件，如果是整个目标元素，方法同上，可参考下面的代码：
 
 ```
 if (window.pageYoffset > el.offsetTop - window.innerHeight - el.offsetHeight && window.pageYoffset < el.offsetTop) {}
@@ -86,3 +86,4 @@ if (window.pageYoffset > el.offsetTop - window.innerHeight - el.offsetHeight && 
 * [jquery lazyload 插件](https://github.com/tuupola/jquery_lazyload#basic-usage)
 * [infinite-scroll 插件](https://github.com/metafizzy/infinite-scroll)
 * [scroll-magic 插件](https://github.com/janpaepke/ScrollMagic)
+* [Building Skeleton Screens with CSS Custom Properties](https://css-tricks.com/building-skeleton-screens-css-custom-properties/)
