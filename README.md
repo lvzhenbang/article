@@ -14,15 +14,23 @@
 * [git分支管理策略](https://github.com/lvzhenbang/article/blob/master/git/git-branch-manage.md)
 * [git提交记录操作](https://github.com/lvzhenbang/article/blob/master/git/git-commit-manage.md)
 * [git合并分支（merge vs rebase）](https://github.com/lvzhenbang/article/blob/master/git/git-merge.md)
+* [git 打标签](https://github.com/lvzhenbang/article/blob/master/git/git-tag.md)
+* [git 从本地仓库到服务器](https://github.com/lvzhenbang/article/blob/master/git/git-local-server.md)
 * [git 技巧使用](https://github.com/lvzhenbang/article/blob/master/git/git-skills.md)
 
 </details>
 
 ### vue
 
+<details>
+
+<summary> 目录 </summary>
+
 * [vue-slot 模板应用](https://github.com/lvzhenbang/article/blob/master/vue/vue-slot.html)
 * [由路径参数引起的路由问题](https://github.com/lvzhenbang/article/blob/master/vue/route/path-param.md)
 * [深入理解vue之组件](https://github.com/lvzhenbang/article/blob/master/vue/doc/render.md)
+
+</details>
 
 ### html layout
 
