@@ -8,13 +8,12 @@
 
 <summary> 目录 </summary>
 
-* [git repository](https://github.com/lvzhenbang/article/blob/master/git/git-repository.md)
-* [git常用命令](https://github.com/lvzhenbang/article/blob/master/git/git-command.md)
-* [git分支操作](https://github.com/lvzhenbang/article/blob/master/git/git-branch.md)
-* [git分支管理策略](https://github.com/lvzhenbang/article/blob/master/git/git-branch-manage.md)
-* [git提交记录操作](https://github.com/lvzhenbang/article/blob/master/git/git-commit-manage.md)
-* [git合并分支（merge vs rebase）](https://github.com/lvzhenbang/article/blob/master/git/git-merge.md)
+* [git 常用命令](https://github.com/lvzhenbang/article/blob/master/git/git-command.md)
+* [git 分支操作](https://github.com/lvzhenbang/article/blob/master/git/git-branch.md)
+* [git 提交记录操作](https://github.com/lvzhenbang/article/blob/master/git/git-commit.md)
+* [git merge vs rebase）](https://github.com/lvzhenbang/article/blob/master/git/git-merge.md)
 * [git 打标签](https://github.com/lvzhenbang/article/blob/master/git/git-tag.md)
+* [git repository](https://github.com/lvzhenbang/article/blob/master/git/git-repository.md)
 * [git 从本地仓库到服务器](https://github.com/lvzhenbang/article/blob/master/git/git-local-server.md)
 * [git 技巧使用](https://github.com/lvzhenbang/article/blob/master/git/git-skills.md)
 
