@@ -1,16 +1,6 @@
-## javascript 数据类型判断 (常见库的类型判断的分析)
+# JavaScript 自己提供的乐行判断
 
-JavaScript一共有六种数据类型，分为原始类型（又名基本类型）和对象类型（又名引用类型）
-
-原始类型有五种，分别为number，string，boolean，undefined，null五种。
-
-对象类型常见的有Function，Array，Date，正则
-
-ES6新增Symbol
-
-### JavaScript 自己提供的乐行判断
-
-#### type
+## typeof
 
 如果不对对象做严格区分使用type。
 
@@ -53,7 +43,7 @@ var type = function(obj) {
 }
 ```
 
-### instanceof
+## instanceof
 
 instanceof 是用来明确对象为某种特定类型的方法。
 
@@ -156,7 +146,7 @@ objectType = function(obj) {
 
 下面介绍一个万能的方法。
 
-### Object.prototype.toString.call(obj)
+## Object.prototype.toString.call(obj)
 
 ```
 Object.prototype.toString.call('hello world'); // "[object String]"
@@ -191,7 +181,7 @@ var getObjectType = function(obj) () {
 
 这个方法可以判断所有的数据类型，也是官方推荐的，但是在实际的开发中，我们使用 `typeof` 来判断基本类型，用 `Objet.prototype.toString.call(obj)` 判断引用类型。
 
-### 常见框架和库的实数据类型判断
+## 常见框架和库的实数据类型判断
 
 jQuery：
 

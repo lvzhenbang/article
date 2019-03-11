@@ -42,8 +42,10 @@ git push origin v0.2
 
 ## 删除远程仓库的版本号
 
+要删除远程的某个版本号，需要删除本地这个版本号，然后再执行下面这个命令。
+
 ```
-git push origin :refs/v0.1
+git push origin :refs/tags/v0.1
 ```
 
 ## 如何让分支信息和版本号联系起来

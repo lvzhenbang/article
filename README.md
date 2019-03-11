@@ -54,6 +54,7 @@
 <details>
 <summary>目录</summary>
 
+* [js type](https://github.com/lvzhenbang/article/blob/master/js/type/index.md)
 * [js中的数组，数字，字符串反转](https://github.com/lvzhenbang/article/blob/master/js/js-reverse.md)
 * [两个数组之间的几种常见操作](https://github.com/lvzhenbang/article/blob/master/js/twoArry.md)
 * [给一个元素同时绑上click和dbclick事件所存在的问题详解](https://github.com/lvzhenbang/article/blob/master/js/single_double_click.md)
@@ -75,7 +76,6 @@
 * [漫谈javascript函数式编程](https://github.com/lvzhenbang/article/blob/master/js/functional-programing.md)
 * [漫谈promise使用场景](https://github.com/lvzhenbang/article/blob/master/js/promise.md)
 * [JavaScript继承几种方式理解](https://github.com/lvzhenbang/article/blob/master/js/js-inherit.md)
-
 
 </details>
 
