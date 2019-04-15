@@ -2,6 +2,10 @@
 
 注：下面所列举的第三方库，都是github上提供的开源项目，也是我个人常用个比较喜欢的项目。
 
+## 查看兼容性
+
+[can i use](https://github.com/Fyrd/caniuse)
+
 ## 轮播图（slider/carousel)
 
 * [swiper](https://github.com/nolimits4web/swiper) 原生的js
