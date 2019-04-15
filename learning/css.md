@@ -17,10 +17,10 @@
 ## css3 animate
 
 * [aniamte.css](https://github.com/daneden/animate.css)
+* [loader.css](https://github.com/ConnorAtherton/loaders.css)
 * [epic-spinners](https://github.com/epicmaxco/epic-spinners)
 * [hamburgers](https://github.com/jonsuh/hamburgers)
 * [SpinKit](https://github.com/tobiasahlin/SpinKit)
-
 
 ## 参考资料
 
