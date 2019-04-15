@@ -8,6 +8,13 @@
 * [slick](https://github.com/kenwheeler/slick) 依赖于jquery
 * [PhotoSwipe](https://github.com/dimsemenov/PhotoSwipe)
 
+## modal
+
+* [bootstrap modal](https://github.com/jschr/bootstrap-modal)
+* [magnific popup](https://github.com/dimsemenov/Magnific-Popup)
+* [lightbox](https://github.com/ashleydw/lightbox)
+* [lightbox2](https://github.com/lokesh/lightbox2)
+
 ## 播放器（video/audio）
 
 * [Plyr](https://github.com/sampotts/plyr) 轻量级的HTML5播放器
