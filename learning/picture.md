@@ -11,3 +11,19 @@
 * lazyload
 * 或者占位符+lazyload，或者背景颜色+lazyload（后者骨架屏技术）
 
+## 图片处理
+
+### 雪碧图
+
+* [` postcss-sprites `](https://github.com/2createStudio/postcss-sprites) 基于[` postcss `](https://github.com/postcss/postcss)的使用
+* [` webpack-spritesmith `](https://github.com/mixtur/webpack-spritesmith) 是一个[` webpack `](https://github.com/webpack/webpack)插件
+
+### 图片压缩
+
+* [` imagemin `](https://github.com/imagemin/imagemin) 开源项目
+* [` imagemin-jpegtran `](https://github.com/imagemin/imagemin-jpegtran#readme) jpg/jpeg
+* [` imagemin-pngquant `](https://github.com/imagemin/imagemin-pngquant#readme) png
+* [` imagemin-optipng `](https://github.com/imagemin/imagemin-optipng#readme) png 优化处理，可单独使用
+* [` imagemin-svgo `](https://github.com/imagemin/imagemin-svgo#readme) svg
+* [` imagemin-gifsice `](https://www.npmjs.com/package/imagemin-gifsicle) gif
+* [` imagemin-webp `](https://github.com/imagemin/imagemin-webp#readme) webp
