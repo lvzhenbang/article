@@ -23,3 +23,25 @@
 
 * [Plyr](https://github.com/sampotts/plyr) 轻量级的HTML5播放器
 * [video.js](https://github.com/videojs/video.js) 兼容性强，支持HTML5
+
+## 编辑器
+
+### json
+
+[editor.js](https://github.com/codex-team/editor.js) 输出一个json文件
+
+### 富文本编辑器
+
+* [medium-editor](https://github.com/yabwe/medium-editor) 模仿`medium.com`在线编辑器
+* [quill](https://github.com/quilljs/quill)
+* [draft-js](https://github.com/facebook/draft-js)
+* [CodeMirror](https://github.com/codemirror/CodeMirror)
+* [monaco-edito](https://microsoft.github.io/monaco-editor/)
+* [ueditor](https://github.com/fex-team/ueditor) 百度富文本编辑器
+
+### markdowon editor
+
+* [markdown-it](https://github.com/markdown-it/markdown-it)
+* [stackedit](https://github.com/benweet/stackedit) 基于`markdown-it`的编辑器
+
+注：markdown[语法](https://markdown-here.com/)
