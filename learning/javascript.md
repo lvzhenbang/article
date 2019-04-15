@@ -36,10 +36,5 @@
 * [JavaScript 30 day](https://github.com/wesbos/JavaScript30)
 * [` You-Dont-Know-JS `](https://github.com/getify/You-Dont-Know-JS)
 * [` 30 seconds of code `](https://github.com/30-seconds/30-seconds-of-code)
-
-## 前端开发框架
-
-[vue](https://github.com/vuejs/vue)
-[react](https://github.com/facebook/react)
-[angular.js](https://github.com/angular/angular.js) or [angular](https://github.com/angular/angular)
+* [33-js-concepts](https://github.com/leonardomso/33-js-concepts)
 
