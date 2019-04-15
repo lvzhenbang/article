@@ -34,6 +34,7 @@
 
 * [medium-editor](https://github.com/yabwe/medium-editor) 模仿`medium.com`在线编辑器
 * [quill](https://github.com/quilljs/quill)
+* [trix](https://github.com/basecamp/trix)
 * [draft-js](https://github.com/facebook/draft-js)
 * [CodeMirror](https://github.com/codemirror/CodeMirror)
 * [monaco-edito](https://microsoft.github.io/monaco-editor/)
