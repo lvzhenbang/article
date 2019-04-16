@@ -18,7 +18,7 @@
 
 [eslint](https://github.com/eslint/eslint)
 
-### 配置规则
+### 预配置语法规则
 
 * [eslint-config-airbnb](https://github.com/airbnb/javascript)
 * [eslint-config-standard](https://github.com/standard/eslint-config-standard)
@@ -37,4 +37,5 @@
 * [` You-Dont-Know-JS `](https://github.com/getify/You-Dont-Know-JS)
 * [` 30 seconds of code `](https://github.com/30-seconds/30-seconds-of-code)
 * [33-js-concepts](https://github.com/leonardomso/33-js-concepts)
+* [` standard `](https://github.com/standard/standard) js 样式指导
 
