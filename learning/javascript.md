@@ -31,6 +31,11 @@
 
 [typescript](https://github.com/Microsoft/TypeScript)
 
+## 性能提升
+
+* [` fast-json-stringify `](https://github.com/fastify/fast-json-stringify) 的速度是`JSON.stringify()` 的两倍多。
+* [` virtual-dom `](https://github.com/Matt-Esch/virtual-dom)
+
 ## javascript 快速入门
 
 * [JavaScript 30 day](https://github.com/wesbos/JavaScript30)
