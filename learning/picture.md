@@ -27,3 +27,7 @@
 * [` imagemin-svgo `](https://github.com/imagemin/imagemin-svgo#readme) svg
 * [` imagemin-gifsice `](https://www.npmjs.com/package/imagemin-gifsicle) gif
 * [` imagemin-webp `](https://github.com/imagemin/imagemin-webp#readme) webp
+
+### 图片编辑器
+
+* [` tui.image-editor `](https://github.com/nhn/tui.image-editor.git)
