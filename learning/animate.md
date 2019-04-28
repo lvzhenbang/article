@@ -18,7 +18,7 @@
 
 动画引擎
 
+* [` three.js `](https://github.com/mrdoob/three.js) 
+* [` p2.js `](https://github.com/schteppe/p2.js.git)
 * [` spin.js `](https://github.com/EsotericSoftware/spine-runtimes)
 * [` cocos2d-html5 `](https://github.com/cocos2d/cocos2d-html5)
-* [` three.js `](https://github.com/mrdoob/three.js)
-
