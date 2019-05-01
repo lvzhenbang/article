@@ -5,6 +5,7 @@
 
 * [` video.js `](https://github.com/videojs/video.js)
 * [` flv.js `](https://github.com/bilibili/flv.js)
+* [` jwplayer `](https://github.com/jwplayer/jwplayer)
 * [` Dplayer `](https://github.com/MoePlayer/DPlayer)
 * [` mediaelement `](https://github.com/mediaelement/mediaelement)
 * [` hsl.js `](https://github.com/video-dev/hls.js)
