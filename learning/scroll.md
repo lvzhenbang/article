@@ -12,6 +12,7 @@
 * [` perfect-scrollbar `](https://github.com/utatti/perfect-scrollbar)
 * [` malihu-custom-scrollbar-plugin `](https://github.com/malihu/malihu-custom-scrollbar-plugin)
 * [` smooth-scrollbar `](https://github.com/idiotWu/smooth-scrollbar)
+* [` simplebar `](https://github.com/Grsmto/simplebar)
 
 * [` react-custom-scrollbars `](https://github.com/malte-wessel/react-custom-scrollbars)
 * [` jquery.scrollbar `](https://github.com/gromo/jquery.scrollbar)
