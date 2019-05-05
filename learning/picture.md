@@ -31,3 +31,9 @@
 ### 图片编辑器
 
 * [` tui.image-editor `](https://github.com/nhn/tui.image-editor.git)
+
+## html 到图片
+
+* [` html2canvas `](https://github.com/niklasvh/html2canvas)
+* [` dom-to-image `](https://github.com/tsayen/dom-to-image)
+* [` web-file `](https://github.com/lvzhenbang/web-file)
