@@ -8,6 +8,10 @@
 
 注：以上三个库的[` 浏览器支持 `](https://github.com/eligrey/FileSaver.js#supported-browsers)
 
+### 其它插件
+
+* [` jquery file download `](https://github.com/johnculviner/jquery.fileDownload/blob/master/index.js)
+
 ## 插件
 
 * [` uppy `](https://github.com/transloadit/uppy)
