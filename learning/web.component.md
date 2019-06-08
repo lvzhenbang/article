@@ -8,5 +8,9 @@
 
 ## 兼容
 
-[` webcomponentsjs) `](https://github.com/webcomponents/webcomponentsjs)
-[` lit-element `](https://github.com/Polymer/lit-element)
+* [` webcomponentsjs) `](https://github.com/webcomponents/webcomponentsjs)
+* [` lit-element `](https://github.com/Polymer/lit-element)
+
+## 其他
+
+* [` Web Components `](http://javascript.ruanyifeng.com/htmlapi/webcomponents.html)
