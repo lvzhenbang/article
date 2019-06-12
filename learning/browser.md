@@ -1,4 +1,4 @@
-# 检测浏览器类型
+# 检测设备/浏览器类型
 
 ```
 var userAgent = window.navigator && window.navigator.userAgent || '';
@@ -52,11 +52,26 @@ var appleWebkitVersion = webkitVersionMap ? parseFloat(webkitVersionMap.pop()) :
 var is_native_android = is_android && android_version < 5 && appleWebkitVersion < 537;
 ```
 
+## webview
+
+```
+var is_webview = (is_ios) && userAgent.match(/.*AppleWebKit(?!.*Safari)/i);
+```
+
+## desktop
+
+```
+var is_desktop = !(is_ios || is_android || is_webView)
+```
+
+注：只要不是ios/android/webview，就可判断其为desktop
+
 ## browser type
 
 ```
-var is_firefox = (/Firefox/i).test(userAgent);
+var is_Ie = (/Trident/i).test(userAgent) || (/MSIE/i).test(userAgent);
 var is_Edge = (/Edge/i).test(userAgent);
+var is_firefox = (/Firefox/i).test(userAgent);
 var is_Chrome = !is_edge && (/Chrome/i).test(userAgent) || (/CriOS/i).test(userAgent);
 var is_safari = (/Safari/i).test(userAgent)) && !is_Chrome && !is_android && !is_edge;
 var is_weixin = (/MicroMessenger/i).test(userAgent);
