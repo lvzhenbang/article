@@ -75,5 +75,5 @@ var is_firefox = (/Firefox/i).test(userAgent);
 var is_Chrome = !is_edge && (/Chrome/i).test(userAgent) || (/CriOS/i).test(userAgent);
 var is_safari = (/Safari/i).test(userAgent)) && !is_Chrome && !is_android && !is_edge;
 var is_weixin = (/MicroMessenger/i).test(userAgent);
-var weixin_version = userAgent.match(/MicroMessenger\/(\d+)(?:\.(\d+))(?:\.(\d+))(?:\.(\d+))*/i)[0].split('/')[0];
+var weixin_version = userAgent.match(/MicroMessenger\/(\d+)(?:\.(\d+))(?:\.(\d+))(?:\.(\d+))*/i)[1].split('/')[0];
 ```
