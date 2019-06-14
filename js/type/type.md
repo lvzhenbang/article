@@ -1,4 +1,4 @@
-## javascript 数据类型判断 (常见库的类型判断的分析)
+# javascript 数据类型判断 (常见库的类型判断的分析)
 
 JavaScript一共有六种数据类型，分为原始类型（又名基本类型）和对象类型（又名引用类型）
 
@@ -8,3 +8,4 @@ JavaScript一共有六种数据类型，分为原始类型（又名基本类型�
 
 ES6新增Symbol
 
+[` 判断类型 `](https://github.com/lvzhenbang/article/blob/master/learning/type.md)
