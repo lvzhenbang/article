@@ -1,4 +1,4 @@
-# JavaScript 自己提供的类型判断
+# JavaScript 类型判断分析
 
 ## typeof
 
