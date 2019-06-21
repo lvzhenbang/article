@@ -6,17 +6,6 @@
 var toString = Object.prototype.toString;
 ```
 
-## isArray
-
-判断给定的值是否为为` 数组 `类型。如果是返回true，否则返回false。
-
-```
-function isArray(val) {
-  return toString.call(val) === '[object Array]';
-}
-
-```
-
 ## isString
 
 判断给定的值是否为` 字符串 `类型。如果是范围true，否则返回false。
@@ -37,6 +26,16 @@ function isNumber(val) {
 }
 ```
 
+## isBoolean
+
+判断给定的值是否为` boolean `类型。如果是范围true，否则返回false。
+
+```
+function isBoolean(val) {
+  return typeof val === 'boolean';
+}
+```
+
 ## isUndefined
 
 判断给定的值是否为` undefined `类型。如果是范围true，否则返回false。
@@ -44,6 +43,27 @@ function isNumber(val) {
 ```
 function isUndefined(val) {
   return typeof val === 'undefined';
+}
+```
+
+## isNull
+
+判断给定的值是否为` null `类型。如果是范围true，否则返回false。
+
+```
+function isNull(val) {
+  return (typeof val === 'object') && (String(val) === 'null');
+}
+```
+
+
+## isSymbol
+
+判断给定的值是否为` symbol `类型。如果是范围true，否则返回false。
+
+```
+function isSymbol(val) {
+  return typeof val === 'symbol';
 }
 ```
 
@@ -55,6 +75,17 @@ function isUndefined(val) {
 function isObject(val) {
   return val !== null && typeof val === 'object';
 }
+```
+
+## isArray
+
+判断给定的值是否为为` 数组 `类型。如果是返回true，否则返回false。
+
+```
+function isArray(val) {
+  return toString.call(val) === '[object Array]';
+}
+
 ```
 
 ## isFunction

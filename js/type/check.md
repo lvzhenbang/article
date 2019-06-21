@@ -22,7 +22,7 @@ undefined：
 
 null:
 
-	typeof null; // "undefined" (特别)
+	typeof null; // "object" (特别)
 
 object:
 	
