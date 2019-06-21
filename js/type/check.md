@@ -1,4 +1,4 @@
-# JavaScript 自己提供的乐行判断
+# JavaScript 自己提供的类型判断
 
 ## typeof
 
