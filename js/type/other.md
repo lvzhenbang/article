@@ -35,3 +35,20 @@ function isEl(val) {
 ```
 
 注：`isObject(val)`，请参考[`js type`](https://github.com/lvzhenbang/article/blob/master/learning/js.type.md#isobject)
+
+
+## iframe
+
+### isInframe
+
+```
+function isInFrame() {
+  try {
+    return window.parent !== window.self;
+  } catch (x) {
+    return true;
+  }
+}
+```
+
+注：在Safari中，如果获取`parent` 或 `self`，将抛出异常，因此需要使用`try/catch`。
