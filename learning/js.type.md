@@ -8,7 +8,7 @@ var toString = Object.prototype.toString;
 
 ## isString
 
-判断给定的值是否为` 字符串 `类型。如果是范围true，否则返回false。
+判断给定的值是否为` 字符串 `类型。如果是返回true，否则返回false。
 
 ```
 function isString(val) {
@@ -18,7 +18,7 @@ function isString(val) {
 
 ## isNumber
 
-判断给定的值是否为` 数字 `类型。如果是范围true，否则返回false。
+判断给定的值是否为` 数字 `类型。如果是返回true，否则返回false。
 
 ```
 function isNumber(val) {
@@ -28,7 +28,7 @@ function isNumber(val) {
 
 ## isBoolean
 
-判断给定的值是否为` boolean `类型。如果是范围true，否则返回false。
+判断给定的值是否为` boolean `类型。如果是返回true，否则返回false。
 
 ```
 function isBoolean(val) {
@@ -38,7 +38,7 @@ function isBoolean(val) {
 
 ## isUndefined
 
-判断给定的值是否为` undefined `类型。如果是范围true，否则返回false。
+判断给定的值是否为` undefined `类型。如果是返回true，否则返回false。
 
 ```
 function isUndefined(val) {
@@ -48,7 +48,7 @@ function isUndefined(val) {
 
 ## isNull
 
-判断给定的值是否为` null `类型。如果是范围true，否则返回false。
+判断给定的值是否为` null `类型。如果是返回true，否则返回false。
 
 ```
 function isNull(val) {
@@ -59,7 +59,7 @@ function isNull(val) {
 
 ## isSymbol
 
-判断给定的值是否为` symbol `类型。如果是范围true，否则返回false。
+判断给定的值是否为` symbol `类型。如果是返回true，否则返回false。
 
 ```
 function isSymbol(val) {
@@ -69,7 +69,7 @@ function isSymbol(val) {
 
 ## isObject
 
-判断给定的值是否为` object `类型。如果是范围true，否则返回false。
+判断给定的值是否为` object `类型。如果是返回true，否则返回false。
 
 ```
 function isObject(val) {
@@ -90,7 +90,7 @@ function isArray(val) {
 
 ## isFunction
 
-判断给定的值是否为` funciton `类型。如果是范围true，否则返回false。
+判断给定的值是否为` funciton `类型。如果是返回true，否则返回false。
 
 ```
 function isFunction(val) {
@@ -100,7 +100,7 @@ function isFunction(val) {
 
 ## isDate
 
-判断给定的值是否为` date `类型。如果是范围true，否则返回false。
+判断给定的值是否为` date `类型。如果是返回true，否则返回false。
 
 ```
 function isDate(val) {
@@ -110,7 +110,7 @@ function isDate(val) {
 
 ## isFile
 
-判断给定的值是否为` file `类型。如果是范围true，否则返回false。
+判断给定的值是否为` file `类型。如果是返回true，否则返回false。
 
 ```
 function isFile(val) {
@@ -120,7 +120,7 @@ function isFile(val) {
 
 ## isBlob
 
-判断给定的值是否为` Blob `类型。如果是范围true，否则返回false。
+判断给定的值是否为` Blob `类型。如果是返回true，否则返回false。
 
 ```
 function isBlob(val) {
@@ -130,7 +130,7 @@ function isBlob(val) {
 
 ## isStream
 
-判断给定的值是否为` stream `类型。如果是范围true，否则返回false。
+判断给定的值是否为` stream `类型。如果是返回true，否则返回false。
 
 ```
 function isStream(val) {
@@ -140,7 +140,7 @@ function isStream(val) {
 
 ## isArrayBuffer
 
-判断给定的值是否为` ArrayBuffer `类型。如果是范围true，否则返回false。
+判断给定的值是否为` ArrayBuffer `类型。如果是返回true，否则返回false。
 
 ```
 function isArrayBuffer(val) {
@@ -150,7 +150,7 @@ function isArrayBuffer(val) {
 
 ## isArrayBufferView
 
-判断给定的值是否为` ArrayBufferView `类型。如果是范围true，否则返回false。
+判断给定的值是否为` ArrayBufferView `类型。如果是返回true，否则返回false。
 
 ```
 function isArrayBufferView(val) {
@@ -166,7 +166,7 @@ function isArrayBufferView(val) {
 
 ## isURLSearchParams
 
-判断给定的值是否为` URLSearchParams `类型。如果是范围true，否则返回false。
+判断给定的值是否为` URLSearchParams `类型。如果是返回true，否则返回false。
 
 ```
 function isURLSearchParams(val) {
@@ -176,7 +176,7 @@ function isURLSearchParams(val) {
 
 ## isFormData
 
-判断给定的值是否为` FormData `类型。如果是范围true，否则返回false。
+判断给定的值是否为` FormData `类型。如果是返回true，否则返回false。
 
 ```
 function isFormData(val) {
