@@ -1,6 +1,7 @@
 # javascript 数据类型
 
-* [常见数据类型](https://github.com/lvzhenbang/article/blob/master/learning/js.type.md)
-* [类型判断分析](https://github.com/lvzhenbang/article/blob/master/js/type/check.md)
-* [其他类型到字符串类型的转换](https://github.com/lvzhenbang/article/blob/master/js/type/toString.md)
-* [其他类型到数字类型的转换](https://github.com/lvzhenbang/article/blob/master/js/type/toNumber.md)
+* [` 常见数据类型 `](https://github.com/lvzhenbang/article/blob/master/learning/js.type.md)
+* [` 类型判断分析 `](https://github.com/lvzhenbang/article/blob/master/js/type/check.md)
+* [` 其他类型到字符串类型的转换 `](https://github.com/lvzhenbang/article/blob/master/js/type/toString.md)
+* [` 其他类型到数字类型的转换 `](https://github.com/lvzhenbang/article/blob/master/js/type/toNumber.md)
+* [` 其他判断 `](https://github.com/lvzhenbang/article/blob/master/js/type/other.md)
