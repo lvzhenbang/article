@@ -36,6 +36,18 @@ function isEl(val) {
 
 注：`isObject(val)`，请参考[`js type`](https://github.com/lvzhenbang/article/blob/master/learning/js.type.md#isobject)
 
+### isTextNode
+
+判断给定的值是否为` 文本节点 `。如果是返回true，否则返回false。
+
+```
+function isTextNode(val) {
+  return isObject(val) && val.nodeType === 3;
+}
+```
+
+注：`isObject(val)`，请参考[`js type`](https://github.com/lvzhenbang/article/blob/master/learning/js.type.md#isobject)
+
 
 ## iframe
 
