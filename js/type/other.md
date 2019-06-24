@@ -96,3 +96,20 @@ function isSingleLeftClick(event) {
 ```
 
 注：参考来源[` isSingleLeftClick `](https://github.com/videojs/video.js/blob/master/src/js/utils/dom.js#L761)
+
+
+## class
+
+### hasClass
+
+判断某元素` el ` 是否有类` clsName `。如果有返回true，否则返回false。
+
+```
+function hasClass(el, clsName) {
+  clsName = clsName.trim()
+  if (el.classList) {
+    return el.classList.contains(clsName);
+  }
+  return (new RegExp('(^|\\s)' + clsName + '($|\\s)')).test(el.className);
+}
+```
