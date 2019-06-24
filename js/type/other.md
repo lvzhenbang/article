@@ -113,3 +113,43 @@ function hasClass(el, clsName) {
   return (new RegExp('(^|\\s)' + clsName + '($|\\s)')).test(el.className);
 }
 ```
+
+## range
+
+### isBottom
+
+判断是否` 到达页面底部 `。如果是返回true，否则返回false。
+
+```
+funciton isBottom() {
+  return document.documentElement.clientHeight + window.scrollY >=
+  (document.documentElement.scrollHeight || document.documentElement.clientHeight);
+}
+```
+
+### isTop
+
+判断是否` 到达页面顶部 `。如果是返回true，否则返回false。
+
+```
+funciton isTop() {
+  return (window.scrollY || document.documentElement.scrollTop) <= 0;
+}
+```
+
+### elementIsVisibleInViewport
+
+判断元素` el `是否出现在` 浏览器窗口 `。如果是返回true，否则返回false。
+
+```
+const elementIsVisibleInViewport = (el, partiallyVisible = false) => {
+  const { top, left, bottom, right } = el.getBoundingClientRect();
+  const { innerHeight, innerWidth } = window;
+  return partiallyVisible
+    ? ((top > 0 && top < innerHeight) || (bottom > 0 && bottom < innerHeight)) &&
+        ((left > 0 && left < innerWidth) || (right > 0 && right < innerWidth))
+    : top >= 0 && left >= 0 && bottom <= innerHeight && right <= innerWidth;
+};
+```
+
+注：参考来源[` 30-second-code elementIsVisibleInViewport `](https://github.com/30-seconds/30-seconds-of-code#elementisvisibleinviewport-)
