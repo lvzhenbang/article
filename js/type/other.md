@@ -53,6 +53,8 @@ function isTextNode(val) {
 
 ### isInframe
 
+判断给定的值是否为` Inframe元素 `。如果是返回true，否则返回false。
+
 ```
 function isInFrame() {
   try {
@@ -64,3 +66,33 @@ function isInFrame() {
 ```
 
 注：在Safari中，如果获取`parent` 或 `self`，将抛出异常，因此需要使用`try/catch`。
+
+## mouse
+
+### isSingleLeftClick
+
+判断是否为`鼠标左键单击`。如果是返回true，否则返回false。
+
+```
+function isSingleLeftClick(event) {
+  if (event.button === undefined && event.buttons === undefined) {
+    return true;
+  }
+
+  if (event.button === 0 && event.buttons === undefined) {
+    return true;
+  }
+
+  if (event.button === 0 && event.buttons === 0) {
+    return true;
+  }
+
+  if (event.button !== 0 || event.buttons !== 1) {
+    return false;
+  }
+
+  return true;
+}
+```
+
+注：参考来源[` isSingleLeftClick `](https://github.com/videojs/video.js/blob/master/src/js/utils/dom.js#L761)
