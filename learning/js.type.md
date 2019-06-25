@@ -128,9 +128,26 @@ function isRegExp(val) {
 }
 ```
 
-## isFile
+## 其他
 
-判断给定的值是否为` file `类型。如果是返回true，否则返回false。
+### isPromise
+
+判断给定的值是否为` promise `。如果是返回true，否则返回false。
+
+```
+function isFile(val) {
+  return (
+    (typeof val === 'object' || typeof val === 'function') &&
+    typeof val.then === 'function' &&
+    typeof val.catch === 'function');
+}
+```
+
+注：参考[` is-promise `](https://github.com/then/is-promise/blob/master/index.js) 和 [` vue isPromise `](https://github.com/vuejs/vue/blob/dev/src/shared/util.js#L74)
+
+### isFile
+
+判断给定的值是否为` file `。如果是返回true，否则返回false。
 
 ```
 function isFile(val) {
@@ -138,9 +155,9 @@ function isFile(val) {
 }
 ```
 
-## isBlob
+### isBlob
 
-判断给定的值是否为` Blob `类型。如果是返回true，否则返回false。
+判断给定的值是否为` Blob `。如果是返回true，否则返回false。
 
 ```
 function isBlob(val) {
@@ -148,9 +165,9 @@ function isBlob(val) {
 }
 ```
 
-## isStream
+### isStream
 
-判断给定的值是否为` stream `类型。如果是返回true，否则返回false。
+判断给定的值是否为` stream `。如果是返回true，否则返回false。
 
 ```
 function isStream(val) {
@@ -158,9 +175,9 @@ function isStream(val) {
 }
 ```
 
-## isArrayBuffer
+### isArrayBuffer
 
-判断给定的值是否为` ArrayBuffer `类型。如果是返回true，否则返回false。
+判断给定的值是否为` ArrayBuffer `。如果是返回true，否则返回false。
 
 ```
 function isArrayBuffer(val) {
@@ -168,9 +185,9 @@ function isArrayBuffer(val) {
 }
 ```
 
-## isArrayBufferView
+### isArrayBufferView
 
-判断给定的值是否为` ArrayBufferView `类型。如果是返回true，否则返回false。
+判断给定的值是否为` ArrayBufferView `。如果是返回true，否则返回false。
 
 ```
 function isArrayBufferView(val) {
@@ -184,9 +201,9 @@ function isArrayBufferView(val) {
 }
 ```
 
-## isURLSearchParams
+### isURLSearchParams
 
-判断给定的值是否为` URLSearchParams `类型。如果是返回true，否则返回false。
+判断给定的值是否为` URLSearchParams `。如果是返回true，否则返回false。
 
 ```
 function isURLSearchParams(val) {
@@ -194,9 +211,9 @@ function isURLSearchParams(val) {
 }
 ```
 
-## isFormData
+### isFormData
 
-判断给定的值是否为` FormData `类型。如果是返回true，否则返回false。
+判断给定的值是否为` FormData `。如果是返回true，否则返回false。
 
 ```
 function isFormData(val) {
