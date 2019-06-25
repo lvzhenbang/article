@@ -26,6 +26,16 @@ function isNumber(val) {
 }
 ```
 
+### isFiniteNum
+
+判断给定的值是否为` 有限数 `。如果是返回true，否则返回false。
+
+```
+function isFiniteNum(val) {
+  return isNumber(val) && isFinite(val);
+}
+```
+
 ## isBoolean
 
 判断给定的值是否为` boolean `类型。如果是返回true，否则返回false。
