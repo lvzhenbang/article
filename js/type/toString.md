@@ -68,3 +68,17 @@ String(hello)
   *  }"
 */
 ```
+
+## toString
+
+如果给定的值是` 数组 ` 或者 `普通对象`，则使用`JSON.stringify(val)`；否则使用` String(val) `。
+
+```
+function toString (val) {
+  return Array.isArray(val) || (isPlainObject(val) && val.toString === Object.prototype.toString)
+    ? JSON.stringify(val, null, 2)
+    : String(val)
+}
+```
+
+注：参考[` vue toString `](https://github.com/vuejs/vue/blob/dev/src/shared/util.js#L85)
