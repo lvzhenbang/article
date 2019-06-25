@@ -1,5 +1,40 @@
 # js其他判断
 
+## data type
+
+### isDef
+
+判断给定的值是否为` 已定义类型 `。如果是返回true，否则返回false。
+
+```
+function isDef(val) {
+  return val !== undefined && val !== null
+}
+```
+
+### isPrimitive
+
+判断给定的值是否为` 基本类型 `。如果是返回true，否则返回false。
+
+```
+function isPrimitive(val) {
+  return (
+    typeof val === 'string' ||
+    typeof val === 'number' ||
+    typeof val === 'symbol' ||
+    typeof val === 'boolean' ||
+    typeof val === 'undefined' ||
+    (isNull(val))
+  )
+}
+```
+
+注：`isNull(val)`可参考[` js.type isNull `](https://github.com/lvzhenbang/article/blob/master/learning/js.type.md#isnull)
+
+注：在vue中，把` null `和它衍生出的` undefined `分离了出来，可参考[`vue isPrimitive`](https://github.com/vuejs/vue/blob/dev/src/shared/util.js#L26)
+
+注：[`初始类型`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types)
+
 ## string 相关
 
 ### isNonBlankString
