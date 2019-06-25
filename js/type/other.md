@@ -35,6 +35,18 @@ function isPrimitive(val) {
 
 注：[`初始类型`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types)
 
+### isPlainObject
+
+判断给定的值是否为` 单纯的对象（object） `（不是 Array, Date等）。如果是返回true，否则返回false。
+
+```
+function isPlainObject(val) {
+  return _toString.call(obj) === '[object Object]'
+}
+```
+
+注：` _toString `可参考[` js.type toString `](https://github.com/lvzhenbang/article/blob/master/learning/js.type.md#javascript-%E5%B8%B8%E8%A7%81%E5%88%A4%E6%96%AD)
+
 ## string 相关
 
 ### isNonBlankString
