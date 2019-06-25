@@ -43,3 +43,14 @@ console.log(Number(()=> console.log(1))) // NaN
 注：`parseInt()`和`Number`类似，不同的是它有两个参数，第一个是需要转换的值，第二个是指定的[`进制`](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/parseInt#%E5%8F%82%E6%95%B0)类型。
 
 通过上面的结果，可以发现，其他类类型的数据要转换到数字，大多数没有实际意义。最有意义的字符串到数字的转换。`form`表单`input`中的字符串类型的值需要转换为数字。
+
+## toNumber
+
+判断给定的值是否可转化为` 数字 `。如果可以，返回转化后的数字；否则返回原值。
+
+```
+function toNumber(val) {
+  var n = parseFloat(val)
+  return isNaN(n) ? val : n
+}
+```
