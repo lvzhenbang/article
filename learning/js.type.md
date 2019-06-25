@@ -108,6 +108,16 @@ function isDate(val) {
 }
 ```
 
+## isRegExp
+
+判断给定的值是否为` 正则 `类型。如果是返回true，否则返回false。
+
+```
+function isRegExp(val) {
+  return toString.call(val) === '[object RegExp]';
+}
+```
+
 ## isFile
 
 判断给定的值是否为` file `类型。如果是返回true，否则返回false。
