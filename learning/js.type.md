@@ -131,10 +131,10 @@ function isFunction(val) {
 }
 ```
 
-## isGenerator
+### isGeneratorFunction
 
 ```
-function isGenerator(val) {
+function isGeneratorFunction(val) {
 	if (typeof val !== 'function') {
 		return false;
 	}
