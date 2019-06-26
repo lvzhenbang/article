@@ -93,7 +93,7 @@ function isObject(val) {
 
 ```
 function isArray(val) {
-  return t_oString.call(val) === '[object Array]';
+  return _toString.call(val) === '[object Array]';
 }
 
 ```
@@ -127,7 +127,7 @@ function isTypedArray(val) {
 
 ```
 function isFunction(val) {
-  return t_oString.call(val) === '[object Function]';
+  return _toString.call(val) === '[object Function]';
 }
 ```
 
@@ -140,7 +140,7 @@ function isGenerator(val) {
 	}
 
 	return (val.constructor && val.constructor.name === 'GeneratorFunction') ||
-		t_oString.call(val) === '[object GeneratorFunction]';
+		_toString.call(val) === '[object GeneratorFunction]';
 }
 ```
 
@@ -152,7 +152,7 @@ function isGenerator(val) {
 
 ```
 function isDate(val) {
-  return t_oString.call(val) === '[object Date]';
+  return _toString.call(val) === '[object Date]';
 }
 ```
 
@@ -162,7 +162,7 @@ function isDate(val) {
 
 ```
 function isRegExp(val) {
-  return t_oString.call(val) === '[object RegExp]';
+  return _toString.call(val) === '[object RegExp]';
 }
 ```
 
@@ -172,7 +172,7 @@ function isRegExp(val) {
 
 ```
 function isSet(val) {
-  return t_oString.call(val) === '[object Set]';
+  return _toString.call(val) === '[object Set]';
 }
 ```
 
@@ -182,7 +182,7 @@ function isSet(val) {
 
 ```
 function isMap(val) {
-  return t_oString.call(val) === '[object Map]';
+  return _toString.call(val) === '[object Map]';
 }
 ```
 
@@ -192,7 +192,7 @@ function isMap(val) {
 
 ```
 function isWeakMap(val) {
-  return t_oString.call(val) === '[object WeakMap]';
+  return _toString.call(val) === '[object WeakMap]';
 }
 ```
 
@@ -219,7 +219,7 @@ function isFile(val) {
 
 ```
 function isFile(val) {
-  return t_oString.call(val) === '[object File]';
+  return _toString.call(val) === '[object File]';
 }
 ```
 
@@ -229,7 +229,7 @@ function isFile(val) {
 
 ```
 function isBlob(val) {
-  return t_oString.call(val) === '[object Blob]';
+  return _toString.call(val) === '[object Blob]';
 }
 ```
 
@@ -249,7 +249,7 @@ function isStream(val) {
 
 ```
 function isArrayBuffer(val) {
-  return t_oString.call(val) === '[object ArrayBuffer]';
+  return _toString.call(val) === '[object ArrayBuffer]';
 }
 ```
 
