@@ -164,7 +164,7 @@ function isSet(val) {
 
 注：参考[` is-generator-fn `](https://github.com/sindresorhus/is-generator-fn)
 
-## 其他d
+## 其他
 
 ### isPromise
 
