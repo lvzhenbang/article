@@ -45,7 +45,18 @@ function isPlainObject(val) {
 }
 ```
 
-注：` _toString `可参考[` js.type toString `](https://github.com/lvzhenbang/article/blob/master/learning/js.type.md#javascript-%E5%B8%B8%E8%A7%81%E5%88%A4%E6%96%AD)
+注：` _toString `可参考[` js.type _toString `](https://github.com/lvzhenbang/article/blob/master/learning/js.type.md#javascript-%E5%B8%B8%E8%A7%81%E5%88%A4%E6%96%AD)
+
+### hasProp
+
+判断某个对象` obj `是否有` 属性key `。如果有返回true，否则返回false。
+
+```
+function hasProp(obj, key) {
+  return isObject(obj) && hasOwnProperty.call(obj, key);
+}
+```
+注：` isObject(obj) `参考[` js.type isObject `](https://github.com/lvzhenbang/article/blob/master/learning/js.type.md#isobject)
 
 ## string 相关
 

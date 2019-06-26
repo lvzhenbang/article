@@ -3,12 +3,12 @@
 对象的字符串表示形式。
 
 ```
-var toString = Object.prototype.toString;
+var _toString = Object.prototype.toString;
 ```
 
 ## isString
 
-判断给定的值是否为` 字符串 `类型。如果是返回true，否则返回false。
+判断给定的值是否为` 字符串 `。如果是返回true，否则返回false。
 
 ```
 function isString(val) {
@@ -18,7 +18,7 @@ function isString(val) {
 
 ## isNumber
 
-判断给定的值是否为` 数字 `类型。如果是返回true，否则返回false。
+判断给定的值是否为` 数字 `。如果是返回true，否则返回false。
 
 ```
 function isNumber(val) {
@@ -38,7 +38,7 @@ function isFiniteNum(val) {
 
 ## isBoolean
 
-判断给定的值是否为` boolean `类型。如果是返回true，否则返回false。
+判断给定的值是否为` boolean `。如果是返回true，否则返回false。
 
 ```
 function isBoolean(val) {
@@ -48,7 +48,7 @@ function isBoolean(val) {
 
 ## isUndefined
 
-判断给定的值是否为` undefined `类型。如果是返回true，否则返回false。
+判断给定的值是否为` undefined `。如果是返回true，否则返回false。
 
 ```
 function isUndefined(val) {
@@ -58,7 +58,7 @@ function isUndefined(val) {
 
 ## isNull
 
-判断给定的值是否为` null `类型。如果是返回true，否则返回false。
+判断给定的值是否为` null `。如果是返回true，否则返回false。
 
 ```
 function isNull(val) {
@@ -69,7 +69,7 @@ function isNull(val) {
 
 ## isSymbol
 
-判断给定的值是否为` symbol `类型。如果是返回true，否则返回false。
+判断给定的值是否为` symbol `。如果是返回true，否则返回false。
 
 ```
 function isSymbol(val) {
@@ -79,7 +79,7 @@ function isSymbol(val) {
 
 ## isObject
 
-判断给定的值是否为` object `类型。如果是返回true，否则返回false。
+判断给定的值是否为` object `。如果是返回true，否则返回false。
 
 ```
 function isObject(val) {
@@ -89,11 +89,34 @@ function isObject(val) {
 
 ## isArray
 
-判断给定的值是否为为` 数组 `类型。如果是返回true，否则返回false。
+判断给定的值是否为` 数组 `。如果是返回true，否则返回false。
 
 ```
 function isArray(val) {
-  return toString.call(val) === '[object Array]';
+  return t_oString.call(val) === '[object Array]';
+}
+
+```
+
+### isArrayLike
+
+判断给定的值是否为` 类数组 `。如果是返回true，否则返回false。
+
+```
+function isArrayLike(val) {
+  return typeof val.length === 'number' && typeof val !== 'function';
+}
+
+```
+
+### isTypedArray
+
+判断给定的值是否为[` TypedArray `](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/TypedArray)。如果是返回true，否则返回false。
+
+
+```
+function isTypedArray(val) {
+  return /^\[object (?:Float(?:32|64)|(?:Int|Uint)(?:8|16|32)|Uint8Clamped)Array\]$/.test(_toString.call(val));
 }
 
 ```
@@ -104,27 +127,72 @@ function isArray(val) {
 
 ```
 function isFunction(val) {
-  return toString.call(val) === '[object Function]';
+  return t_oString.call(val) === '[object Function]';
 }
 ```
 
+## isGenerator
+
+```
+function isGenerator(val) {
+	if (typeof val !== 'function') {
+		return false;
+	}
+
+	return (val.constructor && val.constructor.name === 'GeneratorFunction') ||
+		t_oString.call(val) === '[object GeneratorFunction]';
+}
+```
+
+注：参考[` is-generator-fn `](https://github.com/sindresorhus/is-generator-fn)
+
 ## isDate
 
-判断给定的值是否为` date `类型。如果是返回true，否则返回false。
+判断给定的值是否为` date `。如果是返回true，否则返回false。
 
 ```
 function isDate(val) {
-  return toString.call(val) === '[object Date]';
+  return t_oString.call(val) === '[object Date]';
 }
 ```
 
 ## isRegExp
 
-判断给定的值是否为` 正则 `类型。如果是返回true，否则返回false。
+判断给定的值是否为` 正则 `。如果是返回true，否则返回false。
 
 ```
 function isRegExp(val) {
-  return toString.call(val) === '[object RegExp]';
+  return t_oString.call(val) === '[object RegExp]';
+}
+```
+
+## isSet
+
+判断给定的值是否为` Set `。如果是返回true，否则返回false。
+
+```
+function isSet(val) {
+  return t_oString.call(val) === '[object Set]';
+}
+```
+
+## isMap
+
+判断给定的值是否为` Map `。如果是返回true，否则返回false。
+
+```
+function isMap(val) {
+  return t_oString.call(val) === '[object Map]';
+}
+```
+
+## isWeakMap
+
+判断给定的值是否为` Map `。如果是返回true，否则返回false。
+
+```
+function isWeakMap(val) {
+  return t_oString.call(val) === '[object WeakMap]';
 }
 ```
 
@@ -151,7 +219,7 @@ function isFile(val) {
 
 ```
 function isFile(val) {
-  return toString.call(val) === '[object File]';
+  return t_oString.call(val) === '[object File]';
 }
 ```
 
@@ -161,7 +229,7 @@ function isFile(val) {
 
 ```
 function isBlob(val) {
-  return toString.call(val) === '[object Blob]';
+  return t_oString.call(val) === '[object Blob]';
 }
 ```
 
@@ -181,7 +249,7 @@ function isStream(val) {
 
 ```
 function isArrayBuffer(val) {
-  return toString.call(val) === '[object ArrayBuffer]';
+  return t_oString.call(val) === '[object ArrayBuffer]';
 }
 ```
 
