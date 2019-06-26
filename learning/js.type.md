@@ -3,7 +3,7 @@
 对象的字符串表示形式。
 
 ```
-var toString = Object.prototype.toString;
+var _toString = Object.prototype.toString;
 ```
 
 ## isString
@@ -93,7 +93,7 @@ function isObject(val) {
 
 ```
 function isArray(val) {
-  return toString.call(val) === '[object Array]';
+  return t_oString.call(val) === '[object Array]';
 }
 
 ```
@@ -109,13 +109,25 @@ function isArrayLike(val) {
 
 ```
 
+### isTypedArray
+
+判断给定的值是否为[` TypedArray `](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/TypedArray)。如果是返回true，否则返回false。
+
+
+```
+function isTypedArray(val) {
+  return /^\[object (?:Float(?:32|64)|(?:Int|Uint)(?:8|16|32)|Uint8Clamped)Array\]$/.test(_toString.call(val));
+}
+
+```
+
 ## isFunction
 
 判断给定的值是否为` funciton `类型。如果是返回true，否则返回false。
 
 ```
 function isFunction(val) {
-  return toString.call(val) === '[object Function]';
+  return t_oString.call(val) === '[object Function]';
 }
 ```
 
@@ -128,7 +140,7 @@ function isGenerator(val) {
 	}
 
 	return (val.constructor && val.constructor.name === 'GeneratorFunction') ||
-		toString.call(val) === '[object GeneratorFunction]';
+		t_oString.call(val) === '[object GeneratorFunction]';
 }
 ```
 
@@ -140,7 +152,7 @@ function isGenerator(val) {
 
 ```
 function isDate(val) {
-  return toString.call(val) === '[object Date]';
+  return t_oString.call(val) === '[object Date]';
 }
 ```
 
@@ -150,7 +162,7 @@ function isDate(val) {
 
 ```
 function isRegExp(val) {
-  return toString.call(val) === '[object RegExp]';
+  return t_oString.call(val) === '[object RegExp]';
 }
 ```
 
@@ -160,7 +172,7 @@ function isRegExp(val) {
 
 ```
 function isSet(val) {
-  return toString.call(val) === '[object Set]';
+  return t_oString.call(val) === '[object Set]';
 }
 ```
 
@@ -170,7 +182,7 @@ function isSet(val) {
 
 ```
 function isMap(val) {
-  return toString.call(val) === '[object Map]';
+  return t_oString.call(val) === '[object Map]';
 }
 ```
 
@@ -180,7 +192,7 @@ function isMap(val) {
 
 ```
 function isWeakMap(val) {
-  return toString.call(val) === '[object WeakMap]';
+  return t_oString.call(val) === '[object WeakMap]';
 }
 ```
 
@@ -207,7 +219,7 @@ function isFile(val) {
 
 ```
 function isFile(val) {
-  return toString.call(val) === '[object File]';
+  return t_oString.call(val) === '[object File]';
 }
 ```
 
@@ -217,7 +229,7 @@ function isFile(val) {
 
 ```
 function isBlob(val) {
-  return toString.call(val) === '[object Blob]';
+  return t_oString.call(val) === '[object Blob]';
 }
 ```
 
@@ -237,7 +249,7 @@ function isStream(val) {
 
 ```
 function isArrayBuffer(val) {
-  return toString.call(val) === '[object ArrayBuffer]';
+  return t_oString.call(val) === '[object ArrayBuffer]';
 }
 ```
 

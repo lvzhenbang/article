@@ -45,7 +45,7 @@ function isPlainObject(val) {
 }
 ```
 
-注：` _toString `可参考[` js.type toString `](https://github.com/lvzhenbang/article/blob/master/learning/js.type.md#javascript-%E5%B8%B8%E8%A7%81%E5%88%A4%E6%96%AD)
+注：` _toString `可参考[` js.type _toString `](https://github.com/lvzhenbang/article/blob/master/learning/js.type.md#javascript-%E5%B8%B8%E8%A7%81%E5%88%A4%E6%96%AD)
 
 ### hasProp
 
