@@ -123,7 +123,7 @@ function isTypedArray(val) {
 
 ## isFunction
 
-判断给定的值是否为` funciton `类型。如果是返回true，否则返回false。
+判断给定的值是否为` funciton `。如果是返回true，否则返回false。
 
 ```
 function isFunction(val) {
@@ -131,7 +131,29 @@ function isFunction(val) {
 }
 ```
 
+### isSyncFunction
+
+判断给定的值是否为` 同步funciton `。如果是返回true，否则返回false。
+
+```
+function isSyncFunction(val) {
+  return _toString.call(val) === '[object Function]';
+}
+```
+
+### isAsyncFunction
+
+判断给定的值是否为` 异步funciton `。如果是返回true，否则返回false。
+
+```
+function isAsyncFunction(val) {
+  return _toString.call(val) === '[object AsyncFunction]';
+}
+```
+
 ### isGeneratorFunction
+
+判断给定的值是否为` 生成器funciton `。如果是返回true，否则返回false。
 
 ```
 function isGeneratorFunction(val) {
@@ -145,6 +167,7 @@ function isGeneratorFunction(val) {
 ```
 
 注：参考[` is-generator-fn `](https://github.com/sindresorhus/is-generator-fn)
+
 
 ## isDate
 
@@ -203,7 +226,7 @@ function isWeakMap(val) {
 判断给定的值是否为` promise `。如果是返回true，否则返回false。
 
 ```
-function isFile(val) {
+function isPromise(val) {
   return (
     (typeof val === 'object' || typeof val === 'function') &&
     typeof val.then === 'function' &&
