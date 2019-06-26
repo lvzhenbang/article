@@ -322,3 +322,6 @@ function isFormData(val) {
 }
 ```
 
+## 参考规范
+
+[` ECMAScript® 2016 Language Specification `](http://www.ecma-international.org/ecma-262/7.0/#sec-ecmascript-language-types)
