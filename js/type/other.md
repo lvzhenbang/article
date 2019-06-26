@@ -47,6 +47,8 @@ function isPlainObject(val) {
 
 注：` _toString `可参考[` js.type _toString `](https://github.com/lvzhenbang/article/blob/master/learning/js.type.md#javascript-%E5%B8%B8%E8%A7%81%E5%88%A4%E6%96%AD)
 
+注：后期参考[` lodash isPlainObject `](https://github.com/lodash/lodash/blob/master/isPlainObject.js) 修改。
+
 ### hasProp
 
 判断某个对象` obj `是否有` 属性key `。如果有返回true，否则返回false。
