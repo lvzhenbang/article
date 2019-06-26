@@ -119,6 +119,19 @@ function isFunction(val) {
 }
 ```
 
+## isGenerator
+
+```
+function isGenerator(val) {
+	if (typeof val !== 'function') {
+		return false;
+	}
+
+	return (val.constructor && val.constructor.name === 'GeneratorFunction') ||
+		toString.call(val) === '[object GeneratorFunction]';
+}
+```
+
 ## isDate
 
 判断给定的值是否为` date `。如果是返回true，否则返回false。
@@ -138,6 +151,18 @@ function isRegExp(val) {
   return toString.call(val) === '[object RegExp]';
 }
 ```
+
+## isSet
+
+判断给定的值是否为` Set `。如果是返回true，否则返回false。
+
+```
+function isSet(val) {
+  return toString.call(val) === '[object Set]';
+}
+```
+
+注：参考[` is-generator-fn `](https://github.com/sindresorhus/is-generator-fn)
 
 ## 其他
 
