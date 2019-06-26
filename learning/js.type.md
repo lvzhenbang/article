@@ -164,6 +164,26 @@ function isSet(val) {
 }
 ```
 
+## isMap
+
+判断给定的值是否为` Map `。如果是返回true，否则返回false。
+
+```
+function isMap(val) {
+  return toString.call(val) === '[object Map]';
+}
+```
+
+## isWeakMap
+
+判断给定的值是否为` Map `。如果是返回true，否则返回false。
+
+```
+function isWeakMap(val) {
+  return toString.call(val) === '[object WeakMap]';
+}
+```
+
 ## 其他
 
 ### isPromise
