@@ -199,6 +199,16 @@ function isSet(val) {
 }
 ```
 
+### isWeakSet
+
+判断给定的值是否为` WeakSet `。如果是返回true，否则返回false。
+
+```
+function isSeakSet(val) {
+  return _toString.call(val) === '[object WeakSet]';
+}
+```
+
 ## isMap
 
 判断给定的值是否为` Map `。如果是返回true，否则返回false。
