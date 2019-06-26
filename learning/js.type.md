@@ -8,7 +8,7 @@ var toString = Object.prototype.toString;
 
 ## isString
 
-判断给定的值是否为` 字符串 `类型。如果是返回true，否则返回false。
+判断给定的值是否为` 字符串 `。如果是返回true，否则返回false。
 
 ```
 function isString(val) {
@@ -18,7 +18,7 @@ function isString(val) {
 
 ## isNumber
 
-判断给定的值是否为` 数字 `类型。如果是返回true，否则返回false。
+判断给定的值是否为` 数字 `。如果是返回true，否则返回false。
 
 ```
 function isNumber(val) {
@@ -38,7 +38,7 @@ function isFiniteNum(val) {
 
 ## isBoolean
 
-判断给定的值是否为` boolean `类型。如果是返回true，否则返回false。
+判断给定的值是否为` boolean `。如果是返回true，否则返回false。
 
 ```
 function isBoolean(val) {
@@ -48,7 +48,7 @@ function isBoolean(val) {
 
 ## isUndefined
 
-判断给定的值是否为` undefined `类型。如果是返回true，否则返回false。
+判断给定的值是否为` undefined `。如果是返回true，否则返回false。
 
 ```
 function isUndefined(val) {
@@ -58,7 +58,7 @@ function isUndefined(val) {
 
 ## isNull
 
-判断给定的值是否为` null `类型。如果是返回true，否则返回false。
+判断给定的值是否为` null `。如果是返回true，否则返回false。
 
 ```
 function isNull(val) {
@@ -69,7 +69,7 @@ function isNull(val) {
 
 ## isSymbol
 
-判断给定的值是否为` symbol `类型。如果是返回true，否则返回false。
+判断给定的值是否为` symbol `。如果是返回true，否则返回false。
 
 ```
 function isSymbol(val) {
@@ -79,7 +79,7 @@ function isSymbol(val) {
 
 ## isObject
 
-判断给定的值是否为` object `类型。如果是返回true，否则返回false。
+判断给定的值是否为` object `。如果是返回true，否则返回false。
 
 ```
 function isObject(val) {
@@ -89,11 +89,22 @@ function isObject(val) {
 
 ## isArray
 
-判断给定的值是否为为` 数组 `类型。如果是返回true，否则返回false。
+判断给定的值是否为` 数组 `。如果是返回true，否则返回false。
 
 ```
 function isArray(val) {
   return toString.call(val) === '[object Array]';
+}
+
+```
+
+### isArrayLike
+
+判断给定的值是否为` 类数组 `。如果是返回true，否则返回false。
+
+```
+function isArrayLike(val) {
+  return typeof val.length === 'number' && typeof val !== 'function';
 }
 
 ```
@@ -110,7 +121,7 @@ function isFunction(val) {
 
 ## isDate
 
-判断给定的值是否为` date `类型。如果是返回true，否则返回false。
+判断给定的值是否为` date `。如果是返回true，否则返回false。
 
 ```
 function isDate(val) {
@@ -120,7 +131,7 @@ function isDate(val) {
 
 ## isRegExp
 
-判断给定的值是否为` 正则 `类型。如果是返回true，否则返回false。
+判断给定的值是否为` 正则 `。如果是返回true，否则返回false。
 
 ```
 function isRegExp(val) {
