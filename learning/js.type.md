@@ -139,6 +139,16 @@ function isRegExp(val) {
 }
 ```
 
+## isSet
+
+判断给定的值是否为` Set `。如果是返回true，否则返回false。
+
+```
+function isSet(val) {
+  return toString.call(val) === '[object Set]';
+}
+```
+
 ## 其他
 
 ### isPromise
