@@ -162,12 +162,9 @@ function isSet(val) {
 }
 ```
 
-<<<<<<< HEAD
 注：参考[` is-generator-fn `](https://github.com/sindresorhus/is-generator-fn)
 
-=======
->>>>>>> 9fa8b2c770e192782f8bfc69b4d27c8fb74d3b16
-## 其他
+## 其他d
 
 ### isPromise
 
