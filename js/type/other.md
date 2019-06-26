@@ -56,7 +56,26 @@ function hasProp(obj, key) {
   return isObject(obj) && hasOwnProperty.call(obj, key);
 }
 ```
+
 注：` isObject(obj) `参考[` js.type isObject `](https://github.com/lvzhenbang/article/blob/master/learning/js.type.md#isobject)
+
+## isNative
+
+判断一个方法` val `是否是一个原生的方法。如果是返回true，否则返回false。
+
+```
+var reIsNative = RegExp(`^${
+  Function.prototype.toString.call(Object.prototype.hasOwnProperty)
+    .replace(/[\\^$.*+?()[\]{}|]/g, '\\$&')
+    .replace(/hasOwnProperty|(function).*?(?=\\\()| for .+?(?=\\\])/g, '$1.*?')
+}$`);
+
+function isNative(val) {
+  return isFunction(val) && reIsNative.test(val)
+}
+```
+
+注：` isFunction(val) `参考[` js.type isFunction `](https://github.com/lvzhenbang/article/blob/master/learning/js.type.md#isfunction)
 
 ## string 相关
 

@@ -93,7 +93,7 @@ function isObject(val) {
 
 ```
 function isArray(val) {
-  return t_oString.call(val) === '[object Array]';
+  return _toString.call(val) === '[object Array]';
 }
 
 ```
@@ -123,28 +123,51 @@ function isTypedArray(val) {
 
 ## isFunction
 
-判断给定的值是否为` funciton `类型。如果是返回true，否则返回false。
+判断给定的值是否为` funciton `。如果是返回true，否则返回false。
 
 ```
 function isFunction(val) {
-  return t_oString.call(val) === '[object Function]';
+  return _toString.call(val) === '[object Function]';
 }
 ```
 
-## isGenerator
+### isSyncFunction
+
+判断给定的值是否为` 同步funciton `。如果是返回true，否则返回false。
 
 ```
-function isGenerator(val) {
+function isSyncFunction(val) {
+  return _toString.call(val) === '[object Function]';
+}
+```
+
+### isAsyncFunction
+
+判断给定的值是否为` 异步funciton `。如果是返回true，否则返回false。
+
+```
+function isAsyncFunction(val) {
+  return _toString.call(val) === '[object AsyncFunction]';
+}
+```
+
+### isGeneratorFunction
+
+判断给定的值是否为` 生成器funciton `。如果是返回true，否则返回false。
+
+```
+function isGeneratorFunction(val) {
 	if (typeof val !== 'function') {
 		return false;
 	}
 
 	return (val.constructor && val.constructor.name === 'GeneratorFunction') ||
-		t_oString.call(val) === '[object GeneratorFunction]';
+		_toString.call(val) === '[object GeneratorFunction]';
 }
 ```
 
 注：参考[` is-generator-fn `](https://github.com/sindresorhus/is-generator-fn)
+
 
 ## isDate
 
@@ -152,7 +175,7 @@ function isGenerator(val) {
 
 ```
 function isDate(val) {
-  return t_oString.call(val) === '[object Date]';
+  return _toString.call(val) === '[object Date]';
 }
 ```
 
@@ -162,7 +185,7 @@ function isDate(val) {
 
 ```
 function isRegExp(val) {
-  return t_oString.call(val) === '[object RegExp]';
+  return _toString.call(val) === '[object RegExp]';
 }
 ```
 
@@ -172,7 +195,7 @@ function isRegExp(val) {
 
 ```
 function isSet(val) {
-  return t_oString.call(val) === '[object Set]';
+  return _toString.call(val) === '[object Set]';
 }
 ```
 
@@ -182,7 +205,7 @@ function isSet(val) {
 
 ```
 function isMap(val) {
-  return t_oString.call(val) === '[object Map]';
+  return _toString.call(val) === '[object Map]';
 }
 ```
 
@@ -192,7 +215,7 @@ function isMap(val) {
 
 ```
 function isWeakMap(val) {
-  return t_oString.call(val) === '[object WeakMap]';
+  return _toString.call(val) === '[object WeakMap]';
 }
 ```
 
@@ -203,7 +226,7 @@ function isWeakMap(val) {
 判断给定的值是否为` promise `。如果是返回true，否则返回false。
 
 ```
-function isFile(val) {
+function isPromise(val) {
   return (
     (typeof val === 'object' || typeof val === 'function') &&
     typeof val.then === 'function' &&
@@ -219,7 +242,7 @@ function isFile(val) {
 
 ```
 function isFile(val) {
-  return t_oString.call(val) === '[object File]';
+  return _toString.call(val) === '[object File]';
 }
 ```
 
@@ -229,7 +252,7 @@ function isFile(val) {
 
 ```
 function isBlob(val) {
-  return t_oString.call(val) === '[object Blob]';
+  return _toString.call(val) === '[object Blob]';
 }
 ```
 
@@ -249,7 +272,7 @@ function isStream(val) {
 
 ```
 function isArrayBuffer(val) {
-  return t_oString.call(val) === '[object ArrayBuffer]';
+  return _toString.call(val) === '[object ArrayBuffer]';
 }
 ```
 
