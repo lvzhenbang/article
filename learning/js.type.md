@@ -28,13 +28,15 @@ function isNumber(val) {
 
 ### isFiniteNum
 
-判断给定的值是否为` 有限数 `。如果是返回true，否则返回false。
+判断给定的值是否为` 有穷数 `。如果是返回true，否则返回false。
 
 ```
 function isFiniteNum(val) {
   return isNumber(val) && isFinite(val);
 }
 ```
+
+注：ES6中已经实现，可以使用` Number `的静态方法` isFinite `
 
 ## isBoolean
 
