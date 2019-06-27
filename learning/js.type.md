@@ -127,7 +127,7 @@ function isTypedArray(val) {
 
 ```
 function isFunction(val) {
-  return _toString.call(val) === '[object Function]';
+  return isSyncFunction(val) || isAsyncFunction(val);
 }
 ```
 
