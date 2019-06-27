@@ -38,6 +38,18 @@ function isFiniteNum(val) {
 
 注：ES6中已经实现，可以使用` Number `的静态方法` isFinite `
 
+### isIntger
+
+判断给定的值是否为` 一个整数 `。如果是返回true，否则返回false。
+
+```
+function isInteger(val) {
+  return !isObject(val) && isFiniteNum(val) && Math.floor(val) === val;
+};
+```
+
+注：ES6中已经实现，可以使用` Number `的静态方法` isIntger `
+
 ## isBoolean
 
 判断给定的值是否为` boolean `。如果是返回true，否则返回false。
