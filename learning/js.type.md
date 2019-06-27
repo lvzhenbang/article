@@ -104,10 +104,12 @@ function isArray(val) {
 
 ```
 function isArrayLike(val) {
-  return typeof val.length === 'number' && typeof val !== 'function';
+  return isDef(val) && typeof val.length === 'number' && typeof val !== 'function';
 }
 
 ```
+
+注：` isDef(val) `参考[` type isDef `](https://github.com/lvzhenbang/article/blob/master/js/type/other.md#isdef)
 
 ### isTypedArray
 
@@ -127,7 +129,7 @@ function isTypedArray(val) {
 
 ```
 function isFunction(val) {
-  return _toString.call(val) === '[object Function]';
+  return isSyncFunction(val) || isAsyncFunction(val);
 }
 ```
 
@@ -168,6 +170,15 @@ function isGeneratorFunction(val) {
 
 注：参考[` is-generator-fn `](https://github.com/sindresorhus/is-generator-fn)
 
+## isArguments
+
+判断给定的值是否为` Arguments 对象 `。如果是返回true，否则返回false。
+
+```
+function isArguments(val) {
+	return _toString.call(val) === '[object Arguments]'
+}
+```
 
 ## isDate
 
@@ -196,6 +207,16 @@ function isRegExp(val) {
 ```
 function isSet(val) {
   return _toString.call(val) === '[object Set]';
+}
+```
+
+## isWeakSet
+
+判断给定的值是否为` WeakSet `。如果是返回true，否则返回false。
+
+```
+function isSeakSet(val) {
+  return _toString.call(val) === '[object WeakSet]';
 }
 ```
 
@@ -312,3 +333,6 @@ function isFormData(val) {
 }
 ```
 
+## 参考规范
+
+[` ECMAScript® 2016 Language Specification `](http://www.ecma-international.org/ecma-262/7.0/#sec-ecmascript-language-types)
