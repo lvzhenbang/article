@@ -83,9 +83,11 @@ function isSymbol(val) {
 
 ```
 function isObject(val) {
-  return val !== null && typeof val === 'object';
+  return val !== null && (typeof val === 'object' || typeof === 'function');
 }
 ```
+
+注：[` core-js `](https://github.com/zloirock/core-js/blob/master/packages/core-js/internals/is-object.js)
 
 ## isArray
 
