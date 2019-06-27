@@ -104,10 +104,12 @@ function isArray(val) {
 
 ```
 function isArrayLike(val) {
-  return typeof val.length === 'number' && typeof val !== 'function';
+  return isDef(val) && typeof val.length === 'number' && typeof val !== 'function';
 }
 
 ```
+
+注：` isDef(val) `参考[` type isDef `](https://github.com/lvzhenbang/article/blob/master/js/type/other.md#isdef)
 
 ### isTypedArray
 
