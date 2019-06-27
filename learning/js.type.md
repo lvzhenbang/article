@@ -199,7 +199,7 @@ function isSet(val) {
 }
 ```
 
-### isWeakSet
+## isWeakSet
 
 判断给定的值是否为` WeakSet `。如果是返回true，否则返回false。
 
