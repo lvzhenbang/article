@@ -168,6 +168,15 @@ function isGeneratorFunction(val) {
 
 注：参考[` is-generator-fn `](https://github.com/sindresorhus/is-generator-fn)
 
+## isArguments
+
+判断给定的值是否为` Arguments 对象 `。如果是返回true，否则返回false。
+
+```
+function isArguments(val) {
+	return _toString.call(val) === '[object Arguments]'
+}
+```
 
 ## isDate
 
