@@ -49,6 +49,23 @@ function isPlainObject(val) {
 
 注：后期参考[` lodash isPlainObject `](https://github.com/lodash/lodash/blob/master/isPlainObject.js) 修改。
 
+### isEmptyObject
+
+判断给定的值是否为` 空对象（{}） `。如果是返回true，否则返回false。
+
+```
+function isEmptyObject(val) {
+	for (const key in val) {
+		if (val.hasOwnProperty(key)) {
+			return false
+		}
+	}
+	return true
+}
+```
+
+注：使用它之前需要用[` isObject(val) `](https://github.com/lvzhenbang/article/blob/master/learning/js.type.md#isobject)判断给定的值是否为对象
+
 ### hasProp
 
 判断某个对象` obj `是否有` 属性key `。如果有返回true，否则返回false。
