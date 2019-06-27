@@ -50,6 +50,25 @@ function isInteger(val) {
 
 注：ES6中已经实现，可以使用` Number `的静态方法` isIntger `
 
+### isNaN
+
+判断给定的值是否为` 非数字 `。如果是返回true，否则返回false。
+
+```
+function isNaN(val) {
+  if (typeof val !== 'number') {
+    return false;
+  }
+
+  if (window.isNaN(val)) {
+    return true;
+  }
+
+  return false;
+}
+```
+注：虽然在ES6中已经实现，可以使用` Number `的静态方法` isNaN `，但是它存在问题。如：` Number.isNaN(null) `返回` false `，` Number.isNaN(NaN) `返回` true `等这些异常错误。
+
 ## isBoolean
 
 判断给定的值是否为` boolean `。如果是返回true，否则返回false。
