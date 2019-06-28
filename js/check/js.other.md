@@ -100,6 +100,16 @@ function isNative(val) {
 
 ## UEL
 
+### isHttps
+
+判断当前页面是否使用的是`HTTPS`协议。如果是返回true，否则返回false。
+
+```
+function isHttps () {
+  return window.location.href.test(/^https/);
+}
+```
+
 ### isObjectURL
 
 判断某个值` val `是否是[` ObjectURL `](https://developer.mozilla.org/zh-CN/docs/Web/API/URL/createObjectURL)。如果是返回true，否则返回false。
