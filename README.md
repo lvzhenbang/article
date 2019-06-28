@@ -58,7 +58,7 @@ git相关的可视化工具有很多，最常见的，也是最方便的要数`g
 <details>
 <summary>目录</summary>
 
-* [js type](https://github.com/lvzhenbang/article/blob/master/js/type/index.md)
+* [js 常用判断及扩展](https://github.com/lvzhenbang/article/blob/master/js/check/index.md)
 * [js中的数组，数字，字符串反转](https://github.com/lvzhenbang/article/blob/master/js/js-reverse.md)
 * [两个数组之间的几种常见操作](https://github.com/lvzhenbang/article/blob/master/js/twoArry.md)
 * [给一个元素同时绑上click和dbclick事件所存在的问题详解](https://github.com/lvzhenbang/article/blob/master/js/single_double_click.md)
