@@ -56,15 +56,24 @@ function toArray (val) {
 
 注：` isArrayLike `可参考[` js.type isArrayLike `](https://github.com/lvzhenbang/article/blob/master/js/check/js.type.md#isarraylike)
 
-## dataURItoBlob
+## dataURItoMimeType
 
-转化` base64 `数据为` blob `。
+获取` base64 `所指代的` mimeType `。
 
 ```
-function dataURItoBlob (dataURI, opts, toFile=false) {
+funciton dataURItoMimeType (dataURI, opts) {
+  return opts.mimeType || dataURI.split(',')[0].split(':')[1].split(';')[0];
+}
+```
+
+## dataURItoByetes
+
+转化` base64 `数据为` bytes `。
+
+```
+function dataURItoBlob (dataURI, opts) {
   const data = dataURI.split(',')[1];
-  
-  let mimeType = opts.mimeType || dataURI.split(',')[0].split(':')[1].split(';')[0];
+  const mimeTpe = dataURItoMimeType(dataURI, opts);
 
   if (mimeType == null) {
     mimeType = 'plain/text';
@@ -82,13 +91,26 @@ function dataURItoBlob (dataURI, opts, toFile=false) {
   } catch (err) {
     return null;
   }
-
-  if (toFile) {
-    return new File([bytes], opts.name || '', { type: mimeType });
-  }
-
-  return new Blob([bytes], { type: mimeType });
+  return bytes;
 }
 ```
 
-注：参考[` uppy dataURItoBlob `](https://github.com/transloadit/uppy/blob/master/packages/%40uppy/utils/src/dataURItoBlob.js)
+## dataURItoBlob
+
+转化` base64 `数据为` blob `。
+
+```
+function dataURItoBlob (dataURI, opts) {
+  return new Blob([dataURItoByetes(dataURI, opts)], { type: dataURItoMimeType(dataURI, opts) });
+}
+```
+
+## dataURItoFile
+
+转化` base64 `数据为` file `。
+
+```
+function dataURItoFile (dataURI, opts) {
+  return new File([dataURItoByetes(dataURI, opts)], opts.name || '', { type: dataURItoMimeType(dataURI, opts) });
+}
+```
