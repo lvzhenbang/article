@@ -66,6 +66,7 @@ function isEmptyObject(val) {
 
 注：使用它之前需要用[` isObject(val) `](https://github.com/lvzhenbang/article/blob/master/js/check/js.type.md#isobject)判断给定的值是否为对象
 
+
 ### hasProp
 
 判断某个对象` obj `是否有` 属性key `。如果有返回true，否则返回false。
@@ -95,6 +96,19 @@ function isNative(val) {
 ```
 
 注：` isFunction(val) `参考[` js.type isFunction `](https://github.com/lvzhenbang/article/blob/master/js/check/js.type.md#isfunction)
+
+
+## UEL
+
+### isObjectURL
+
+判断某个值` val `是否是[` ObjectURL `](https://developer.mozilla.org/zh-CN/docs/Web/API/URL/createObjectURL)。如果是返回true，否则返回false。
+
+```
+function isObjectURL (val) {
+  return val.indexOf('blob:') === 0;
+}
+```
 
 ## string 相关
 
