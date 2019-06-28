@@ -26,6 +26,8 @@ function toString (val) {
 
 注：参考[` vue toString `](https://github.com/vuejs/vue/blob/dev/src/shared/util.js#L85)
 
+注：` isPlainObject `可参考[` js.other isPlainObject `](https://github.com/lvzhenbang/article/blob/master/js/check/js.type.md#isplainobject)
+
 ## toObject
 
 判断给定的值是否可转化为` 对象 `。如果可以，返回转化后的数字；否则返回原值。
@@ -40,6 +42,8 @@ function toObject(val) {
 }
 ```
 
+注：` isString `可参考[` js.type isString `](https://github.com/lvzhenbang/article/blob/master/js/check/js.type.md#isstring)
+
 ## toArray
 
 判断给定的值是否可转化为` 数组 `。如果可以，返回转化后的数组；否则返回原值。
@@ -49,3 +53,5 @@ function toArray (val) {
   return isArrayLike(val) ? Array.prototype.slice.call(val || [], 0) : val;
 }
 ```
+
+注：` isArrayLike `可参考[` js.type isArrayLike `](https://github.com/lvzhenbang/article/blob/master/js/check/js.type.md#isarraylike)
