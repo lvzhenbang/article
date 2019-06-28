@@ -28,13 +28,46 @@ function isNumber(val) {
 
 ### isFiniteNum
 
-判断给定的值是否为` 有限数 `。如果是返回true，否则返回false。
+判断给定的值是否为` 有穷数 `。如果是返回true，否则返回false。
 
 ```
 function isFiniteNum(val) {
   return isNumber(val) && isFinite(val);
 }
 ```
+
+注：ES6中已经实现，可以使用` Number `的静态方法` isFinite `
+
+### isIntger
+
+判断给定的值是否为` 一个整数 `。如果是返回true，否则返回false。
+
+```
+function isInteger(val) {
+  return !isObject(val) && isFiniteNum(val) && Math.floor(val) === val;
+};
+```
+
+注：ES6中已经实现，可以使用` Number `的静态方法` isIntger `
+
+### isNaN
+
+判断给定的值是否为` 非数字 `。如果是返回true，否则返回false。
+
+```
+function isNaN(val) {
+  if (typeof val !== 'number') {
+    return false;
+  }
+
+  if (window.isNaN(val)) {
+    return true;
+  }
+
+  return false;
+}
+```
+注：虽然在ES6中已经实现，可以使用` Number `的静态方法` isNaN `，但是它存在问题。如：` Number.isNaN(null) `返回` false `，` Number.isNaN(NaN) `返回` true `等这些异常错误。
 
 ## isBoolean
 
@@ -83,9 +116,11 @@ function isSymbol(val) {
 
 ```
 function isObject(val) {
-  return val !== null && typeof val === 'object';
+  return val !== null && (typeof val === 'object' || typeof === 'function');
 }
 ```
+
+注：[` core-js `](https://github.com/zloirock/core-js/blob/master/packages/core-js/internals/is-object.js)
 
 ## isArray
 
