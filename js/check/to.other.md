@@ -36,6 +36,16 @@ JSON.parse('{"a":1,"b":2}') // {a: 1, b: 2}
 JSON.parse('[1, 2, 3]') // [1, 2, 3]
 */
 function toObject(val) {
-  return JSON.parse(val)
+  return isString(val) && /^({|\[)(}|\])$/.test(val) ? JSON.parse(val) : val;
+}
+```
+
+## toArray
+
+判断给定的值是否可转化为` 数组 `。如果可以，返回转化后的数组；否则返回原值。
+
+```
+function toArray (val) {
+  return isArrayLike(val) ? Array.prototype.slice.call(val || [], 0) : val;
 }
 ```
