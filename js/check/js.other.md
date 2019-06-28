@@ -66,6 +66,7 @@ function isEmptyObject(val) {
 
 注：使用它之前需要用[` isObject(val) `](https://github.com/lvzhenbang/article/blob/master/js/check/js.type.md#isobject)判断给定的值是否为对象
 
+
 ### hasProp
 
 判断某个对象` obj `是否有` 属性key `。如果有返回true，否则返回false。
@@ -95,6 +96,39 @@ function isNative(val) {
 ```
 
 注：` isFunction(val) `参考[` js.type isFunction `](https://github.com/lvzhenbang/article/blob/master/js/check/js.type.md#isfunction)
+
+
+## URL
+
+### isHttps
+
+判断当前页面是否使用的是`HTTPS`协议。如果是返回true，否则返回false。
+
+```
+function isHttps () {
+  return window.location.href.test(/^https/);
+}
+```
+
+### isObjectURL
+
+判断某个值` val `是否是[` ObjectURL `](https://developer.mozilla.org/zh-CN/docs/Web/API/URL/createObjectURL)。如果是返回true，否则返回false。
+
+```
+function isObjectURL (val) {
+  return val.indexOf('blob:') === 0;
+}
+```
+
+### isURLSearchParams
+
+判断给定的值是否为` URLSearchParams `。如果是返回true，否则返回false。
+
+```
+function isURLSearchParams(val) {
+  return typeof URLSearchParams !== 'undefined' && val instanceof URLSearchParams;
+}
+```
 
 ## string 相关
 
@@ -249,3 +283,96 @@ const elementIsVisibleInViewport = (el, partiallyVisible = false) => {
 ```
 
 注：参考来源[` 30-second-code elementIsVisibleInViewport `](https://github.com/30-seconds/30-seconds-of-code#elementisvisibleinviewport-)
+
+## Device
+
+### isTouchDevice
+
+判断是否是` 触屏设备 `。如果是返回true，否则返回false。
+
+```
+function isTouchDevice () {
+  // works on most browsers
+  if ('ontouchstart' in window) {
+    return true
+  }
+
+  // works on IE10/11 and Surface
+  return !!navigator.maxTouchPoints
+}
+```
+
+## file
+
+### isFile
+
+判断给定的值是否为` file `。如果是返回true，否则返回false。
+
+```
+function isFile(val) {
+  return _toString.call(val) === '[object File]';
+}
+```
+
+### isBlob
+
+判断给定的值是否为` Blob `。如果是返回true，否则返回false。
+
+```
+function isBlob(val) {
+  return _toString.call(val) === '[object Blob]';
+}
+```
+
+### isStream
+
+判断给定的值是否为` stream `。如果是返回true，否则返回false。
+
+```
+function isStream(val) {
+  return isObject(val) && isFunction(val.pipe);
+}
+```
+
+### isArrayBuffer
+
+判断给定的值是否为` ArrayBuffer `。如果是返回true，否则返回false。
+
+```
+function isArrayBuffer(val) {
+  return _toString.call(val) === '[object ArrayBuffer]';
+}
+```
+
+### isArrayBufferView
+
+判断给定的值是否为` ArrayBufferView `。如果是返回true，否则返回false。
+
+```
+function isArrayBufferView(val) {
+  var result;
+  if ((typeof ArrayBuffer !== 'undefined') && (ArrayBuffer.isView)) {
+    result = ArrayBuffer.isView(val);
+  } else {
+    result = (val) && (val.buffer) && (val.buffer instanceof ArrayBuffer);
+  }
+  return result;
+}
+```
+
+### isPreviewFile
+
+判断` FileType ` 是否可以在 ` 浏览器中预览 `。如果是返回true，否则返回false。
+
+```
+function isPreviewFile (val) {
+  if (!val) return false
+  const fileType = val.split('/')[1]
+  if (/^(jpe?g|gif|png|svg|svg\+xml|bmp)$/.test(fileType)) {
+    return true
+  }
+  return false
+}
+```
+
+注：参考[` uppy isPreviewSupported`](https://github.com/transloadit/uppy/blob/master/packages/%40uppy/utils/src/isPreviewSupported.js)

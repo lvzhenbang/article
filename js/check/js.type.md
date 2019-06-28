@@ -275,9 +275,7 @@ function isWeakMap(val) {
 }
 ```
 
-## 其他
-
-### isPromise
+## isPromise
 
 判断给定的值是否为` promise `。如果是返回true，否则返回false。
 
@@ -292,73 +290,8 @@ function isPromise(val) {
 
 注：参考[` is-promise `](https://github.com/then/is-promise/blob/master/index.js) 和 [` vue isPromise `](https://github.com/vuejs/vue/blob/dev/src/shared/util.js#L74)
 
-### isFile
 
-判断给定的值是否为` file `。如果是返回true，否则返回false。
-
-```
-function isFile(val) {
-  return _toString.call(val) === '[object File]';
-}
-```
-
-### isBlob
-
-判断给定的值是否为` Blob `。如果是返回true，否则返回false。
-
-```
-function isBlob(val) {
-  return _toString.call(val) === '[object Blob]';
-}
-```
-
-### isStream
-
-判断给定的值是否为` stream `。如果是返回true，否则返回false。
-
-```
-function isStream(val) {
-  return isObject(val) && isFunction(val.pipe);
-}
-```
-
-### isArrayBuffer
-
-判断给定的值是否为` ArrayBuffer `。如果是返回true，否则返回false。
-
-```
-function isArrayBuffer(val) {
-  return _toString.call(val) === '[object ArrayBuffer]';
-}
-```
-
-### isArrayBufferView
-
-判断给定的值是否为` ArrayBufferView `。如果是返回true，否则返回false。
-
-```
-function isArrayBufferView(val) {
-  var result;
-  if ((typeof ArrayBuffer !== 'undefined') && (ArrayBuffer.isView)) {
-    result = ArrayBuffer.isView(val);
-  } else {
-    result = (val) && (val.buffer) && (val.buffer instanceof ArrayBuffer);
-  }
-  return result;
-}
-```
-
-### isURLSearchParams
-
-判断给定的值是否为` URLSearchParams `。如果是返回true，否则返回false。
-
-```
-function isURLSearchParams(val) {
-  return typeof URLSearchParams !== 'undefined' && val instanceof URLSearchParams;
-}
-```
-
-### isFormData
+## isFormData
 
 判断给定的值是否为` FormData `。如果是返回true，否则返回false。
 
@@ -368,6 +301,6 @@ function isFormData(val) {
 }
 ```
 
-## 参考规范
+# 参考规范
 
 [` ECMAScript® 2016 Language Specification `](http://www.ecma-international.org/ecma-262/7.0/#sec-ecmascript-language-types)
