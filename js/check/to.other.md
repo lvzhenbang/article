@@ -55,3 +55,40 @@ function toArray (val) {
 ```
 
 注：` isArrayLike `可参考[` js.type isArrayLike `](https://github.com/lvzhenbang/article/blob/master/js/check/js.type.md#isarraylike)
+
+## dataURItoBlob
+
+转化` base64 `数据为` blob `。
+
+```
+function dataURItoBlob (dataURI, opts, toFile=false) {
+  const data = dataURI.split(',')[1];
+  
+  let mimeType = opts.mimeType || dataURI.split(',')[0].split(':')[1].split(';')[0];
+
+  if (mimeType == null) {
+    mimeType = 'plain/text';
+  }
+
+  const binary = atob(data);
+  const array = [];
+  for (let i = 0; i < binary.length; i++) {
+    array.push(binary.charCodeAt(i));
+  }
+
+  let bytes;
+  try {
+    bytes = new Uint8Array(array);
+  } catch (err) {
+    return null;
+  }
+
+  if (toFile) {
+    return new File([bytes], opts.name || '', { type: mimeType });
+  }
+
+  return new Blob([bytes], { type: mimeType });
+}
+```
+
+注：参考[` uppy dataURItoBlob `](https://github.com/transloadit/uppy/blob/master/packages/%40uppy/utils/src/dataURItoBlob.js)
