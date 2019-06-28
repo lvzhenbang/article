@@ -114,3 +114,15 @@ function dataURItoFile (dataURI, opts) {
   return new File([dataURItoByetes(dataURI, opts)], opts.name || '', { type: dataURItoMimeType(dataURI, opts) });
 }
 ```
+
+## canvasToBlob
+
+```
+function canvasToBlob (canvas, type, quality) {
+  if (canvas.toBlob) {
+    return canvas.toBlob(function() {}, type, quality)
+  }
+  
+  return dataURItoBlob(canvas.toDataURL(type, quality), {});
+}
+```
