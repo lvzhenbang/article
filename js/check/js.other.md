@@ -273,3 +273,21 @@ const elementIsVisibleInViewport = (el, partiallyVisible = false) => {
 ```
 
 注：参考来源[` 30-second-code elementIsVisibleInViewport `](https://github.com/30-seconds/30-seconds-of-code#elementisvisibleinviewport-)
+
+## Device
+
+### isTouchDevice
+
+判断是否是` 触屏设备 `。如果是返回true，否则返回false。
+
+```
+function isTouchDevice () {
+  // works on most browsers
+  if ('ontouchstart' in window) {
+    return true
+  }
+
+  // works on IE10/11 and Surface
+  return !!navigator.maxTouchPoints
+}
+```
