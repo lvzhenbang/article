@@ -29,7 +29,7 @@ function isPrimitive(val) {
 }
 ```
 
-注：`isNull(val)`可参考[` js.type isNull `](https://github.com/lvzhenbang/article/blob/master/learning/js.type.md#isnull)
+注：`isNull(val)`可参考[` js.type isNull `](https://github.com/lvzhenbang/article/blob/master/js/check/js.type.md#isnull)
 
 注：在vue中，把` null `和它衍生出的` undefined `分离了出来，可参考[`vue isPrimitive`](https://github.com/vuejs/vue/blob/dev/src/shared/util.js#L26)
 
@@ -45,7 +45,7 @@ function isPlainObject(val) {
 }
 ```
 
-注：` _toString `可参考[` js.type _toString `](https://github.com/lvzhenbang/article/blob/master/learning/js.type.md#javascript-%E5%B8%B8%E8%A7%81%E5%88%A4%E6%96%AD)
+注：` _toString `可参考[` js.type _toString `](https://github.com/lvzhenbang/article/blob/master/js/check/js.type.md#javascript-%E5%B8%B8%E8%A7%81%E5%88%A4%E6%96%AD)
 
 注：后期参考[` lodash isPlainObject `](https://github.com/lodash/lodash/blob/master/isPlainObject.js) 修改。
 
@@ -64,7 +64,7 @@ function isEmptyObject(val) {
 }
 ```
 
-注：使用它之前需要用[` isObject(val) `](https://github.com/lvzhenbang/article/blob/master/learning/js.type.md#isobject)判断给定的值是否为对象
+注：使用它之前需要用[` isObject(val) `](https://github.com/lvzhenbang/article/blob/master/js/check/js.type.md#isobject)判断给定的值是否为对象
 
 ### hasProp
 
@@ -76,7 +76,7 @@ function hasProp(obj, key) {
 }
 ```
 
-注：` isObject(obj) `参考[` js.type isObject `](https://github.com/lvzhenbang/article/blob/master/learning/js.type.md#isobject)
+注：` isObject(obj) `参考[` js.type isObject `](https://github.com/lvzhenbang/article/blob/master/js/check/js.type.md#isobject)
 
 ## isNative
 
@@ -94,7 +94,7 @@ function isNative(val) {
 }
 ```
 
-注：` isFunction(val) `参考[` js.type isFunction `](https://github.com/lvzhenbang/article/blob/master/learning/js.type.md#isfunction)
+注：` isFunction(val) `参考[` js.type isFunction `](https://github.com/lvzhenbang/article/blob/master/js/check/js.type.md#isfunction)
 
 ## string 相关
 
@@ -130,7 +130,7 @@ function isEl(val) {
 }
 ```
 
-注：`isObject(val)`，请参考[`js type`](https://github.com/lvzhenbang/article/blob/master/learning/js.type.md#isobject)
+注：`isObject(val)`，请参考[`js type`](https://github.com/lvzhenbang/article/blob/master/js/check/js.type.md#isobject)
 
 ### isTextNode
 
@@ -142,7 +142,7 @@ function isTextNode(val) {
 }
 ```
 
-注：`isObject(val)`，请参考[`js type`](https://github.com/lvzhenbang/article/blob/master/learning/js.type.md#isobject)
+注：`isObject(val)`，请参考[`js type`](https://github.com/lvzhenbang/article/blob/master/js/check/js.type.md#isobject)
 
 
 ## iframe
