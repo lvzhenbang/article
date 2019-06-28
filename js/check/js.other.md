@@ -291,3 +291,22 @@ function isTouchDevice () {
   return !!navigator.maxTouchPoints
 }
 ```
+
+## file
+
+### isPreviewFile
+
+判断` FileType ` 是否可以在 ` 浏览器中预览 `。如果是返回true，否则返回false。
+
+```
+function isPreviewFile (val) {
+  if (!val) return false
+  const fileType = val.split('/')[1]
+  if (/^(jpe?g|gif|png|svg|svg\+xml|bmp)$/.test(fileType)) {
+    return true
+  }
+  return false
+}
+```
+
+注：参考[` uppy isPreviewSupported`](https://github.com/transloadit/uppy/blob/master/packages/%40uppy/utils/src/isPreviewSupported.js)
