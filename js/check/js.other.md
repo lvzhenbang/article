@@ -259,6 +259,30 @@ function isTouchDevice () {
 }
 ```
 
+### isDragDropSupported
+
+判断是否支持` 元素拖拽 `。如果是返回true，否则返回false。
+
+```
+function isDragDropSupported () {
+  var div = document.createElement('div')
+
+  if (!('draggable' in div) || !('ondragstart' in div && 'ondrop' in div)) {
+    return false
+  }
+
+  if (!('FormData' in window)) {
+    return false
+  }
+
+  if (!('FileReader' in window)) {
+    return false
+  }
+
+  return true
+}
+```
+
 ## file
 
 ### isFile
