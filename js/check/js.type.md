@@ -122,6 +122,51 @@ function isObject(val) {
 
 注：[` core-js `](https://github.com/zloirock/core-js/blob/master/packages/core-js/internals/is-object.js)
 
+
+### isPlainObject
+
+判断给定的值是否为` 单纯的对象（object） `（不是 Array, Date等）。如果是返回true，否则返回false。
+
+```
+function isPlainObject(val) {
+  return _toString.call(obj) === '[object Object]'
+}
+```
+
+注：` _toString `可参考[` js.type _toString `](https://github.com/lvzhenbang/article/blob/master/js/check/js.type.md#javascript-%E5%B8%B8%E8%A7%81%E5%88%A4%E6%96%AD)
+
+注：后期参考[` lodash isPlainObject `](https://github.com/lodash/lodash/blob/master/isPlainObject.js) 修改。
+
+### isEmptyObject
+
+判断给定的值是否为` 空对象（{}） `。如果是返回true，否则返回false。
+
+```
+function isEmptyObject(val) {
+	for (const key in val) {
+		if (val.hasOwnProperty(key)) {
+			return false
+		}
+	}
+	return true
+}
+```
+
+注：使用它之前需要用[` isObject(val) `](https://github.com/lvzhenbang/article/blob/master/js/check/js.type.md#isobject)判断给定的值是否为对象
+
+
+### hasProp
+
+判断某个对象` obj `是否有` 属性key `。如果有返回true，否则返回false。
+
+```
+function hasProp(obj, key) {
+  return isObject(obj) && hasOwnProperty.call(obj, key);
+}
+```
+
+注：` isObject(obj) `参考[` js.type isObject `](https://github.com/lvzhenbang/article/blob/master/js/check/js.type.md#isobject)
+
 ## isArray
 
 判断给定的值是否为` 数组 `。如果是返回true，否则返回false。
