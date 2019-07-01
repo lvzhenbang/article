@@ -126,3 +126,15 @@ function canvasToBlob (canvas, type, quality) {
   return dataURItoBlob(canvas.toDataURL(type, quality), {});
 }
 ```
+
+## secondsToTime
+
+```
+function secondsToTime (seconds) {
+  val hours = Math.floor(seconds / 3600) % 24;
+  val minutes = Math.floor(seconds / 60) % 60;
+  val seconds = Math.floor(seconds % 60);
+
+  return { hours, minutes, seconds }
+
+```
