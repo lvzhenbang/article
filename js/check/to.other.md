@@ -127,6 +127,16 @@ function canvasToBlob (canvas, type, quality) {
 }
 ```
 
+## toDate
+
+```
+funciton toDate(val) {
+  return isDate(val) ? new Date(val) : null;
+}
+```
+
+注：日期的格式化可参考[` utils.date `]()
+
 ## secondsToTime
 
 ```
