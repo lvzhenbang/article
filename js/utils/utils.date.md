@@ -92,7 +92,7 @@ function getDayInMonth(year, month) {
 
 ### setYear
 
-设置` date对象 `的` 年 `为` val `
+设置` date对象 `的` 年 `为` val `, 然后返回修改后的` date `。
 
 ```
 function setFullYear (date, val) {
@@ -102,7 +102,7 @@ function setFullYear (date, val) {
 
 ### setMonth
 
-设置` date对象 `的` 月 `为` val `
+设置` date对象 `的` 月 `为` val `, 然后返回修改后的` date `。
 
 ```
 function setMonth (date, val) {
@@ -112,7 +112,7 @@ function setMonth (date, val) {
 
 ### setDate
 
-设置` date对象 `的` 天 `为` val `
+设置` date对象 `的` 天 `为` val `, 然后返回修改后的` date `。
 
 ```
 function setDate (date, val) {
@@ -122,7 +122,7 @@ function setDate (date, val) {
 
 ### setMinutes
 
-设置` date对象 `的` 分钟 `为` val `
+设置` date对象 `的` 分钟 `为` val `, 然后返回修改后的` date `。
 
 ```
 function setMinutes (date, val) {
@@ -132,7 +132,7 @@ function setMinutes (date, val) {
 
 ### setSeconds
 
-设置` date对象 `的` 秒钟 `为` val `
+设置` date对象 `的` 秒钟 `为` val `, 然后返回修改后的` date `。
 
 ```
 function setSeconds (date, val) {
@@ -142,7 +142,7 @@ function setSeconds (date, val) {
 
 ### setMilliseconds
 
-设置` date对象 `的` 毫秒 `为` val `
+设置` date对象 `的` 毫秒 `为` val `, 然后返回修改后的` date `。
 
 ```
 function setMilliseconds (date, val) {
@@ -152,7 +152,7 @@ function setMilliseconds (date, val) {
 
 ### setDay
 
-设置` date对象 ` 的` 星期几 `为` val `
+设置` date对象 ` 的` 星期几 `为` val `, 然后返回修改后的` date `。
 
 ```
 function setDay (date, val) {
