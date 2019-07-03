@@ -159,3 +159,26 @@ function setDay (date, val) {
   return isUTC ? date.setUTCDay(val) : date.setDay(val)
 }
 ```
+
+## 格式化日期
+
+```
+formatDate (date, format, lang) {
+  lang = (!lang) ? en : lang
+  var year = this.getYear(date)
+  var month = this.getMonth(date) + 1
+  var day = this.getDate(date)
+
+  return format
+    .replace(/dd/, ('0' + day).slice(-2))
+    .replace(/d/, day)
+    .replace(/yyyy/, year)
+    .replace(/yy/, String(year).slice(2))
+    .replace(/MMMM/, this.getMonthName(this.getMonth(date), lang.months))
+    .replace(/MMM/, this.getMonthNameAbbr(this.getMonth(date), lang.monthsAbbr))
+    .replace(/MM/, ('0' + month).slice(-2))
+    .replace(/M(?!a|ä|e)/, month)
+    .replace(/su/, this.getNthSuffix(this.getDate(date)))
+    .replace(/D(?!e|é|i)/, this.getDayNameAbbr(date, lang.days))
+}
+```
