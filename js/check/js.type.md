@@ -8,7 +8,7 @@ var _toString = Object.prototype.toString;
 
 ## isString
 
-判断给定的值是否为` 字符串 `。如果是返回true，否则返回false。
+判断给定的值` val `是否为` 字符串 `。如果是返回true，否则返回false。
 
 ```
 function isString(val) {
@@ -18,7 +18,7 @@ function isString(val) {
 
 ## isNumber
 
-判断给定的值是否为` 数字 `。如果是返回true，否则返回false。
+判断给定的值` val `是否为` 数字 `。如果是返回true，否则返回false。
 
 ```
 function isNumber(val) {
@@ -28,7 +28,7 @@ function isNumber(val) {
 
 ### isFiniteNum
 
-判断给定的值是否为` 有穷数 `。如果是返回true，否则返回false。
+判断给定的值` val `是否为` 有穷数 `。如果是返回true，否则返回false。
 
 ```
 function isFiniteNum(val) {
@@ -40,7 +40,7 @@ function isFiniteNum(val) {
 
 ### isIntger
 
-判断给定的值是否为` 一个整数 `。如果是返回true，否则返回false。
+判断给定的值` val `是否为` 一个整数 `。如果是返回true，否则返回false。
 
 ```
 function isInteger(val) {
@@ -52,7 +52,7 @@ function isInteger(val) {
 
 ### isNaN
 
-判断给定的值是否为` 非数字 `。如果是返回true，否则返回false。
+判断给定的值` val `是否为` 非数字 `。如果是返回true，否则返回false。
 
 ```
 function isNaN(val) {
@@ -71,7 +71,7 @@ function isNaN(val) {
 
 ## isBoolean
 
-判断给定的值是否为` boolean `。如果是返回true，否则返回false。
+判断给定的值` val `是否为` boolean `。如果是返回true，否则返回false。
 
 ```
 function isBoolean(val) {
@@ -81,7 +81,7 @@ function isBoolean(val) {
 
 ## isUndefined
 
-判断给定的值是否为` undefined `。如果是返回true，否则返回false。
+判断给定的值` val `是否为` undefined `。如果是返回true，否则返回false。
 
 ```
 function isUndefined(val) {
@@ -91,7 +91,7 @@ function isUndefined(val) {
 
 ## isNull
 
-判断给定的值是否为` null `。如果是返回true，否则返回false。
+判断给定的值` val `是否为` null `。如果是返回true，否则返回false。
 
 ```
 function isNull(val) {
@@ -102,7 +102,7 @@ function isNull(val) {
 
 ## isSymbol
 
-判断给定的值是否为` symbol `。如果是返回true，否则返回false。
+判断给定的值` val `是否为` symbol `。如果是返回true，否则返回false。
 
 ```
 function isSymbol(val) {
@@ -112,7 +112,7 @@ function isSymbol(val) {
 
 ## isObject
 
-判断给定的值是否为` object `。如果是返回true，否则返回false。
+判断给定的值` val `是否为` object `。如果是返回true，否则返回false。
 
 ```
 function isObject(val) {
@@ -125,7 +125,7 @@ function isObject(val) {
 
 ### isPlainObject
 
-判断给定的值是否为` 单纯的对象（object） `（不是 Array, Date等）。如果是返回true，否则返回false。
+判断给定的值` val `是否为` 单纯的对象（object） `（不是 Array, Date等）。如果是返回true，否则返回false。
 
 ```
 function isPlainObject(val) {
@@ -139,7 +139,7 @@ function isPlainObject(val) {
 
 ### isEmptyObject
 
-判断给定的值是否为` 空对象（{}） `。如果是返回true，否则返回false。
+判断给定的值` val `是否为` 空对象（{}） `。如果是返回true，否则返回false。
 
 ```
 function isEmptyObject(val) {
@@ -152,7 +152,7 @@ function isEmptyObject(val) {
 }
 ```
 
-注：使用它之前需要用[` isObject(val) `](https://github.com/lvzhenbang/article/blob/master/js/check/js.type.md#isobject)判断给定的值是否为对象
+注：使用它之前需要用[` isObject(val) `](https://github.com/lvzhenbang/article/blob/master/js/check/js.type.md#isobject)判断给定的值` val `是否为对象
 
 
 ### hasProp
@@ -169,7 +169,7 @@ function hasProp(obj, key) {
 
 ## isArray
 
-判断给定的值是否为` 数组 `。如果是返回true，否则返回false。
+判断给定的值` val `是否为` 数组 `。如果是返回true，否则返回false。
 
 ```
 function isArray(val) {
@@ -180,7 +180,7 @@ function isArray(val) {
 
 ### isArrayLike
 
-判断给定的值是否为` 类数组 `。如果是返回true，否则返回false。
+判断给定的值` val `是否为` 类数组 `。如果是返回true，否则返回false。
 
 ```
 function isArrayLike(val) {
@@ -193,7 +193,7 @@ function isArrayLike(val) {
 
 ### isTypedArray
 
-判断给定的值是否为[` TypedArray `](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/TypedArray)。如果是返回true，否则返回false。
+判断给定的值` val `是否为[` TypedArray `](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/TypedArray)。如果是返回true，否则返回false。
 
 
 ```
@@ -205,7 +205,7 @@ function isTypedArray(val) {
 
 ## isFunction
 
-判断给定的值是否为` funciton `。如果是返回true，否则返回false。
+判断给定的值` val `是否为` funciton `。如果是返回true，否则返回false。
 
 ```
 function isFunction(val) {
@@ -215,7 +215,7 @@ function isFunction(val) {
 
 ### isSyncFunction
 
-判断给定的值是否为` 同步funciton `。如果是返回true，否则返回false。
+判断给定的值` val `是否为` 同步funciton `。如果是返回true，否则返回false。
 
 ```
 function isSyncFunction(val) {
@@ -225,7 +225,7 @@ function isSyncFunction(val) {
 
 ### isAsyncFunction
 
-判断给定的值是否为` 异步funciton `。如果是返回true，否则返回false。
+判断给定的值` val `是否为` 异步funciton `。如果是返回true，否则返回false。
 
 ```
 function isAsyncFunction(val) {
@@ -235,7 +235,7 @@ function isAsyncFunction(val) {
 
 ### isGeneratorFunction
 
-判断给定的值是否为` 生成器funciton `。如果是返回true，否则返回false。
+判断给定的值` val `是否为` 生成器funciton `。如果是返回true，否则返回false。
 
 ```
 function isGeneratorFunction(val) {
@@ -252,7 +252,7 @@ function isGeneratorFunction(val) {
 
 ## isArguments
 
-判断给定的值是否为` Arguments 对象 `。如果是返回true，否则返回false。
+判断给定的值` val `是否为` Arguments 对象 `。如果是返回true，否则返回false。
 
 ```
 function isArguments(val) {
@@ -260,19 +260,9 @@ function isArguments(val) {
 }
 ```
 
-## isDate
-
-判断给定的值是否为` date `。如果是返回true，否则返回false。
-
-```
-function isDate(val) {
-  return _toString.call(val) === '[object Date]';
-}
-```
-
 ## isRegExp
 
-判断给定的值是否为` 正则 `。如果是返回true，否则返回false。
+判断给定的值` val `是否为` 正则 `。如果是返回true，否则返回false。
 
 ```
 function isRegExp(val) {
@@ -282,7 +272,7 @@ function isRegExp(val) {
 
 ## isSet
 
-判断给定的值是否为` Set `。如果是返回true，否则返回false。
+判断给定的值` val `是否为` Set `。如果是返回true，否则返回false。
 
 ```
 function isSet(val) {
@@ -292,7 +282,7 @@ function isSet(val) {
 
 ## isWeakSet
 
-判断给定的值是否为` WeakSet `。如果是返回true，否则返回false。
+判断给定的值` val `是否为` WeakSet `。如果是返回true，否则返回false。
 
 ```
 function isSeakSet(val) {
@@ -302,7 +292,7 @@ function isSeakSet(val) {
 
 ## isMap
 
-判断给定的值是否为` Map `。如果是返回true，否则返回false。
+判断给定的值` val `是否为` Map `。如果是返回true，否则返回false。
 
 ```
 function isMap(val) {
@@ -312,7 +302,7 @@ function isMap(val) {
 
 ## isWeakMap
 
-判断给定的值是否为` Map `。如果是返回true，否则返回false。
+判断给定的值` val `是否为` Map `。如果是返回true，否则返回false。
 
 ```
 function isWeakMap(val) {
@@ -322,7 +312,7 @@ function isWeakMap(val) {
 
 ## isPromise
 
-判断给定的值是否为` promise `。如果是返回true，否则返回false。
+判断给定的值` val `是否为` promise `。如果是返回true，否则返回false。
 
 ```
 function isPromise(val) {
@@ -338,7 +328,7 @@ function isPromise(val) {
 
 ## isFormData
 
-判断给定的值是否为` FormData `。如果是返回true，否则返回false。
+判断给定的值` val `是否为` FormData `。如果是返回true，否则返回false。
 
 ```
 function isFormData(val) {

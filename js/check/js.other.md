@@ -357,3 +357,81 @@ function isPreviewFile (val) {
 ```
 
 注：参考[` uppy isPreviewSupported`](https://github.com/transloadit/uppy/blob/master/packages/%40uppy/utils/src/isPreviewSupported.js)
+
+## date
+
+### isDate
+
+判断给定的值` val `是否为` date `。如果是返回true，否则返回false。
+
+```
+function isDate(val) {
+  return _toString.call(val) === '[object Date]';
+}
+```
+
+注：一般不使用` isDate() `，而是使用下面的` isValidDate(val) `。
+
+### isValidDate
+
+判断给定的值` val `是否为有效的` date `。如果是返回true，否则返回false。
+
+```
+funciton isValidDate(val) {
+  return isDate(val) && !isNaN(val.getTime())
+}
+```
+
+### isLeapYear
+
+判断给定的` 年份 `值` val `是否为` 闰年 `。如果是返回true，否则返回false。
+
+```
+function isLeapYaer(val) {
+  var n = parseInt(val);
+  return !isNaN(n) && n % 400 === 0 || (n % 4 === 0 && n % 100 !== 0);
+}
+```
+
+### isSameYear
+
+判断两个给定的` date `对象` val `和`val2`是否为` 同一年 `。如果是返回true，否则返回false。
+
+```
+function isSameYear(val, val2) {
+  return val.getFullYear() === val2.getFullYear();
+}
+```
+
+### isSameMonth
+
+判断两个给定的` date `对象` val `和`val2`是否为` 同一年 `。如果是返回true，否则返回false。
+
+```
+function isSameMonth(val, val2) {
+  return isSameYear(val, val2) && val.getMonth() === val2.getMonth();
+}
+```
+
+### isSameDay
+
+判断两个给定的` date `对象` val `和`val2`是否为` 同一年 `。如果是返回true，否则返回false。
+
+```
+function isSameDay(val, val2) {
+  return val.getTime === val2.getTime;
+}
+```
+
+注：[` Date.getTime() `](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Date/getTime) 返回一个从` Jan 1, 1970, 00:00:00.000 GMT `的毫秒数值。
+
+### isWeekend
+
+判断给定的` date `值` val `是否为` 周末 `。如果是返回true，否则返回false。
+
+```
+function isWeekend(val) {
+  var day = date.getDay();
+  return day === 0 || day === 6;
+}
+```

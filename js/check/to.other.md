@@ -42,7 +42,7 @@ function toObject(val) {
 }
 ```
 
-注：` isString `可参考[` js.type isString `](https://github.com/lvzhenbang/article/blob/master/js/check/js.type.md#isstring)
+注：` isString `可参考[` js.type isString `](https://github.com/lvzhenbang/article/blob/master/js/check/js.type.md#isString)
 
 ## toArray
 
@@ -117,6 +117,8 @@ function dataURItoFile (dataURI, opts) {
 
 ## canvasToBlob
 
+转化` canvas `对象为` blob `。
+
 ```
 function canvasToBlob (canvas, type, quality) {
   if (canvas.toBlob) {
@@ -126,3 +128,28 @@ function canvasToBlob (canvas, type, quality) {
   return dataURItoBlob(canvas.toDataURL(type, quality), {});
 }
 ```
+
+## toDate
+
+转化` date `对象。
+
+```
+function toDate(y, m, d, M, h, s, ms) {
+  retunr new Date(y, m, d, M, h, s, ms)
+}
+```
+
+注：`isDate(val)`参考[` js.type isDate `](https://github.com/lvzhenbang/article/blob/master/js/check/js.type.md#isDate)
+
+
+## secondsToDate
+
+将` seconds `转化为日期` date `对象，并返回对象。
+
+```
+function secondsToDate (seconds) {
+  var n = parseInt(seconds);
+  return !isNaN(n) && new Date(n);
+}
+```
+注：`isNaN(n)`参考[` js.type isNaN `](https://github.com/lvzhenbang/article/blob/master/js/check/js.type.md#isNaN)
