@@ -424,3 +424,14 @@ function isSameDay(val, val2) {
 ```
 
 注：[` Date.getTime() `](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Date/getTime) 返回一个从` Jan 1, 1970, 00:00:00.000 GMT `的毫秒数值。
+
+### isWeekend
+
+判断给定的` date `值` val `是否为` 周末 `。如果是返回true，否则返回false。
+
+```
+function isWeekend(val) {
+  var day = date.getDay();
+  return day === 0 || day === 6;
+}
+```
