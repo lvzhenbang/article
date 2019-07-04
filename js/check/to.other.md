@@ -42,7 +42,7 @@ function toObject(val) {
 }
 ```
 
-注：` isString `可参考[` js.type isString `](https://github.com/lvzhenbang/article/blob/master/js/check/js.type.md#isstring)
+注：` isString `可参考[` js.type isString `](https://github.com/lvzhenbang/article/blob/master/js/check/js.type.md#istring)
 
 ## toArray
 
@@ -142,14 +142,14 @@ funciton toDate(y, m, d, M, h, s, ms) {
 注：`isDate(val)`参考[` js.type isDate `](https://github.com/lvzhenbang/article/blob/master/js/check/js.type.md#isDate)
 
 
-## secondsToTime
+## secondsToDate
+
+将` seconds `转化为日期` date `对象，并返回对象。
 
 ```
-function secondsToTime (seconds) {
-  val hours = Math.floor(seconds / 3600) % 24;
-  val minutes = Math.floor(seconds / 60) % 60;
-  val seconds = Math.floor(seconds % 60);
-
-  return { hours, minutes, seconds }
-
+function secondsToDate (seconds) {
+  var n = parseInt(seconds);
+  return !isNaN(n) && new Date(n);
+}
 ```
+注：`isNaN(n)`参考[` js.type isNaN `](https://github.com/lvzhenbang/article/blob/master/js/check/js.type.md#isNaN)
