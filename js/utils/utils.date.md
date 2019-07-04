@@ -10,77 +10,77 @@ isUTC = false; // 默认为非UTC
 
 ### getYear
 
-返回指定` date对象 `第几` 年 `
+返回指定` date对象 ` date第几` 年 `
 
 ```
-function getFullYear (date) {
+function getFullYear (date, isUTC) {
   return isUTC ? date.getUTCFullYear() : date.getFullYear()
 },
 ```
 
 ### getMonth
 
-返回指定` date对象 `第几` 月 `
+返回指定` date对象 ` date第几` 月 `
 
 ```
-function getMonth (date) {
+function getMonth (date, isUTC) {
   return isUTC ? date.getUTCMonth() : date.getMonth()
 }
 ```
 
 ### getDate
 
-返回指定` date对象 `某月的第几` 天 `
+返回指定` date对象 ` date某月的第几` 天 `
 
 ```
-function getDate (date) {
+function getDate (date, isUTC) {
   return isUTC ? date.getUTCDate() : date.getDate()
 }
 ```
 
 ### getMinutes
 
-返回指定` date对象 `第几` 分钟 `
+返回指定` date对象 ` date第几` 分钟 `
 
 ```
-function getMinutes (date) {
+function getMinutes (date, isUTC) {
   return isUTC ? date.getUTCMinutes() : date.getMinutes()
 }
 ```
 
 ### getSeconds
 
-返回指定` date对象 `第几` 秒钟 `
+返回指定` date对象 ` date第几` 秒钟 `
 
 ```
-function getSeconds (date) {
+function getSeconds (date, isUTC) {
   return isUTC ? date.getUTCSeconds() : date.getSeconds()
 }
 ```
 
 ### getMilliseconds
 
-返回指定` date对象 `第几` 毫秒 `
+返回指定` date对象 ` date第几` 毫秒 `
 
 ```
-function getMilliseconds (date) {
+function getMilliseconds (date, isUTC) {
   return isUTC ? date.getUTCMilliseconds() : date.getMilliseconds()
 }
 ```
 
 ### getDay
 
-返回指定` date对象 ` 是` 星期几 `
+返回指定` date对象 ` date 是` 星期几 `
 
 ```
-function getDay (date) {
+function getDay (date, isUTC) {
   return isUTC ? date.getUTCDay() : date.getDay()
 }
 ```
 
 ### getQuarter
 
-返回指定` date对象 ` 是` 第几季度 `
+返回指定` date对象 ` date 是` 第几季度 `
 
 ```
 function getQuarter(date, isUTC) {
@@ -116,70 +116,70 @@ function getDateNow(date) {
 
 ### setYear
 
-设置` date对象 `的` 年 `为` val `, 然后返回修改后的` date `。
+设置` date对象 ` date的` 年 `为` val `, 然后返回修改后的` date `。
 
 ```
-function setFullYear (date, val) {
+function setFullYear (date, val, isUTC) {
   return isUTC ? date.setUTCFullYear(val) : date.setFullYear(val)
 },
 ```
 
 ### setMonth
 
-设置` date对象 `的` 月 `为` val `, 然后返回修改后的` date `。
+设置` date对象 ` date的` 月 `为` val `, 然后返回修改后的` date `。
 
 ```
-function setMonth (date, val) {
+function setMonth (date, val, isUTC) {
   return isUTC ? date.setUTCMonth(val) : date.setMonth(val)
 }
 ```
 
 ### setDate
 
-设置` date对象 `的` 天 `为` val `, 然后返回修改后的` date `。
+设置` date对象 ` date的` 天 `为` val `, 然后返回修改后的` date `。
 
 ```
-function setDate (date, val) {
+function setDate (date, val, isUTC) {
   return isUTC ? date.setUTCDate(val) : date.setDate(val)
 }
 ```
 
 ### setMinutes
 
-设置` date对象 `的` 分钟 `为` val `, 然后返回修改后的` date `。
+设置` date对象 ` date的` 分钟 `为` val `, 然后返回修改后的` date `。
 
 ```
-function setMinutes (date, val) {
+function setMinutes (date, val, isUTC) {
   return isUTC ? date.setUTCMinutes(val) : date.setMinutes(val)
 }
 ```
 
 ### setSeconds
 
-设置` date对象 `的` 秒钟 `为` val `, 然后返回修改后的` date `。
+设置` date对象 ` date的` 秒钟 `为` val `, 然后返回修改后的` date `。
 
 ```
-function setSeconds (date, val) {
+function setSeconds (date, val, isUTC) {
   return isUTC ? date.setUTCSeconds(val) : date.setSeconds(val)
 }
 ```
 
 ### setMilliseconds
 
-设置` date对象 `的` 毫秒 `为` val `, 然后返回修改后的` date `。
+设置` date对象 ` date的` 毫秒 `为` val `, 然后返回修改后的` date `。
 
 ```
-function setMilliseconds (date, val) {
+function setMilliseconds (date, val, isUTC) {
   return isUTC ? date.setUTCMilliseconds(val) : date.setMilliseconds(val)
 }
 ```
 
 ### setDay
 
-设置` date对象 ` 的` 星期几 `为` val `, 然后返回修改后的` date `。
+设置` date对象 ` date 的` 星期几 `为` val `, 然后返回修改后的` date `。
 
 ```
-function setDay (date, val) {
+function setDay (date, val, isUTC) {
   return isUTC ? date.setUTCDay(val) : date.setDay(val)
 }
 ```
