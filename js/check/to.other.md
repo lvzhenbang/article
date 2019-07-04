@@ -134,8 +134,8 @@ function canvasToBlob (canvas, type, quality) {
 转化` date `对象。
 
 ```
-funciton toDate(y, m, d, M, h, s, ms) {
-  return new Date(y, m, d, M, h, s, ms);
+function toDate(y, m, d, M, h, s, ms) {
+  retunr new Date(y, m, d, M, h, s, ms)
 }
 ```
 
