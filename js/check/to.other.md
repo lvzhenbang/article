@@ -42,7 +42,7 @@ function toObject(val) {
 }
 ```
 
-注：` isString `可参考[` js.type isString `](https://github.com/lvzhenbang/article/blob/master/js/check/js.type.md#istring)
+注：` isString `可参考[` js.type isString `](https://github.com/lvzhenbang/article/blob/master/js/check/js.type.md#isString)
 
 ## toArray
 
