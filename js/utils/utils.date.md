@@ -84,9 +84,11 @@ function getDay (date) {
 
 ```
 function getDayInMonth(year, month) {
-  return /8|3|5|10/.test(month) ? 30 : month === 1 ? (!(year % 4) && year % 100) || !(year % 400) ? 29 : 28 : 31
+  return /8|3|5|10/.test(month) ? 30 : month === 1 ? (!isLeapYaer(year)) ? 29 : 28 : 31
 }
 ```
+
+注：[` isLeapYaer(year) `](https://github.com/lvzhenbang/article/blob/master/js/check/js.other.md#isLeapYaer)
 
 ## getDateNow
 
