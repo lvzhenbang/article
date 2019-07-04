@@ -117,6 +117,8 @@ function dataURItoFile (dataURI, opts) {
 
 ## canvasToBlob
 
+转化` canvas `对象为` blob `。
+
 ```
 function canvasToBlob (canvas, type, quality) {
   if (canvas.toBlob) {
@@ -129,13 +131,16 @@ function canvasToBlob (canvas, type, quality) {
 
 ## toDate
 
+转化` date `对象。
+
 ```
-funciton toDate(val) {
-  return isDate(val) ? new Date(val) : null;
+funciton toDate(y, m, d, M, h, s, ms) {
+  return new Date(y, m, d, M, h, s, ms);
 }
 ```
 
-注：`isDate(val)`参考[` utils.date `]()
+注：`isDate(val)`参考[` js.type isDate `](https://github.com/lvzhenbang/article/blob/master/js/check/js.type.md#isDate)
+
 
 ## secondsToTime
 
