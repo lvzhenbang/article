@@ -270,6 +270,18 @@ function isDate(val) {
 }
 ```
 
+注：一般不使用` isDate() `，而是使用下面的` isValidDate(val) `。
+
+## isValidDate
+
+判断给定的值是否为有效的` date `。如果是返回true，否则返回false。
+
+```
+funciton isValidDate(val) {
+  return isDate(val) && !isNaN(val.getTime())
+}
+```
+
 ## isRegExp
 
 判断给定的值是否为` 正则 `。如果是返回true，否则返回false。
