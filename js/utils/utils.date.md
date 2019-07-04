@@ -88,6 +88,18 @@ function getDayInMonth(year, month) {
 }
 ```
 
+## getDateNow
+
+返回自` 1970年1月1日 00:00:00 `到指定日期` date `的毫秒数。
+
+```
+
+function getDateNow(date) {
+  return Date.now ? Date.now(date) : +(new Date(date));
+}
+
+```
+
 ## 设置日期
 
 ### setYear

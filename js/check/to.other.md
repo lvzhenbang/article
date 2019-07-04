@@ -135,7 +135,7 @@ funciton toDate(val) {
 }
 ```
 
-注：日期的格式化可参考[` utils.date `]()
+注：`isDate(val)`参考[` utils.date `]()
 
 ## secondsToTime
 
