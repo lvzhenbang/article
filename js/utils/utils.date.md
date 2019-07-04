@@ -78,6 +78,16 @@ function getDay (date) {
 }
 ```
 
+### getQuarter
+
+返回指定` date对象 ` 是` 第几季度 `
+
+```
+function getQuarter(date, isUTC) {
+  return Math.floor((getMonth(date, isUTC) / 4)) + 1;
+}
+```
+
 ### getDayInMonth
 
 返回某年` year `第几个月` month `有几天
