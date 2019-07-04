@@ -384,7 +384,7 @@ funciton isValidDate(val) {
 
 ### isLeapYear
 
-判断给定的`年份`值` val `是否为` 闰年 `。如果是返回true，否则返回false。
+判断给定的` 年份 `值` val `是否为` 闰年 `。如果是返回true，否则返回false。
 
 ```
 function isLeapYaer(val) {
@@ -392,3 +392,35 @@ function isLeapYaer(val) {
   return !isNaN(n) && n % 400 === 0 || (n % 4 === 0 && n % 100 !== 0);
 }
 ```
+
+### isSameYear
+
+判断两个给定的` date `对象` val `和`val2`是否为` 同一年 `。如果是返回true，否则返回false。
+
+```
+function isSameYear(val, val2) {
+  return val.getFullYear() === val2.getFullYear();
+}
+```
+
+### isSameMonth
+
+判断两个给定的` date `对象` val `和`val2`是否为` 同一年 `。如果是返回true，否则返回false。
+
+```
+function isSameMonth(val, val2) {
+  return isSameYear(val, val2) && val.getMonth() === val2.getMonth();
+}
+```
+
+### isSameDay
+
+判断两个给定的` date `对象` val `和`val2`是否为` 同一年 `。如果是返回true，否则返回false。
+
+```
+function isSameDay(val, val2) {
+  return val.getTime === val2.getTime;
+}
+```
+
+注：[` Date.getTime() `](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Date/getTime) 返回一个从` Jan 1, 1970, 00:00:00.000 GMT `的毫秒数值。
