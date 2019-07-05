@@ -206,3 +206,21 @@ formatDate (date, format, lang) {
     .replace(/D(?!e|é|i)/, this.getDayNameAbbr(date, lang.days))
 }
 ```
+
+## 其他
+
+### startOfWeek
+
+获取给定` date `对象` val `所在` 周 `的第一天(MonDay)所指的新对象。
+
+```
+function startOfWeek(val) {
+  val.setDate(val);
+  // 时分秒是相同
+  val.setHour(0);
+  val.setMinute(0);
+  val.setSecond(0);
+  val.setMillisecond(0);
+  return val;
+}
+```

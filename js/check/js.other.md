@@ -413,6 +413,16 @@ function isSameMonth(val, val2) {
 }
 ```
 
+### isSameWeek
+
+判断两个给定的` date `对象` val `和`val2`是否为` 同一周 `。如果是返回true，否则返回false。
+
+```
+function isSameMonth(val, val2) {
+  return startOfWork(val).getTime === startOfWork(val2).getTime;
+}
+```
+
 ### isSameDay
 
 判断两个给定的` date `对象` val `和`val2`是否为` 同一年 `。如果是返回true，否则返回false。
