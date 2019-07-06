@@ -206,7 +206,7 @@ function setDay (date, val, isUTC) {
 
 ## 格式化日期
 
-输入一个` date `对象，然后返回一个` YYYY-MM-DD HH:mm:ss `格式的输出
+输入一个` date `对象，然后返回一个` YYYY-MM-DD hh:mm:ss `格式的输出
 
 ```
 function formatDate (date, format) {
@@ -218,19 +218,16 @@ function formatDate (date, format) {
   var second = getSeconds(date);
 
   return format
-    .replace(/YYYY/, year)
     .replace(/YY/, ('' + year).slice(2))
     .replace(/MM/, ('0' + month).slice(-2))
     .replace(/DD/, ('0' + day).slice(-2))
-    .replace(/D/, day)
-    .replace(/M/, month)
     .replace(/hh/, ('0' + hour).slice(-2))
     .replace(/mm/, ('0' + minute).slice(-2))
     .replace(/ss/, ('0' + second).slice(-2))
 }
 ```
 
-注：` getYear `，` getMonth `，` getDate `，` getHour `，` getMinutes `，` getSeconds `，
+注：` getYear `，` getMonth `，` getDate `，` getHour `，` getMinutes `，` getSeconds `參考上述自定义函数。
 
 ## 其他
 
