@@ -206,7 +206,7 @@ function setDay (date, val, isUTC) {
 
 ## 格式化日期
 
-输入一个` date `对象，然后返回一个` YYYY-MM-DD HH:mm:ss `格式的输出
+输入一个` date `对象，然后返回一个` YYYY-MM-DD hh:mm:ss `格式的输出
 
 ```
 function formatDate (date, format) {
