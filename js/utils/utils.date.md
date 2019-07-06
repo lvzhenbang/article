@@ -13,9 +13,9 @@ isUTC = false; // 默认为非UTC
 返回指定` date对象 ` date第几` 年 `
 
 ```
-function getFullYear (date, isUTC) {
+function getYear (date, isUTC) {
   return isUTC ? date.getUTCFullYear() : date.getFullYear()
-},
+}
 ```
 
 ### getMonth
@@ -35,6 +35,16 @@ function getMonth (date, isUTC) {
 ```
 function getDate (date, isUTC) {
   return isUTC ? date.getUTCDate() : date.getDate()
+}
+```
+
+### getHour
+
+返回指定` date对象 ` date第几` 小时 `
+
+```
+function getHour (date, isUTC) {
+  return isUTC ? date.getUTCHours() : date.getHours()
 }
 ```
 
@@ -144,6 +154,16 @@ function setDate (date, val, isUTC) {
 }
 ```
 
+### setHour
+
+设置` date对象 ` date的` 小时 `为` val `, 然后返回修改后的` date `。
+
+```
+function setHour (date, val, isUTC) {
+  return isUTC ? date.setUTCHours(val) : date.setHours(val)
+}
+```
+
 ### setMinutes
 
 设置` date对象 ` date的` 分钟 `为` val `, 然后返回修改后的` date `。
@@ -186,23 +206,63 @@ function setDay (date, val, isUTC) {
 
 ## 格式化日期
 
+输入一个` date `对象，然后返回一个` YYYY-MM-DD hh:mm:ss `格式的输出
+
 ```
-formatDate (date, format, lang) {
-  lang = (!lang) ? en : lang
-  var year = this.getYear(date)
-  var month = this.getMonth(date) + 1
-  var day = this.getDate(date)
+function formatDate (date, format) {
+  var year = getYear(date);
+  var month = getMonth(date) + 1;
+  var day = getDate(date);
+  var hour = getHour(date);
+  var minute = getMinutes(date);
+  var second = getSeconds(date);
 
   return format
-    .replace(/dd/, ('0' + day).slice(-2))
-    .replace(/d/, day)
-    .replace(/yyyy/, year)
-    .replace(/yy/, String(year).slice(2))
-    .replace(/MMMM/, this.getMonthName(this.getMonth(date), lang.months))
-    .replace(/MMM/, this.getMonthNameAbbr(this.getMonth(date), lang.monthsAbbr))
+    .replace(/YYYY/, year)
+    .replace(/YY/, ('' + year).slice(2))
     .replace(/MM/, ('0' + month).slice(-2))
-    .replace(/M(?!a|ä|e)/, month)
-    .replace(/su/, this.getNthSuffix(this.getDate(date)))
-    .replace(/D(?!e|é|i)/, this.getDayNameAbbr(date, lang.days))
+    .replace(/DD/, ('0' + day).slice(-2))
+    .replace(/D/, day)
+    .replace(/M/, month)
+    .replace(/hh/, ('0' + hour).slice(-2))
+    .replace(/mm/, ('0' + minute).slice(-2))
+    .replace(/ss/, ('0' + second).slice(-2))
 }
 ```
+
+注：` getYear `，` getMonth `，` getDate `，` getHour `，` getMinutes `，` getSeconds `，
+
+## 其他
+
+### startOfWeek
+
+获取给定` date `对象` val `所在` 周 `的第一天(MonDay)所指的新对象。
+
+```
+function startOfWeek(val) {
+  val.setDate(val);
+  // 时分秒是相同
+  val.setHour(0);
+  val.setMinute(0);
+  val.setSecond(0);
+  val.setMillisecond(0);
+  return val;
+}
+```
+
+## 插件
+
+* [` moment `](https://github.com/moment/moment)
+* [` date-fns `](https://github.com/date-fns/date-fns)
+* [` dayjs `](https://github.com/iamkun/dayjs)
+
+> datepicker
+
+* [` daterangepicker `](https://github.com/dangrossman/daterangepicker)
+* [` bootstrap-datepicker `](https://github.com/uxsolutions/bootstrap-datepicker)
+* [` jquery datetimepicker `](https://github.com/xdan/datetimepicker)
+* [` vue-datepicker `](https://github.com/charliekassel/vuejs-datepicker)
+* [` react-datepicker `](https://github.com/Hacker0x01/react-datepicker)
+* [` angular-datepicker `](https://github.com/720kb/angular-datepicker)
+
+注：`vue`, `angular/js`, `react`可以查找相关的组件库
