@@ -187,8 +187,7 @@ function setDay (date, val, isUTC) {
 ## 格式化日期
 
 ```
-formatDate (date, format, lang) {
-  lang = (!lang) ? en : lang
+function formatDate (date, format) {
   var year = this.getYear(date)
   var month = this.getMonth(date) + 1
   var day = this.getDate(date)
@@ -198,12 +197,8 @@ formatDate (date, format, lang) {
     .replace(/d/, day)
     .replace(/yyyy/, year)
     .replace(/yy/, String(year).slice(2))
-    .replace(/MMMM/, this.getMonthName(this.getMonth(date), lang.months))
-    .replace(/MMM/, this.getMonthNameAbbr(this.getMonth(date), lang.monthsAbbr))
     .replace(/MM/, ('0' + month).slice(-2))
-    .replace(/M(?!a|ä|e)/, month)
-    .replace(/su/, this.getNthSuffix(this.getDate(date)))
-    .replace(/D(?!e|é|i)/, this.getDayNameAbbr(date, lang.days))
+    .replace(/M/, month)
 }
 ```
 
