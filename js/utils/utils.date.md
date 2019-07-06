@@ -13,9 +13,9 @@ isUTC = false; // 默认为非UTC
 返回指定` date对象 ` date第几` 年 `
 
 ```
-function getFullYear (date, isUTC) {
+function getYear (date, isUTC) {
   return isUTC ? date.getUTCFullYear() : date.getFullYear()
-},
+}
 ```
 
 ### getMonth
