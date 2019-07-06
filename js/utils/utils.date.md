@@ -38,6 +38,16 @@ function getDate (date, isUTC) {
 }
 ```
 
+### getHour
+
+返回指定` date对象 ` date第几` 小时 `
+
+```
+function getHour (date, isUTC) {
+  return isUTC ? date.getUTCHours() : date.getHours()
+}
+```
+
 ### getMinutes
 
 返回指定` date对象 ` date第几` 分钟 `
@@ -144,6 +154,16 @@ function setDate (date, val, isUTC) {
 }
 ```
 
+### setHour
+
+设置` date对象 ` date的` 小时 `为` val `, 然后返回修改后的` date `。
+
+```
+function setHour (date, val, isUTC) {
+  return isUTC ? date.setUTCHours(val) : date.setHours(val)
+}
+```
+
 ### setMinutes
 
 设置` date对象 ` date的` 分钟 `为` val `, 然后返回修改后的` date `。
@@ -188,9 +208,9 @@ function setDay (date, val, isUTC) {
 
 ```
 function formatDate (date, format) {
-  var year = this.getYear(date)
-  var month = this.getMonth(date) + 1
-  var day = this.getDate(date)
+  var year = getYear(date);
+  var month = getMonth(date) + 1;
+  var day = getDate(date);
 
   return format
     .replace(/dd/, ('0' + day).slice(-2))
