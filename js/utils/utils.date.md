@@ -224,3 +224,20 @@ function startOfWeek(val) {
   return val;
 }
 ```
+
+## 插件
+
+* [` moment `](https://github.com/moment/moment)
+* [` date-fns `](https://github.com/date-fns/date-fns)
+* [` dayjs `](https://github.com/iamkun/dayjs)
+
+> datepicker
+
+* [` daterangepicker `](https://github.com/dangrossman/daterangepicker)
+* [` bootstrap-datepicker `](https://github.com/uxsolutions/bootstrap-datepicker)
+* [` jquery datetimepicker `](https://github.com/xdan/datetimepicker)
+* [` vue-datepicker `](https://github.com/charliekassel/vuejs-datepicker)
+* [` react-datepicker `](https://github.com/Hacker0x01/react-datepicker)
+* [` angular-datepicker `](https://github.com/720kb/angular-datepicker)
+
+注：`vue`, `angular/js`, `react`可以查找相关的组件库
