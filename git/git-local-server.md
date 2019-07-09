@@ -1,15 +1,21 @@
-## 本地仓库到仓库管理服务器
+## 本地仓库到远程仓库
 
 注：以常见的github仓库管理服务器为例。
 
 ## 常见的操作
 
 1. 从github下载自己所要参与的项目(如：`git clone https://github.com/lvzhenbang/webpack4.x-multi-page.git` 这样的脚本命令可以将 `webpack4.x-multi-page` 项目下载到本地)；
+
 2. 然后，修改本地的项目并将其上传到github。如果是下载后第一次上传，需要先`git add .`，然后 `git commit -m 'init'`，紧接着用 `git push --set-upstream origin master` 和仓库服务器的分支建立联系；如果是不是首次的话，只用 `git push` 就可以和github建立联系，其它的操作和第一次上传相同。
+
 3. 如果是一个全新的项目，然后需要上传到github。本地不管如何操作，但都需要在github上[ `创建一个项目` ](https://help.github.com/en/articles/create-a-repo)。接着说本地如何操作？如果一开始就打算用github管理项目，可以先在github上创建一个项目，然后用 `第二条中操作` 中的方法来实现本地的操作。
+
 4. 如果一开始只是一个demo，之后想着要把它当作一个项目，放在github来进行持续的维护。首先，可以用 `git init` 脚本命令来初始本地项目，然后用 `git add .`, 紧接着用 `git commit -m 'init'`，这样就完成了本地的操作，再然后就是在github创建一个项目，紧接着用`git remote add origin https://github.com/lvzhenbang/webpack4.x-multi-page.git` 和github上新创建的 `webpack4.x-multi-page.git` 建立联系，随后本地项目的修改和操作可参考 `第二条操作` 。
+
 5. 如果后期你的项目向两个或多个方向走，那么可以创建不同的分支，可参考[ `git branch` ](https://github.com/lvzhenbang/article/blob/master/git/git-branch.md)。
+
 6. 如果随着时间的增长分歧越来越大就像[ `angularjs与anglar` ](https://github.com/angular)一样，你需要重新开启一个项目，那么该怎么做呢？简单的方法就是将原项目重新拷贝一份，然后用 `rm -f .git` 脚本命令删除原项目的历史记录（或者手动删除项目根目录下的`.git`文件夹），然后用 `第二中操作` 中的方法来实现本地的操作，紧接着是用 `第四条中操作` 中的相关方法来实现本地项目的上传。
+
 7. 随着新内容或者新技术的引入，抑或旧内容和旧技术的替代，开发中需要用到 [`git tag ***` ](https://github.com/lvzhenbang/article/blob/master/git/git-tag.md)来进行项目的版本管理。 
 
 
