@@ -237,12 +237,35 @@ function formatDate (date, format) {
 
 ```
 function startOfWeek(val) {
-  val.setDate(val);
+  const date = val.getDate();
+  const day = val.getDay();
+  const distanceDate = day === 0 ? -6 : 1 - day;
+  val.setDate(date + distanceDate);
   // 时分秒是相同
-  val.setHour(0);
-  val.setMinute(0);
-  val.setSecond(0);
-  val.setMillisecond(0);
+  val.setHours(0);
+  val.setMinutes(0);
+  val.setSeconds(0);
+  val.setMilliseconds(0);
+  return val;
+}
+```
+
+
+### endOfWeek
+
+获取给定` date `对象` val `所在` 周 `的最后一天(SunDay)所指的新对象。
+
+```
+function endOfWeek(val) {
+  const date = val.getDate();
+  const day = val.getDay();
+  const distanceDate = day === 0 ? 0 : 7 - day;
+  val.setDate(date + distanceDate);
+  // 时分秒是相同
+  val.setHours(0);
+  val.setMinutes(0);
+  val.setSeconds(0);
+  val.setMilliseconds(0);
   return val;
 }
 ```
