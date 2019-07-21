@@ -262,10 +262,10 @@ function endOfWeek(val) {
   const distanceDate = day === 0 ? 0 : 7 - day;
   val.setDate(date + distanceDate);
   // 时分秒是相同
-  val.setHours(0);
-  val.setMinutes(0);
-  val.setSeconds(0);
-  val.setMilliseconds(0);
+  val.setHours(23);
+  val.setMinutes(59);
+  val.setSeconds(59);
+  val.setMilliseconds(999);
   return val;
 }
 ```
