@@ -236,13 +236,36 @@ function formatDate (date, format) {
 获取给定` date `对象` val `所在` 周 `的第一天(MonDay)所指的新对象。
 
 ```
-function startOfWeek(val) {
-  val.setDate(val);
+function startOfWeek(val, start) {
+  const date = val.getDate();
+  const day = val.getDay();
+  const distanceDate = day < start ? start - day -7 : start - day;
+  val.setDate(date + distanceDate);
   // 时分秒是相同
-  val.setHour(0);
-  val.setMinute(0);
-  val.setSecond(0);
-  val.setMillisecond(0);
+  val.setHours(0);
+  val.setMinutes(0);
+  val.setSeconds(0);
+  val.setMilliseconds(0);
+  return val;
+}
+```
+
+
+### endOfWeek
+
+获取给定` date `对象` val `所在` 周 `的最后一天(SunDay)所指的新对象。
+
+```
+function endOfWeek(val, start) {
+  const date = val.getDate();
+  const day = val.getDay();
+  const distanceDate = day < start ? start - day - 1 : 6 + (start - day);
+  val.setDate(date + distanceDate);
+  // 时分秒是相同
+  val.setHours(23);
+  val.setMinutes(59);
+  val.setSeconds(59);
+  val.setMilliseconds(999);
   return val;
 }
 ```
