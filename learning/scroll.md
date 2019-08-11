@@ -15,7 +15,7 @@
 * [` simplebar `](https://github.com/Grsmto/simplebar)
 
 * [` react-custom-scrollbars `](https://github.com/malte-wessel/react-custom-scrollbars)
-* [` jquery.scrollbar `](https://github.com/gromo/jquery.scrollbar)
+* [` jquery.nicescroll `](https://github.com/inuyaksa/jquery.nicescroll)
 
 ## scrollIntoView
 
