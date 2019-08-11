@@ -69,6 +69,12 @@ var is_desktop = !(is_ios || is_android || is_webView)
 ## browser type
 
 ```
+function isMicrosoftBrowser(userAgent) {
+  var userAgentPatterns = ['MSIE ', 'Trident/', 'Edge/'];
+
+  return new RegExp(userAgentPatterns.join('|')).test(userAgent);
+}
+var is_Microsoft = isMicrosoftBrowser();
 var is_Ie = (/Trident/i).test(userAgent) || (/MSIE/i).test(userAgent);
 var is_Edge = (/Edge/i).test(userAgent);
 var is_firefox = (/Firefox/i).test(userAgent);
