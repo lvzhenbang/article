@@ -22,3 +22,4 @@
 * [` p2.js `](https://github.com/schteppe/p2.js.git)
 * [` spin.js `](https://github.com/EsotericSoftware/spine-runtimes)
 * [` cocos2d-html5 `](https://github.com/cocos2d/cocos2d-html5)
+* [` GreenSock-JS `](https://github.com/greensock/GreenSock-JS)
