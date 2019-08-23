@@ -336,6 +336,18 @@ function isFormData(val) {
 }
 ```
 
+## event
+
+### isTouchEvent()
+
+判断DOM触发的事件类型` event(e) `是否为` TouchEvent `。如果是返回true，否则返回false。
+
+```
+function isTouchEvent (e) {
+  return e.constructor.name === 'TouchEvent'
+}
+```
+
 # 参考规范
 
 [` ECMAScript® 2016 Language Specification `](http://www.ecma-international.org/ecma-262/7.0/#sec-ecmascript-language-types)
