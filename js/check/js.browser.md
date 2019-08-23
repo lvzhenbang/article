@@ -61,7 +61,7 @@ var is_webview = (is_ios) && userAgent.match(/.*AppleWebKit(?!.*Safari)/i);
 ## desktop
 
 ```
-var is_desktop = !(is_ios || is_android || is_webView)
+var is_desktop = !(is_ios() || is_android() || is_webView())
 ```
 
 注：只要不是ios/android/webview，就可判断其为desktop
