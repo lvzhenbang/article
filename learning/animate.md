@@ -4,6 +4,8 @@
 
 * [` css3-animte `](https://github.com/lvzhenbang/css3-animate)
 
+* [` swup `](https://github.com/swup/swup)
+
 ## JavaScript动画
 
 * [` velocity `](https://github.com/julianshapiro/velocity)
