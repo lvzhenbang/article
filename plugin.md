@@ -8,3 +8,6 @@
 * [` relative-time-format `](https://github.com/lvzhenbang/relative-time-format)
 * [` pagination `]https://github.com/lvzhenbang/pagination)
 * [` countdown `](https://github.com/lvzhenbang/countdown)
+* [` slider `](https://github.com/lvzhenbang/slider)
+* [` rating `](https://github.com/lvzhenbang/rating)
+* [` infinitescroll `](https://github.com/lvzhenbang/infinitescroll)

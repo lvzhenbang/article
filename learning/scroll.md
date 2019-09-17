@@ -6,6 +6,7 @@
 
 * [` better-scroll `](https://github.com/ustbhuangyi/better-scroll)
 * [` scrollMagic `](https://github.com/janpaepke/ScrollMagic)
+* [` scrollama `](https://github.com/russellgoldenberg/scrollama)
 
 ## 自定义滚动条
 
