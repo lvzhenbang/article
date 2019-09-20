@@ -3,6 +3,7 @@
 ## css 动画
 
 * [` css3-animte `](https://github.com/lvzhenbang/css3-animate)
+* [` ladda for button `](https://github.com/hakimel/Ladda)
 * [` swup `](https://github.com/swup/swup)
 
 ## JavaScript动画
