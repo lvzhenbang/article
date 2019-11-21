@@ -4,6 +4,11 @@
 
 [` ecma `](https://github.com/tc39/ecma262)
 
+## javascript 规范
+
+* [` js guide `](https://github.com/bevacqua/js)
+* [` airbnb javascript `](https://github.com/airbnb/javascript)
+
 ## 低版本兼容（polyfill）
 
 * [` core-js `](https://github.com/zloirock/core-js)
