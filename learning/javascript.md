@@ -48,4 +48,5 @@
 * [` 30 seconds of code `](https://github.com/30-seconds/30-seconds-of-code)
 * [` 33-js-concepts `](https://github.com/leonardomso/33-js-concepts)
 * [` standard `](https://github.com/standard/standard) js 样式指导
+* [`You might not need jQuery `](http://youmightnotneedjquery.com/)
 
