@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>event</title>
+</head>
+<body>
+  <input type="text" placeholder="please input 123...">
+  <div class="output">输出结果</div>
+  <script>
+    var event = {
+      trigger: function (el, customName, options) {
+        var evt;
+        if (window.CustomEvent) {
+          evt = new CustomEvent(customName, options);
+        } else {
+          evt = document.createEvent(customName, options);
+          if (evt.initCustomEvent) {
+            evt.initCustomEvent(customName, true, true, options);
+          } else {
+            evt.initEvent(customName, true, true);
+          }
+        }
+
+        if (el.dispatchEvent) {
+          el.dispatchEvent(evt);
+        } else {
+          el.fireEvent(evt);
+        }
+      },
+      on: function (el, evtName, handle) {
+        if (el.addEventListener) {
+          el.addEventListener(evtName, handle, false);
+        } else {
+          el.attachEvent('on' + evtName, handle);
+        }
+      },
+      off: function (el, evtName, handle) {
+        if (el.removeEventListener) {
+          el.removeEventListener(evtName, handle);
+        } else {
+          el.detachEvent('on' + evtName, handle);
+        }
+      }
+    }
+
+    // 类双向数据
+    var elInput = document.querySelector('input');
+    var oldVal = '';
+    var elOutput = document.querySelector('.output');
+    event.on(elInput, 'change', function(e) {
+      var newVal = e.target.value;
+      if (newVal !== '' && newVal === oldVal) {
+        
+        elOutput.innerHTML = newVal;
+      }
+
+      if (newVal === '') elOutput.innerHTML = '输出结果';
+    });
+    event.on(elInput, 'keyup', function(e) {
+      oldVal = e.target.value;
+      event.trigger(elInput, 'change');
+    });
+  </script>
+</body>
+</html>
