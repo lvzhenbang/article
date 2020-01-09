@@ -26,7 +26,13 @@
 
 * 性能不算好，也不算坏
 
-web常用的有缓存，切图、数据内嵌与合并、域名分片、Javascript的特殊用法。
+web常用的有缓存，切图、资源合并与压缩、CDN、Javascript的特殊用法。
+
+## HTTP实体数据
+
+* conttent-type：指定文件的[` 类型（MIME） `](https://baike.baidu.com/item/MIME/2900607); 也可以指定字符的编码类型[` charset `](https://baike.baidu.com/item/字符集/946585?fromtitle=charset&fromid=7362035#1_1)
+* content-encoding：文件的[` 压缩方式 `](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Headers/Accept-Encoding)
+* content-language：指定文件内容是哪种[` 语言 `](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Headers/Content-Language)
 
 ## 参考资料
 
