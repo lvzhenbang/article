@@ -40,38 +40,26 @@ JavaScript从开始被人当成为一种玩具语言，到后来发展为一门�
 
 ### 目录
 
-[‘大处着眼，小处着手’——设计模式系列](https://github.com/lvzhenbang/article/blob/master/design-pattern/introduce.md)
+[` ‘大处着眼，小处着手’——设计模式系列 `](https://github.com/lvzhenbang/article/blob/master/design-pattern/introduce.md)
 
 注：这是我个人对设计模式的认识和理解，仅代表个人观点个看法，不足之处欢迎大家指正，随着认识的加深这篇文章（包括设计模式其他系列文章）会不断地进行更新。
 
 ### javascript 设计模式
 
-[面向对象的JavaScript](https://github.com/lvzhenbang/article/blob/master/design-pattern/oop-js.md)
-	
-[构造器 设计模式](https://github.com/lvzhenbang/article/blob/master/design-pattern/constructor.md)
-
-[外观 设计模式](https://github.com/lvzhenbang/article/blob/master/design-pattern/facade.md)
-
-[工厂 设计模式](https://github.com/lvzhenbang/article/blob/master/design-pattern/factory.md)
-
-[观察者 设计模式](https://github.com/lvzhenbang/article/blob/master/design-pattern/observer.md)
-
-[javascript 单例设计模式](https://github.com/lvzhenbang/article/blob/master/design-pattern/js-singleton.md)
-
-[javascript 策略设计模式](https://github.com/lvzhenbang/article/blob/master/design-pattern/strategy.md)
-
-[javascript 代理设计模式](https://github.com/lvzhenbang/article/blob/master/design-pattern/proxy-pattern.md)
-
-[javascript 迭代器设计模式](https://github.com/lvzhenbang/article/blob/master/design-pattern/iterator.md)
-
-[javascript 观察者模式](https://github.com/lvzhenbang/article/blob/master/design-pattern/js-observer.md)
-
-
-持续更新中...
+* [` 面向对象的JavaScript `](https://github.com/lvzhenbang/article/blob/master/design-pattern/oop-js.md)
+* [` unix/linux设计思想 `](https://github.com/lvzhenbang/article/blob/master/design-pattern/unix.linux.md)
+* [` 设计模式六大原则 `](https://github.com/lvzhenbang/article/blob/master/design-pattern/design.principle.md)
+* [` 构造器 设计模式 `](https://github.com/lvzhenbang/article/blob/master/design-pattern/constructor.md)
+* [` 外观 设计模式 `](https://github.com/lvzhenbang/article/blob/master/design-pattern/facade.md)
+* [` 工厂 设计模式 `](https://github.com/lvzhenbang/article/blob/master/design-pattern/factory.md)
+* [` 观察者 设计模式 `](https://github.com/lvzhenbang/article/blob/master/design-pattern/observer.md)
+* [` javascript 单例设计模式 `](https://github.com/lvzhenbang/article/blob/master/design-pattern/js-singleton.md)
+* [` javascript 策略设计模式 `](https://github.com/lvzhenbang/article/blob/master/design-pattern/strategy.md)
+* [` javascript 代理设计模式 `](https://github.com/lvzhenbang/article/blob/master/design-pattern/proxy-pattern.md)
+* [` javascript 迭代器设计模式 `](https://github.com/lvzhenbang/article/blob/master/design-pattern/iterator.md)
+* [` javascript 观察者模式](https://github.com/lvzhenbang/article/blob/master/design-pattern/js-observer.md)
 
 ### 参考资料
 
-[学习JavaScript设计模式](https://addyosmani.com/resources/essentialjsdesignpatterns/book/)
-
-[腾讯全端 AlloyTeam 设计模式系列文章](http://www.alloyteam.com/2012/10/common-javascript-design-patterns/)
-
+* [` 学习JavaScript设计模式 `](https://addyosmani.com/resources/essentialjsdesignpatterns/book/)
+* [` 腾讯全端 AlloyTeam 设计模式系列文章 `](http://www.alloyteam.com/2012/10/common-javascript-design-patterns/)
