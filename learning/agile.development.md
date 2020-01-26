@@ -2,6 +2,8 @@
 
 敏捷开发、敏捷实战、极限编程
 
+注：[` Scrum `](https://baike.baidu.com/item/Scrum/1698901?fr=aladdin)是迭代式增量软件开发过程。
+
 ## 敏捷开发（Agile Development）
 
 它是一种面临迅速变化的需求，快速开发软件的能力。
