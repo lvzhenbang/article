@@ -14,95 +14,96 @@
 
 下面是一个单例实现:
 
-	var mySingleton = (function () {
-	  // 实例存储单例的引用
-	  var instance;
-	  function init() {
-	    // 单例
-	    // 私有方法和变量
-	    function privateMethod(){
-	        console.log( "I am private" );
-	    }
-	    var privateVariable = "Im also private";
-	    var privateRandomNumber = Math.random();
-	    return {
-	      // 公共方法和变量
-	      publicMethod: function () {
-	        console.log( "The public can see me!" );
-	      },
-	      publicProperty: "I am also public",
-	      getRandomNumber: function() {
-	        return privateRandomNumber;
-	      }
-	    };
-	  };
-	 
-	  return {
-	    // 如果单例的实例存在就获得它，不存在就创建一个
-	    getInstance: function () {
-	      if ( !instance ) {
-	        instance = init();
-	      }
-	      return instance;
-	    }
-	  };
-	})();
-	 
-	var myBadSingleton = (function () {
-	  // 实例存储一个单例的引用
-	  var instance;
-	  function init() {
-	    // 单例
-	    var privateRandomNumber = Math.random();
-	    return {
-	      getRandomNumber: function() {
-	        return privateRandomNumber;
-	      }
-	    };
-	  };
-	 
-	  return {
-	    // 创建一个单例实例
-	    getInstance: function () {
-	      instance = init();
-	      return instance;
-	    }
-	  };
-	})();
-	  
-	// 用法:
-	var singleA = mySingleton.getInstance();
-	var singleB = mySingleton.getInstance();
-	console.log( singleA.getRandomNumber() === singleB.getRandomNumber() ); // true
-	 
-	var badSingleA = myBadSingleton.getInstance();
-	var badSingleB = myBadSingleton.getInstance();
-	console.log( badSingleA.getRandomNumber() !== badSingleB.getRandomNumber() ); // true
- 
+```
+var mySingleton = (function () {
+	// 实例存储单例的引用
+	var instance;
+	function init() {
+		// 单例
+		// 私有方法和变量
+		function privateMethod(){
+				console.log( "I am private" );
+		}
+		var privateVariable = "Im also private";
+		var privateRandomNumber = Math.random();
+		return {
+			// 公共方法和变量
+			publicMethod: function () {
+				console.log( "The public can see me!" );
+			},
+			publicProperty: "I am also public",
+			getRandomNumber: function() {
+				return privateRandomNumber;
+			}
+		};
+	};
+	
+	return {
+		// 如果单例的实例存在就获得它，不存在就创建一个
+		getInstance: function () {
+			if ( !instance ) {
+				instance = init();
+			}
+			return instance;
+		}
+	};
+})();
+	
+var myBadSingleton = (function () {
+	// 实例存储一个单例的引用
+	var instance;
+	function init() {
+		// 单例
+		var privateRandomNumber = Math.random();
+		return {
+			getRandomNumber: function() {
+				return privateRandomNumber;
+			}
+		};
+	};
+	
+	return {
+		// 创建一个单例实例
+		getInstance: function () {
+			instance = init();
+			return instance;
+		}
+	};
+})();
+	
+// 用法:
+var singleA = mySingleton.getInstance();
+var singleB = mySingleton.getInstance();
+console.log( singleA.getRandomNumber() === singleB.getRandomNumber() ); // true
+	
+var badSingleA = myBadSingleton.getInstance();
+var badSingleB = myBadSingleton.getInstance();
+console.log( badSingleA.getRandomNumber() !== badSingleB.getRandomNumber() ); // true
+```
+
 注意: 当我们用随机数来处理时，有一个可能性两个数字是一样的，无论多么不可能。上述示例在其他情况下仍然有效.
 
 通常使单例能全局的访问实例（通常通过MySingleton.getInstance()），我们无法（至少在静态语言中）调用新的MySingleton()，然而这在JavaScript中是可能的，因为JavaScript可以进行函数作为一个参数进行传参。
 
 在GoF这本书中，单例模式适用性描述如下:
 
-1.必须有一个类的一个实例，并且必须从一个公共的访问点访问实例；
-
-2.当唯一的实例应该通过子类化扩展时，实例应该能够使用扩展实例而不修改其代码。
+1. 必须有一个类的一个实例，并且必须从一个公共的访问点访问实例；
+2. 当唯一的实例应该通过子类化扩展时，实例应该能够使用扩展实例而不修改其代码。
 
 第二点我们可以用一个示例说明，代码如下:
 
-
-	mySingleton.getInstance = function(){
-	  if ( this._instance == null ) {
-	    if ( isFoo() ) {
-	       this._instance = new FooSingleton();
-	    } else {
-	       this._instance = new BasicSingleton();
-	    }
-	  }
-	  return this._instance;
-	};
- 
+```
+mySingleton.getInstance = function(){
+	if ( this._instance == null ) {
+		if ( isFoo() ) {
+				this._instance = new FooSingleton();
+		} else {
+				this._instance = new BasicSingleton();
+		}
+	}
+	return this._instance;
+};
+``` 
 
 在这里，getInstance变得有点像工厂方法，但在我们的代码中不需要更新每一点。上面的FooSingleton将是BasicSingleton的一个子类.
 
@@ -118,41 +119,43 @@
 
 在实践中，当需要一个对象来协调系统中的其他对象时，单例模式是有用的。这里有一个例子，在这个背景下使用的模式是:
 
-	var SingletonTester = (function () {
-	  // options: 一个包含单例配置项的对象
-	  // 例如： var options = { name: "test", pointX: 5};
-	  function Singleton( options ) {
-	    // 如果没有提供选项，则将选项设置为提供的选项或空对象
-	    options = options || {};
-	    // 为我们的单里设置一些属性
-	    this.name = "SingletonTester";
-	    this.pointX = options.pointX || 6;
-	    this.pointY = options.pointY || 10;
-	  }
-	 
-	  // 实例
-	  var instance;
-	  // 静态变量和方法的仿真
-	  var _static = {
-	    name: "SingletonTester",
-	    // 获取实例的方法，它返回一个单例对象的实例
-	    getInstance: function( options ) {
-	      if( instance === undefined ) {
-	        instance = new Singleton( options );
-	      }
-	      return instance;
-	    }
-	  };
-	  return _static;
-	})();
-	 
-	var singletonTest = SingletonTester.getInstance({
-	  pointX: 5
-	});
-	 
-	// 如果验证正确输出 pointX
-	// Outputs: 5
-	console.log( singletonTest.pointX );
+```
+var SingletonTester = (function () {
+	// options: 一个包含单例配置项的对象
+	// 例如： var options = { name: "test", pointX: 5};
+	function Singleton( options ) {
+		// 如果没有提供选项，则将选项设置为提供的选项或空对象
+		options = options || {};
+		// 为我们的单里设置一些属性
+		this.name = "SingletonTester";
+		this.pointX = options.pointX || 6;
+		this.pointY = options.pointY || 10;
+	}
+	
+	// 实例
+	var instance;
+	// 静态变量和方法的仿真
+	var _static = {
+		name: "SingletonTester",
+		// 获取实例的方法，它返回一个单例对象的实例
+		getInstance: function( options ) {
+			if( instance === undefined ) {
+				instance = new Singleton( options );
+			}
+			return instance;
+		}
+	};
+	return _static;
+})();
+	
+var singletonTest = SingletonTester.getInstance({
+	pointX: 5
+});
+	
+// 如果验证正确输出 pointX
+// Outputs: 5
+console.log( singletonTest.pointX );
+```
 
 虽然，Singleton具有很好的用途，但通常当我们在JavaScript中发现自己需要它时，它是一个标志表明我们的项目设计可能存在着问题，这时需要重新评估设计。
 
