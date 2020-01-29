@@ -8,7 +8,7 @@
 
 在于它没有显示地要求我们使用构造函数，相反，它为创建对象提供一个通用的接口，用这个接口，我们可以创建我们想创建的指定类型的工厂对象。
 
-注：它将构造函数和创建者分离，符合` 接口开放封闭 `原则。
+注：它将构造函数和创建者分离，符合` 开放封闭原则 `。
 
 ### 实例说明
 
@@ -72,9 +72,9 @@ VehicleFactory.prototype.createVehicle = function ( options ) {
 // 创建一个 car 类的工厂实例
 var carFactory = new VehicleFactory();
 var car = carFactory.createVehicle( {
-		vehicleType: "car",
-		color: "yellow",
-		doors: 6
+	vehicleType: "car",
+	color: "yellow",
+	doors: 6
 } );
 	
 // 测试确认我们的 car 用 vehicleClass/prototype Car 创建的
@@ -192,7 +192,7 @@ var car = abstractVehicleFactory.getVehicle( "car", {
 	
 // Instantiate a new truck in a similar manner
 var truck = abstractVehicleFactory.getVehicle( "truck", {
-			wheelSize: "medium",
-			color: "neon yellow"
+	wheelSize: "medium",
+	color: "neon yellow"
 } );
 ```
