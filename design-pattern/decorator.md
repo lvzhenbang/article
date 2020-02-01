@@ -1,48 +1,42 @@
-## 装饰者设计模式
+# 装饰者设计模式
 
-装饰者设计模式又被称作包装器设计模式，包装器很好理解就是对所实现的对象添加方法进行的包装处理。
+装饰者设计模式就是装饰器对目标对象添加新的成员（属性、方法）。
 
-在JavaScript中我们经常会遇到用原型链来模拟类的继承。而装饰者模式就是解决继承模式的不灵活的特性。
+注：它符合` 开闭原则 `
 
-### 继承是什么
-
-继承就是让一个引用类型继承另一个引用类型的属性和方法。
-
-### 继承的特性
-
-* 由于父类和子类间的强耦合性，使得我们给父类添加功能，往往会影响子类；
-* 同时在复用时，可能创造大量的子类。
-
-### 继承的几种常见方式
-
-
-1. 原型链
-
+## 装饰者模式的实现
 
 ```
-var Robot = function() {}
-
-Robot.prototype.say = function() {
-	console.log('My name is ' + this.name + '.')
+var obj = {
+	name: '<obj>'
 }
 
-var robotDancer = function(name) {
-	this.name = name
+// 装饰器
+obj.printName = function() {
+	console.log(this.name)
 }
 
-robotDancer.prototype = new Robot()
-
-robotDancer.prototype.dance = function() {
-	console.log('I can dance.')
-}
-
-var dancerA = new robotDancer('A')
-
-dancerA.say() // My name is A.
-dancerA.dance() // I can dance.
-
+obj.printName()
 ```
 
-2. 构造函数
+## ES7 ` decorator `
 
-### 装饰者模式的实现
+```
+let readOnly = function(target, name, descriptor){
+	descriptor.writable = false
+	return descriptor
+}
+
+class Fac {
+	@readOnly
+	printName() {
+		console.log('tfac a.')
+	}
+}
+
+let fac = new Fac()
+fac.printName()
+fac.printName = function() {
+	console.log('readonly')
+}
+```

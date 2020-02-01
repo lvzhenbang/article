@@ -1,8 +1,10 @@
-## 代理模式
+# 代理模式
 
 所谓的的代理模式就是为一个对象找一个替代对象，以便对原对象进行访问。
 
 使用代理的原因是我们不愿意或者不想对原对象进行直接操作，我们使用代理就是让它帮原对象进行一系列的操作，等这些东西做完后告诉原对象就行了。就像我们生活的那些明星的助理经纪人一样。
+
+## 代理实现
 
 我们举一个明星买鞋子的例子。
 
@@ -63,7 +65,7 @@ assistant.buyShoes(new Shoes('高跟鞋')); // "买到了一双高跟鞋"
 
 怎么样，代理就是这么简单，可能到这里有的同学会比较疑惑，代理的实现结果不是和不使用一样吗？是的，一样的实现结果是必须的，但是，值用代理并不是我们看到的那样将简单的事情复杂化了，代理的使用场景当然不是这种简单的场景，而是针对一些比较复杂或特殊的情况使用，这里只是为了举例说明代理的实现。下面就介绍一些使用场景。
 
-### 代理使用场景
+## 代理使用场景
 
 继续上面的明星买鞋子的问题。在生活中我们会遇到商店在营业时间，而你在工作时间，由于要挣钱同时又要花钱，所以，会找一个代理；就像春节快到了，你没时间或者抢不到票，就会找票贩子一样；像现在的代购，则是你不能出国，或者对国外不了解，就找能出国，对国外了解的人帮你买东西一样。我们知道每家商店都有自己的营业时间和休息时间，这里我们用（8:00~20:00）算作营业时间。
 
@@ -80,7 +82,6 @@ Shoes.prototype.getName = function() {
 Shoes.prototype.business = function() {
 	var curTime = new Date().getHours();
 	return  curTime >= 8 && curTime <= 20 ? that.getName() : '"非营业时间！"';
-	
 }
 
 // 定义一个助理对象
@@ -100,7 +101,7 @@ var star = {
 assistant.buyShoes(new Shoes('高跟鞋')); // "买到了一双高跟鞋"
 ```
 
-### 保护代理
+## 保护代理
 
 助理作为明星的代理，不仅可以帮助明星买东西，同时还有帮助明星过滤的东西的职责，比如说，有粉丝要送明星花（不是什么样的花都收的），有人要找明星代言广告（不是什么样的广告都代言的）。
 
@@ -148,7 +149,7 @@ assistant.init(new Ad(500)); // "广告费500万元"
 
 像这种明星向助理授权，如：什么样价位的广告可以接，什么样的鲜花可以接等等。这样将一些业务的处理交给助理或者经纪人处理，而自己则位于幕后，无疑给自己减少了不必要的麻烦，这样明星就处于一种保护状态。在现实生活中的例子比比皆是，同样在我们的程序语言开发中也是比较常见，尤其是网络和进程这方面，相信做过nodjs开发的同学或多或少会遇到。
 
-### 虚拟代理
+## 虚拟代理
 
 在开发中，我们往往将 `new Ad('5')` 这个对象的实例化操作，放到函数内部执行，这样的操作会减少不必要的实例化对象的开销，造成资源的浪费。这种使用的情况我们将之成为虚拟代理。
 
@@ -185,36 +186,36 @@ var myImage = (function() {
 	var imgNode = document.createElement('img');
 	document.body.appendChild(imgNode);
 	return {
-    	setSrc: function(src) {
-    		imgNode.src = src;
-    	}
-    }
+		setSrc: function(src) {
+			imgNode.src = src;
+		}
+	}
 })();
 
 var preImage = (function() {
 	var img = new Image; 
-    img.onload = function() {
-    	myImage.setSrc = img.src;
-    }; 
- 
-    return {
-    	setSrc: function(src) {
-    		myImage.setSrc('../loading.gif');
-    		img.src = src;
-    	}
-    }
+	img.onload = function() {
+		myImage.setSrc = img.src;
+	}; 
+
+	return {
+		setSrc: function(src) {
+			myImage.setSrc('../loading.gif');
+			img.src = src;
+		}
+	}
 })(); 
  
-preImage.setSrc('https://cn.bing.com/az/hprichbg/rb/TadamiTrain_ZH-CN13495442975_1920x1080.jpg'); 
+preImage.setSrc('https://cn.bing.com/az/hprichbg/rb/TadamiTrain_ZH-CN13495442975_1920x1080.jpg');
 ```
 
 这样我们就将图片预加载和为img元素节点设置src分开来。
 
-### 代理和被代理对象的一致性
+## 代理和被代理对象的一致性
 
 因为代理要实现和被代理对象实际处理一样的效果，所以，在实现代理对象时，原对象有的方法，代理对象一样有，这样可以保证，用户在操作代理对象时就像在操作原对象一样。
 
-### 缓存代理
+## 缓存代理
 
 缓存代理就是将代理加缓存，下面是一个求和的例子：
 
@@ -247,3 +248,7 @@ proxyAdd(1, 2, 3); // 6
 
 
 当然，还有其他的分类代理，比如，智能代理，远程代理。但是在JavaScript中我们使用最多，也最常见的就是虚拟代理和缓存代理。
+
+## ES6 中的Proxy
+
+[` Proxy `](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Proxy)
