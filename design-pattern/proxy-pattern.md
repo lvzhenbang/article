@@ -248,3 +248,7 @@ proxyAdd(1, 2, 3); // 6
 
 
 当然，还有其他的分类代理，比如，智能代理，远程代理。但是在JavaScript中我们使用最多，也最常见的就是虚拟代理和缓存代理。
+
+## ES6 中的Proxy
+
+[` Proxy `](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Proxy)
