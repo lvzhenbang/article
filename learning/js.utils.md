@@ -25,3 +25,7 @@ function hyphen(val) {
   return val.replace(/\B([A-Z])/g, '-$1').toLowerCase()
 }
 ```
+
+## deepMerge
+
+[` deepmerge `](https://github.com/TehShrike/deepmerge)
