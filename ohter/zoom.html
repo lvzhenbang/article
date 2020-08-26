@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>zoom</title>
+    <style>
+        body {
+            padding: 50px;
+        }
+        .box {
+            position: relative;
+            overflow: hidden;
+            width: 500px;
+            height: 500px;
+        }
+        .zoom {
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        .zoomDiv {
+            position: absolute;
+            overflow: hidden;
+        }
+        .maskDiv {
+            position: absolute;
+            background-color: rgba(255, 255, 255, .6);
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="zoom" style="background-image: url('./zoom.jpg');" rel="./zoom.jpg"></div>
+    </div>
+    <script src="./jquery.js"></script>
+    <script>
+        (function($) {
+	    $.fn.imagezoom = function(options) {
+	        var settings = {
+	            xzoom: 300,
+	            yzoom: 300,
+	            scale: 2
+	        };
+	        var self = this;
+	        if (options) {
+	            $.extend(settings, options);
+	        }
+	        $(this).bind("mouseover",  function(ev) {					
+	            function getMaskOffset(target) {
+	            	var offset = {
+	            			x: 0,
+	            			y: 0
+	            		}
+	            	if (target.pageX <= imageLeft + maskWidth / 2) {
+	            		offset.x = 0;
+	            	} else if (target.pageX >= imageLeft + imageWidth - maskWidth / 2) {
+	            		offset.x = imageWidth - maskWidth;
+	            	} else {
+	            		offset.x = target.pageX - imageLeft - maskWidth / 2;
+	            	}
+
+	            	if (target.pageY <= imageTop + maskHeight / 2) {
+	            		offset.y = 0;
+	            	} else if (target.pageY >= imageTop + imageHeight - maskHeight / 2) {
+	            		offset.y = imageHeight - maskHeight;
+	            	} else {
+	            		offset.y = target.pageY - imageTop - maskHeight / 2;
+	            	}
+	            	return offset;
+	            }
+	            var imageLeft = $(this).offset().left;
+	            var imageTop = $(this).offset().top;
+	            var imageWidth = $(this).get(0).offsetWidth;
+	            var imageHeight = $(this).get(0).offsetHeight;
+	            var boxLeft = $(this).parent().offset().left;
+	            var boxTop = $(this).parent().offset().top;
+	            var boxWidth = $(this).parent().width();
+	            var boxHeight = $(this).parent().height();
+	            var imageUrl = $(this).attr("rel");
+	            var $mask = $('<div class="maskDiv"></div>');
+	            var maskWidth = settings.xzoom / settings.scale;
+	            var maskHeight = settings.yzoom / settings.scale;
+				var maskOffset = getMaskOffset(ev);
+
+	            if ($("div.zoomDiv").get().length == 0) {
+	                $(document.body).append("<div class='zoomDiv'><img class='bigimg' src='" + imageUrl + "'/></div>");
+	            }
+
+	            $mask.css({
+					'top': maskOffset.y,
+					'left': maskOffset.x,
+					'width': maskWidth,
+					'height': maskHeight 
+	            });
+	            $(this).css({
+	            	'position': 'relative',
+	            	'cursor': 'crosshair'
+	            });
+	            
+	            if ($('div.maskDiv').length == 0) {
+	            	$(this).append($mask);
+	            }
+	
+	            $("div.zoomDiv").css({ top: boxTop, left: (boxLeft + boxWidth) });
+	            $("div.zoomDiv").width(settings.xzoom);
+	            $("div.zoomDiv").height(settings.yzoom);
+	            $("div.zoomDiv .bigimg").width(boxWidth * settings.scale);
+	            $("div.zoomDiv .bigimg").height(boxHeight * settings.scale);
+	            $("div.zoomDiv").show();
+	
+	            $(document.body).mousemove(function(e) {
+	                var mouse = {
+	                		x: e.pageX,
+	                		y: e.pageY
+	                	};
+
+	                if (mouse.x < imageLeft || (mouse.x > imageLeft + imageWidth) || mouse.y < imageTop || (mouse.y > imageTop + imageHeight)) {
+                        console.log('xx')
+	                    mouseOutImage();
+	                } else {
+	                	var bigWidth = $(".bigimg").get(0).offsetWidth;
+	                	var bigHeight = $(".bigimg").get(0).offsetHeight;
+	                	var scalex = (boxWidth - maskWidth) / (bigWidth - settings.xzoom);
+	                	var scaley = (boxHeight - maskHeight) / (bigHeight - settings.yzoom);
+	                	var xposs = mouse.x - imageLeft;
+	                	var yposs = mouse.y - imageTop;
+
+		                maskOffset = getMaskOffset(e);
+		                $mask.css({
+		                	top: maskOffset.y,
+		                	left: maskOffset.x
+		                });
+
+	                	$("div.zoomDiv").get(0).scrollLeft = xposs / scalex - maskWidth / 2 / scalex;
+	                	$("div.zoomDiv").get(0).scrollTop = yposs / scaley - maskHeight / 2 / scaley;
+	                }
+	            });
+	        });
+	        function mouseOutImage() {
+	            $(document.body).off("mousemove");
+	            $("div.zoomDiv").remove();
+	            $('div.maskDiv').remove();
+	        }
+	    }
+	})(jQuery);
+    </script>
+    <script>
+        $('.zoom').imagezoom();
+    </script>
+</body>
+</html>
