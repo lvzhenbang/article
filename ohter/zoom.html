@@ -42,7 +42,8 @@
 	        var settings = {
 	            xzoom: 300,
 	            yzoom: 300,
-	            scale: 2
+				scale: 2,
+				mask: false,
 	        };
 	        var self = this;
 	        if (options) {
@@ -89,18 +90,18 @@
 	                $(document.body).append("<div class='zoomDiv'><img class='bigimg' src='" + imageUrl + "'/></div>");
 	            }
 
-	            $mask.css({
-					'top': maskOffset.y,
-					'left': maskOffset.x,
-					'width': maskWidth,
-					'height': maskHeight 
-	            });
 	            $(this).css({
 	            	'position': 'relative',
 	            	'cursor': 'crosshair'
 	            });
 	            
-	            if ($('div.maskDiv').length == 0) {
+	            if (settings.mask && $('div.maskDiv').length == 0) {
+					$mask.css({
+						'top': maskOffset.y,
+						'left': maskOffset.x,
+						'width': maskWidth,
+						'height': maskHeight 
+					});
 	            	$(this).append($mask);
 	            }
 	
@@ -123,10 +124,10 @@
 	                } else {
 	                	var bigWidth = $(".bigimg").get(0).offsetWidth;
 	                	var bigHeight = $(".bigimg").get(0).offsetHeight;
-	                	var scalex = (boxWidth - maskWidth) / (bigWidth - settings.xzoom);
-	                	var scaley = (boxHeight - maskHeight) / (bigHeight - settings.yzoom);
-	                	var xposs = mouse.x - imageLeft;
-	                	var yposs = mouse.y - imageTop;
+	                	var scalex = (boxWidth - (settings.mask ? maskWidth : 0)) / (bigWidth - settings.xzoom);
+	                	var scaley = (boxHeight - (settings.mask ? maskHeight : 0)) / (bigHeight - settings.yzoom);
+	                	var xposs = mouse.x - imageLeft - (settings.mask ? maskWidth / 2 : 0);
+	                	var yposs = mouse.y - imageTop - (settings.mask ? maskHeight / 2 : 0);
 
 		                maskOffset = getMaskOffset(e);
 		                $mask.css({
@@ -134,8 +135,8 @@
 		                	left: maskOffset.x
 		                });
 
-	                	$("div.zoomDiv").get(0).scrollLeft = xposs / scalex - maskWidth / 2 / scalex;
-	                	$("div.zoomDiv").get(0).scrollTop = yposs / scaley - maskHeight / 2 / scaley;
+	                	$("div.zoomDiv").get(0).scrollLeft = xposs / scalex;
+	                	$("div.zoomDiv").get(0).scrollTop = yposs / scaley;
 	                }
 	            });
 	        });
@@ -148,7 +149,9 @@
 	})(jQuery);
     </script>
     <script>
-        $('.zoom').imagezoom();
+        $('.zoom').imagezoom({
+			mask: true
+		});
     </script>
 </body>
 </html>
