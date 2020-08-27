@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>zoom</title>
+    <style>
+        body {
+            padding: 50px;
+        }
+        .box {
+            position: relative;
+            overflow: hidden;
+            width: 500px;
+            height: 500px;
+        }
+        .zoom {
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        .zoom-box {
+            position: absolute;
+            overflow: hidden;
+        }
+        .mask-box {
+            position: absolute;
+            background-color: rgba(255, 255, 255, .6);
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="zoom" style="background-image: url('./zoom.jpg');" rel="./zoom.jpg"></div>
+    </div>
+    <script src="./jquery.js"></script>
+    <script>
+        (function($) {
+			$.fn.imagezoom = function(options) {
+				var settings = {
+					xzoom: 300,
+					yzoom: 300,
+					scale: 2,
+					mask: false
+				};
+
+				var imageUrl = $(this).attr('rel');
+				var imageTop = $(this).offset().top;
+				var imageLeft = $(this).offset().left;
+				var imageWidth = $(this).get(0).offsetWidth;
+				var imageHeight = $(this).get(0).offsetHeight;
+
+				var boxLeft = $(this).parent().offset().left;
+				var boxTop = $(this).parent().offset().top;
+				var boxWidth = $(this).parent().width();
+				var boxHeight = $(this).parent().height();
+
+				var $mask;
+				var maskWidth = settings.xzoom / settings.scale;
+				var maskHeight = settings.yzoom / settings.scale;
+
+				if (options) {
+					$.extend(settings, options);
+				}
+
+				if (settings.mask) {
+					$mask = $('<div class="mask-box"></div>');
+				}
+
+				$(this).bind('mouseover', function(ev) {
+					var maskOffset = {
+						x: 0,
+						y: 0
+					};
+
+					$(this).css({
+						'position': 'relative',
+						'cursor': 'crosshair'
+					});
+
+					if (!$('.zoom-box').length) {
+						$(document.body).append('<div class="zoom-box"><img class="zoom-img" src="' + imageUrl + '"/></div>');
+					}
+					
+					if (settings.mask && !$('.mask-box').length) {
+						maskOffset = getMaskOffset(ev);
+						$mask.css({
+							'top': maskOffset.y,
+							'left': maskOffset.x,
+							'width': maskWidth,
+							'height': maskHeight 
+						});
+						$(this).append($mask);
+					}
+		
+					$('.zoom-box').css({ top: boxTop, left: (boxLeft + boxWidth) });
+					$('.zoom-box').width(settings.xzoom);
+					$('.zoom-box').height(settings.yzoom);
+					$('.zoom-box .zoom-img').width(boxWidth * settings.scale);
+					$('.zoom-box .zoom-img').height(boxHeight * settings.scale);
+		
+					$(document.body).mousemove(function(e) {
+						var mouse = {
+								x: e.pageX,
+								y: e.pageY
+							};
+
+						if (mouse.x < imageLeft || (mouse.x > imageLeft + imageWidth) || mouse.y < imageTop || (mouse.y > imageTop + imageHeight)) {
+							mouseOutImage();
+						} else {
+							var bigWidth = $('.zoom-img').get(0).offsetWidth;
+							var bigHeight = $('.zoom-img').get(0).offsetHeight;
+							var scalex = (boxWidth - (settings.mask ? maskWidth : 0)) / (bigWidth - settings.xzoom);
+							var scaley = (boxHeight - (settings.mask ? maskHeight : 0)) / (bigHeight - settings.yzoom);
+							var xposs = mouse.x - imageLeft - (settings.mask ? maskWidth / 2 : 0);
+							var yposs = mouse.y - imageTop - (settings.mask ? maskHeight / 2 : 0);
+							
+							if (settings.mask) {
+								maskOffset = getMaskOffset(e);
+								$mask.css({
+									top: maskOffset.y,
+									left: maskOffset.x
+								});
+							}
+
+							$('.zoom-box').get(0).scrollLeft = xposs / scalex;
+							$('.zoom-box').get(0).scrollTop = yposs / scaley;
+						}
+					});
+				});
+				// event: mouse leave image-zone
+				function mouseOutImage() {
+					$(document.body).off('mousemove');
+					$('.zoom-box').remove();
+					$('.mask-box').remove();
+				}
+				// get mask offset
+				function getMaskOffset(target) {
+	            	var offset = {
+						x: 0,
+						y: 0
+					}
+	            	if (target.pageX <= imageLeft + maskWidth / 2) {
+	            		offset.x = 0;
+	            	} else if (target.pageX >= imageLeft + imageWidth - maskWidth / 2) {
+	            		offset.x = imageWidth - maskWidth;
+	            	} else {
+	            		offset.x = target.pageX - imageLeft - maskWidth / 2;
+	            	}
+
+	            	if (target.pageY <= imageTop + maskHeight / 2) {
+	            		offset.y = 0;
+	            	} else if (target.pageY >= imageTop + imageHeight - maskHeight / 2) {
+	            		offset.y = imageHeight - maskHeight;
+	            	} else {
+	            		offset.y = target.pageY - imageTop - maskHeight / 2;
+	            	}
+	            	return offset;
+	            }
+	    	}
+		})(jQuery);
+    </script>
+    <script>
+        $('.zoom').imagezoom({
+			mask: true
+		});
+    </script>
+</body>
+</html>
