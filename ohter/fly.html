@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fly</title>
+    <style>
+        body {
+           padding: 500px 800px;
+        }
+        .btn-group {
+            position: fixed;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .btn-group button+button {
+            margin-left: 10px;
+        }
+        #shot {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 60px;
+            height: 60px;
+            background-color: red;
+        }
+        #receiver {
+            position: fixed;
+            top: 50px;
+            left: 50px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 60px;
+            height: 60px;
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+    <div class="btn-group">
+        <button class="top-left">top left</button>
+        <button class="top-right">top right</button>
+        <button class="bottom-left">bottom left</button>
+        <button class="bottom-right">bottom right</button>
+    </div>
+    <div id="shot">shot</div>
+    <div id="receiver">receiver</div>
+    <script src="./jquery.js"></script>
+    <script>
+        function fly(start, end) {
+            var $bubble = $('<div class="bubble"></div>');
+            $bubble.css({
+                'position': 'fixed',
+                'top': start.top,
+                'left': start.left,
+                'width': '20px',
+                'height': '20px',
+                'border-radius': '50%',
+                'background-color': 'red',
+            });
+            $(document.body).append($bubble);
+            var options = {
+                time: 1500
+            }
+
+            var speedX = (end.left - start.left) / options.time;
+            var speedY = 0;
+            var direction = start.top - end.top;
+            var a = 0;
+            var t = 0;
+            var duration = 20;
+
+            if (direction > 0) {
+                speedY = Math.abs(3 * (start.top - end.top) / options.time);
+                a = 2 * (speedY * options.time - (start.top - end.top)) / (options.time * options.time);
+            }
+            if (direction < 0) {
+                a = 2 * (end.top - start.top) / (options.time * options.time);
+            }
+
+            var timer = setInterval(function() {
+                t += duration;
+                if (t >= options.time) {
+                    clearInterval(timer);
+                    $bubble.remove();
+                }
+                var posTop = 0;
+                var posLeft = 0;
+                if (start.top > end.top) {
+                    // 上抛
+                    posTop = start.top - (speedY * t - (a * t * t / 2));
+                } else if (start.top < end.top) {
+                    // 下抛
+                    posTop = (start.top + a * t * t / 2);
+                } else {
+                    // 水平
+                    posTop = 0;
+                }
+                $bubble.css({
+                    top: posTop,
+                    left: (start.left + speedX * t)
+                });
+            }, duration);
+        }
+        $('#shot').on('click', function() {
+            var self = this;
+            var startOffset = $(self).offset();
+            var endOffset = $('#receiver').offset();
+            var winScroll = {
+                top: $(window).scrollTop(),
+                left: $(window).scrollLeft()
+            }
+            fly({
+                top: startOffset.top - winScroll.top,
+                left: startOffset.left - winScroll.left + $(self).outerWidth() / 2
+            }, {
+                top: endOffset.top - winScroll.top,
+                left: endOffset.left - winScroll.left + $('#receiver').outerWidth() / 2
+            });
+        });
+        // envent pos
+        $('.top-left').on('click', function() {
+            $('#receiver').css({
+                top: '50px',
+                left: '50px',
+                right: 'unset',
+                bottom: 'unset'
+            });
+        });
+        $('.top-right').on('click', function() {
+            $('#receiver').css({
+                top: '50px',
+                left: 'unset',
+                right: '50px',
+                bottom: 'unset'
+            });
+        });
+        $('.bottom-left').on('click', function() {
+            $('#receiver').css({
+                top: 'unset',
+                left: '50px',
+                right: 'unset',
+                bottom: '50px'
+            });
+        });
+        $('.bottom-right').on('click', function() {
+            $('#receiver').css({
+                top: 'unset',
+                left: 'unset',
+                right: '50px',
+                bottom: '50px'
+            });
+        });
+    </script>
+</body>
+</html>
