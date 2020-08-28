@@ -45,6 +45,11 @@
         <button class="top-right">top right</button>
         <button class="bottom-left">bottom left</button>
         <button class="bottom-right">bottom right</button>
+
+        <select id="select-type">
+            <option value="horizontal">horizontal cast</option>
+            <option value="stant">Stant cast</option>
+        </select>
     </div>
     <div id="shot">shot</div>
     <div id="receiver">receiver</div>
@@ -65,6 +70,7 @@
             var options = $.extend({}, {
                 time: 1500,
                 duration: 20,
+                type: 'horizontal', // stant, horizontal
             }, opt || {});
 
             var speedX = (end.left - start.left) / options.time;
@@ -76,11 +82,17 @@
             $(document.body).append($bubble);
 
             if (direction > 0) {
-                speedY = Math.abs(3 * (start.top - end.top) / options.time);
+                speedY = Math.abs((options.type == 'stant' ? 3 : 2) * (start.top - end.top) / options.time);
                 a = 2 * (speedY * options.time - (start.top - end.top)) / (options.time * options.time);
             } else if (direction < 0) {
-                speedY = 0;
-                a = 2 * (end.top - start.top) / (options.time * options.time);
+                if (options.type == 'stant') {
+                    var tt = options.time / 3;
+                    a = 2 * (end.top - start.top) / (tt * tt) / 3;
+                    speedY = a * tt;
+                } else {
+                    speedY = 0;
+                    a = 2 * (end.top - start.top) / (options.time * options.time);
+                }
             } else {
                 speedY = 0;
                 a = 0;
@@ -98,6 +110,7 @@
                 });
             }, options.duration);
         }
+        var type = 'horizontal';
         $('#shot').on('click', function() {
             var self = this;
             var startOffset = $(self).offset();
@@ -112,6 +125,8 @@
             }, {
                 top: endOffset.top - winScroll.top,
                 left: endOffset.left - winScroll.left + $('#receiver').outerWidth() / 2
+            }, {
+                type: type,
             });
         });
         // envent pos
@@ -146,6 +161,9 @@
                 right: '50px',
                 bottom: '50px'
             });
+        });
+        $('#select-type').on('change', function() {
+            type = $(this).val();
         });
     </script>
 </body>
