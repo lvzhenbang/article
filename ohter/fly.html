@@ -50,7 +50,7 @@
     <div id="receiver">receiver</div>
     <script src="./jquery.js"></script>
     <script>
-        function fly(start, end) {
+        function fly(start, end, opt) {
             var $bubble = $('<div class="bubble"></div>');
             $bubble.css({
                 'position': 'fixed',
@@ -61,49 +61,42 @@
                 'border-radius': '50%',
                 'background-color': 'red',
             });
-            $(document.body).append($bubble);
-            var options = {
-                time: 1500
-            }
+
+            var options = $.extend({}, {
+                time: 1500,
+                duration: 20,
+            }, opt || {});
 
             var speedX = (end.left - start.left) / options.time;
             var speedY = 0;
             var direction = start.top - end.top;
             var a = 0;
             var t = 0;
-            var duration = 20;
+
+            $(document.body).append($bubble);
 
             if (direction > 0) {
                 speedY = Math.abs(3 * (start.top - end.top) / options.time);
                 a = 2 * (speedY * options.time - (start.top - end.top)) / (options.time * options.time);
-            }
-            if (direction < 0) {
+            } else if (direction < 0) {
+                speedY = 0;
                 a = 2 * (end.top - start.top) / (options.time * options.time);
+            } else {
+                speedY = 0;
+                a = 0;
             }
 
             var timer = setInterval(function() {
-                t += duration;
+                t += options.duration;
                 if (t >= options.time) {
                     clearInterval(timer);
                     $bubble.remove();
                 }
-                var posTop = 0;
-                var posLeft = 0;
-                if (start.top > end.top) {
-                    // 上抛
-                    posTop = start.top - (speedY * t - (a * t * t / 2));
-                } else if (start.top < end.top) {
-                    // 下抛
-                    posTop = (start.top + a * t * t / 2);
-                } else {
-                    // 水平
-                    posTop = 0;
-                }
                 $bubble.css({
-                    top: posTop,
+                    top: (posTop = start.top + (a * t * t / 2) - speedY * t),
                     left: (start.left + speedX * t)
                 });
-            }, duration);
+            }, options.duration);
         }
         $('#shot').on('click', function() {
             var self = this;
