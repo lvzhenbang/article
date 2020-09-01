@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slide</title>
+    <style>
+        .slide {
+            position: relative;
+            overflow: hidden;
+            width: 500px;
+            height: 500px;
+            border: 1px solid #ccc;
+        }
+        .slide-wrapper {
+            width: 100%;
+            height: 100%;
+        }
+        .slide-item {
+            width: 100%;
+            height: 100%;
+
+            align-items: center;
+            justify-content: center;
+
+            font-size: 2rem;
+            color: #333;
+
+            display: none;
+            visibility: hidden;
+            opacity: 0;
+        }
+        .slide-item.active {
+            display: flex;
+            visibility: visible;
+            opacity: 1;
+        }
+        .slide-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 3rem;
+            height: 3rem;
+            border: 1px solid #333;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+        .slide-prev {
+            left: 1rem;
+        }
+        .slide-next {
+            right: 1rem;
+        }
+        .slide-indicator {
+            position: absolute;
+            bottom: 1rem;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+        }
+        .slide-indicator-item {
+            width: .5rem;
+            height: .5rem;
+            background-color: #ccc;
+            border: 1px solid #fff;
+            border-radius: 50%;
+            cursor: pointer;
+
+            transition: all ease .6s;
+        }
+        .slide-indecator-item+.slide-indicator-item {
+            margin-left: .15rem;
+        }
+        .slide-indicator-item:hover,
+        .slide-indicator-item.active {
+            background-color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide" id="slide">
+        <div class="slide-wrapper">
+            <div class="slide-item active">1</div>
+            <div class="slide-item">2</div>
+            <div class="slide-item">3</div>
+            <div class="slide-item">4</div>
+            <div class="slide-item">5</div>
+            <div class="slide-item">6</div>
+        </div>
+        <div class="slide-btn slide-prev">prev</div>
+        <div class="slide-btn slide-next">next</div>
+        <div class="slide-indicator"></div>
+    </div>
+    <script src="./jquery.js"></script>
+    <script>
+        var currIndex = 0;
+        var tempIndex = 0;
+        var $slideItem = $('#slide .slide-item');
+        var len = $slideItem.length;
+
+        function generateIndicator() {
+            var html = '';
+            for (var i = 0; i < len; i+= 1) {
+                html += '<div class="slide-indicator-item' + (currIndex == i ? ' active' : '') + '" data-order="'+ i +'"></div>';
+            }
+            $('#slide .slide-indicator').html(html);
+            bindIndicatorEvent();
+        }
+        function bindIndicatorEvent() {
+            $('#slide .slide-indicator-item').on('click', function() {
+                $('#slide .slide-indicator-item').removeClass('active');
+                $(this).addClass('active');
+                tempIndex = $(this).data('order');
+                animateSlide();
+            });
+        }
+        function updateIndicator() {
+            $('#slide .slide-indicator-item').removeClass('active').eq(currIndex).addClass('active');
+        }
+        function animateSlide(flag) {
+            addSlideAnimate(flag);
+            currIndex = tempIndex;
+            $('#slide .slide-item').removeClass('active').eq(currIndex).addClass('active');
+            updateIndicator();
+        }
+        function addSlideAnimate(flag) {            
+            if (flag) {
+                $('#slide .slide-item').eq(tempIndex).css({
+                    transform: 'translateX(100%)'
+                });
+            } else {
+                $('#slide .slide-item').eq(tempIndex).css({
+                    transform: 'translateX(-100%)'
+                });
+            }
+            setTimeout(function() {
+                if (flag) {
+                    $('#slide .slide-item').eq(currIndex).css({
+                        transform: 'translateX(100%)'
+                    });
+                } else {
+                    $('#slide .slide-item').eq(currIndex).css({
+                        transform: 'translateX(0)'
+                    });
+                }
+            }, 10);
+            setTimeout(function() {
+                $('#slide .slide-item').removeAttr('style');
+            }, 600);
+        }
+        function getPrevItem() {
+            tempIndex = currIndex == 0 ? len - 1 : currIndex - 1;
+            return $slideItem.eq(tempIndex);
+        }
+        function getNextItem() {
+            tempIndex = currIndex == len - 1 ? 0 : currIndex + 1;
+            return $slideItem.eq(tempIndex);
+        }
+
+        generateIndicator();
+        $('#slide .slide-prev').on('click', function() {
+            var $prevItem = getPrevItem();
+            animateSlide(-1);
+            console.log($prevItem.text())
+        });
+        $('#slide .slide-next').on('click', function() {
+            var $nextItem = getNextItem();
+            animateSlide(1);
+            console.log($nextItem.text())
+        });
+    </script>
+</body>
+</html>
