@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Slide</title>
     <style>
+        /* http://www.joelambert.co.uk/flux/ */
         .slide {
             position: relative;
             overflow: hidden;
@@ -17,6 +18,9 @@
             height: 100%;
         }
         .slide-item {
+            position: absolute;
+            top: 0;
+
             width: 100%;
             height: 100%;
 
@@ -31,6 +35,8 @@
             display: none;
             visibility: hidden;
             opacity: 0;
+
+            transition: transform ease-in-out .6s;
         }
         .slide-item.active {
             display: flex;
@@ -100,30 +106,45 @@
         var tempIndex = 0;
         var $slideItem = $('#slide .slide-item');
         var len = $slideItem.length;
+        var timer = null;
+        var duration = 2400; // min: 600;
+        var touchDelta = 0;
+        var touchStart = 0;
 
         function generateIndicator() {
             var html = '';
             for (var i = 0; i < len; i+= 1) {
-                html += '<div class="slide-indicator-item' + (currIndex == i ? ' active' : '') + '" data-order="'+ i +'"></div>';
+                html += '<div class="slide-indicator-item' + (currIndex == i ? ' active' : '') + '" data-order="'+ (i + 1) +'"></div>';
             }
             $('#slide .slide-indicator').html(html);
             bindIndicatorEvent();
         }
+
         function bindIndicatorEvent() {
             $('#slide .slide-indicator-item').on('click', function() {
-                $('#slide .slide-indicator-item').removeClass('active');
-                $(this).addClass('active');
-                tempIndex = $(this).data('order');
-                animateSlide();
+                tempIndex = $(this).data('order') || 1;
+                tempIndex -= 1;
+               
+                if (tempIndex != currIndex) {
+                    $('#slide .slide-indicator-item').removeClass('active');
+                    $(this).addClass('active');
+
+                    if (tempIndex > currIndex) {
+                        animateSlide(true);
+                    }
+
+                    if (tempIndex < currIndex)  {
+                        animateSlide(false);
+                    }
+                }
             });
         }
         function updateIndicator() {
-            $('#slide .slide-indicator-item').removeClass('active').eq(currIndex).addClass('active');
+            $('#slide .slide-indicator-item').removeClass('active').eq(tempIndex).addClass('active');
         }
         function animateSlide(flag) {
             addSlideAnimate(flag);
-            currIndex = tempIndex;
-            $slideItem.removeClass('active').eq(tempIndex).addClass('active');
+            $('#slide .slide-item').eq(tempIndex).addClass('active');
             updateIndicator();
         }
         function addSlideAnimate(flag) {
@@ -137,20 +158,26 @@
                 });
             }
             setTimeout(function() {
-                $slideItem.css({
-                    transform: 'translateX(0)'
-                });
-            }, 10)
-            $slideItem.eq(currIndex).on('transitionend', function() {
-                $(this).removeClass('active').css({
-                    transform: 'translateX(0px)'
-                });
+                if (flag) {
+                    $('#slide .slide-item').eq(tempIndex).css({
+                        transform: 'translateX(0)'
+                    }).end().eq(currIndex).css({
+                        transform: 'translateX(-100%)'
+                    });
+                } else {
+                    $('#slide .slide-item').eq(tempIndex).css({
+                        transform: 'translateX(0)'
+                    }).end().eq(currIndex).css({
+                        transform: 'translateX(100%)'
+                    });
+                }
             });
-            
-            $slideItem.eq(tempIndex).on('transitionend', function() {
-                $(this).css({
-                    transform: 'translateX(0px)'
-                });
+            $('#slide .slide-item').eq(currIndex).on('transitionend', function() {
+                $(this).removeClass('active').removeAttr('style');
+            });
+            $('#slide .slide-item').eq(tempIndex).on('transitionend', function() {
+                $(this).addClass('active').removeAttr('style');
+                currIndex = tempIndex;
             });
         }
         function getPrevItem() {
@@ -162,14 +189,57 @@
             return $slideItem.eq(tempIndex);
         }
 
-        generateIndicator();
-        $('#slide .slide-prev').on('click', function() {
+        function cycle() {
+            timer = setInterval(slideNext, duration);
+        }
+
+        function pause() {
+            clearInterval(timer);
+        }
+
+        function slidePrev() {
             var $prevItem = getPrevItem();
-            animateSlide(!1);
+            animateSlide(false);
+        }
+
+        function slideNext() {
+            var $nextItem = getNextItem();
+            animateSlide(true);
+        }
+
+        function initSlide() {
+            generateIndicator();
+            // cycle();
+        }
+
+        initSlide();
+
+        $('#slide .slide-prev').on('click', function() {
+            slidePrev();
         });
         $('#slide .slide-next').on('click', function() {
-            var $nextItem = getNextItem();
-            animateSlide(!0);
+            slideNext();
+        });
+        // event mouse
+        $('#slide').on('mouseenter', function() {
+            pause();
+        }).on('mouseleave', function() {
+            cycle();
+        });
+        // event touch
+        $('#slide .slide-wrapper').on('touchstart', function(e) {
+            touchStart = e.originalEvent.touches[0].clientX;
+        }).on('touchmove', function(e) {
+            touchDelta = e.originalEvent.touches[0].clientX - touchStart;
+        }).on('touchend', function(e) {
+            if (Math.abs(touchDelta) > 100) {
+                if (touchDelta < 0) {
+                    slideNext();
+                } else {
+                    slidePrev();
+                }
+            }
+            touchDelta = touchStart = 0;
         });
     </script>
 </body>
