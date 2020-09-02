@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Slide</title>
     <style>
+        /* http://www.joelambert.co.uk/flux/ */
         .slide {
             position: relative;
             overflow: hidden;
@@ -144,7 +145,7 @@
             $('#slide .slide-item').eq(tempIndex).addClass('active');
             updateIndicator();
         }
-        function addSlideAnimate(flag) {            
+        function addSlideAnimate(flag) {
             if (flag) {
                 $('#slide .slide-item').eq(tempIndex).css({
                     transform: 'translateX(100%)'
@@ -206,7 +207,6 @@
 
         initSlide();
 
-       
         $('#slide .slide-prev').on('click', function() {
             var $prevItem = getPrevItem();
             animateSlide(false);
