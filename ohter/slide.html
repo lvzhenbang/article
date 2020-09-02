@@ -17,6 +17,9 @@
             height: 100%;
         }
         .slide-item {
+            position: absolute;
+            top: 0;
+
             width: 100%;
             height: 100%;
 
@@ -29,6 +32,8 @@
             display: none;
             visibility: hidden;
             opacity: 0;
+
+            transition: transform ease-in-out .6s;
         }
         .slide-item.active {
             display: flex;
@@ -104,26 +109,37 @@
         function generateIndicator() {
             var html = '';
             for (var i = 0; i < len; i+= 1) {
-                html += '<div class="slide-indicator-item' + (currIndex == i ? ' active' : '') + '" data-order="'+ i +'"></div>';
+                html += '<div class="slide-indicator-item' + (currIndex == i ? ' active' : '') + '" data-order="'+ (i + 1) +'"></div>';
             }
             $('#slide .slide-indicator').html(html);
             bindIndicatorEvent();
         }
+
         function bindIndicatorEvent() {
             $('#slide .slide-indicator-item').on('click', function() {
-                $('#slide .slide-indicator-item').removeClass('active');
-                $(this).addClass('active');
-                tempIndex = $(this).data('order');
-                animateSlide();
+                tempIndex = $(this).data('order') || 1;
+                tempIndex -= 1;
+               
+                if (tempIndex != currIndex) {
+                    $('#slide .slide-indicator-item').removeClass('active');
+                    $(this).addClass('active');
+
+                    if (tempIndex > currIndex) {
+                        animateSlide(true);
+                    }
+
+                    if (tempIndex < currIndex)  {
+                        animateSlide(false);
+                    }
+                }
             });
         }
         function updateIndicator() {
-            $('#slide .slide-indicator-item').removeClass('active').eq(currIndex).addClass('active');
+            $('#slide .slide-indicator-item').removeClass('active').eq(tempIndex).addClass('active');
         }
         function animateSlide(flag) {
             addSlideAnimate(flag);
-            currIndex = tempIndex;
-            $('#slide .slide-item').removeClass('active').eq(currIndex).addClass('active');
+            $('#slide .slide-item').eq(tempIndex).addClass('active');
             updateIndicator();
         }
         function addSlideAnimate(flag) {            
@@ -138,18 +154,26 @@
             }
             setTimeout(function() {
                 if (flag) {
-                    $('#slide .slide-item').eq(currIndex).css({
-                        transform: 'translateX(100%)'
+                    $('#slide .slide-item').eq(tempIndex).css({
+                        transform: 'translateX(0)'
+                    }).end().eq(currIndex).css({
+                        transform: 'translateX(-100%)'
                     });
                 } else {
-                    $('#slide .slide-item').eq(currIndex).css({
+                    $('#slide .slide-item').eq(tempIndex).css({
                         transform: 'translateX(0)'
+                    }).end().eq(currIndex).css({
+                        transform: 'translateX(100%)'
                     });
                 }
-            }, 10);
-            setTimeout(function() {
-                $('#slide .slide-item').removeAttr('style');
-            }, 600);
+            });
+            $('#slide .slide-item').eq(currIndex).on('transitionend', function() {
+                $(this).removeClass('active').removeAttr('style');
+                currIndex = tempIndex;
+            });
+            $('#slide .slide-item').eq(tempIndex).on('transitionend', function() {
+                $(this).addClass('active').removeAttr('style');
+            });
         }
         function getPrevItem() {
             tempIndex = currIndex == 0 ? len - 1 : currIndex - 1;
@@ -163,13 +187,11 @@
         generateIndicator();
         $('#slide .slide-prev').on('click', function() {
             var $prevItem = getPrevItem();
-            animateSlide(-1);
-            console.log($prevItem.text())
+            animateSlide(false);
         });
         $('#slide .slide-next').on('click', function() {
             var $nextItem = getNextItem();
-            animateSlide(1);
-            console.log($nextItem.text())
+            animateSlide(true);
         });
     </script>
 </body>
