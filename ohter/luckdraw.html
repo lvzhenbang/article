@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Getting Started with ml5.js</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+
+  <body>
+    <script>
+      // 抽奖
+      function weightBinarySearch(arr, fIdx, tIdx, value) {
+        var low = fIdx;
+        var high = tIdx;
+        while (low <= high) {
+          var mIdx = (low + high) >>> 1;
+          var cmp = arr[mIdx] - value;
+          if (cmp < 0) {
+            low = mIdx + 1;
+          } else if (cmp > 0) {
+            high = mIdx - 1;
+          } else {
+            return mIdx;
+          }
+        }
+        return low;
+      }
+
+      function getArrWeight(arr) {
+        var weight = 0;
+        var sum = 0;
+        var arrWeight = [];
+        arr.forEach(item => {
+          weight += parseFloat(item.weight);
+        });
+        arr.forEach(item => {          
+          sum += parseFloat(item.weight);
+          arrWeight.push(sum / weight);
+        });
+        return arrWeight;
+      }
+
+      function luck(arr) {
+        var arrWeight = getArrWeight(arr);
+        var wIdx = weightBinarySearch(arrWeight, 0, arrWeight.length - 1, Math.random());
+        return arr[wIdx];
+      }
+      var data = [
+        {
+          "name": "一等奖",
+          "weight": "0.1"
+        },
+        {
+          "name": "二等奖",
+          "weight": "0.2"
+        },
+        {
+          "name": "三等奖",
+          "weight": "0.2"
+        },
+        {
+          "name": "四等奖",
+          "weight": "0.3"
+        }
+      ];
+      
+      // 测试
+      var result = [];
+      var reusltMap = {};
+      for(var i = 0; i < 1000; i++) {        
+        result.push(luck(data));
+      }
+      result.forEach(item => {
+        if (reusltMap[item.name]) {
+          reusltMap[item.name] += 1;
+        } else {
+          reusltMap[item.name] = 1;
+        }
+      });
+      console.log("奖品数据: "+ JSON.stringify(data));
+      console.log("奖品权重分布："+ getArrWeight(data));
+      console.log("1000次抽奖结果: "+ JSON.stringify(reusltMap));
+    </script>
+  </body>
+</html>
