@@ -26,17 +26,13 @@
       }
 
       function getArrWeight(arr) {
-        var weight = 0;
         var sum = 0;
-        var arrWeight = [];
-        arr.forEach(item => {
-          weight += parseFloat(item.weight);
-        });
-        arr.forEach(item => {          
+        var weight = arr.reduce((sum, item) => sum += parseFloat(item.weight)) || 0;        
+        return arr.reduce((nArr, item) => {
           sum += parseFloat(item.weight);
-          arrWeight.push(sum / weight);
-        });
-        return arrWeight;
+          nArr.push(sum / weight);
+          return nArr;
+        }, []);
       }
 
       function luck(arr) {
