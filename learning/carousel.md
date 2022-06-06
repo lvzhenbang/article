@@ -1,6 +1,7 @@
 # 轮播图
 
-* [` slick `](https://github.com/javve/list.js)
+* [` slick `](https://github.com/javve/list.js) `shopify`
+* [` flickity `](https://github.com/metafizzy/flickity) `shopify`
 * [` fullpage.js `](https://github.com/alvarotrigo/fullPage.js)
 * [` swiper `](https://github.com/nolimits4web/swiper)
 * [` splide `](https://github.com/Splidejs/splide)
