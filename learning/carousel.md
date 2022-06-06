@@ -3,6 +3,7 @@
 * [` slick `](https://github.com/javve/list.js)
 * [` fullpage.js `](https://github.com/alvarotrigo/fullPage.js)
 * [` swiper `](https://github.com/nolimits4web/swiper)
+* [` splide `](https://github.com/Splidejs/splide)
 
 * [` bootstrap-carousel `](https://getbootstrap.com/docs/4.3/components/carousel/)
 * [` vue-awesome-swiper `](https://github.com/surmon-china/vue-awesome-swiper)
