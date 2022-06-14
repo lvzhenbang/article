@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>countdown</title>
+</head>
+
+<body>
+
+  <style>
+    [hidden] {
+      display: none!important
+    }
+    .countdown-banner {
+      background-color: #000;
+      color: #fff;
+      opacity: 0;
+      overflow: auto;
+      padding: 13px 20px;
+      visibility: hidden
+    }
+
+    .countdown-banner.active {
+      opacity: 1;
+      transition: opacity .4s cubic-bezier(.645,.045,.355,1),visibility .4s cubic-bezier(.645,.045,.355,1);
+      visibility: visible
+    }
+
+    .countdown-banner.hide {
+      display: none
+    }
+
+    @media only screen and (max-width: 767px) {
+      .countdown-banner {
+        padding-bottom:6px;
+        padding-top: 7px
+      }
+    }
+
+    .countdown-banner__time {
+      align-items: center;
+      display: flex;
+      justify-content: center;
+      margin-top: 5px
+    }
+
+    @media only screen and (max-width: 767px) {
+      .countdown-banner__time {
+          margin-top:8px
+      }
+    }
+
+    .countdown-banner__segment {
+      align-self: center;
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      position: relative;
+      width: 32px;
+      height: 40px;
+      overflow: hidden;
+      margin-right: 2px;
+      border-radius: 4px
+    }
+
+    .countdown-banner__segment:last-child {
+      margin-right: 0
+    }
+
+    .countdown-banner__divider {
+      font-size: 30px;
+      margin: -5px 4px 0 3px
+    }
+
+    .countdown-banner__value {
+      font-size: 32px;
+      line-height: 28px;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%,-50%)
+    }
+
+    @media only screen and (max-width: 767px) {
+      .countdown-banner__value {
+        font-size:28px;
+        line-height: 16px
+      }
+    }
+
+    .countdown-banner__unit {
+      font-size: 14px
+    }
+
+    @media only screen and (max-width: 767px) {
+      .countdown-banner__unit {
+        font-size:12px
+      }
+    }
+
+    .countdown-banner__heading {
+      font-weight: 400;
+      margin-bottom: 0;
+      margin-top: 0;
+      text-align: center
+    }
+
+    @media only screen and (min-width: 768px) {
+      .countdown-banner__heading {
+        padding-left:30px;
+        padding-right: 30px
+      }
+    }
+
+    @media only screen and (max-width: 1179px) {
+      .countdown-banner__heading {
+        font-size:22px
+      }
+    }
+
+    @media only screen and (max-width: 767px) {
+      .countdown-banner__heading {
+        display:none
+      }
+    }
+
+    .countdown-banner__heading--mobile {
+      display: none;
+      font-size: 14px;
+      line-height: 16px;
+      margin-bottom: 5px;
+      margin-top: 0
+    }
+
+    @media only screen and (max-width: 767px) {
+      .countdown-banner__heading--mobile {
+        display:block;
+        font-size: 13px
+      }
+    }
+  </style>
+  <div class="countdown-banner" data-countdown-section data-end-date="6/14/22 23:59:59">
+    <div class="countdown-banner__time" data-time>
+      <span class="countdown-banner__segment" style="background-color:#ff622b">
+        <span class="countdown-banner__value" style="color: #e1fc78" data-days-hundreds>0</span>
+      </span>
+      <span class="countdown-banner__segment" style="background-color:#ff622b">
+        <span class="countdown-banner__value" style="color: #e1fc78" data-days-tence>0</span>
+      </span>
+      <span class="countdown-banner__segment" style="background-color:#ff622b">
+        <span class="countdown-banner__value" style="color: #e1fc78" data-days-once>0</span>
+      </span>
+      <span class="countdown-banner__divider">:</span>
+      <span class="countdown-banner__segment" style="background-color:#ff622b">
+        <span class="countdown-banner__value" style="color: #e1fc78" data-hours-hundreds>0</span>
+      </span>
+      <span class="countdown-banner__segment" style="background-color:#ff622b">
+        <span class="countdown-banner__value" style="color: #e1fc78" data-hours-tence>0</span>
+      </span>
+      <span class="countdown-banner__segment" style="background-color:#ff622b">
+        <span class="countdown-banner__value" style="color: #e1fc78" data-hours-once>0</span>
+      </span>
+      <span class="countdown-banner__divider">:</span>
+      <span class="countdown-banner__segment" style="background-color:#ff622b">
+        <span class="countdown-banner__value" style="color: #e1fc78" data-minutes-tence>0</span>
+      </span>
+      <span class="countdown-banner__segment" style="background-color:#ff622b">
+        <span class="countdown-banner__value" style="color: #e1fc78" data-minutes-once>0</span>
+      </span>
+      <span class="countdown-banner__divider">:</span>
+      <span class="countdown-banner__segment" style="background-color:#ff622b">
+        <span class="countdown-banner__value" style="color: #e1fc78" data-seconds-tence>0</span>
+      </span>
+      <span class="countdown-banner__segment" style="background-color:#ff622b">
+        <span class="countdown-banner__value" style="color: #e1fc78" data-seconds-once>0</span>
+      </span>
+    </div>
+</div>
+  <script>
+    function countdown(e, t, n) {
+     "use strict";
+     var pq  = (e,t,n)=>new Promise(r=>{
+        let i = t;
+        const o = setInterval(()=>{
+          i -= 1, i < 0 ? (r(), clearInterval(o)) : n(e, i)
+        }, 1e3)
+      });
+      const i = "[data-countdown-section]"
+        , o = "[data-time]"
+        , a = "[data-days-hundreds]"
+        , s = "[data-days-tence]"
+        , c = "[data-days-once]"
+        , l = "[data-hours-hundreds]"
+        , d = "[data-hours-tence]"
+        , u = "[data-hours-once]"
+        , h = "[data-minutes-tence]"
+        , p = "[data-minutes-once]"
+        , m = "[data-seconds-tence]"
+        , f = "[data-seconds-once]"
+        , y = (e,t)=>{
+          const n = Array.from(String(Math.floor(t % 60)), Number)
+            , r = Array.from(String(Math.floor(t / 60 % 60)), Number);
+          let i = Math.floor(t / 3600 % 24)
+            , o = Math.floor(t / 86400);
+          const y = Array.from(String(24 * o + i), Number);
+          i = Array.from(String(i), Number),
+          o = Array.from(String(o), Number);
+          [n, r, i, o, y].forEach(e=>{
+            e.length < 2 && e.unshift(0)
+          }),
+          e.querySelector(a) && 2 === o.length && (
+            e.querySelector(a).closest(".countdown-banner__segment").hidden = !0,
+            e.querySelector(l).closest(".countdown-banner__segment").hidden = !0
+          ),
+          2 === y.length && (
+            e.querySelector(l).closest(".countdown-banner__segment").hidden = !0
+          );
+          const g = [];
+          Number(e.querySelector(f).innerText) !== n[1] && g.push({
+            selector: f,
+            value: n[1]
+          }),
+          Number(e.querySelector(m).innerText) !== n[0] && g.push({
+            selector: m,
+            value: n[0]
+          }),
+          Number(e.querySelector(h).innerText) !== r[0] && g.push({
+            selector: h,
+            value: r[0]
+          }),
+          Number(e.querySelector(p).innerText) !== r[1] && g.push({
+            selector: p,
+            value: r[1]
+          }),
+          e.querySelector(a) ? (
+            Number(e.querySelector(c).innerText) !== o[o.length - 1] && g.push({
+              selector: c,
+              value: o[o.length - 1]
+            }),
+            Number(e.querySelector(s).innerText) !== o[o.length - 2] && g.push({
+              selector: s,
+              value: o[o.length - 2]
+            }),
+            3 === o.length && Number(e.querySelector(a).innerText) !== o[o.length - 3] && g.push({
+              selector: a,
+              value: o[o.length - 3]
+            }),
+            Number(e.querySelector(d).innerText) !== i[0] && g.push({
+              selector: d,
+              value: i[0]
+            }),
+            Number(e.querySelector(u).innerText) !== i[1] && g.push({
+              selector: u,
+              value: i[1]
+            })
+          ) : (
+            Number(e.querySelector(u).innerText) !== y[y.length - 1] && g.push({
+              selector: u,
+              value: y[y.length - 1]
+            }),
+            Number(e.querySelector(d).innerText) !== y[y.length - 2] && g.push({
+              selector: d,
+              value: y[y.length - 2]
+            }),
+            3 === y.length && Number(e.querySelector(l).innerText) !== y[y.length - 3] && g.push({
+              selector: l,
+              value: y[y.length - 3]
+            })
+          ),
+          async function(t) {
+              var n;
+              await (
+                n = t,
+                new Promise(t=>{
+                  let r = 0, i = 50, o = 1;
+                  const a = setInterval(()=>{
+                    15 === r ? (
+                      n.forEach(t=>{
+                        e.querySelector(t.selector).style.top = "120%",
+                        e.querySelector(t.selector).innerText = t.value
+                      }),
+                      t(),
+                      clearInterval(a)
+                    ) : (
+                      i -= 5,
+                      n.forEach(t=>{
+                        e.querySelector(t.selector).style.top = i + "%",
+                        r > 10 && (o -= .2, e.querySelector(t.selector).style.opacity = "" + o)
+                      }),
+                      r += 1
+                    )
+                  }, 15)
+                })
+              );
+              let r = 0, i = 120, o = .3;
+              const a = setInterval(()=>{
+                10 === r ? (
+                  t.forEach(t=>{
+                    e.querySelector(t.selector).style.top = "50%"
+                  }),
+                  clearInterval(a)
+                ) : (
+                  i -= 7,
+                  o += .1,
+                  t.forEach(t=>{
+                    e.querySelector(t.selector).style.top = i + "%",
+                    e.querySelector(t.selector).style.opacity = "" + o
+                  }),
+                  r += 1
+                )
+              }, 15)
+          }(g)
+      };
+      const g = e=>{
+        if (!e || !e.dataset.endDate || e.classList.contains("initialized"))
+          return;
+        e.classList.add("initialized");
+        const t = function(e) {
+          const t = new Date;
+          return (new Date(e).getTime() - t.getTime()) / 1e3
+        }(e.dataset.endDate),
+        n = e.querySelector(o);
+        isNaN(t) || t <= 0 ? e.classList.add("hide") : (
+          setTimeout(()=>{
+            e.classList.add("active")
+          }, 1e3),
+          Object(pq)(n, t, y).then(()=>{
+            e.classList.remove("active"),
+            setTimeout(()=>{
+              e.classList.add("hide")
+            }, 400)
+          })
+        )
+      };
+      const countdown = document.querySelector(i);
+      setTimeout(()=>{ g(countdown) }, 1e3)
+    }
+    var date = new Date();
+    document.querySelector('.countdown-banner').dataset.endDate = (date.getMonth() + 1) + '/' + date.getDate() + '/' + date.getFullYear() + ' 23:59:59';
+    countdown();
+  </script>
+</body>
+
+</html>
