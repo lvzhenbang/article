@@ -5,6 +5,7 @@
 * [` css3-animte `](https://github.com/lvzhenbang/css3-animate)
 * [` ladda for button `](https://github.com/hakimel/Ladda)
 * [` swup `](https://github.com/swup/swup)
+* [` hover effect `](https://css-tricks.com/cool-hover-effects-using-background-properties/)
 
 ## JavaScript动画
 
