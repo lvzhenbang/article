@@ -5,12 +5,13 @@
 
 * [` medium-editor `](https://github.com/yabwe/medium-editor) 模仿`medium.com`在线编辑器
 * [` quill `](https://github.com/quilljs/quill)
-* [` trix `](https://github.com/basecamp/trix)
 * [` draft-js `](https://github.com/facebook/draft-js)
-* [` CodeMirror `](https://github.com/codemirror/CodeMirror)
 * [` summernote `](https://github.com/summernote/summernote)
 * [` monaco-edito `](https://microsoft.github.io/monaco-editor/)
 * [` ueditor `](https://github.com/fex-team/ueditor) 百度富文本编辑器
+
+
+tip: [` CodeMirror `](https://github.com/codemirror/codemirror5) 代码编辑器
 
 ### vue
 
