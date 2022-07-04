@@ -10,7 +10,6 @@
 * [` monaco-edito `](https://microsoft.github.io/monaco-editor/)
 * [` ueditor `](https://github.com/fex-team/ueditor) 百度富文本编辑器
 
-
 tip: [` CodeMirror `](https://github.com/codemirror/codemirror5) 代码编辑器
 
 ### vue
