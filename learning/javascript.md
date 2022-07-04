@@ -8,6 +8,7 @@
 
 * [` js guide `](https://github.com/bevacqua/js)
 * [` airbnb javascript `](https://github.com/airbnb/javascript)
+* [` Google JavaScript Style Guide `](https://google.github.io/styleguide/jsguide.html)
 
 ## 低版本兼容（polyfill）
 
