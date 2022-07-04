@@ -6,6 +6,7 @@
 * [` ladda for button `](https://github.com/hakimel/Ladda)
 * [` swup `](https://github.com/swup/swup)
 * [` hover effect `](https://css-tricks.com/cool-hover-effects-using-background-properties/)
+* [` hover background `](https://css-tricks.com/cool-hover-effects-using-background-properties)
 
 ## JavaScript动画
 
