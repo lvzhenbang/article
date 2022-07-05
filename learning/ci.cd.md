@@ -7,7 +7,7 @@
 * CI: 叫做持续集成（Continuous Integration）
 * CD: 叫做持续交付（Continuous Delivery）
 * CT: 叫做持续测试（Continuous Testing）
-* CD: 叫做持续部署（Continuous Testing）
+* CD: 叫做持续部署（Continuous Deployment）
 
 注：这里的`持续`不是一直在运行的意思，而是随时可运行的意思，它有`反复`的特点儿。
 
