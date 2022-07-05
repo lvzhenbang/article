@@ -13,4 +13,4 @@
 
 ## 其他
 
-`vue`, `angular`, `react`的组件库都包含`轮播图`组件。
+`vue`, `angular`, `react`的组件库都包含`轮播图`组件
