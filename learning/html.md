@@ -13,3 +13,4 @@
 ## storage
 
 [` indexedDB `](https://github.com/dexie/Dexie.js)
+[` localForage `](https://github.com/localForage/localForage)
