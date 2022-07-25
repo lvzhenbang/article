@@ -6,6 +6,7 @@
 ## Shopify Editor
 
 * [` Theme Editor `](https://shopify.dev/themes/tools/online-editor)
+* [` Theme Editor Event `](https://shopify.dev/themes/architecture/sections/integrate-sections-with-the-theme-editor)
 * [` Code Editor `](https://shopify.dev/themes/tools/code-editor)
 
 ## Browser Support
