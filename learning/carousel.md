@@ -11,6 +11,10 @@
 * [` react-slick `](https://github.com/akiran/react-slick)
 * [` ng-bootstrap `](https://ng-bootstrap.github.io/#/components/carousel/api)
 
+## 注意
+
+` Swiper thumbs `如果在使用的时候，对` swiper `进行二次重构，`swiper thumbs `将会出现异常
+
 ## 其他
 
 `vue`, `angular`, `react`的组件库都包含`轮播图`组件
