@@ -7,8 +7,12 @@
 ## HTML常用组件
 
 * [material design lite](https://github.com/google/material-design-lite) 来自google
-* [Material Components for the web](https://github.com/material-components/material-components-web) 来自` Material Components
- `
+* [Material Components for the web](https://github.com/material-components/material-components-web) 来自` Material Components `
+
+## Hot Area(Hot Spot)
+
+* [` Creating An ImageMap `](https://developer.mozilla.org/en-US/docs/Learn/HTML/Howto/Add_a_hit_map_on_top_of_an_image)
+* [` Using Svg As An ImageMap `](http://thenewcode.com/696/Using-SVG-as-an-Alternative-To-Imagemaps)
 
 ## storage
 
