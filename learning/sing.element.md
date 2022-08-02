@@ -6,3 +6,4 @@
 * [` Single Element Dot `](https://css-tricks.com/single-element-loaders-the-dots/)
 * [` Single Element Bar `](https://css-tricks.com/single-element-loaders-the-bars/)
 * [` Single Element 3D `](https://css-tricks.com/single-element-loaders-going-3d/)
+* [` Svg Loader `](https://github.com/SamHerbert/SVG-Loaders/tree/master/svg-loaders)
