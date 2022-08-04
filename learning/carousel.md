@@ -1,6 +1,6 @@
 # 轮播图
 
-* [` slick `](https://github.com/javve/list.js) `shopify`
+* [` slick `](https://github.com/javve/list.js) `shopify` （slick 电脑端拖拽会出现异常）
 * [` flickity `](https://github.com/metafizzy/flickity) `shopify`
 * [` fullpage.js `](https://github.com/alvarotrigo/fullPage.js)
 * [` swiper `](https://github.com/nolimits4web/swiper)
