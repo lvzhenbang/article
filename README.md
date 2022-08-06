@@ -7,7 +7,7 @@
 * [` html layout `](https://github.com/lvzhenbang/article/blob/master/layout)
 * [` canvas `](https://github.com/lvzhenbang/article/blob/master/canvas)
 * [` JavaScript `](https://github.com/lvzhenbang/article/blob/master/js)
-* [` SVG ](ttps://github.com/lvzhenbang/article/blob/master/svg)
+* [` SVG `](ttps://github.com/lvzhenbang/article/blob/master/svg)
 * [` 正则 `](https://github.com/lvzhenbang/article/blob/master/regular/introduce.md)
 * [` 设计模式 `](https://github.com/lvzhenbang/article/blob/master/design-pattern)
 * [` Git `](https://github.com/lvzhenbang/article/blob/master/git)
