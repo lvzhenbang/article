@@ -10,6 +10,7 @@
 * [` SVG `](https://github.com/lvzhenbang/article/blob/master/svg)
 * [` 正则 `](https://github.com/lvzhenbang/article/blob/master/regular/introduce.md)
 * [` 设计模式 `](https://github.com/lvzhenbang/article/blob/master/design-pattern)
+* [` 富文本编辑器、markdown编辑器、代码编辑器、JSON编辑器 `](https://github.com/lvzhenbang/article/blob/master/editor)
 * [` Git `](https://github.com/lvzhenbang/article/blob/master/git)
 * [` vue `](https://github.com/lvzhenbang/article/blob/master/vue)
 * [` shopify 开发 `](https://github.com/lvzhenbang/article/blob/master/shopify)
