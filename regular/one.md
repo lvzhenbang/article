@@ -60,13 +60,6 @@
 
 	/^\s*[A-Za-z_$][\w$]*(?:\.[A-Za-z_$][\w$]*|\['*?'\]|\[".*?"\]|\[\d+\]|\[[A-Za-z_$][\w$]*\])*\s*$/
 
-下面推荐几款可视化的正则编辑器。
-
-[regexper](https://link.zhihu.com/?target=https%3A//regexper.com/) (这是我最早接触到的一款)
-
-[Regulex](https://jex.im/regulex/) (这一款是我现在经常使用的)
-
-[RegExr](https://regexr.com/) (这一款功能很强大，对于学习正则很有帮助，如果学习正则的话强烈推荐)
 
 ### js如何使用
 
@@ -192,6 +185,4 @@
 
 ### 推荐
 
-如果喜欢码题的同学可到[https://www.hackerrank.com/domains/regex/re-introduction](https://www.hackerrank.com/domains/regex/re-introduction)这个网站去。
-
-[github.com/lvzhenbang/article]()
+如果喜欢刷题的同学可到[https://www.hackerrank.com/domains/regex/re-introduction](https://www.hackerrank.com/domains/regex/re-introduction)这个网站去。
