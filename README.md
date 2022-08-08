@@ -13,6 +13,7 @@
 * [` 富文本编辑器、markdown编辑器、代码编辑器、JSON编辑器 `](https://github.com/lvzhenbang/article/blob/master/editor)
 * [` Git `](https://github.com/lvzhenbang/article/blob/master/git)
 * [` vue `](https://github.com/lvzhenbang/article/blob/master/vue)
+* [` 前端插件 `](https://github.com/lvzhenbang/article/blob/master/plugin)
 * [` shopify 开发 `](https://github.com/lvzhenbang/article/blob/master/shopify)
 * [` 语法检查 `](https://github.com/lvzhenbang/article/blob/master/lint)
 * [` 文档翻译 `](https://github.com/lvzhenbang/article/blob/master/translate)

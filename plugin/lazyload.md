@@ -31,7 +31,3 @@
 * [vue-lazyload](https://github.com/hilongjw/vue-lazyload) 基于vue.js的，兼容了IntersectionObserver
 * [w3c IntersectionObserver](https://github.com/w3c/IntersectionObserver) polyfill
 * [polyfillService IntersectionObserver](https://github.com/Financial-Times/polyfill-service)
-
-
-
-
