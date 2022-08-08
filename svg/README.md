@@ -9,3 +9,7 @@
 
 tips: [` 热区绘制工具 `](https://unpkg.com/svgedit@3.2.0/editor/svg-editor.html), [` github SVGEdit `](https://github.com/SVG-Edit/svgedit).
 tips: [` 热区绘制工具 `](https://boxy-svg.com/app).
+
+## 其他
+
+[` SVG Software(Inkscape) `](https://inkscape.org/)
