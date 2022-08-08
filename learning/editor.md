@@ -5,16 +5,14 @@
 
 * [` medium-editor `](https://github.com/yabwe/medium-editor) 模仿`medium.com`在线编辑器
 * [` quill `](https://github.com/quilljs/quill)
-* [` draft-js `](https://github.com/facebook/draft-js)
+* [` wangEditor `](https://github.com/wangeditor-team/wangEditor)
 * [` summernote `](https://github.com/summernote/summernote)
+* [` draft-js `](https://github.com/facebook/draft-js) 基于react的编辑器
+
+## 代码编辑器
+
+* [` CodeMirror `](https://github.com/codemirror/codemirror5)
 * [` monaco-edito `](https://microsoft.github.io/monaco-editor/)
-* [` ueditor `](https://github.com/fex-team/ueditor) 百度富文本编辑器
-
-tip: [` CodeMirror `](https://github.com/codemirror/codemirror5) 代码编辑器
-
-### vue
-
-[` tiptap `](https://github.com/scrumpy/tiptap) 基于`vue`的富文本插件
 
 ## markdowon editor
 
