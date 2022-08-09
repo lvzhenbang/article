@@ -12,6 +12,8 @@
 * [` 图片懒加载插件 `](https://github.com/lvzhenbang/article/blob/master/plugin/lazyload.md)
 * [` 图表插件 `](https://github.com/lvzhenbang/article/blob/master/plugin/data.view.md)
 * [` 360全景插件 `](https://github.com/lvzhenbang/article/blob/master/plugin/360.media-viewer.md)
+* [` js 工具插件 `](https://github.com/lvzhenbang/article/blob/master/plugin/js.utils.md)
+* [` 算法插件 `](https://github.com/lvzhenbang/article/blob/master/plugin/algorithm.md)
 
 
 * [` 自定义插件 `](https://github.com/lvzhenbang/article/blob/master/plugin/custom-plugin.md)
