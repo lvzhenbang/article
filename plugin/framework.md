@@ -24,7 +24,7 @@
 * [` iview `](https://github.com/iview/iview) 来自`iview`，项目`活跃`
 * [` vuetify `](https://github.com/vuetifyjs/vuetify) 来自`vuetifyjs`，项目`活跃`
 * [` vux `](https://github.com/airyland/vux) 来自`vux`，项目`活跃`
-* [` buefy `](https://github.com/buefy/buefy 来自`buefy`，项目`活跃`
+* [` buefy `](https://github.com/buefy/buefy) 来自`buefy`，项目`活跃`
 * [` mint-ui `](https://github.com/ElemeFE/mint-ui) 来自`ele.me`，项目`不活跃`, 为`mobile`设计
 * [` vant `](https://github.com/youzan/vant) 来自`youzan`，项目`活跃`, 为`mobile`设计
 
