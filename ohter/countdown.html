@@ -180,9 +180,9 @@
     </div>
 </div>
   <script>
-    function countdown(e, t, n) {
-     "use strict";
-     var pq  = (e,t,n)=>new Promise(r=>{
+  function countdown(e, t, n) {
+    "use strict";
+    var pq  = (e,t,n)=>new Promise(r=>{
         let i = t;
         const o = setInterval(()=>{
           i -= 1, i < 0 ? (r(), clearInterval(o)) : n(e, i)
@@ -315,13 +315,14 @@
           }(g)
       };
       const g = e=>{
-        if (!e || !e.dataset.endDate || e.classList.contains("initialized"))
-          return;
+        if (!e || e.classList.contains("initialized")) return;
         e.classList.add("initialized");
-        const t = function(e) {
+        const t = function() {
           const t = new Date;
+          const e = (t.getMonth() + 1) + '/' + t.getDate() + '/' + t.getFullYear() + ' 23:59:59';
+          console.log((new Date(e).getTime() - t.getTime()) / 1e3)
           return (new Date(e).getTime() - t.getTime()) / 1e3
-        }(e.dataset.endDate),
+        }(),
         n = e.querySelector(o);
         isNaN(t) || t <= 0 ? e.classList.add("hide") : (
           setTimeout(()=>{
@@ -335,11 +336,11 @@
           })
         )
       };
-      const countdown = document.querySelector(i);
-      setTimeout(()=>{ g(countdown) }, 1e3)
+      const countdowns = document.querySelectorAll(i);
+      countdowns.forEach(countdown => {
+        setTimeout(()=>{ g(countdown) }, 1e3);      
+      });
     }
-    var date = new Date();
-    document.querySelector('.countdown-banner').dataset.endDate = (date.getMonth() + 1) + '/' + date.getDate() + '/' + date.getFullYear() + ' 23:59:59';
     countdown();
   </script>
 </body>
