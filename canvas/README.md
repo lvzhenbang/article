@@ -46,3 +46,12 @@
 ## 实例
 
 * [` canvas-special `](https://github.com/bxm0927/canvas-special)
+
+## canvas 图形工具
+
+图形库，动画引擎
+
+* [` paperjs `](https://github.com/paperjs/paper.js)
+* [` html2canvas `](https://github.com/niklasvh/html2canvas)
+
+
