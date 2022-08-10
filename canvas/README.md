@@ -51,7 +51,6 @@
 
 图形库，动画引擎
 
-* [` paperjs `](https://github.com/paperjs/paper.js)
+* [` phaser `](https://github.com/photonstorm/phaser) 动画引擎
+* [` paperjs `](https://github.com/paperjs/paper.js) 
 * [` html2canvas `](https://github.com/niklasvh/html2canvas)
-
-
