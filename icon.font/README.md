@@ -5,7 +5,7 @@
 * [public-sans](https://github.com/uswds/public-sans) 免费字体
 * [google font](https://github.com/google/fonts)
 
-## 第三方
+## 第三方网站
 
 * [material-design-icons](https://github.com/google/material-design-icons)
 * [iconfont](https://www.iconfont.cn/) 阿里巴巴图标库
