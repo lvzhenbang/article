@@ -8,7 +8,7 @@
 * [` hsl.js `](https://github.com/video-dev/hls.js)
 * [` Audio howlers.js `](https://github.com/goldfire/howler.js)
 
-* [` videoangular `](https://github.com/videogular/videogular) angularjs
+* [` video angular `](https://github.com/videogular/videogular) angularjs
 * [` vue-video-player `](https://github.com/surmon-china/vue-video-player) vue
 * [` fancybox `](https://github.com/fancyapps/fancybox) jquery
 * [` Jpalyer `](https://github.com/jplayer/jPlayer) jquery
