@@ -4,4 +4,5 @@
 * [` quill `](https://github.com/quilljs/quill)
 * [` wangEditor `](https://github.com/wangeditor-team/wangEditor)
 * [` summernote `](https://github.com/summernote/summernote)
+* [` slate `](https://github.com/ianstormtaylor/slate)
 * [` draft-js `](https://github.com/facebook/draft-js) 基于react的编辑器
