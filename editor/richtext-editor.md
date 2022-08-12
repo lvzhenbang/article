@@ -1,6 +1,6 @@
 # 目录
 
-* [` medium-editor `](https://github.com/yabwe/medium-editor) 模仿`medium.com`在线编辑器
+* [` medium-editor `](https://github.com/yabwe/medium-editor) 项目不活跃
 * [` quill `](https://github.com/quilljs/quill)
 * [` wangEditor `](https://github.com/wangeditor-team/wangEditor)
 * [` summernote `](https://github.com/summernote/summernote)
