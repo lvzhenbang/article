@@ -22,4 +22,3 @@
 ## StoreFront Theme
 
 * [` Theme Architecture `](https://shopify.dev/themes/architecture)
-* 
