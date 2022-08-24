@@ -3,6 +3,7 @@
 * [` Shopify help `](https://help.shopify.com/en) Shopify Merchant Document
 * [` Shopify Dev `](https://shopify.dev/) Shopify development Document
 * [` liquid `](https://shopify.github.io/liquid/) theme template
+* [` What is a template language `](https://shopify.dev/api/liquid#what_is_a_template_language)
 
 ## Shopify Editor
 
