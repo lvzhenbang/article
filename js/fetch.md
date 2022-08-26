@@ -178,4 +178,5 @@ window.fetch(url, options)
 
 2. 如果使用习惯了jquery的progress方法的，或者使用deffered的一些方法
 
-具体 `fetch` 实现了哪些与jquery类似的方法可参考[whatwg-ftch](https://github.com/whatwg/fetch/issues/27) 或者 [fetch-issue](https://github.com/whatwg/fetch/issues/27)
+* 具体 `fetch` 实现了哪些与jquery类似的方法可参考[whatwg-ftch](https://github.com/whatwg/fetch/issues/27) 或者 [fetch-issue](https://github.com/whatwg/fetch/issues/27)
+* [` AbortController `](https://medium.com/@rajeshi/optimize-your-api-by-canceling-it-abortcontroller-in-javascript-d9a5428988b8)
