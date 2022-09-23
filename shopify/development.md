@@ -22,3 +22,7 @@
 ## StoreFront Theme
 
 * [` Theme Architecture `](https://shopify.dev/themes/architecture)
+
+## OTHER
+
+* [` syte `](https://www.syte.ai/)可实现根据图片搜搜索站内相关产品
