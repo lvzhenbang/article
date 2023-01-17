@@ -23,6 +23,10 @@
 
 * [` Theme Architecture `](https://shopify.dev/themes/architecture)
 
+## Shopify Store status
+
+* [` Shopify Status`](https://www.shopifystatus.com/)
+
 ## OTHER
 
 * [` syte `](https://www.syte.ai/)可实现根据图片搜搜索站内相关产品
