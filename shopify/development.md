@@ -18,6 +18,7 @@
 ## UI Theme
 
 * [` Shopify UX `](https://ux.shopify.com/next-generation-theme-design-5aae94f6d44c)
+* [` placeholder svg `](https://shopify.dev/docs/api/liquid/filters/placeholder_svg_tag)
 
 ## StoreFront Theme
 
