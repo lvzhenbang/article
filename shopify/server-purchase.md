@@ -61,4 +61,5 @@ Route::post('/ga', function (Request $request) {
 });
 ```
 
-[`Google Analytics Measurement Protocol`](https://developers.google.com/analytics/devguides/collection/protocol/ga4/reference/events#purchase)
+[` Google Analytics Measurement Protocol `](https://developers.google.com/analytics/devguides/collection/protocol/ga4/reference/events#purchase)
+[` Event Builder Test `](https://ga-dev-tools.google/ga4/event-builder/)
