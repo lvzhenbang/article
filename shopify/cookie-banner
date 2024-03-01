@@ -1,0 +1,101 @@
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  // 1. 每个页面先默认 不同意追踪 及 不接受 cookie
+  gtag('consent', 'default', {
+    analytics_storage: 'denied',
+    ad_storage: 'denied',
+    ad_user_data:'denied',
+    ad_personalization:'denied',
+    wait_for_update: 500, // if has CMP, wait 500ms for CMP to update
+    region: ['AT','BE','BG','CY','CZ','DE','DK','EE','ES','FI','FR','GR','HR','HU','IE','IS','IT','LI','LT','LU','LV','MT','NL','NO','PL','PT','RO','SE','SI','SK'], // apply default to specific regions only
+  });
+</script>
+<script>
+  // 2. 根据用户之前是否同意的选项 在每个页面自动触发 代码同意追踪 及 cookie 
+  if (localStorage['gtag.consent.option'] !== undefined) {
+    const option = JSON.parse(localStorage['gtag.consent.option']);
+    gtag('consent', 'update', option);
+  }
+</script>
+<script>
+  // 按钮的代码 给用户 同意 cookie 
+  document.addEventListener('click', function (e) {
+    const btnAcceptCookie = e.target.closest('[id*="btn-accept"],[id*="header-accept"]');
+    if (btnAcceptCookie === null) return;
+    const option = {
+      'analytics_storage': 'granted',
+      'ad_storage': 'granted',
+      'ad_user_data':'granted',
+      'ad_personalization':'granted'
+    };
+    gtag('consent', 'update', option);
+    // 3. 保存并记录用户是否同意的选项 以便下一页面自动选择是否同意 cookie
+    localStorage['gtag.consent.option'] = JSON.stringify(option);
+  });
+</script>
+<script>
+  // 按钮的代码 给用户 同意 部分cookie 
+  document.addEventListener('click', function (e) {
+    const btnAcceptCookie = e.target.closest('[id*="header-save"]');
+    var option;
+    if (btnAcceptCookie === null) return;
+    var ads = document.querySelector('[id*="marketing-input"]').checked;
+    var ga4 = document.querySelector('[id*="analytics-input"]').checked;
+    //didnt check for both Personalize marketing and Measure performance
+    if(ads==false && ga4==false){    
+      option = {
+        'analytics_storage': 'denied',
+        'ad_storage': 'denied',
+        'ad_user_data':'denied',
+        'ad_personalization':'denied'
+      };    
+    }
+    //only checked Personalize marketing
+    if(ads==true && ga4==false){    
+     option = {
+        'analytics_storage': 'denied',
+        'ad_storage': 'granted',
+        'ad_user_data':'granted',
+        'ad_personalization':'granted'
+      };    
+    }
+    //only checked Measure performance
+    if(ads==false && ga4==true){    
+       option = {
+          'analytics_storage': 'granted',
+          'ad_storage': 'denied',
+          'ad_user_data':'denied',
+          'ad_personalization':'denied'
+        };    
+    }
+    //only checked Measure performance
+    if(ads==true && ga4==true){    
+     option = {
+        'analytics_storage': 'granted',
+        'ad_storage': 'granted',
+        'ad_user_data':'granted',
+        'ad_personalization':'granted'
+      };    
+    }
+    gtag('consent', 'update', option);
+    // 3. 保存并记录用户是否同意的选项 以便下一页面自动选择是否同意 cookie
+    localStorage['gtag.consent.option'] = JSON.stringify(option);
+  });
+</script>
+<script>
+  // 按钮的代码 给用户 拒绝 cookie 
+  document.addEventListener('click', function (e) {
+    const btnRejectCookie = e.target.closest('[id*="btn-decline"],[id*="header-decline"]');
+    if (btnRejectCookie === null) return;
+    const option = {
+      'analytics_storage': 'denied',
+      'ad_storage': 'denied',
+      'ad_user_data':'denied',
+      'ad_personalization':'denied'
+    };
+    gtag('consent', 'update', option);
+    // 3b. 移除之前保存的用户同意选项的记录 以便下一页面不再自动同意 cookie
+    localStorage.removeItem('gtag.consent.option');
+  });
+</script>
