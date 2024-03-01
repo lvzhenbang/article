@@ -1,0 +1,81 @@
+<?php
+
+use Illuminate\Support\Facades\Route;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\Log;
+
+/*
+|--------------------------------------------------------------------------
+| Web Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register web routes for your application. These
+| routes are loaded by the RouteServiceProvider and all of them will
+| be assigned to the "web" middleware group. Make something great!
+|
+*/
+use Signifly\Shopify\Shopify;
+
+Route::get('/', function () {
+    return view('welcome');
+});
+Route::get('/products', function () {
+    
+    $shopify = new Shopify(
+        env('SHOPIFY_PASSWORD'),
+        env('SHOPIFY_DOMAIN'),
+        env('SHOPIFY_API_VERSION')
+    );
+    return $shopify->get('products.json');
+});
+Route::get('/customers', function () {    
+    $shopify = new Shopify(
+        env('SHOPIFY_PASSWORD'),
+        env('SHOPIFY_DOMAIN'),
+        env('SHOPIFY_API_VERSION')
+    );
+    return $shopify->get('customers.json');
+});
+Route::get('/orders', function () {
+    
+    $shopify = new Shopify(
+        env('SHOPIFY_PASSWORD'),
+        env('SHOPIFY_DOMAIN'),
+        env('SHOPIFY_API_VERSION')
+    );
+    return $shopify->get('orders.json');
+});
+
+Route::post('/ga', function (Request $request) {
+    $payLoad = json_decode($request->getContent(), true);
+    Log::info($payLoad);
+    $response = Http::withBody(json_encode([
+            "client_id"=> $payLoad["client_id"],
+            "non_personalized_ads"=> false,
+            "events"=> [
+                [
+                    "name"=> "custom_purchase",
+                    "params"=> $payLoad["event_data"],
+                ]
+            ]
+        ]) ,'application/json')
+        ->post('https://www.google-analytics.com/mp/collect?measurement_id=' . env('GA4_MEASUREMENT_ID') .'&api_secret='. env('GA4_API_SECRET'));
+    // Log::info($response->json());
+    // return $response->json();
+});
+
+Route::get('/shopify-test', function(Request $request) {
+    
+});
+
+Route::get('/judge', function(Request $request) {
+    // Log::info($_GET['code']);
+    $response = Http::withBody(json_encode([
+        'api_token' => $_GET['code'],
+        'shop_domain'=> 'lzbt.myshopify.com',
+        "id"=> '6537130574032'
+    ]), 'application/json')->post('https://judge.me/api/v1/widgets/product_review');
+
+    return $response;
+});
